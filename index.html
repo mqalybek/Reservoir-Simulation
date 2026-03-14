@@ -10,7 +10,7 @@
 :root{
   --bg:#0a0e17;--bg2:#111827;--bg3:#1a2236;--bg4:#212d42;
   --accent:#4f8ef7;--accent2:#3a7ae0;--accentg:#4ff7c0;
-  --gold:#f7c44f;--red:#f75f5f;--green:#4ff7a0;
+  --gold:#f7c44f;--red:#f75f5f;--green:#4ff7a0;--purple:#a78bfa;
   --t1:#f0f4ff;--t2:#8fa3c0;--t3:#4a6080;
   --border:rgba(79,142,247,0.12);--border2:rgba(79,142,247,0.25);
   --card:rgba(17,24,39,0.9);--r:10px;
@@ -18,229 +18,291 @@
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;
   background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(79,142,247,0.08),transparent),
-  linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  linear-gradient(var(--border) 1px,transparent 1px),
+  linear-gradient(90deg,var(--border) 1px,transparent 1px);
   background-size:100% 100%,48px 48px,48px 48px;pointer-events:none;z-index:0}
 .app{position:relative;z-index:1;display:flex;flex-direction:column;min-height:100vh}
 
 /* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:56px;
-  background:rgba(10,14,23,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;backdrop-filter:blur(16px)}
+  background:rgba(10,14,23,0.95);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;backdrop-filter:blur(16px)}
 .logo{display:flex;align-items:center;gap:8px}
-.logo-mark{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accentg));
-  display:flex;align-items:center;justify-content:center;font-family:'Syne';font-size:12px;font-weight:700;color:#000}
-.logo-text{font-family:'Syne';font-size:14px;font-weight:600;color:var(--t1);letter-spacing:.5px}
+.logo-mark{width:28px;height:28px;border-radius:7px;
+  background:linear-gradient(135deg,var(--accent),var(--accentg));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne';font-size:12px;font-weight:700;color:#000}
+.logo-text{font-family:'Syne';font-size:14px;font-weight:600;letter-spacing:.5px}
 .logo-sub{font-size:11px;color:var(--t3);margin-left:4px}
 .nav-tabs{display:flex;gap:2px}
-.ntab{padding:6px 13px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;font-family:'Inter'}
+.ntab{padding:6px 13px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:500;
+  color:var(--t2);transition:all .2s;border:none;background:none;font-family:'Inter'}
 .ntab:hover{color:var(--t1);background:var(--bg3)}
 .ntab.active{color:var(--accent);background:rgba(79,142,247,0.12)}
 .nav-right{display:flex;align-items:center;gap:8px}
-.notif-btn{position:relative;background:none;border:1px solid var(--border);border-radius:8px;width:34px;height:34px;
-  cursor:pointer;color:var(--t2);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s}
+.notif-btn{position:relative;background:none;border:1px solid var(--border);border-radius:8px;
+  width:34px;height:34px;cursor:pointer;color:var(--t2);
+  display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s}
 .notif-btn:hover{border-color:var(--accent);color:var(--accent)}
 .notif-badge{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;
-  border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.nav-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accentg));
-  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#000;cursor:pointer;border:2px solid transparent;transition:all .2s}
+  border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:600;
+  display:flex;align-items:center;justify-content:center}
+.nav-av{width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accentg));
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:#000;cursor:pointer;
+  border:2px solid transparent;transition:all .2s}
 .nav-av:hover{border-color:var(--accent)}
-.btn-out{padding:5px 11px;border-radius:7px;border:1px solid var(--border);background:none;color:var(--t3);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Inter'}
+.btn-out{padding:5px 11px;border-radius:7px;border:1px solid var(--border);
+  background:none;color:var(--t3);font-size:12px;cursor:pointer;
+  transition:all .2s;font-family:'Inter'}
 .btn-out:hover{border-color:var(--red);color:var(--red)}
 
 /* NOTIF PANEL */
-.notif-panel{position:fixed;top:60px;right:1rem;width:320px;background:var(--bg2);border:1px solid var(--border2);
-  border-radius:var(--r);z-index:300;box-shadow:0 16px 48px rgba(0,0,0,.5);display:none}
+.notif-panel{position:fixed;top:60px;right:1rem;width:320px;
+  background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);
+  z-index:300;box-shadow:0 16px 48px rgba(0,0,0,.5);display:none}
 .notif-panel.open{display:block}
-.np-head{padding:14px 16px 10px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.np-title{font-family:'Syne';font-size:13px;font-weight:600;color:var(--t1)}
+.np-head{padding:14px 16px 10px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center}
+.np-title{font-family:'Syne';font-size:13px;font-weight:600}
 .np-clear{font-size:11px;color:var(--accent);cursor:pointer;border:none;background:none;font-family:'Inter'}
-.np-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.np-item{padding:10px 16px;border-bottom:1px solid var(--border);
+  display:flex;gap:10px;align-items:flex-start}
 .np-item.unread{background:rgba(79,142,247,0.05)}
-.np-icon{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:rgba(79,142,247,0.1)}
+.np-icon{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:13px;flex-shrink:0;background:rgba(79,142,247,0.1)}
 .np-body{flex:1}
-.np-text{font-size:12px;color:var(--t1);line-height:1.5}
+.np-text{font-size:12px;line-height:1.5}
 .np-time{font-size:11px;color:var(--t3);margin-top:2px}
 .np-empty{padding:1.5rem;text-align:center;font-size:13px;color:var(--t3)}
 
 /* AUTH */
 .auth-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
-.auth-wrap{width:100%;max-width:400px}
-.auth-header{text-align:center;margin-bottom:2rem}
-.auth-logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accentg));
-  margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:'Syne';font-size:18px;font-weight:700;color:#000}
-.auth-title{font-family:'Syne';font-size:24px;font-weight:700;margin-bottom:6px}
+.auth-wrap{width:100%;max-width:500px}
+.auth-header{text-align:center;margin-bottom:1.5rem}
+.auth-logo{width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accentg));
+  margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;
+  font-family:'Syne';font-size:18px;font-weight:700;color:#000}
+.auth-title{font-family:'Syne';font-size:22px;font-weight:700;margin-bottom:4px}
 .auth-sub{font-size:13px;color:var(--t2)}
-.auth-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:2rem;backdrop-filter:blur(20px)}
-.atabs{display:flex;background:var(--bg3);border-radius:8px;padding:3px;margin-bottom:1.5rem;gap:3px}
-.atab{flex:1;padding:7px;text-align:center;cursor:pointer;font-size:13px;font-weight:500;color:var(--t2);
-  border-radius:6px;border:none;background:none;transition:all .2s;font-family:'Inter'}
+.auth-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:1.75rem;backdrop-filter:blur(20px)}
+.atabs{display:flex;background:var(--bg3);border-radius:8px;padding:3px;
+  margin-bottom:1.25rem;gap:3px}
+.atab{flex:1;padding:7px;text-align:center;cursor:pointer;font-size:13px;font-weight:500;
+  color:var(--t2);border-radius:6px;border:none;background:none;
+  transition:all .2s;font-family:'Inter'}
 .atab.active{background:var(--bg2);color:var(--accent);border:1px solid var(--border)}
-.fg{margin-bottom:1rem}
-label{display:block;font-size:11px;color:var(--t3);margin-bottom:5px;font-weight:500;letter-spacing:.5px}
-input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;
-  padding:9px 13px;color:var(--t1);font-size:13px;font-family:'Inter';transition:border .2s;outline:none}
+
+/* FORMS */
+.fg{margin-bottom:.875rem}
+label{display:block;font-size:10px;color:var(--t3);margin-bottom:4px;
+  font-weight:500;letter-spacing:.5px}
+input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);
+  border-radius:8px;padding:8px 12px;color:var(--t1);font-size:13px;
+  font-family:'Inter';transition:border .2s;outline:none}
 input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 input::placeholder,textarea::placeholder{color:var(--t3)}
 select option{background:var(--bg2)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btn{width:100%;padding:10px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;font-family:'Inter';margin-top:4px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.btn{width:100%;padding:10px;border-radius:8px;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-weight:600;font-size:14px;cursor:pointer;
+  transition:all .2s;font-family:'Inter';margin-top:4px}
 .btn:hover{opacity:.9;transform:translateY(-1px)}
-.auth-hint{text-align:center;font-size:12px;color:var(--t3);margin-top:1rem}
+.auth-hint{text-align:center;font-size:12px;color:var(--t3);margin-top:.875rem}
 .auth-hint span{color:var(--accent);cursor:pointer}
+.form-section{font-size:10px;color:var(--t3);letter-spacing:1px;
+  margin:.875rem 0 .625rem;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* SHELL */
 .shell{display:flex;flex:1;min-height:calc(100vh - 56px)}
 .content{flex:1;overflow-y:auto;padding:1.5rem}
-
-/* PAGE */
-.ph{margin-bottom:1.5rem}
+.ph{margin-bottom:1.25rem}
 .pt{font-family:'Syne';font-size:18px;font-weight:700}
 .ps{font-size:13px;color:var(--t2);margin-top:3px}
 
-/* CARDS */
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;backdrop-filter:blur(10px)}
-
-/* TEAM GRID */
+/* TEAM */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem}
-.mcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;
-  cursor:pointer;transition:all .25s}
-.mcard:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,142,247,.12)}
-.mcard-top{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.mav{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:14px;font-weight:700;flex-shrink:0;border:2px solid var(--border2)}
+.mcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.25rem;cursor:pointer;transition:all .25s}
+.mcard:hover{border-color:var(--accent);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(79,142,247,.12)}
+.mcard-top{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.mav{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;border:2px solid}
 .mname{font-size:14px;font-weight:600}
 .mrole{font-size:11px;color:var(--accent);margin-top:2px;font-weight:500}
-.msep{border:none;border-top:1px solid var(--border);margin:10px 0}
-.mrow{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
+.msep{border:none;border-top:1px solid var(--border);margin:8px 0}
+.mrow{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
 .mrow span:first-child{color:var(--t2)}
-.mtags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.tag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.3px;
+.mtags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;
   background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.2)}
 .tag.vac{background:rgba(247,196,79,.1);color:var(--gold);border-color:rgba(247,196,79,.2)}
 .tag.skill{background:rgba(79,247,192,.08);color:var(--accentg);border-color:rgba(79,247,192,.2)}
-
-/* STATUS DOT */
 .sdot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
-.sdot.on{background:var(--green)}
-.sdot.vac{background:var(--gold)}
+.sdot.on{background:var(--green)}.sdot.vac{background:var(--gold)}
+.project-bar{background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);
+  border-radius:6px;padding:4px 8px;font-size:11px;color:var(--purple);
+  display:flex;align-items:center;gap:4px;margin-bottom:6px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:400;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(6px)}
-.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;padding:2rem}
-.mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:400;
+  display:flex;align-items:center;justify-content:center;
+  padding:1rem;backdrop-filter:blur(6px)}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;
+  width:100%;max-width:520px;max-height:88vh;overflow-y:auto;padding:1.75rem}
+.mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
 .mtitle{font-family:'Syne';font-size:16px;font-weight:700}
-.btnx{background:none;border:1px solid var(--border);color:var(--t2);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btnx{background:none;border:1px solid var(--border);color:var(--t2);
+  width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:14px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s}
 .btnx:hover{border-color:var(--red);color:var(--red)}
-.mav-lg{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin:0 auto 1rem;border:3px solid var(--border2)}
+.mav-lg{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:22px;font-weight:700;margin:0 auto 1rem;border:3px solid}
 .mn{text-align:center;font-family:'Syne';font-size:17px;font-weight:700}
-.mr-lbl{text-align:center;font-size:12px;color:var(--accent);margin-top:4px;margin-bottom:1.5rem;font-weight:500}
+.mr-lbl{text-align:center;font-size:12px;color:var(--accent);
+  margin-top:4px;margin-bottom:1.25rem;font-weight:500}
 .igrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem}
 .iitem .il{font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:3px}
 .iitem .iv{font-size:13px;font-weight:500}
-.sec{font-size:10px;color:var(--t3);letter-spacing:1px;margin:1rem 0 .5rem;border-bottom:1px solid var(--border);padding-bottom:6px}
+.sec{font-size:10px;color:var(--t3);letter-spacing:1px;
+  margin:1rem 0 .5rem;border-bottom:1px solid var(--border);padding-bottom:5px}
 
-/* CALENDAR */
-.cal-wrap{margin-bottom:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem}
-.cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
-.cal-m{font-family:'Syne';font-size:15px;font-weight:700}
-.cal-nav{display:flex;gap:4px}
-.cnbtn{padding:5px 9px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--t2);cursor:pointer;font-size:12px;transition:all .2s;font-family:'Inter'}
+/* YEAR CALENDAR */
+.year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.625rem}
+.mini-month{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.625rem}
+.mm-title{font-family:'Syne';font-size:11px;font-weight:700;color:var(--t2);
+  text-align:center;margin-bottom:.375rem;letter-spacing:.5px}
+.mm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
+.mm-dh{text-align:center;font-size:8px;color:var(--t3);padding:1px 0;font-weight:500}
+.mm-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  border-radius:3px;font-size:9px;cursor:pointer;position:relative;
+  color:var(--t3);transition:background .1s}
+.mm-day:hover{background:var(--bg4);color:var(--t1)}
+.mm-day.today{background:rgba(79,142,247,.25);color:var(--accent);font-weight:700}
+.mm-day.hol{background:rgba(247,196,79,.15);color:var(--gold)}
+.mm-day.vac{background:rgba(79,247,160,.1);color:var(--accentg)}
+.mm-day.selected{background:rgba(79,142,247,.35);color:#fff;font-weight:700}
+.mm-day .md{position:absolute;bottom:1px;left:50%;transform:translateX(-50%);
+  width:3px;height:3px;border-radius:50%;background:var(--accentg)}
+.mm-day.empty{pointer-events:none;cursor:default}
+.cal-year-nav{display:flex;align-items:center;gap:10px;margin-bottom:.875rem}
+.cal-year-val{font-family:'Syne';font-size:16px;font-weight:700;min-width:50px;text-align:center}
+.cnbtn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);
+  background:none;color:var(--t2);cursor:pointer;font-size:12px;
+  transition:all .2s;font-family:'Inter'}
 .cnbtn:hover{border-color:var(--accent);color:var(--accent)}
-.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.cdh{text-align:center;font-size:10px;color:var(--t3);padding:4px;font-weight:500;letter-spacing:.3px}
-.cday{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:12px;cursor:default;position:relative;transition:all .15s;color:var(--t2)}
-.cday.cur{background:rgba(79,142,247,.2);color:var(--accent);font-weight:700}
-.cday.hol{background:rgba(247,196,79,.12);color:var(--gold)}
-.cday.vac{background:rgba(79,247,160,.08)}
-.cday .dd{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--accentg)}
-.cleg{display:flex;gap:1rem;margin-top:.75rem;flex-wrap:wrap}
+.day-popup{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;
+  padding:1rem;margin-bottom:.75rem;animation:fdIn .15s ease}
+@keyframes fdIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.day-popup-hd{font-family:'Syne';font-size:14px;font-weight:700;
+  margin-bottom:.625rem;display:flex;justify-content:space-between;align-items:center}
+.cal-legend{display:flex;gap:1rem;margin-top:.75rem;flex-wrap:wrap}
 .li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .ld{width:10px;height:10px;border-radius:3px}
 
-/* EVENTS */
-.evlist{display:flex;flex-direction:column;gap:6px}
-.evitem{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:10px}
-.evbar{width:3px;height:32px;border-radius:2px;flex-shrink:0}
-.evinfo{flex:1}
-.evt{font-size:12px;font-weight:600}
-.evm{font-size:11px;color:var(--t2);margin-top:2px}
-
 /* FILES */
-.upzone{border:2px dashed var(--border);border-radius:10px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:1rem}
+.upzone{border:2px dashed var(--border);border-radius:10px;padding:1.25rem;
+  text-align:center;cursor:pointer;transition:all .2s;margin-bottom:1rem}
 .upzone:hover{border-color:var(--accent);background:rgba(79,142,247,.04)}
-.upico{font-size:28px;margin-bottom:6px}
+.upico{font-size:26px;margin-bottom:5px}
 .upt{font-size:13px;color:var(--t2)}
 .upt span{color:var(--accent);font-weight:500}
 .flist{display:flex;flex-direction:column;gap:6px}
-.fitem{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 13px;display:flex;align-items:center;gap:10px}
+.fitem{background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:9px 13px;display:flex;align-items:center;gap:10px}
 .fico{font-size:18px}
 .fi{flex:1}
 .fn{font-size:13px;font-weight:500}
 .fm{font-size:11px;color:var(--t3);margin-top:1px}
-.fdel{background:none;border:none;color:var(--t3);cursor:pointer;font-size:13px;transition:color .2s;padding:4px}
+.fdel{background:none;border:none;color:var(--t3);cursor:pointer;
+  font-size:13px;transition:color .2s;padding:4px}
 .fdel:hover{color:var(--red)}
 
+/* DM CHAT */
+.chat-layout{display:flex;flex:1;height:calc(100vh - 56px)}
+.dm-sidebar{width:240px;flex-shrink:0;border-right:1px solid var(--border);
+  overflow-y:auto;background:rgba(10,14,23,.6)}
+.dm-head{padding:.875rem 1rem .5rem;font-size:10px;color:var(--t3);letter-spacing:1px}
+.dm-item{display:flex;align-items:center;gap:10px;padding:9px 12px;
+  cursor:pointer;transition:all .2s;border-left:2px solid transparent}
+.dm-item:hover{background:var(--bg3)}
+.dm-item.active{background:rgba(79,142,247,.1);border-left-color:var(--accent)}
+.dm-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;border:1.5px solid}
+.dm-info{flex:1;min-width:0}
+.dm-name{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-last{font-size:11px;color:var(--t3);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;margin-top:1px}
+.dm-badge{background:var(--accent);color:#000;border-radius:50%;
+  width:16px;height:16px;font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-main{flex:1;display:flex;flex-direction:column;min-height:0}
+.chat-hdr{padding:.875rem 1rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;flex-shrink:0}
+.chat-hdr-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:700;border:1.5px solid;flex-shrink:0}
+.chat-hdr-name{font-family:'Syne';font-size:14px;font-weight:700}
+.chat-hdr-sub{font-size:11px;color:var(--t2)}
+.messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+.msg{display:flex;gap:8px;align-items:flex-end;max-width:72%}
+.msg.me{flex-direction:row-reverse;align-self:flex-end}
+.msg-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;border:1px solid}
+.msg-meta{font-size:10px;color:var(--t3);margin-bottom:2px}
+.msg.me .msg-meta{text-align:right}
+.msg-bubble{background:var(--bg3);border:1px solid var(--border);border-radius:10px;
+  padding:7px 11px;font-size:13px;line-height:1.5;word-break:break-word}
+.msg.me .msg-bubble{background:rgba(79,142,247,.18);border-color:rgba(79,142,247,.3)}
+.chat-input-bar{padding:.75rem 1rem;border-top:1px solid var(--border);
+  display:flex;gap:8px;align-items:center;flex-shrink:0}
+.chat-input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:8px 12px;color:var(--t1);font-size:13px;font-family:'Inter';outline:none;transition:border .2s}
+.chat-input:focus{border-color:var(--accent)}
+.chat-send{padding:8px 14px;border-radius:8px;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;font-family:'Inter'}
+.chat-send:hover{opacity:.88}
+.no-chat{flex:1;display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--t3);flex-direction:column;gap:.625rem}
+
 /* PROFILE */
-.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
+.pcard{background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;margin-bottom:1rem}
 .ptop{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.25rem}
-.pav{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;flex-shrink:0;border:3px solid var(--border2)}
+.pav{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:24px;font-weight:700;flex-shrink:0}
 .pname{font-family:'Syne';font-size:18px;font-weight:700}
 .prole{color:var(--accent);font-size:13px;margin-top:3px;font-weight:500}
 .pemail{color:var(--t2);font-size:12px;margin-top:2px}
-.btedit{padding:7px 14px;border-radius:7px;border:1px solid var(--border);background:none;color:var(--t2);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Inter'}
+.btedit{padding:7px 14px;border-radius:7px;border:1px solid var(--border);
+  background:none;color:var(--t2);font-size:12px;cursor:pointer;
+  transition:all .2s;font-family:'Inter';white-space:nowrap}
 .btedit:hover{border-color:var(--accent);color:var(--accent)}
 .sep{border:none;border-top:1px solid var(--border);margin:1rem 0}
 
-/* CHAT */
-.chat-layout{display:flex;flex:1;height:calc(100vh - 56px)}
-.chat-sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);overflow-y:auto;background:rgba(10,14,23,.6)}
-.chat-main{flex:1;display:flex;flex-direction:column;min-height:0}
-.chat-rooms{padding:.75rem .5rem}
-.chat-room-title{font-size:10px;color:var(--t3);letter-spacing:1px;padding:4px 8px;margin-bottom:4px}
-.croom{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;cursor:pointer;transition:all .2s;font-size:13px;color:var(--t2)}
-.croom:hover{background:var(--bg3);color:var(--t1)}
-.croom.active{background:rgba(79,142,247,.12);color:var(--accent)}
-.croom-ico{width:28px;height:28px;border-radius:7px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-.croom-name{font-size:13px;font-weight:500}
-.croom-last{font-size:11px;color:var(--t3)}
-.chat-header{padding:.875rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-shrink:0}
-.chat-header-name{font-family:'Syne';font-size:14px;font-weight:700}
-.chat-header-sub{font-size:11px;color:var(--t2)}
-.messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}
-.msg{display:flex;gap:8px;align-items:flex-start;max-width:78%}
-.msg.me{flex-direction:row-reverse;align-self:flex-end}
-.msg-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;border:1px solid var(--border)}
-.msg-body{}
-.msg-meta{font-size:10px;color:var(--t3);margin-bottom:3px}
-.msg.me .msg-meta{text-align:right}
-.msg-bubble{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.5;max-width:320px;word-break:break-word}
-.msg.me .msg-bubble{background:rgba(79,142,247,.15);border-color:rgba(79,142,247,.25);color:var(--t1)}
-.chat-input-bar{padding:.75rem 1rem;border-top:1px solid var(--border);display:flex;gap:8px;align-items:center;flex-shrink:0}
-.chat-input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;
-  padding:8px 13px;color:var(--t1);font-size:13px;font-family:'Inter';outline:none;transition:border .2s}
-.chat-input:focus{border-color:var(--accent)}
-.chat-send{padding:8px 16px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter';white-space:nowrap}
-.chat-send:hover{opacity:.9}
-
 /* TOAST */
-.toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:600;background:var(--bg2);border:1px solid var(--green);
-  border-radius:8px;padding:10px 16px;font-size:12px;color:var(--green);display:none;max-width:280px}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:600;
+  background:var(--bg2);border:1px solid var(--green);border-radius:8px;
+  padding:10px 16px;font-size:12px;color:var(--green);display:none;max-width:280px}
 .toast.show{display:block;animation:si .3s ease}
-@keyframes si{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
-
+@keyframes si{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
 .empty{text-align:center;padding:2rem;color:var(--t3);font-size:13px}
 
-@media(max-width:768px){
-  .logo-sub{display:none}
-  .nav-tabs .ntab{padding:5px 8px;font-size:11px}
-  .row2{grid-template-columns:1fr}
+@media(max-width:960px){.year-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){
+  .year-grid{grid-template-columns:repeat(2,1fr)}
+  .logo-sub,.dm-info,.dm-head{display:none}
+  .dm-sidebar{width:56px}
+  .row2,.row3{grid-template-columns:1fr}
   .igrid{grid-template-columns:1fr}
   .ptop{flex-direction:column;text-align:center}
-  .chat-sidebar{width:60px}
-  .croom-name,.croom-last{display:none}
-  .chat-room-title{display:none}
 }
 @media(max-width:480px){
   nav{padding:0 .75rem}
@@ -252,109 +314,107 @@ select option{background:var(--bg2)}
 <body>
 <div class="app" id="app"></div>
 <div class="toast" id="toast"></div>
-
 <script>
-const HOLIDAYS = {
+/* ══════════════════════════════════
+   CONSTANTS
+══════════════════════════════════ */
+const HOLIDAYS={
+  '2026-01-01':'Новый год','2026-01-02':'Новый год',
+  '2026-03-08':'Международный женский день',
+  '2026-03-21':'Наурыз мейрамы','2026-03-22':'Наурыз мейрамы','2026-03-23':'Наурыз мейрамы',
+  '2026-05-01':'День единства народа','2026-05-07':'День защитника Отечества','2026-05-09':'День Победы',
+  '2026-07-06':'День столицы','2026-08-30':'День Конституции РК',
+  '2026-10-25':'День Республики','2026-12-01':'День Первого Президента',
+  '2026-12-16':'День Независимости','2026-12-17':'День Независимости',
   '2025-01-01':'Новый год','2025-01-02':'Новый год',
   '2025-03-08':'Международный женский день',
   '2025-03-21':'Наурыз мейрамы','2025-03-22':'Наурыз мейрамы','2025-03-23':'Наурыз мейрамы',
-  '2025-05-01':'День единства народа Казахстана',
-  '2025-05-07':'День защитника Отечества','2025-05-09':'День Победы',
+  '2025-05-01':'День единства народа','2025-05-07':'День защитника Отечества','2025-05-09':'День Победы',
   '2025-06-30':'Курбан айт','2025-07-06':'День столицы',
   '2025-08-30':'День Конституции РК','2025-10-25':'День Республики',
   '2025-12-01':'День Первого Президента',
   '2025-12-16':'День Независимости','2025-12-17':'День Независимости',
-  '2026-01-01':'Новый год','2026-01-02':'Новый год',
-  '2026-03-08':'Международный женский день',
-  '2026-03-21':'Наурыз мейрамы','2026-03-22':'Наурыз мейрамы','2026-03-23':'Наурыз мейрамы',
-  '2026-05-01':'День единства народа Казахстана',
-  '2026-05-07':'День защитника Отечества','2026-05-09':'День Победы',
-  '2026-07-06':'День столицы','2026-08-30':'День Конституции РК',
-  '2026-10-25':'День Республики','2026-12-01':'День Первого Президента',
-  '2026-12-16':'День Независимости','2026-12-17':'День Независимости',
 };
-
-const COLORS = ['#4f8ef7','#4ff7c0','#f7c44f','#f75f5f','#a78bfa','#34d399','#fb923c','#f472b6','#60a5fa'];
-
-const DEMO_MEMBERS = [
-  {id:1,name:'Калыбек Абенов',role:'Старший инженер',email:'k.abenov@company.kz',phone:'+7 777 123 4567',joined:'2019',skills:['Eclipse','Petrel','Python'],bio:'',color:COLORS[0]},
-  {id:2,name:'Айгерим Сатпаева',role:'Инженер-симулятор',email:'a.satpaeva@company.kz',phone:'',joined:'2021',skills:['tNavigator','CMG'],bio:'',color:COLORS[1]},
-  {id:3,name:'Данияр Сейткали',role:'Инженер-симулятор',email:'d.seitkali@company.kz',phone:'',joined:'2020',skills:['Eclipse','Petrel'],bio:'',color:COLORS[2]},
+const COLORS=['#4f8ef7','#4ff7c0','#f7c44f','#f75f5f','#a78bfa','#34d399','#fb923c','#f472b6','#60a5fa'];
+const MN_FULL=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const MN_SHORT=['ЯНВ','ФЕВ','МАР','АПР','МАЙ','ИЮН','ИЮЛ','АВГ','СЕН','ОКТ','НОЯ','ДЕК'];
+const DEMO_MEMBERS=[
+  {id:1,name:'Калыбек Абенов',role:'Старший инженер',email:'k.abenov@company.kz',
+   phone:'+7 777 123 4567',joined:'2019',skills:['Eclipse','Petrel','Python'],
+   bio:'',color:COLORS[0],birthday:'',family:'',project:'Адаптация модели Карачаганак'},
+  {id:2,name:'Айгерим Сатпаева',role:'Инженер-симулятор',email:'a.satpaeva@company.kz',
+   phone:'',joined:'2021',skills:['tNavigator','CMG'],
+   bio:'',color:COLORS[1],birthday:'',family:'',project:''},
+  {id:3,name:'Данияр Сейткали',role:'Инженер-симулятор',email:'d.seitkali@company.kz',
+   phone:'',joined:'2020',skills:['Eclipse','Petrel'],
+   bio:'',color:COLORS[2],birthday:'',family:'',project:''},
 ];
 
-const ROOMS = [
-  {id:'general',name:'Общий чат',icon:'💬',desc:'Весь отдел'},
-  {id:'tech',name:'Технический',icon:'⚙️',desc:'Симуляции и модели'},
-  {id:'admin',name:'Орг. вопросы',icon:'📋',desc:'Отпуска, расписание'},
-];
-
-const DEMO_MSGS = {
-  general:[
-    {id:1,memberId:2,text:'Всем привет! Как проходит адаптация новой модели?',time:'09:14'},
-    {id:2,memberId:3,text:'Нормально, Eclipse отрабатывает. Вечером скину результаты.',time:'09:22'},
-    {id:3,memberId:1,text:'Отлично, жду. Сегодня встреча в 14:00, не забудьте.',time:'09:35'},
-  ],
-  tech:[
-    {id:1,memberId:3,text:'Вопрос по гридированию — у кого есть опыт с угловой точечной геометрией?',time:'10:05'},
-    {id:2,memberId:1,text:'Да, писал скрипт на Python для конвертации. Поделюсь в файлах.',time:'10:18'},
-  ],
-  admin:[
-    {id:1,memberId:2,text:'Напоминаю — заявки на отпуск до 15 числа!',time:'08:30'},
-  ],
-};
-
+/* ══════════════════════════════════
+   STATE
+══════════════════════════════════ */
 function ls(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}}
 function lss(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
 
-let S = {
-  page:'auth', authTab:'login', currentUser:null,
-  members: ls('rs_members', DEMO_MEMBERS),
-  files: ls('rs_files', []),
-  vacations: ls('rs_vacs', []),
-  msgs: ls('rs_msgs', DEMO_MSGS),
-  notifications: ls('rs_notifs', []),
-  calY: new Date().getFullYear(), calM: new Date().getMonth(),
-  modalMember: null, editingProfile: false,
-  activeRoom: 'general', notifOpen: false,
+let S={
+  page:'auth',authTab:'login',currentUser:null,
+  members:ls('rs3_members',DEMO_MEMBERS),
+  files:ls('rs3_files',[]),
+  vacations:ls('rs3_vacs',[]),
+  dms:ls('rs3_dms',{}),
+  notifications:ls('rs3_notifs',[]),
+  calYear:2026,
+  modalMember:null,editingProfile:false,
+  activeDM:null,notifOpen:false,
+  selectedDay:null,
 };
 
 function save(){
-  lss('rs_members',S.members); lss('rs_files',S.files);
-  lss('rs_vacs',S.vacations); lss('rs_msgs',S.msgs);
-  lss('rs_notifs',S.notifications);
+  lss('rs3_members',S.members);lss('rs3_files',S.files);
+  lss('rs3_vacs',S.vacations);lss('rs3_dms',S.dms);
+  lss('rs3_notifs',S.notifications);
 }
-
 function showToast(msg){
   const el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  setTimeout(()=>el.classList.remove('show'),2800);
+  el.textContent=msg;el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),2600);
 }
-
 function ini(n){return(n||'??').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
-
 function hexA(hex,a){
   if(!hex||hex.length<7)return`rgba(79,142,247,${a})`;
   const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
   return`rgba(${r},${g},${b},${a})`;
 }
-
+function escH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function escA(s){return(s||'').replace(/"/g,'&quot;')}
+function fmtDate(d){
+  if(!d)return'—';
+  const p=d.split('-');return p.length===3?`${p[2]}.${p[1]}.${p[0]}`:d;
+}
+function dmKey(a,b){return[a,b].sort((x,y)=>x-y).join('_')}
 function addNotif(text,icon='🔔'){
-  const n={id:Date.now(),text,icon,time:new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'}),read:false};
-  S.notifications.unshift(n);
-  if(S.notifications.length>30)S.notifications.pop();
-  save();
+  S.notifications.unshift({id:Date.now(),text,icon,
+    time:new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'}),read:false});
+  if(S.notifications.length>30)S.notifications.pop();save();
 }
+function unreadCount(){return S.notifications.filter(n=>!n.read).length}
+function isOnVac(memberId){
+  const today=new Date().toISOString().split('T')[0];
+  return S.vacations.some(v=>v.memberId===memberId&&v.from<=today&&today<=v.to);
+}
+function scrollMsgs(){const el=document.getElementById('msgs');if(el)el.scrollTop=el.scrollHeight}
 
-function unread(){return S.notifications.filter(n=>!n.read).length}
-
+/* ══════════════════════════════════
+   RENDER
+══════════════════════════════════ */
 function render(){
-  document.getElementById('app').innerHTML = S.page==='auth' ? renderAuth() : renderShell();
+  document.getElementById('app').innerHTML=S.page==='auth'?renderAuth():renderShell();
 }
 
-/* ═══ AUTH ═══ */
+/* ─── AUTH ─── */
 function renderAuth(){
-  const isL = S.authTab==='login';
-  return `<div class="auth-screen"><div class="auth-wrap">
+  const isL=S.authTab==='login';
+  return`<div class="auth-screen"><div class="auth-wrap">
     <div class="auth-header">
       <div class="auth-logo">RS</div>
       <h1 class="auth-title">RS Team Portal</h1>
@@ -365,22 +425,51 @@ function renderAuth(){
         <button class="atab ${isL?'active':''}" onclick="setAt('login')">Войти</button>
         <button class="atab ${!isL?'active':''}" onclick="setAt('register')">Регистрация</button>
       </div>
-      ${isL ? `
-        <div class="fg"><label>EMAIL</label><input type="email" id="le" placeholder="your@company.kz"></div>
-        <div class="fg"><label>ПАРОЛЬ</label><input type="password" id="lp" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      ${isL?`
+        <div class="fg"><label>EMAIL</label>
+          <input type="email" id="le" placeholder="your@company.kz"></div>
+        <div class="fg"><label>ПАРОЛЬ</label>
+          <input type="password" id="lp" placeholder="••••••••"
+            onkeydown="if(event.key==='Enter')doLogin()"></div>
         <button class="btn" onclick="doLogin()">Войти в систему</button>
         <p class="auth-hint">Нет аккаунта? <span onclick="setAt('register')">Зарегистрироваться</span></p>
-      ` : `
+      `:`
+        <div class="form-section" style="margin-top:0">ОСНОВНАЯ ИНФОРМАЦИЯ</div>
         <div class="row2">
           <div class="fg"><label>ИМЯ</label><input type="text" id="rf" placeholder="Алишер"></div>
           <div class="fg"><label>ФАМИЛИЯ</label><input type="text" id="rl" placeholder="Нурмагамбет"></div>
         </div>
-        <div class="fg"><label>EMAIL</label><input type="email" id="re" placeholder="a.n@company.kz"></div>
-        <div class="fg"><label>ДОЛЖНОСТЬ</label><input type="text" id="rr" placeholder="Инженер-симулятор"></div>
+        <div class="row2">
+          <div class="fg"><label>EMAIL</label><input type="email" id="re" placeholder="a.n@company.kz"></div>
+          <div class="fg"><label>ТЕЛЕФОН</label><input type="tel" id="rph" placeholder="+7 777 000 0000"></div>
+        </div>
+        <div class="row2">
+          <div class="fg"><label>ДОЛЖНОСТЬ</label><input type="text" id="rr" placeholder="Инженер-симулятор"></div>
+          <div class="fg"><label>ГОД НАЧАЛА РАБОТЫ</label><input type="text" id="rjoin" placeholder="${new Date().getFullYear()}"></div>
+        </div>
         <div class="row2">
           <div class="fg"><label>ПАРОЛЬ</label><input type="password" id="rp" placeholder="••••••••"></div>
-          <div class="fg"><label>ПОВТОР</label><input type="password" id="rp2" placeholder="••••••••"></div>
+          <div class="fg"><label>ПОВТОР ПАРОЛЯ</label><input type="password" id="rp2" placeholder="••••••••"></div>
         </div>
+        <div class="form-section">О СЕБЕ</div>
+        <div class="row3">
+          <div class="fg"><label>ДАТА РОЖДЕНИЯ</label><input type="date" id="rbday"></div>
+          <div class="fg"><label>СЕМЕЙНЫЙ СТАТУС</label>
+            <select id="rfam">
+              <option value="">Не указано</option>
+              <option value="Холост / не замужем">Холост / не замужем</option>
+              <option value="Женат / замужем">Женат / замужем</option>
+              <option value="Разведён / разведена">Разведён / разведена</option>
+              <option value="Помолвлен / помолвлена">Помолвлен / помолвлена</option>
+            </select>
+          </div>
+          <div class="fg"><label>НАВЫКИ (через запятую)</label>
+            <input type="text" id="rskills" placeholder="Eclipse, Petrel..."></div>
+        </div>
+        <div class="fg"><label>ТЕКУЩИЙ ПРОЕКТ / ЧЕМ ЗАНЯТ</label>
+          <input type="text" id="rproj" placeholder="Адаптация модели, разработка отчёта..."></div>
+        <div class="fg"><label>О СЕБЕ (необязательно)</label>
+          <textarea id="rbio" rows="2" placeholder="Кратко о себе..."></textarea></div>
         <button class="btn" onclick="doReg()">Создать аккаунт</button>
         <p class="auth-hint">Уже есть аккаунт? <span onclick="setAt('login')">Войти</span></p>
       `}
@@ -388,11 +477,11 @@ function renderAuth(){
   </div></div>`;
 }
 
-/* ═══ SHELL ═══ */
+/* ─── SHELL ─── */
 function renderShell(){
-  const uc = unread();
-  const pageLabels = {team:'👥 Команда',calendar:'📅 Календарь',files:'📁 Файлы',chat:'💬 Чат',profile:'👤 Профиль'};
-  return `
+  const uc=unreadCount();
+  const labels={team:'👥 Команда',calendar:'📅 Календарь',files:'📁 Файлы',chat:'💬 Сообщения',profile:'👤 Профиль'};
+  return`
     <nav>
       <div class="logo">
         <div class="logo-mark">RS</div>
@@ -400,354 +489,424 @@ function renderShell(){
         <span class="logo-sub">Reservoir Simulation</span>
       </div>
       <div class="nav-tabs">
-        ${Object.entries(pageLabels).map(([p,l])=>`
+        ${Object.entries(labels).map(([p,l])=>`
           <button class="ntab ${S.page===p?'active':''}" onclick="gp('${p}')">${l}</button>`).join('')}
       </div>
       <div class="nav-right">
         <button class="notif-btn" onclick="toggleNotif()">
           🔔${uc>0?`<span class="notif-badge">${uc}</span>`:''}
         </button>
-        <div class="nav-av" title="${S.currentUser.name}" onclick="gp('profile')">${ini(S.currentUser.name)}</div>
+        <div class="nav-av" onclick="gp('profile')">${ini(S.currentUser.name)}</div>
         <button class="btn-out" onclick="logout()">Выйти</button>
       </div>
     </nav>
-
     <div class="notif-panel ${S.notifOpen?'open':''}" id="npanel">
       <div class="np-head">
         <span class="np-title">Уведомления</span>
         <button class="np-clear" onclick="clearNotifs()">Очистить всё</button>
       </div>
-      ${S.notifications.length ? S.notifications.map(n=>`
+      ${S.notifications.length?S.notifications.map(n=>`
         <div class="np-item ${!n.read?'unread':''}">
           <div class="np-icon">${n.icon}</div>
-          <div class="np-body">
-            <div class="np-text">${n.text}</div>
-            <div class="np-time">${n.time}</div>
-          </div>
-        </div>`).join('') : '<div class="np-empty">Нет уведомлений</div>'}
+          <div class="np-body"><div class="np-text">${n.text}</div><div class="np-time">${n.time}</div></div>
+        </div>`).join(''):`<div class="np-empty">Нет уведомлений</div>`}
     </div>
-
     <div class="shell">
-      ${S.page==='chat' ? renderChat() : `<div class="content">${renderPage()}</div>`}
+      ${S.page==='chat'?renderDMLayout():`<div class="content">${renderPage()}</div>`}
     </div>
-    ${S.modalMember ? renderModal() : ''}`;
+    ${S.modalMember?renderModal():''}`;
 }
 
 function renderPage(){
-  if(S.page==='team') return renderTeam();
-  if(S.page==='calendar') return renderCal();
-  if(S.page==='files') return renderFiles();
-  if(S.page==='profile') return renderProfile();
-  return '';
+  if(S.page==='team')return renderTeam();
+  if(S.page==='calendar')return renderCalendar();
+  if(S.page==='files')return renderFiles();
+  if(S.page==='profile')return renderProfile();
+  return'';
 }
 
-/* ═══ TEAM ═══ */
+/* ─── TEAM ─── */
 function renderTeam(){
-  return `
+  return`
     <div class="ph">
       <div class="pt">Команда отдела</div>
       <div class="ps">${S.members.length} сотрудников · Reservoir Simulation, Атырау</div>
     </div>
     <div class="tgrid">
       ${S.members.map(m=>{
-        const myVacs = S.vacations.filter(v=>v.memberId===m.id);
-        const hasVac = myVacs.length > 0;
-        return `
-        <div class="mcard" onclick="openM(${m.id})">
+        const onVac=isOnVac(m.id);
+        return`<div class="mcard" onclick="openM(${m.id})">
           <div class="mcard-top">
             <div class="mav" style="background:${hexA(m.color,.12)};border-color:${hexA(m.color,.35)};color:${m.color}">${ini(m.name)}</div>
-            <div>
-              <div class="mname">${m.name}</div>
-              <div class="mrole">${m.role}</div>
-            </div>
+            <div><div class="mname">${m.name}</div><div class="mrole">${m.role}</div></div>
           </div>
+          ${m.project?`<div class="project-bar">⚙ ${escH(m.project)}</div>`:''}
           <div class="msep"></div>
-          <div class="mrow"><span>Статус</span><span><span class="sdot ${hasVac?'vac':'on'}"></span>${hasVac?'В отпуске':'Активен'}</span></div>
-          <div class="mrow"><span>В компании</span><span style="font-weight:500">с ${m.joined}</span></div>
+          <div class="mrow"><span>Статус</span>
+            <span><span class="sdot ${onVac?'vac':'on'}"></span>${onVac?'В отпуске':'Активен'}</span></div>
+          <div class="mrow"><span>В компании</span><span style="font-weight:500">с ${m.joined||'—'}</span></div>
           <div class="mtags">
             ${(m.skills||[]).slice(0,3).map(s=>`<span class="tag skill">${s}</span>`).join('')}
-            ${hasVac?'<span class="tag vac">Отпуск</span>':''}
+            ${onVac?'<span class="tag vac">Отпуск</span>':''}
           </div>
         </div>`;
       }).join('')}
     </div>`;
 }
 
-/* ═══ MODAL ═══ */
+/* ─── MODAL ─── */
 function renderModal(){
-  const m = S.modalMember;
-  const myV = S.vacations.filter(v=>v.memberId===m.id);
-  const myF = S.files.filter(f=>f.memberId===m.id);
-  return `
-    <div class="overlay" onclick="if(event.target===this)closeM()">
-      <div class="modal">
-        <div class="mhead">
-          <div class="mtitle">Профиль сотрудника</div>
-          <button class="btnx" onclick="closeM()">✕</button>
-        </div>
-        <div class="mav-lg" style="background:${hexA(m.color,.12)};border-color:${hexA(m.color,.4)};color:${m.color}">${ini(m.name)}</div>
-        <div class="mn">${m.name}</div>
-        <div class="mr-lbl">${m.role}</div>
-        <div class="igrid">
-          <div class="iitem"><div class="il">EMAIL</div><div class="iv" style="font-size:12px">${m.email||'—'}</div></div>
-          <div class="iitem"><div class="il">ТЕЛЕФОН</div><div class="iv">${m.phone||'—'}</div></div>
-          <div class="iitem"><div class="il">В КОМПАНИИ</div><div class="iv">с ${m.joined}</div></div>
-          <div class="iitem"><div class="il">СТАТУС</div><div class="iv" style="color:${myV.length?'var(--gold)':'var(--green)'}">${myV.length?'В отпуске':'Активен'}</div></div>
-        </div>
-        ${m.bio?`<div style="font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:.75rem">${m.bio}</div>`:''}
-        ${(m.skills||[]).length?`<div class="sec">НАВЫКИ</div><div class="mtags" style="margin-bottom:.75rem">${m.skills.map(s=>`<span class="tag skill">${s}</span>`).join('')}</div>`:''}
-        ${myV.length?`<div class="sec">ОТПУСКА</div>${myV.map(v=>`<div style="font-size:12px;color:var(--t2);margin-bottom:4px">📅 ${v.from} — ${v.to}</div>`).join('')}`:''}
-        ${myF.length?`<div class="sec">ФАЙЛЫ (${myF.length})</div>${myF.slice(0,5).map(f=>`<div style="font-size:12px;color:var(--t2);margin-bottom:3px">📄 ${f.name}</div>`).join('')}`:''}
-        <div style="margin-top:1rem">
-          <button class="btedit" onclick="closeM();gp('chat')" style="width:100%;text-align:center">💬 Перейти в чат</button>
-        </div>
+  const m=S.modalMember;
+  const myV=S.vacations.filter(v=>v.memberId===m.id);
+  const myF=S.files.filter(f=>f.memberId===m.id);
+  const isMe=m.id===S.currentUser.id;
+  const onVac=isOnVac(m.id);
+  return`<div class="overlay" onclick="if(event.target===this)closeM()">
+    <div class="modal">
+      <div class="mhead"><div class="mtitle">Профиль сотрудника</div>
+        <button class="btnx" onclick="closeM()">✕</button></div>
+      <div class="mav-lg" style="background:${hexA(m.color,.12)};border-color:${hexA(m.color,.45)};color:${m.color}">${ini(m.name)}</div>
+      <div class="mn">${m.name}</div>
+      <div class="mr-lbl">${m.role}</div>
+      ${m.project?`<div style="text-align:center;margin-bottom:.875rem">
+        <span style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);
+          border-radius:6px;padding:4px 12px;font-size:12px;color:var(--purple)">⚙ ${escH(m.project)}</span>
+      </div>`:''}
+      <div class="igrid">
+        <div class="iitem"><div class="il">EMAIL</div><div class="iv" style="font-size:12px">${m.email||'—'}</div></div>
+        <div class="iitem"><div class="il">ТЕЛЕФОН</div><div class="iv">${m.phone||'—'}</div></div>
+        <div class="iitem"><div class="il">В КОМПАНИИ</div><div class="iv">с ${m.joined||'—'}</div></div>
+        <div class="iitem"><div class="il">СТАТУС</div>
+          <div class="iv" style="color:${onVac?'var(--gold)':'var(--green)'}">${onVac?'В отпуске':'Активен'}</div></div>
+        ${m.birthday?`<div class="iitem"><div class="il">ДЕНЬ РОЖДЕНИЯ</div><div class="iv">${fmtDate(m.birthday)}</div></div>`:''}
+        ${m.family?`<div class="iitem"><div class="il">СЕМЕЙНЫЙ СТАТУС</div><div class="iv">${escH(m.family)}</div></div>`:''}
       </div>
-    </div>`;
+      ${m.bio?`<p style="font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:.75rem">${escH(m.bio)}</p>`:''}
+      ${(m.skills||[]).length?`<div class="sec">НАВЫКИ</div>
+        <div class="mtags" style="margin-bottom:.75rem">${m.skills.map(s=>`<span class="tag skill">${s}</span>`).join('')}</div>`:''}
+      ${myV.length?`<div class="sec">ОТПУСКА</div>
+        ${myV.map(v=>`<div style="font-size:12px;color:var(--t2);margin-bottom:4px">📅 ${v.from} — ${v.to}</div>`).join('')}`:''}
+      ${myF.length?`<div class="sec">ФАЙЛЫ (${myF.length})</div>
+        ${myF.slice(0,4).map(f=>`<div style="font-size:12px;color:var(--t2);margin-bottom:3px">📄 ${escH(f.name)}</div>`).join('')}`:''}
+      ${!isMe?`<div style="margin-top:1rem">
+        <button class="btedit" onclick="closeM();openDM(${m.id})" style="width:100%;text-align:center">
+          💬 Написать личное сообщение
+        </button></div>`:''}
+    </div>
+  </div>`;
 }
 
-/* ═══ CALENDAR ═══ */
-function renderCal(){
-  const MN=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-  const DN=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
-  const y=S.calY, m=S.calM;
-  const fd=new Date(y,m,1).getDay(), off=fd===0?6:fd-1, dim=new Date(y,m+1,0).getDate();
-  const today=new Date();
+/* ─── CALENDAR (year view) ─── */
+function renderCalendar(){
+  const y=S.calYear;
+  const todayStr=new Date().toISOString().split('T')[0];
 
+  // build vacation date map
   const vacD={};
   S.vacations.forEach(v=>{
-    let d=new Date(v.from); const e=new Date(v.to);
+    let d=new Date(v.from);const e=new Date(v.to);
     while(d<=e){
       const k=d.toISOString().split('T')[0];
       if(!vacD[k])vacD[k]=[];
       const mem=S.members.find(mb=>mb.id===v.memberId);
-      if(mem)vacD[k].push(mem.name.split(' ')[0]);
+      if(mem)vacD[k].push({name:mem.name,color:mem.color});
       d.setDate(d.getDate()+1);
     }
   });
 
-  let cells='';
-  for(let i=0;i<off;i++) cells+=`<div></div>`;
-  for(let d=1;d<=dim;d++){
-    const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const isT=d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear();
-    const isH=HOLIDAYS[ds]; const isV=vacD[ds];
-    let cls='cday'; if(isT)cls+=' cur'; if(isH)cls+=' hol'; if(isV)cls+=' vac';
-    const tt=[isH,isV&&('Отпуск: '+isV.join(', '))].filter(Boolean).join(' | ');
-    cells+=`<div class="${cls}" title="${tt}">${d}${isV?'<div class="dd"></div>':''}</div>`;
-  }
-
-  const mStr=`${y}-${String(m+1).padStart(2,'0')}`;
-  const mH=Object.entries(HOLIDAYS).filter(([k])=>k.startsWith(mStr));
-  const mV=S.vacations.filter(v=>v.from.substring(0,7)===mStr);
-
-  return `
-    <div class="ph"><div class="pt">Календарь</div><div class="ps">Праздники и отпуска команды</div></div>
-    <div class="cal-wrap">
-      <div class="cal-hd">
-        <div class="cal-m">${MN[m]} ${y}</div>
-        <div class="cal-nav">
-          <button class="cnbtn" onclick="cn(-1)">← Пред</button>
-          <button class="cnbtn" onclick="cn(1)">След →</button>
-        </div>
-      </div>
-      <div class="cgrid">
-        ${DN.map(d=>`<div class="cdh">${d}</div>`).join('')}
+  // render 12 mini months
+  const months=Array.from({length:12},(_,m)=>{
+    const fd=new Date(y,m,1).getDay(),off=fd===0?6:fd-1;
+    const dim=new Date(y,m+1,0).getDate();
+    let cells='';
+    for(let i=0;i<off;i++)cells+=`<div class="mm-day empty"></div>`;
+    for(let d=1;d<=dim;d++){
+      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const isT=ds===todayStr;
+      const isH=!!HOLIDAYS[ds];const isV=!!vacD[ds];const isSel=S.selectedDay===ds;
+      let cls='mm-day';
+      if(isSel)cls+=' selected';else if(isT)cls+=' today';
+      if(isH&&!isSel)cls+=' hol';
+      if(isV&&!isSel)cls+=' vac';
+      cells+=`<div class="${cls}" onclick="selectDay('${ds}')">${d}${isV&&!isSel?'<div class="md"></div>':''}</div>`;
+    }
+    return`<div class="mini-month">
+      <div class="mm-title">${MN_SHORT[m]}</div>
+      <div class="mm-grid">
+        ${['П','В','С','Ч','П','С','В'].map(d=>`<div class="mm-dh">${d}</div>`).join('')}
         ${cells}
       </div>
-      <div class="cleg">
-        <div class="li"><div class="ld" style="background:rgba(79,142,247,.4)"></div>Сегодня</div>
-        <div class="li"><div class="ld" style="background:rgba(247,196,79,.4)"></div>Праздник РК</div>
-        <div class="li"><div class="ld" style="background:rgba(79,247,160,.3)"></div>Отпуск коллеги</div>
+    </div>`;
+  }).join('');
+
+  // day detail popup
+  let popup='';
+  if(S.selectedDay){
+    const ds=S.selectedDay;
+    const [dy,dm,dd]=ds.split('-');
+    const hol=HOLIDAYS[ds];
+    const dayVacs=vacD[ds]||[];
+    const isFuture=ds>=todayStr;
+    popup=`<div class="day-popup">
+      <div class="day-popup-hd">
+        <span>${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</span>
+        <button class="btnx" onclick="S.selectedDay=null;render()" style="flex-shrink:0">✕</button>
       </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
-      <div>
-        <div class="sec" style="margin-top:0;border-top:none;padding-top:0">ПРАЗДНИКИ МЕСЯЦА</div>
-        <div class="evlist">
-          ${mH.length ? mH.map(([k,n])=>`
-            <div class="evitem">
-              <div class="evbar" style="background:var(--gold)"></div>
-              <div class="evinfo"><div class="evt">${n}</div><div class="evm">${k}</div></div>
-            </div>`).join('') : '<div class="empty" style="padding:1rem">Нет праздников</div>'}
-        </div>
-      </div>
-      <div>
-        <div class="sec" style="margin-top:0;border-top:none;padding-top:0">ОТПУСКА</div>
-        <button class="btedit" style="width:100%;text-align:center;margin-bottom:8px" onclick="showVF()">+ Добавить мой отпуск</button>
-        <div id="vf" style="display:none;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:8px">
-          <div class="row2">
-            <div class="fg"><label>С</label><input type="date" id="vfrom"></div>
-            <div class="fg"><label>ПО</label><input type="date" id="vto"></div>
+      ${hol?`<div style="margin-bottom:.5rem">
+        <span style="background:rgba(247,196,79,.12);border:1px solid rgba(247,196,79,.25);
+          border-radius:5px;padding:3px 9px;font-size:12px;color:var(--gold)">🎉 ${hol}</span>
+      </div>`:''}
+      ${dayVacs.length?`
+        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.375rem">В ОТПУСКЕ</div>
+        ${dayVacs.map(v=>`
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;font-size:13px">
+            <span style="width:8px;height:8px;border-radius:50%;background:${v.color};display:inline-block;flex-shrink:0"></span>
+            ${escH(v.name)}
+          </div>`).join('')}
+      `:`<div style="font-size:13px;color:var(--t3);margin-bottom:${isFuture?'.75rem':'0'}">${hol?'':'Нет событий'}</div>`}
+      ${isFuture?`
+        <div style="border-top:1px solid var(--border);padding-top:.75rem;margin-top:${dayVacs.length?'.75rem':'0'}">
+          <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.375rem">ДОБАВИТЬ ОТПУСК С ЭТОЙ ДАТЫ</div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:12px;color:var(--t2)">по</span>
+            <input type="date" id="vto-q" value="${ds}" min="${ds}"
+              style="flex:1;min-width:130px;padding:6px 10px;font-size:12px">
+            <button onclick="saveVacFromDay('${ds}')"
+              style="padding:7px 13px;border-radius:7px;border:none;
+                background:linear-gradient(135deg,var(--accent),var(--accent2));
+                color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter">
+              + Добавить
+            </button>
           </div>
-          <button class="btn" onclick="saveVac()">Сохранить</button>
-        </div>
-        <div class="evlist">
-          ${mV.length ? mV.map(v=>{
-            const mem=S.members.find(mb=>mb.id===v.memberId);
-            return `<div class="evitem">
-              <div class="evbar" style="background:var(--green)"></div>
-              <div class="evinfo"><div class="evt">${mem?mem.name:'Сотрудник'}</div><div class="evm">${v.from} — ${v.to}</div></div>
-            </div>`;
-          }).join('') : '<div class="empty" style="padding:1rem">Нет отпусков в этом месяце</div>'}
-        </div>
-      </div>
+        </div>`:''}
+    </div>`;
+  }
+
+  return`
+    <div class="ph"><div class="pt">Календарь</div>
+      <div class="ps">Нажмите на любой день чтобы увидеть детали</div></div>
+    <div class="cal-year-nav">
+      <button class="cnbtn" onclick="S.calYear--;render()">← ${y-1}</button>
+      <div class="cal-year-val">${y}</div>
+      <button class="cnbtn" onclick="S.calYear++;render()">${y+1} →</button>
+    </div>
+    ${popup}
+    <div class="year-grid">${months}</div>
+    <div class="cal-legend">
+      <div class="li"><div class="ld" style="background:rgba(79,142,247,.4)"></div>Сегодня</div>
+      <div class="li"><div class="ld" style="background:rgba(247,196,79,.4)"></div>Праздник РК</div>
+      <div class="li"><div class="ld" style="background:rgba(79,247,160,.3)"></div>Отпуск коллеги</div>
+      <div class="li"><div class="ld" style="background:rgba(79,142,247,.4)"></div>Выбранный день</div>
     </div>`;
 }
 
-/* ═══ FILES ═══ */
+function selectDay(ds){S.selectedDay=S.selectedDay===ds?null:ds;render()}
+
+function saveVacFromDay(from){
+  const toEl=document.getElementById('vto-q');
+  const to=toEl?toEl.value:from;
+  if(!to||to<from){showToast('Выберите корректную конечную дату');return}
+  S.vacations.push({id:Date.now(),memberId:S.currentUser.id,from,to});
+  save();
+  const me=S.members.find(m=>m.id===S.currentUser.id);
+  addNotif(`${me?.name.split(' ')[0]} добавил отпуск: ${from} — ${to}`,'🌴');
+  showToast('Отпуск добавлен!');
+  S.selectedDay=null;render();
+}
+
+/* ─── FILES ─── */
 function renderFiles(){
-  const myF = S.files.filter(f=>f.memberId===S.currentUser.id);
-  const tmF = S.files.filter(f=>f.memberId!==S.currentUser.id);
-  const ICONS={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',pptx:'📊',ppt:'📊',dat:'💾',txt:'📋',csv:'📊',png:'🖼',jpg:'🖼',jpeg:'🖼',zip:'📦',rar:'📦'};
-  const fItem = (f,canDel) => {
+  const myF=S.files.filter(f=>f.memberId===S.currentUser.id);
+  const tmF=S.files.filter(f=>f.memberId!==S.currentUser.id);
+  const ICONS={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',
+    pptx:'📊',dat:'💾',txt:'📋',csv:'📊',png:'🖼',jpg:'🖼',jpeg:'🖼',zip:'📦',rar:'📦'};
+  const fItem=(f,canDel)=>{
     const ext=(f.name.split('.').pop()||'').toLowerCase();
     const mem=S.members.find(m=>m.id===f.memberId)||{name:''};
-    return `<div class="fitem">
+    return`<div class="fitem">
       <div class="fico">${ICONS[ext]||'📎'}</div>
-      <div class="fi">
-        <div class="fn">${f.name}</div>
-        <div class="fm">${mem.name} · ${f.date} · ${f.size}</div>
-      </div>
-      ${canDel?`<button class="fdel" onclick="delF('${f.id}')" title="Удалить">🗑</button>`:''}
+      <div class="fi"><div class="fn">${escH(f.name)}</div>
+        <div class="fm">${escH(mem.name)} · ${f.date} · ${f.size}</div></div>
+      ${canDel?`<button class="fdel" onclick="delF('${f.id}')">🗑</button>`:''}
     </div>`;
   };
-  return `
+  return`
     <div class="ph"><div class="pt">Файлы</div><div class="ps">Документы, отчёты, модели отдела</div></div>
     <div class="upzone" onclick="document.getElementById('fi').click()">
       <div class="upico">📁</div>
       <div class="upt">Перетащите или <span>выберите файл</span></div>
-      <div style="font-size:11px;color:var(--t3);margin-top:4px">PDF, XLSX, DOCX, DAT, CSV и другие</div>
+      <div style="font-size:11px;color:var(--t3);margin-top:3px">PDF, XLSX, DOCX, DAT, CSV и другие</div>
       <input type="file" id="fi" style="display:none" onchange="upF(event)" multiple>
     </div>
-    <div class="sec" style="margin-top:0;border-top:none;padding-top:0">МОИ ФАЙЛЫ (${myF.length})</div>
-    ${myF.length ? `<div class="flist">${myF.map(f=>fItem(f,true)).join('')}</div>` : '<div class="empty">Вы ещё не загружали файлы</div>'}
-    ${tmF.length ? `
+    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">МОИ ФАЙЛЫ (${myF.length})</div>
+    ${myF.length?`<div class="flist">${myF.map(f=>fItem(f,true)).join('')}</div>`
+      :'<div class="empty">Вы ещё не загружали файлы</div>'}
+    ${tmF.length?`
       <div class="sep"></div>
-      <div class="sec" style="border-top:none;padding-top:0">ФАЙЛЫ КОМАНДЫ (${tmF.length})</div>
-      <div class="flist">${tmF.map(f=>fItem(f,false)).join('')}</div>` : ''}`;
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">ФАЙЛЫ КОМАНДЫ (${tmF.length})</div>
+      <div class="flist">${tmF.map(f=>fItem(f,false)).join('')}</div>`:''}`;
 }
 
-/* ═══ CHAT ═══ */
-function renderChat(){
-  const room = ROOMS.find(r=>r.id===S.activeRoom)||ROOMS[0];
-  const msgs = S.msgs[S.activeRoom]||[];
-  return `
-    <div class="chat-layout">
-      <div class="chat-sidebar">
-        <div class="chat-rooms">
-          <div class="chat-room-title">КАНАЛЫ</div>
-          ${ROOMS.map(r=>`
-            <div class="croom ${S.activeRoom===r.id?'active':''}" onclick="setRoom('${r.id}')">
-              <div class="croom-ico">${r.icon}</div>
-              <div>
-                <div class="croom-name">${r.name}</div>
-                <div class="croom-last">${r.desc}</div>
-              </div>
-            </div>`).join('')}
-        </div>
+/* ─── DM CHAT ─── */
+function renderDMLayout(){
+  const others=S.members.filter(m=>m.id!==S.currentUser.id);
+  const sidebar=others.map(m=>{
+    const key=dmKey(S.currentUser.id,m.id);
+    const msgs=S.dms[key]||[];
+    const last=msgs[msgs.length-1];
+    const uc=msgs.filter(msg=>msg.from===m.id&&!msg.read).length;
+    return`<div class="dm-item ${S.activeDM===m.id?'active':''}" onclick="openDM(${m.id})">
+      <div class="dm-av" style="background:${hexA(m.color,.12)};color:${m.color};border-color:${hexA(m.color,.35)}">${ini(m.name)}</div>
+      <div class="dm-info">
+        <div class="dm-name">${m.name}</div>
+        <div class="dm-last">${last?(last.from===S.currentUser.id?'Вы: ':'')+escH(last.text.slice(0,26))+'…':'Нет сообщений'}</div>
       </div>
-      <div class="chat-main">
-        <div class="chat-header">
-          <span style="font-size:18px">${room.icon}</span>
-          <div>
-            <div class="chat-header-name">${room.name}</div>
-            <div class="chat-header-sub">${S.members.length} участников</div>
-          </div>
+      ${uc>0?`<div class="dm-badge">${uc}</div>`:''}
+    </div>`;
+  }).join('');
+
+  let main='';
+  if(S.activeDM){
+    const peer=S.members.find(m=>m.id===S.activeDM);
+    if(peer){
+      const key=dmKey(S.currentUser.id,peer.id);
+      const msgs=S.dms[key]||[];
+      msgs.forEach(msg=>{if(msg.from===peer.id)msg.read=true});
+      main=`<div class="chat-main">
+        <div class="chat-hdr">
+          <div class="chat-hdr-av" style="background:${hexA(peer.color,.12)};color:${peer.color};border-color:${hexA(peer.color,.35)}">${ini(peer.name)}</div>
+          <div><div class="chat-hdr-name">${peer.name}</div><div class="chat-hdr-sub">${peer.role}</div></div>
         </div>
         <div class="messages" id="msgs">
-          ${msgs.map(msg=>{
-            const mem=S.members.find(m=>m.id===msg.memberId)||{name:'Неизвестно',color:COLORS[0]};
-            const isMe=msg.memberId===S.currentUser.id;
-            return `<div class="msg ${isMe?'me':''}">
-              <div class="msg-av" style="background:${hexA(mem.color||COLORS[0],.12)};color:${mem.color||COLORS[0]};border-color:${hexA(mem.color||COLORS[0],.3)}">${ini(mem.name)}</div>
-              <div class="msg-body">
-                <div class="msg-meta">${isMe?'Вы':mem.name.split(' ')[0]} · ${msg.time}</div>
-                <div class="msg-bubble">${escHtml(msg.text)}</div>
+          ${msgs.length?msgs.map(msg=>{
+            const isMe=msg.from===S.currentUser.id;
+            const sender=isMe?S.currentUser:peer;
+            return`<div class="msg ${isMe?'me':''}">
+              <div class="msg-av" style="background:${hexA(sender.color,.12)};color:${sender.color};border-color:${hexA(sender.color,.3)}">${ini(sender.name)}</div>
+              <div>
+                <div class="msg-meta">${isMe?'Вы':peer.name.split(' ')[0]} · ${msg.time}</div>
+                <div class="msg-bubble">${escH(msg.text)}</div>
               </div>
             </div>`;
-          }).join('')}
-          ${msgs.length===0?'<div class="empty">Нет сообщений. Начните общение!</div>':''}
+          }).join(''):`<div class="empty" style="margin:auto">Начните диалог с ${peer.name.split(' ')[0]} 👋</div>`}
         </div>
         <div class="chat-input-bar">
-          <input class="chat-input" id="cinput" placeholder="Написать сообщение..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}">
-          <button class="chat-send" onclick="sendMsg()">Отправить →</button>
+          <input class="chat-input" id="cinput" placeholder="Написать ${escA(peer.name.split(' ')[0])}..."
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendDM(${peer.id})}">
+          <button class="chat-send" onclick="sendDM(${peer.id})">Отправить →</button>
         </div>
-      </div>
+      </div>`;
+    }
+  } else {
+    main=`<div class="no-chat">
+      <span style="font-size:40px">💬</span>
+      <span>Выберите коллегу для личного диалога</span>
+      <span style="font-size:12px;color:var(--t3)">Все переписки хранятся приватно в вашем браузере</span>
     </div>`;
+  }
+
+  return`<div class="chat-layout">
+    <div class="dm-sidebar">
+      <div class="dm-head">ЛИЧНЫЕ СООБЩЕНИЯ</div>
+      ${sidebar}
+    </div>
+    ${main}
+  </div>`;
 }
 
-/* ═══ PROFILE ═══ */
+/* ─── PROFILE ─── */
 function renderProfile(){
-  const me = S.members.find(m=>m.id===S.currentUser.id);
-  if(!me) return `<div class="empty">Профиль не найден</div>`;
-  return `
+  const me=S.members.find(m=>m.id===S.currentUser.id);
+  if(!me)return`<div class="empty">Профиль не найден</div>`;
+  return`
     <div class="ph"><div class="pt">Мой профиль</div><div class="ps">Личная информация и настройки</div></div>
     <div class="pcard">
       <div class="ptop">
-        <div class="pav" style="background:${hexA(me.color,.12)};border-color:${hexA(me.color,.4)};color:${me.color}">${ini(me.name)}</div>
+        <div class="pav" style="background:${hexA(me.color,.12)};border:3px solid ${hexA(me.color,.45)};color:${me.color}">${ini(me.name)}</div>
         <div style="flex:1">
           <div class="pname">${me.name}</div>
           <div class="prole">${me.role}</div>
           <div class="pemail">${me.email}</div>
+          ${me.project?`<div style="margin-top:6px;display:inline-flex;align-items:center;gap:5px;
+            background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);
+            border-radius:6px;padding:4px 9px;font-size:12px;color:var(--purple)">⚙ ${escH(me.project)}</div>`:''}
         </div>
         <button class="btedit" onclick="toggleEdit()">✏ Редактировать</button>
       </div>
-      ${S.editingProfile ? `
-        <div style="border-top:1px solid var(--border);padding-top:1.25rem">
-          <div class="row2">
-            <div class="fg"><label>ТЕЛЕФОН</label><input type="tel" id="ep" value="${me.phone||''}" placeholder="+7 777 000 0000"></div>
-            <div class="fg"><label>ГОД НАЧАЛА РАБОТЫ</label><input type="text" id="ej" value="${me.joined||''}" placeholder="2020"></div>
-          </div>
-          <div class="fg"><label>НАВЫКИ (через запятую)</label><input type="text" id="es" value="${(me.skills||[]).join(', ')}" placeholder="Eclipse, Petrel, Python"></div>
-          <div class="fg"><label>О СЕБЕ</label><textarea id="eb" rows="3" placeholder="Краткое описание...">${me.bio||''}</textarea></div>
-          <button class="btn" onclick="saveProf()">Сохранить изменения</button>
-        </div>` : ''}
+      ${S.editingProfile?renderEditForm(me):''}
     </div>
     <div class="pcard">
-      <div class="sec" style="margin-top:0;border-top:none;padding-top:0">ИНФОРМАЦИЯ</div>
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.75rem">ИНФОРМАЦИЯ</div>
       <div class="igrid">
         <div class="iitem"><div class="il">ОТДЕЛ</div><div class="iv">Reservoir Simulation</div></div>
         <div class="iitem"><div class="il">В КОМПАНИИ С</div><div class="iv">${me.joined||'—'}</div></div>
         <div class="iitem"><div class="il">ТЕЛЕФОН</div><div class="iv">${me.phone||'—'}</div></div>
         <div class="iitem"><div class="il">СТАТУС</div><div class="iv" style="color:var(--green)">● Активен</div></div>
+        ${me.birthday?`<div class="iitem"><div class="il">ДЕНЬ РОЖДЕНИЯ</div><div class="iv">${fmtDate(me.birthday)}</div></div>`:''}
+        ${me.family?`<div class="iitem"><div class="il">СЕМЕЙНЫЙ СТАТУС</div><div class="iv">${escH(me.family)}</div></div>`:''}
       </div>
       <div class="sep"></div>
-      <div class="sec" style="border-top:none;padding-top:0">НАВЫКИ</div>
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">НАВЫКИ</div>
       <div class="mtags">
-        ${(me.skills||[]).map(s=>`<span class="tag skill">${s}</span>`).join('')||'<span style="color:var(--t3);font-size:13px">Не указаны — нажмите Редактировать</span>'}
+        ${(me.skills||[]).map(s=>`<span class="tag skill">${s}</span>`).join('')
+          ||`<span style="color:var(--t3);font-size:13px">Не указаны</span>`}
       </div>
-      ${me.bio?`<div class="sep"></div><div class="sec" style="border-top:none;padding-top:0">О СЕБЕ</div><p style="font-size:13px;color:var(--t2);line-height:1.7">${me.bio}</p>`:''}
+      ${me.bio?`<div class="sep"></div>
+        <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">О СЕБЕ</div>
+        <p style="font-size:13px;color:var(--t2);line-height:1.7">${escH(me.bio)}</p>`:''}
     </div>`;
 }
 
-/* ═══ UTILS ═══ */
-function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-
-function scrollMsgs(){
-  const el=document.getElementById('msgs');
-  if(el) el.scrollTop=el.scrollHeight;
+function renderEditForm(me){return`
+  <div style="border-top:1px solid var(--border);padding-top:1.125rem">
+    <div class="form-section" style="margin-top:0">КОНТАКТЫ</div>
+    <div class="row2">
+      <div class="fg"><label>ТЕЛЕФОН</label><input type="tel" id="ep" value="${escA(me.phone||'')}"></div>
+      <div class="fg"><label>ГОД НАЧАЛА РАБОТЫ</label><input type="text" id="ej" value="${escA(me.joined||'')}"></div>
+    </div>
+    <div class="form-section">ЛИЧНОЕ</div>
+    <div class="row2">
+      <div class="fg"><label>ДАТА РОЖДЕНИЯ</label><input type="date" id="ebday" value="${me.birthday||''}"></div>
+      <div class="fg"><label>СЕМЕЙНЫЙ СТАТУС</label>
+        <select id="efam">
+          <option value="" ${!me.family?'selected':''}>Не указано</option>
+          <option value="Холост / не замужем" ${me.family==='Холост / не замужем'?'selected':''}>Холост / не замужем</option>
+          <option value="Женат / замужем" ${me.family==='Женат / замужем'?'selected':''}>Женат / замужем</option>
+          <option value="Разведён / разведена" ${me.family==='Разведён / разведена'?'selected':''}>Разведён / разведена</option>
+          <option value="Помолвлен / помолвлена" ${me.family==='Помолвлен / помолвлена'?'selected':''}>Помолвлен / помолвлена</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-section">РАБОЧЕЕ</div>
+    <div class="fg"><label>ТЕКУЩИЙ ПРОЕКТ / ЧЕМ ЗАНЯТ</label>
+      <input type="text" id="eproj" value="${escA(me.project||'')}" placeholder="Адаптация модели пласта..."></div>
+    <div class="fg"><label>НАВЫКИ (через запятую)</label>
+      <input type="text" id="es" value="${escA((me.skills||[]).join(', '))}" placeholder="Eclipse, Petrel, Python"></div>
+    <div class="fg"><label>О СЕБЕ</label>
+      <textarea id="eb" rows="3">${me.bio||''}</textarea></div>
+    <button class="btn" onclick="saveProf()">Сохранить изменения</button>
+  </div>`
 }
 
-/* ═══ ACTIONS ═══ */
+/* ══════════════════════════════════
+   ACTIONS
+══════════════════════════════════ */
 function setAt(t){S.authTab=t;render()}
-
-function gp(p){
-  S.page=p; S.notifOpen=false; S.modalMember=null; S.editingProfile=false;
-  render();
-  if(p==='chat') setTimeout(scrollMsgs,50);
-}
-
+function gp(p){S.page=p;S.notifOpen=false;S.modalMember=null;S.editingProfile=false;render();if(p==='chat')setTimeout(scrollMsgs,50)}
 function logout(){S.currentUser=null;S.page='auth';render()}
+function openM(id){S.modalMember=S.members.find(m=>m.id===id)||null;render()}
+function closeM(){S.modalMember=null;render()}
+function toggleEdit(){S.editingProfile=!S.editingProfile;render()}
+function toggleNotif(){S.notifOpen=!S.notifOpen;if(S.notifOpen){S.notifications.forEach(n=>n.read=true);save()}render()}
+function clearNotifs(){S.notifications=[];save();render()}
+
+function openDM(id){S.activeDM=id;S.page='chat';S.notifOpen=false;S.modalMember=null;render();setTimeout(scrollMsgs,50)}
 
 function doLogin(){
   const email=(document.getElementById('le')||{}).value||'';
   if(!email){showToast('Введите email');return}
-  let member=S.members.find(m=>m.email===email.trim());
-  if(!member){
-    // Demo mode: log in as first member
-    member=S.members[0];
-  }
-  S.currentUser=member; S.page='team';
+  let member=S.members.find(m=>m.email===email.trim())||S.members[0];
+  S.currentUser=member;S.page='team';
   addNotif(`Добро пожаловать, ${member.name.split(' ')[0]}! 👋`,'🏠');
   render();
 }
@@ -757,122 +916,75 @@ function doReg(){
   const ln=(document.getElementById('rl')||{}).value||'';
   const em=(document.getElementById('re')||{}).value||'';
   const ro=(document.getElementById('rr')||{}).value||'';
+  const ph=(document.getElementById('rph')||{}).value||'';
   const p=(document.getElementById('rp')||{}).value||'';
   const p2=(document.getElementById('rp2')||{}).value||'';
-  if(!fn||!ln||!em){showToast('Заполните все обязательные поля');return}
-  if(p!==p2){showToast('Пароли не совпадают');return}
+  const bday=(document.getElementById('rbday')||{}).value||'';
+  const fam=(document.getElementById('rfam')||{}).value||'';
+  const join=(document.getElementById('rjoin')||{}).value||String(new Date().getFullYear());
+  const proj=(document.getElementById('rproj')||{}).value||'';
+  const skills=(document.getElementById('rskills')||{}).value||'';
+  const bio=(document.getElementById('rbio')||{}).value||'';
+  if(!fn||!ln||!em){showToast('Заполните имя, фамилию и email');return}
+  if(p&&p!==p2){showToast('Пароли не совпадают');return}
   const ex=S.members.find(m=>m.email===em.trim());
   if(ex){S.currentUser=ex;S.page='team';render();return}
-  const idx=S.members.length%COLORS.length;
   const nm={id:Date.now(),name:`${fn.trim()} ${ln.trim()}`,role:ro.trim()||'Сотрудник',
-    email:em.trim(),phone:'',joined:new Date().getFullYear().toString(),
-    skills:[],bio:'',color:COLORS[idx]};
-  S.members.push(nm);
-  S.currentUser=nm; S.page='team';
-  save();
-  addNotif(`${nm.name} присоединился к команде! 🎉`,'👤');
-  showToast('Аккаунт создан!');
-  render();
-}
-
-function openM(id){S.modalMember=S.members.find(m=>m.id===id)||null;render()}
-function closeM(){S.modalMember=null;render()}
-function toggleEdit(){S.editingProfile=!S.editingProfile;render()}
-
-function cn(d){
-  S.calM+=d;
-  if(S.calM>11){S.calM=0;S.calY++}
-  if(S.calM<0){S.calM=11;S.calY--}
-  render();
-}
-
-function showVF(){
-  const f=document.getElementById('vf');
-  if(f)f.style.display=f.style.display==='none'?'block':'none';
-}
-
-function saveVac(){
-  const from=(document.getElementById('vfrom')||{}).value||'';
-  const to=(document.getElementById('vto')||{}).value||'';
-  if(!from||!to){showToast('Выберите даты');return}
-  if(from>to){showToast('Дата начала не может быть позже конца');return}
-  S.vacations.push({id:Date.now(),memberId:S.currentUser.id,from,to});
-  save();
-  const me=S.members.find(m=>m.id===S.currentUser.id);
-  addNotif(`${me?.name.split(' ')[0]} добавил отпуск: ${from} — ${to}`,'🌴');
-  showToast('Отпуск добавлен!');
-  render();
-}
-
-function setRoom(r){S.activeRoom=r;render();setTimeout(scrollMsgs,50)}
-
-function toggleNotif(){
-  S.notifOpen=!S.notifOpen;
-  if(S.notifOpen){S.notifications.forEach(n=>n.read=true);save()}
-  render();
-}
-
-function clearNotifs(){S.notifications=[];save();render()}
-
-function sendMsg(){
-  const input=document.getElementById('cinput');
-  const text=(input?.value||'').trim();
-  if(!text)return;
-  const msg={id:Date.now(),memberId:S.currentUser.id,text,
-    time:new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'})};
-  if(!S.msgs[S.activeRoom])S.msgs[S.activeRoom]=[];
-  S.msgs[S.activeRoom].push(msg);
-  save();
-  render();
-  setTimeout(()=>{scrollMsgs();const i=document.getElementById('cinput');if(i)i.focus()},30);
+    email:em.trim(),phone:ph.trim(),joined:join.trim(),
+    skills:skills?skills.split(',').map(s=>s.trim()).filter(Boolean):[],
+    bio:bio.trim(),color:COLORS[S.members.length%COLORS.length],
+    birthday:bday,family:fam,project:proj.trim()};
+  S.members.push(nm);S.currentUser=nm;S.page='team';
+  save();addNotif(`${nm.name} присоединился к команде! 🎉`,'👤');
+  showToast('Аккаунт создан!');render();
 }
 
 function saveProf(){
-  const me=S.members.find(m=>m.id===S.currentUser.id);
-  if(!me)return;
+  const me=S.members.find(m=>m.id===S.currentUser.id);if(!me)return;
   me.phone=(document.getElementById('ep')||{}).value||me.phone;
   me.joined=(document.getElementById('ej')||{}).value||me.joined;
+  me.birthday=(document.getElementById('ebday')||{}).value||'';
+  me.family=(document.getElementById('efam')||{}).value||'';
+  me.project=(document.getElementById('eproj')||{}).value||'';
   const sk=(document.getElementById('es')||{}).value||'';
   me.skills=sk?sk.split(',').map(s=>s.trim()).filter(Boolean):me.skills;
   me.bio=(document.getElementById('eb')||{}).value||'';
-  S.editingProfile=false;
+  S.editingProfile=false;save();
+  addNotif('Профиль обновлён','✏️');showToast('Профиль сохранён!');render();
+}
+
+function sendDM(peerId){
+  const input=document.getElementById('cinput');
+  const text=(input?.value||'').trim();if(!text)return;
+  const key=dmKey(S.currentUser.id,peerId);
+  if(!S.dms[key])S.dms[key]=[];
+  S.dms[key].push({id:Date.now(),from:S.currentUser.id,text,
+    time:new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'}),read:false});
   save();
-  addNotif('Профиль успешно обновлён','✏️');
-  showToast('Профиль сохранён!');
-  render();
+  const peer=S.members.find(m=>m.id===peerId);
+  addNotif(`Вы написали ${peer?.name.split(' ')[0]}`,'💬');
+  render();setTimeout(()=>{scrollMsgs();document.getElementById('cinput')?.focus()},30);
 }
 
 function upF(e){
-  const files=e.target.files;
-  if(!files.length)return;
+  const files=e.target.files;if(!files.length)return;
   Array.from(files).forEach(f=>{
-    S.files.push({
-      id: String(Date.now())+Math.random(),
-      name: f.name,
-      memberId: S.currentUser.id,
-      date: new Date().toLocaleDateString('ru'),
-      size: f.size>1048576?(f.size/1048576).toFixed(1)+' МБ':Math.round(f.size/1024)+' КБ'
-    });
+    S.files.push({id:String(Date.now()+Math.random()),name:f.name,memberId:S.currentUser.id,
+      date:new Date().toLocaleDateString('ru'),
+      size:f.size>1048576?(f.size/1048576).toFixed(1)+' МБ':Math.round(f.size/1024)+' КБ'});
   });
-  save();
-  addNotif(`${files.length} файл(ов) загружено в общие документы`,'📁');
-  showToast(`Загружено: ${files.length} файл(ов)`);
-  render();
+  save();addNotif(`${files.length} файл(ов) загружено`,'📁');
+  showToast(`Загружено: ${files.length} файл(ов)`);render();
 }
 
-function delF(id){
-  S.files=S.files.filter(f=>f.id!==id);
-  save();showToast('Файл удалён');render();
-}
+function delF(id){S.files=S.files.filter(f=>f.id!==id);save();showToast('Файл удалён');render()}
 
-/* Close notif on outside click */
-document.addEventListener('click', e=>{
-  if(S.notifOpen && !e.target.closest('#npanel') && !e.target.closest('.notif-btn')){
+document.addEventListener('click',e=>{
+  if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('.notif-btn')){
     S.notifOpen=false;render();
   }
 });
 
-/* Init */
 render();
 </script>
 </body>

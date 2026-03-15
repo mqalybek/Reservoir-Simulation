@@ -727,6 +727,152 @@ select option{background:var(--bg2)}
   .big-day-num{font-size:11px}
   .day-pips{display:none}
 }
+
+/* ════════════════════════════════
+   QUIZ — ВИКТОРИНА (Kahoot-style)
+════════════════════════════════ */
+.quiz-wrap{max-width:860px;margin:0 auto}
+
+/* ── Lobby ── */
+.quiz-lobby{background:#fff;border-radius:20px;padding:2.5rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.10);border:1px solid var(--border)}
+.quiz-logo{font-size:56px;margin-bottom:.75rem}
+.quiz-title{font-family:'Space Grotesk';font-size:26px;font-weight:800;margin-bottom:.375rem}
+.quiz-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
+.quiz-lobby-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.qbtn{padding:13px 32px;border-radius:14px;border:none;font-weight:700;font-size:15px;
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;letter-spacing:.3px}
+.qbtn-primary{background:linear-gradient(135deg,#2878e8,#1a65d4);color:#fff;
+  box-shadow:0 4px 14px rgba(40,120,232,.3)}
+.qbtn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(40,120,232,.4)}
+.qbtn-secondary{background:#f0f4fa;color:#0f1f35;border:1.5px solid #e0e8f5}
+.qbtn-secondary:hover{background:#e4ecf8;transform:translateY(-1px)}
+.qbtn:active{transform:translateY(0) !important}
+.qbtn:disabled{opacity:.45;cursor:not-allowed;transform:none !important}
+.quiz-join-row{display:flex;gap:.75rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.quiz-pin-input{text-align:center;font-size:22px;letter-spacing:6px;font-weight:700;
+  font-family:'Space Grotesk';width:180px;padding:12px 16px;border-radius:12px;
+  border:2px solid var(--border);background:#f5f7fb;text-transform:uppercase;outline:none}
+.quiz-pin-input:focus{border-color:var(--accent)}
+.quiz-pin-display{font-family:'Space Grotesk';font-size:52px;font-weight:800;
+  color:var(--accent);letter-spacing:10px;margin:1rem 0}
+.quiz-rules{background:#f5f7fb;border-radius:14px;padding:1.25rem 1.5rem;
+  text-align:left;margin-top:1.5rem;border:1px solid #e4ecf8}
+.quiz-rules-title{font-weight:700;font-size:14px;margin-bottom:.75rem}
+.quiz-rules li{font-size:13px;color:var(--t2);line-height:1.9;margin-left:1.25rem}
+
+/* ── Waiting room ── */
+.quiz-waiting{background:#fff;border-radius:20px;padding:2rem;
+  box-shadow:0 4px 24px rgba(40,120,232,.10);border:1px solid var(--border)}
+.quiz-waiting-header{text-align:center;margin-bottom:1.5rem}
+.quiz-waiting-pin{font-size:13px;color:var(--t2);margin-bottom:.375rem}
+.quiz-waiting-title{font-family:'Space Grotesk';font-size:18px;font-weight:700}
+.quiz-players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.625rem;margin-bottom:1.5rem}
+.quiz-player-chip{background:var(--bg3);border-radius:10px;padding:.625rem .875rem;
+  display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);
+  animation:chipIn .2s ease}
+@keyframes chipIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.quiz-player-chip.host{border-color:rgba(40,120,232,.4);background:rgba(40,120,232,.06)}
+.qpc-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qpc-badge{font-size:10px;color:var(--accent);font-weight:600}
+
+/* ── Question screen ── */
+.quiz-question-screen{display:flex;flex-direction:column;gap:1rem}
+.quiz-topbar{background:#fff;border-radius:16px;padding:1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;
+  box-shadow:0 2px 12px rgba(40,120,232,.08);border:1px solid var(--border)}
+.quiz-q-num{font-size:12px;color:var(--t2);font-weight:600;letter-spacing:.5px}
+.quiz-timer-wrap{display:flex;flex-direction:column;align-items:center;gap:4px}
+.quiz-timer{font-family:'Space Grotesk';font-size:28px;font-weight:800;
+  color:var(--accent);min-width:48px;text-align:center;line-height:1}
+.quiz-timer.urgent{color:#e03a3a;animation:pulse .5s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.quiz-timer-bar-wrap{width:200px;height:6px;background:#f0f4fa;border-radius:6px;overflow:hidden}
+.quiz-timer-bar{height:100%;border-radius:6px;
+  background:linear-gradient(90deg,#2878e8,#60c8ff);transition:width .9s linear}
+.quiz-timer-bar.urgent{background:linear-gradient(90deg,#e03a3a,#f87171)}
+.quiz-score-display{font-family:'Space Grotesk';font-size:18px;font-weight:700;color:var(--t1)}
+.quiz-score-label{font-size:11px;color:var(--t3);text-align:center}
+
+.quiz-card{background:#fff;border-radius:20px;padding:2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.08);border:1px solid var(--border)}
+.quiz-q-text{font-family:'Space Grotesk';font-size:20px;font-weight:700;
+  line-height:1.45;margin-bottom:.5rem;color:#0f1f35}
+.quiz-q-cat{font-size:11px;color:var(--t3);letter-spacing:.5px;font-weight:500;
+  margin-bottom:1rem;text-transform:uppercase}
+
+.quiz-answers{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.quiz-answer{border:none;border-radius:16px;padding:1.25rem 1.5rem;cursor:pointer;
+  font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans';
+  transition:all .2s;text-align:left;display:flex;align-items:center;gap:.875rem;
+  min-height:72px;line-height:1.35;position:relative;overflow:hidden}
+.quiz-answer:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.05)}
+.quiz-answer:active:not(:disabled){transform:translateY(0)}
+.quiz-answer:disabled{cursor:default}
+.qa-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.qa-text{flex:1;color:#fff}
+.qa-0{background:linear-gradient(135deg,#e03a3a,#c82020)}
+.qa-1{background:linear-gradient(135deg,#2878e8,#1a65d4)}
+.qa-2{background:linear-gradient(135deg,#d4920a,#b87b00)}
+.qa-3{background:linear-gradient(135deg,#16b47a,#0e9566)}
+.quiz-answer.selected{box-shadow:0 0 0 4px rgba(255,255,255,.6),0 4px 20px rgba(0,0,0,.2);
+  transform:scale(1.02)}
+.quiz-answer.correct{animation:correctFlash .4s ease}
+.quiz-answer.wrong{opacity:.55;filter:grayscale(.4)}
+.quiz-answer.show-correct{box-shadow:0 0 0 4px #fff,0 0 0 7px #16b47a}
+@keyframes correctFlash{0%,100%{transform:scale(1.02)}50%{transform:scale(1.06)}}
+
+/* ── Result overlay ── */
+.quiz-result-overlay{background:#fff;border-radius:20px;padding:1.5rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border);
+  animation:slideUp .3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.qro-emoji{font-size:48px;margin-bottom:.5rem}
+.qro-correct{font-family:'Space Grotesk';font-size:18px;font-weight:800;margin-bottom:.25rem}
+.qro-pts{font-size:14px;color:var(--accent);font-weight:700}
+.qro-explain{font-size:13px;color:var(--t2);margin-top:.5rem;line-height:1.6}
+
+/* ── Leaderboard ── */
+.quiz-leaderboard{background:#fff;border-radius:20px;padding:1.75rem;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.qlb-title{font-family:'Space Grotesk';font-size:18px;font-weight:800;
+  text-align:center;margin-bottom:1.25rem}
+.qlb-item{display:flex;align-items:center;gap:.875rem;padding:.75rem 1rem;
+  border-radius:12px;margin-bottom:.5rem;transition:all .2s;
+  background:var(--bg3);border:1.5px solid var(--border)}
+.qlb-item.top-1{background:linear-gradient(135deg,#fff8e1,#fff3c4);border-color:#f5c842}
+.qlb-item.top-2{background:linear-gradient(135deg,#f5f5f5,#ebebeb);border-color:#bbb}
+.qlb-item.top-3{background:linear-gradient(135deg,#fdf0e6,#fde4cc);border-color:#f59e42}
+.qlb-item.me{border-color:var(--accent) !important;background:rgba(40,120,232,.05) !important}
+.qlb-rank{font-family:'Space Grotesk';font-size:18px;font-weight:800;
+  width:32px;text-align:center;flex-shrink:0}
+.qlb-name{flex:1;font-weight:600;font-size:14px}
+.qlb-score{font-family:'Space Grotesk';font-size:16px;font-weight:800;color:var(--accent)}
+.qlb-streak{font-size:11px;color:var(--t3);margin-top:1px}
+
+/* ── Final screen ── */
+.quiz-final{background:#fff;border-radius:20px;padding:2.5rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.quiz-winner-trophy{font-size:72px;margin-bottom:1rem;
+  animation:trophyBounce .6s ease infinite alternate}
+@keyframes trophyBounce{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.quiz-winner-name{font-family:'Space Grotesk';font-size:26px;font-weight:800;margin-bottom:.25rem}
+.quiz-winner-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
+
+/* Waiting for answer (player view) */
+.quiz-waiting-answer{background:#fff;border-radius:20px;padding:3rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.qwa-icon{font-size:56px;margin-bottom:1rem;animation:spin 2s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+@media(max-width:600px){
+  .quiz-answers{grid-template-columns:1fr}
+  .quiz-answer{min-height:58px;padding:1rem 1.25rem}
+  .quiz-q-text{font-size:17px}
+  .quiz-timer-bar-wrap{width:120px}
+}
+
 </style>
 </head>
 <body>
@@ -786,6 +932,7 @@ let S={
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
   game:null, gameRoom:null,
+  quizRoom:null, quizRoomId:null, quizMyAnswer:null, quizShowResult:false,
   calMonth:new Date().getMonth(),
   polls:{}, kanban:{}, wiki:{}, weather:null,
   wikiView:null, calcTab:'pressure', activeKanbanForm:null,
@@ -870,6 +1017,7 @@ function startListeners(){
   fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
   fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
   fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
+  fbListen('quiz', v=>{ S.quizRoom=v||null; if(S.page==='quiz')rerender(); });
   fbListen('polls', v=>{ S.polls=v||{}; if(S.page==='feed')rerender(); });
   fbListen('kanban', v=>{ S.kanban=v||{}; if(S.page==='kanban')rerender(); });
   fbListen('wiki', v=>{ S.wiki=v||{}; if(S.page==='wiki')rerender(); });
@@ -960,6 +1108,7 @@ function renderShell(){
     {id:'kanban',ico:'📋',label:'Задачи'},
     {id:'wiki',ico:'📚',label:'База знаний'},
     {id:'tools',ico:'🧮',label:'Инструменты'},
+    {id:'quiz',ico:'🧠',label:'Викторина'},
   ];
   const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
     if(!key.includes(S.user.id))return acc;
@@ -1103,6 +1252,7 @@ function renderPage(){
   if(S.page==='kanban')   return renderKanban();
   if(S.page==='wiki')     return renderWiki();
   if(S.page==='tools')    return renderTools();
+  if(S.page==='quiz')     return renderQuiz();
   return '';
 }
 
@@ -2037,6 +2187,7 @@ function renderBottomNav(){
     {id:'messages',ico:'💬',label:'Чат',badge:dmUnread},
     {id:'kanban',ico:'📋',label:'Задачи'},
     {id:'game',ico:'🎯',label:'Игра'},
+    {id:'quiz',ico:'🧠',label:'Викторина'},
     {id:'profile',ico:'👤',label:'Профиль'},
   ];
   bn.innerHTML=items.map(it=>`
@@ -2919,6 +3070,1152 @@ window.switchCalc = id => {
     if(tab) tab.className = 'calc-tab' + (t===id ? ' active' : '');
   });
 };
+
+/* ════════════════════════════════════════════════
+   QUIZ — ВИКТОРИНА (Kahoot-style)
+   Вопросы: нефтяная промышленность, геология,
+   бурение, разработка пластов, история нефти в КЗ
+════════════════════════════════════════════════ */
+
+const QUIZ_QUESTIONS = [
+  // ── ГЕОЛОГИЯ И ПЛАСТЫ ──
+  {cat:'Геология',q:'Что такое пористость горной породы?',
+   a:['Способность пропускать жидкость','Объём пустот к общему объёму породы','Твёрдость минералов','Температура кипения нефти'],cor:1,
+   exp:'Пористость — отношение объёма пор к общему объёму породы, выражается в %. Именно в порах хранится нефть и газ.'},
+  {cat:'Геология',q:'Какая порода чаще всего является коллектором нефти?',
+   a:['Гранит','Мрамор','Песчаник','Соль'],cor:2,
+   exp:'Песчаники — один из основных типов коллекторов благодаря высокой пористости и проницаемости.'},
+  {cat:'Геология',q:'Что такое проницаемость пласта?',
+   a:['Способность пропускать жидкость через поры','Плотность породы','Глубина залегания','Температура пласта'],cor:0,
+   exp:'Проницаемость (Дарси) — способность горной породы пропускать флюиды под действием перепада давления.'},
+  {cat:'Геология',q:'Единица измерения проницаемости в нефтяной промышленности?',
+   a:['Паскаль','Дарси (мД)','Ньютон','Бар'],cor:1,
+   exp:'Проницаемость измеряется в Дарси или миллидарси (мД). 1 Дарси = примерно 10⁻¹² м².'},
+  {cat:'Геология',q:'Что такое антиклиналь в геологии?',
+   a:['Прогиб пластов вниз','Выпуклый изгиб пластов вверх','Горизонтальный разлом','Тектонический разрыв'],cor:1,
+   exp:'Антиклиналь — складка пластов выпуклостью вверх. Нефть и газ скапливаются в сводовой части антиклинали.'},
+  {cat:'Геология',q:'Что такое ловушка в нефтяной геологии?',
+   a:['Место скопления нефти и газа','Инструмент бурения','Тип насоса','Разновидность скважины'],cor:0,
+   exp:'Ловушка — структура, удерживающая нефть и газ от миграции. Бывает структурная, стратиграфическая, литологическая.'},
+  {cat:'Геология',q:'Нефтематеринская порода — это:',
+   a:['Порода где хранится нефть','Порода в которой образовалась нефть из органики','Твёрдая непроницаемая порода','Кровля пласта'],cor:1,
+   exp:'Нефтематеринская порода (source rock) — богатая органикой порода, в которой при нагреве образуются нефть и газ.'},
+
+  // ── БУРЕНИЕ ──
+  {cat:'Бурение',q:'Что такое КНБК в бурении?',
+   a:['Контрольный насос бурового кольца','Компоновка низа бурильной колонны','Коэффициент нефтеносности бурового кернa','Кран нагнетания бурового концентрата'],cor:1,
+   exp:'КНБК — компоновка низа бурильной колонны. Включает долото, забойный двигатель, калибраторы, телесистему.'},
+  {cat:'Бурение',q:'Какой тип долота использует вращение шарошек?',
+   a:['PDC-долото','Алмазное долото','Шарошечное долото','Фрезерное долото'],cor:2,
+   exp:'Шарошечное долото разрушает породу вращением зубчатых конусов. PDC-долото режет породу поликристаллическими алмазными вставками.'},
+  {cat:'Бурение',q:'Для чего используется буровой раствор?',
+   a:['Только для смазки долота','Выноса шлама, охлаждения, удержания давления в пласте','Только для цементирования','Для разрушения породы'],cor:1,
+   exp:'Буровой раствор: выносит шлам, охлаждает долото, создаёт гидростатическое давление на пласт, укрепляет стенки скважины.'},
+  {cat:'Бурение',q:'Что такое ГРП?',
+   a:['Геологический разрез пласта','Гидравлический разрыв пласта','Горизонтальное расположение проекта','Главный регулятор потока'],cor:1,
+   exp:'ГРП (гидравлический разрыв пласта) — закачка жидкости под высоким давлением для создания трещин в пласте и увеличения добычи.'},
+  {cat:'Бурение',q:'Что означает аббревиатура ROP в бурении?',
+   a:['Rate of Production — дебит','Rate of Penetration — механическая скорость','Return of Pressure — возврат давления','Range of Porosity — диапазон пористости'],cor:1,
+   exp:'ROP (Rate of Penetration) — механическая скорость бурения, измеряется в м/ч или фут/ч.'},
+  {cat:'Бурение',q:'Что такое обсадная колонна?',
+   a:['Труба для закачки раствора','Стальная труба для крепления стенок скважины','Инструмент для цементирования','Вид насосной установки'],cor:1,
+   exp:'Обсадная колонна — стальные трубы, спускаемые в скважину для крепления стенок и изоляции горизонтов.'},
+
+  // ── РАЗРАБОТКА МЕСТОРОЖДЕНИЙ ──
+  {cat:'Разработка',q:'Что такое КИН?',
+   a:['Коэффициент извлечения нефти','Критический индекс насоса','Кривая изменения напора','Контроль интенсивности нагнетания'],cor:0,
+   exp:'КИН (коэффициент извлечения нефти) — отношение извлекаемых запасов к начальным геологическим. Обычно 0.25–0.45.'},
+  {cat:'Разработка',q:'Что такое обводнённость продукции?',
+   a:['Содержание газа в нефти','Доля воды в общем флюиде скважины','Давление на устье','Дебит жидкости'],cor:1,
+   exp:'Обводнённость — процентное содержание воды в добываемой жидкости. С разработкой месторождения растёт.'},
+  {cat:'Разработка',q:'Что такое газовый фактор?',
+   a:['Объём газа на объём добытой нефти','Давление газа в пласте','Состав попутного газа','Коэффициент сжимаемости газа'],cor:0,
+   exp:'Газовый фактор (GOR) — отношение объёма попутного газа к объёму нефти в стандартных условиях, м³/м³ или ст. куб. фут/баррель.'},
+  {cat:'Разработка',q:'Метод заводнения применяется для:',
+   a:['Бурения новых скважин','Поддержания пластового давления и вытеснения нефти','Освоения скважины','Цементирования'],cor:1,
+   exp:'Заводнение — закачка воды в нагнетательные скважины для поддержания давления и вытеснения нефти к добывающим скважинам.'},
+  {cat:'Разработка',q:'Что такое УЭЦН?',
+   a:['Установка эксплуатационного центробежного насоса','Устройство электрического центробежного насоса','Установка электрическая центробежная насосная','Уровень эксплуатационного центра нагнетания'],cor:2,
+   exp:'УЭЦН — установка электрическая центробежная насосная. Основной способ механизированной добычи нефти в мире.'},
+  {cat:'Разработка',q:'Что такое пластовое давление?',
+   a:['Давление на устье скважины','Давление жидкости и газа в порах пласта','Давление бурового раствора','Давление в трубопроводе'],cor:1,
+   exp:'Пластовое давление — давление флюида в поровом пространстве пласта. Определяет возможность фонтанирования скважины.'},
+  {cat:'Разработка',q:'Какой метод увеличения нефтеотдачи используует тепловое воздействие?',
+   a:['Заводнение','Закачка CO2','Паротепловая обработка','Кислотная обработка'],cor:2,
+   exp:'Паротепловая обработка (Steam injection) снижает вязкость тяжёлой нефти, улучшая её подвижность к скважине.'},
+
+  // ── СИМУЛЯЦИЯ ПЛАСТОВ ──
+  {cat:'Симуляция',q:'Что такое симулятор пласта?',
+   a:['Программа для бурения скважин','Математическая модель для прогноза поведения пласта','Устройство измерения давления','Система управления УЭЦН'],cor:1,
+   exp:'Симулятор пласта — компьютерная программа, решающая уравнения фильтрации флюидов для прогноза разработки месторождения.'},
+  {cat:'Симуляция',q:'Что такое History Matching (адаптация модели)?',
+   a:['Создание новой геологической модели','Подгонка модели пласта к фактическим данным добычи','Экспорт данных из симулятора','Построение сетки пласта'],cor:1,
+   exp:'History Matching — процесс настройки параметров модели (пористость, проницаемость, относительные фазовые проницаемости) для воспроизведения исторических данных.'},
+  {cat:'Симуляция',q:'Что означает BLACK OIL модель?',
+   a:['Модель для добычи тяжёлой нефти','Упрощённая модель с тремя компонентами: нефть, газ, вода','Модель без водоносного горизонта','Модель чёрного цвета в интерфейсе'],cor:1,
+   exp:'Black Oil — стандартная модель симуляции с тремя псевдокомпонентами. Достаточна для большинства задач разработки.'},
+  {cat:'Симуляция',q:'Что такое PVT-данные в симуляции пласта?',
+   a:['Pressure-Volume-Temperature — свойства флюидов','Plan-Volume-Target — плановые показатели','Pore-Volume-Total — объём пор','Pressure-Velocity-Time — данные бурения'],cor:0,
+   exp:'PVT (Pressure-Volume-Temperature) описывает фазовое поведение флюидов: объёмный коэффициент, газосодержание, вязкость при разных условиях.'},
+  {cat:'Симуляция',q:'Какой файл является основным входным в Eclipse?',
+   a:['.GRID','DATA-файл (.DATA)','EGRID-файл','FSMSPEC-файл'],cor:1,
+   exp:'Основной входной файл Eclipse — .DATA файл, содержащий все ключевые слова для описания пласта, скважин и расписания.'},
+  {cat:'Симуляция',q:'Что такое OOIP (HCPV)?',
+   a:['Добытые запасы нефти','Начальные геологические запасы нефти в пласте','Остаточные запасы после разработки','Извлекаемые запасы нефти'],cor:1,
+   exp:'OOIP (Original Oil In Place) — начальные геологические запасы нефти. Отличается от извлекаемых запасов на КИН.'},
+
+  // ── ИСТОРИЯ НЕФТИ В КАЗАХСТАНЕ ──
+  {cat:'Нефть Казахстана',q:'В каком году было открыто месторождение Тенгиз?',
+   a:['1966','1979','1953','1990'],cor:1,
+   exp:'Тенгиз открыт в 1979 году. Одно из крупнейших нефтяных месторождений мира, расположено в Атырауской области.'},
+  {cat:'Нефть Казахстана',q:'Какое самое большое нефтяное месторождение Казахстана?',
+   a:['Тенгиз','Жанажол','Кашаган','Карачаганак'],cor:2,
+   exp:'Кашаган — крупнейшее в Казахстане и одно из крупнейших в мире, открыто в 2000 году на Каспийском шельфе.'},
+  {cat:'Нефть Казахстана',q:'Когда была основана компания КазМунайГаз?',
+   a:['1995','2002','1991','2008'],cor:1,
+   exp:'КазМунайГаз создан в 2002 году путём слияния «Казахойл» и «Транспорт Нефти и Газ» как национальный оператор нефтегазовой отрасли.'},
+  {cat:'Нефть Казахстана',q:'Карачаганак — это преимущественно:',
+   a:['Нефтяное месторождение','Нефтегазоконденсатное месторождение','Газовое месторождение','Угольное месторождение'],cor:1,
+   exp:'Карачаганак — уникальное нефтегазоконденсатное месторождение в Западно-Казахстанской области, одно из крупнейших в мире.'},
+  {cat:'Нефть Казахстана',q:'В каком году Казахстан впервые добыл нефть на шельфе Каспия (Кашаган)?',
+   a:['2008','2013','2016','2020'],cor:2,
+   exp:'Промышленная добыча на Кашагане началась в 2013 году, хотя месторождение было открыто в 2000 году.'},
+  {cat:'Нефть Казахстана',q:'Через какой трубопровод экспортируется основная часть нефти Казахстана?',
+   a:['BTC (Баку-Тбилиси-Джейхан)','КТК (Каспийский трубопроводный консорциум)','Дружба','ВСТО'],cor:1,
+   exp:'КТК (Каспийский трубопроводный консорциум) — основной экспортный маршрут для казахстанской нефти через территорию России к порту Новороссийск.'},
+
+  // ── ФИЗИКА ПЛАСТА ──
+  {cat:'Физика пласта',q:'Что такое насыщение пласта (Sw)?',
+   a:['Температура пластовых вод','Доля порового пространства занятая водой','Солёность пластовой воды','Скорость фильтрации воды'],cor:1,
+   exp:'Водонасыщенность Sw — доля пор, заполненных водой. Sw + So + Sg = 1. Остаточное водонасыщение Swirr непреодолимо для вытеснения.'},
+  {cat:'Физика пласта',q:'Закон Дарси описывает:',
+   a:['Испарение нефти','Линейную фильтрацию жидкости в пористой среде','Сжимаемость газа','Вязкость нефти'],cor:1,
+   exp:'Закон Дарси: Q = kA·ΔP / (μL). Скорость фильтрации пропорциональна проницаемости и градиенту давления, обратно пропорциональна вязкости.'},
+  {cat:'Физика пласта',q:'Что такое относительная фазовая проницаемость (ОФП)?',
+   a:['Абсолютная проницаемость породы','Проницаемость для одной фазы при наличии других фаз','Вязкость нефти','Давление насыщения'],cor:1,
+   exp:'ОФП — отношение эффективной проницаемости для данной фазы к абсолютной. Зависит от насыщения и определяет соотношение добычи нефти/воды/газа.'},
+  {cat:'Физика пласта',q:'При каком давлении из нефти начинает выделяться газ?',
+   a:['При атмосферном давлении','При давлении насыщения (Pb)','При забойном давлении','При пластовом давлении'],cor:1,
+   exp:'Давление насыщения (Bubble Point) — давление, при котором из нефти начинают выделяться пузырьки газа. Важнейший параметр разработки.'},
+];
+
+const QUIZ_ICONS = ['🔴','🔵','🟡','🟢'];
+const QUIZ_TIME = 20; // секунд на вопрос
+
+let quizTimer = null;
+let quizTimeLeft = QUIZ_TIME;
+
+/* ── HELPERS ── */
+function quizKey(){ return S.quizRoomId ? `quiz/rooms/${S.quizRoomId}` : null; }
+function makePin(){ return Math.floor(1000+Math.random()*9000).toString(); }
+function quizMe(room){ return room&&room.players&&room.players[S.user.id]; }
+function quizIsHost(room){ return room&&room.hostId===S.user.id; }
+
+/* ── RENDER QUIZ ── */
+function renderQuiz(){
+  const room = S.quizRoom;
+  if(!room || !S.quizRoomId){
+    stopQuizTimer();
+    return renderQuizLobby();
+  }
+  if(room.status==='waiting') return renderQuizWaiting(room);
+  if(room.status==='question') return renderQuizQuestion(room);
+  if(room.status==='leaderboard') return renderQuizLeaderboard(room);
+  if(room.status==='finished') return renderQuizFinished(room);
+  return renderQuizLobby();
+}
+
+function renderQuizLobby(){
+  return`<div class="quiz-wrap">
+    <div class="quiz-lobby">
+      <div class="quiz-logo">🧠</div>
+      <div class="quiz-title">Викторина нефтяника</div>
+      <div class="quiz-sub">Kahoot-формат · ${QUIZ_QUESTIONS.length} вопросов · Геология, бурение, разработка, Казахстан</div>
+      <div class="quiz-lobby-btns">
+        <button class="qbtn qbtn-primary" onclick="quizCreate()">🚀 Создать игру</button>
+        <button class="qbtn qbtn-secondary" onclick="document.getElementById('quiz-join-wrap').style.display='block'">🚪 Войти по PIN</button>
+      </div>
+      <div id="quiz-join-wrap" style="display:none">
+        <div class="quiz-join-row">
+          <input class="quiz-pin-input" id="quiz-pin-inp" maxlength="4" placeholder="PIN"
+            oninput="this.value=this.value.replace(/\\D/g,'')"
+            onkeydown="if(event.key==='Enter')quizJoin()">
+          <button class="qbtn qbtn-primary" onclick="quizJoin()">Войти</button>
+        </div>
+      </div>
+      <div class="quiz-rules">
+        <div class="quiz-rules-title">📋 Как играть</div>
+        <ul>
+          <li>Один создаёт игру — остальные заходят по PIN-коду</li>
+          <li>На каждый вопрос <strong>${QUIZ_TIME} секунд</strong> — быстрее ответил = больше очков</li>
+          <li>За правильный ответ до <strong>1000 очков</strong> в зависимости от скорости</li>
+          <li>После каждого вопроса — таблица лидеров</li>
+          <li>Победитель — кто наберёт больше всего очков</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizWaiting(room){
+  const players = Object.values(room.players||{});
+  const isHost = quizIsHost(room);
+  const canStart = players.length >= 1;
+  return`<div class="quiz-wrap">
+    <div class="quiz-waiting">
+      <div class="quiz-waiting-header">
+        <div class="quiz-waiting-pin">PIN-КОД ИГРЫ</div>
+        <div class="quiz-pin-display">${S.quizRoomId}</div>
+        <div class="quiz-waiting-title">Ожидаем игроков... ${players.length} в комнате</div>
+      </div>
+      <div class="quiz-players-grid">
+        ${players.map(p=>`
+          <div class="quiz-player-chip ${p.id===room.hostId?'host':''}">
+            ${avImg(p.avatar,p.name,28,p.color||COLORS[0])}
+            <div>
+              <div class="qpc-name">${escH(p.name.split(' ')[0])}</div>
+              ${p.id===room.hostId?'<div class="qpc-badge">👑 Ведущий</div>':''}
+            </div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" ${canStart?'':'disabled'} onclick="quizStart()">
+            ▶ Начать игру (${players.length} игроков)
+          </button>
+          <div style="font-size:12px;color:var(--t3);margin-top:.5rem">Минимум 1 игрок для старта</div>
+        </div>`
+      :`<div style="text-align:center;font-size:14px;color:var(--t2);padding:1rem">
+          ⏳ Ждём пока ведущий начнёт игру...
+        </div>`}
+      <div style="text-align:center;margin-top:1rem">
+        <button class="qbtn qbtn-secondary" style="padding:8px 20px;font-size:13px" onclick="quizLeave()">Выйти</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizQuestion(room){
+  const qi = room.currentQuestion||0;
+  const q = QUIZ_QUESTIONS[qi];
+  if(!q) return renderQuizLobby();
+
+  const isHost = quizIsHost(room);
+  const myAnswer = room.answers&&room.answers[S.user.id];
+  const showAnswers = room.showAnswers;
+  const timeLeft = room.timeLeft!==undefined ? room.timeLeft : QUIZ_TIME;
+  const timePct = (timeLeft/QUIZ_TIME)*100;
+  const urgent = timeLeft<=5;
+
+  // Scores
+  const me = quizMe(room);
+  const myScore = me ? me.score||0 : 0;
+
+  if(isHost){
+    // Host sees question + answer count + timer
+    const answeredCount = Object.keys(room.answers||{}).length;
+    const totalPlayers = Object.keys(room.players||{}).length;
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div>
+            <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+            <div style="font-size:12px;color:var(--t3);margin-top:2px">${escH(q.cat)}</div>
+          </div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:800;font-family:'Space Grotesk'">${answeredCount}/${totalPlayers}</div>
+            <div style="font-size:11px;color:var(--t3)">ответили</div>
+          </div>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-q-cat">${escH(q.cat)}</div>
+          <div class="quiz-q-text">${escH(q.q)}</div>
+        </div>
+        <div class="quiz-answers">
+          ${q.a.map((ans,i)=>`
+            <div class="quiz-answer qa-${i} ${showAnswers&&i===q.cor?'show-correct':''}"
+              style="opacity:1;cursor:default">
+              <div class="qa-icon">${QUIZ_ICONS[i]}</div>
+              <div class="qa-text">${escH(ans)}</div>
+            </div>`).join('')}
+        </div>
+        ${showAnswers?`<div class="quiz-result-overlay" style="margin-top:1rem">
+          <div class="qro-correct" style="color:var(--green)">✓ Правильный ответ: ${escH(q.a[q.cor])}</div>
+          <div class="qro-explain">${escH(q.exp)}</div>
+          <button class="qbtn qbtn-primary" style="margin-top:1rem"
+            onclick="${qi+1<QUIZ_QUESTIONS.length?'quizNextQuestion()':'quizFinish()'}">
+            ${qi+1<QUIZ_QUESTIONS.length?'Следующий вопрос →':'🏆 Показать итоги'}
+          </button>
+        </div>`:''}
+      </div>
+    </div>`;
+  }
+
+  // Player view
+  if(showAnswers){
+    const correct = myAnswer===q.cor;
+    const pts = room.lastPoints&&room.lastPoints[S.user.id]||0;
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+          <div>
+            <div class="quiz-score-display">${myScore}</div>
+            <div class="quiz-score-label">очков</div>
+          </div>
+        </div>
+        <div class="quiz-result-overlay">
+          <div class="qro-emoji">${correct?'🎉':'😔'}</div>
+          <div class="qro-correct" style="color:${correct?'var(--green)':'var(--red)'}">
+            ${correct?'Правильно!':'Неверно'}
+          </div>
+          ${pts>0?`<div class="qro-pts">+${pts} очков</div>`:''}
+          <div class="qro-explain">${escH(q.exp)}</div>
+        </div>
+        <div class="quiz-answers" style="margin-top:.875rem">
+          ${q.a.map((ans,i)=>`
+            <div class="quiz-answer qa-${i} ${i===q.cor?'show-correct':myAnswer===i?'wrong':''}"
+              style="opacity:1;cursor:default;${i===q.cor?'':'opacity:.6'}">
+              <div class="qa-icon">${i===q.cor?'✓':QUIZ_ICONS[i]}</div>
+              <div class="qa-text">${escH(ans)}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  if(myAnswer!==undefined){
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="quiz-score-display">${myScore}</div>
+            <div class="quiz-score-label">очков</div>
+          </div>
+        </div>
+        <div class="quiz-waiting-answer">
+          <div class="qwa-icon">⏳</div>
+          <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700;margin-bottom:.375rem">Ответ принят!</div>
+          <div style="font-size:13px;color:var(--t2)">Ждём остальных игроков...</div>
+          <div style="margin-top:1rem">
+            <div class="quiz-answer qa-${myAnswer}" style="cursor:default;display:inline-flex;max-width:320px">
+              <div class="qa-icon">${QUIZ_ICONS[myAnswer]}</div>
+              <div class="qa-text">${escH(q.a[myAnswer])}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // Player answers
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <div class="quiz-topbar">
+        <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+        <div class="quiz-timer-wrap">
+          <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+          <div class="quiz-timer-bar-wrap">
+            <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="quiz-score-display">${myScore}</div>
+          <div class="quiz-score-label">очков</div>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-q-cat">${escH(q.cat)}</div>
+        <div class="quiz-q-text">${escH(q.q)}</div>
+      </div>
+      <div class="quiz-answers">
+        ${q.a.map((ans,i)=>`
+          <button class="quiz-answer qa-${i}" onclick="quizAnswer(${i})">
+            <div class="qa-icon">${QUIZ_ICONS[i]}</div>
+            <div class="qa-text">${escH(ans)}</div>
+          </button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizLeaderboard(room){
+  const isHost = quizIsHost(room);
+  const qi = room.currentQuestion||0;
+  const players = Object.values(room.players||{})
+    .sort((a,b)=>(b.score||0)-(a.score||0));
+  const medals = ['🥇','🥈','🥉'];
+  return`<div class="quiz-wrap">
+    <div class="quiz-leaderboard">
+      <div class="qlb-title">📊 Таблица лидеров · Вопрос ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+      ${players.map((p,i)=>`
+        <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+          <div class="qlb-rank">${medals[i]||`${i+1}`}</div>
+          ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+          <div style="flex:1;min-width:0">
+            <div class="qlb-name">${escH(p.name)} ${p.id===S.user.id?'<span style="color:var(--accent);font-size:11px">(вы)</span>':''}</div>
+            <div class="qlb-streak">${(room.lastPoints&&room.lastPoints[p.id]>0)?`+${room.lastPoints[p.id]} за этот вопрос`:''}</div>
+          </div>
+          <div class="qlb-score">${p.score||0}</div>
+        </div>`).join('')}
+      ${isHost?`
+        <div style="text-align:center;margin-top:1.25rem">
+          <button class="qbtn qbtn-primary" onclick="${qi+1<QUIZ_QUESTIONS.length?'quizNextQuestion()':'quizFinish()'}">
+            ${qi+1<QUIZ_QUESTIONS.length?`Вопрос ${qi+2} →`:'🏆 Финал'}
+          </button>
+        </div>`
+      :`<div style="text-align:center;font-size:14px;color:var(--t2);margin-top:1rem">⏳ Ведущий готовит следующий вопрос...</div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizFinished(room){
+  const players = Object.values(room.players||{})
+    .sort((a,b)=>(b.score||0)-(a.score||0));
+  const winner = players[0];
+  const medals = ['🥇','🥈','🥉'];
+  return`<div class="quiz-wrap">
+    <div class="quiz-final">
+      <div class="quiz-winner-trophy">🏆</div>
+      <div class="quiz-winner-name">${escH(winner?winner.name:'?')}</div>
+      <div class="quiz-winner-sub">Победитель с ${winner?winner.score||0:0} очками!</div>
+      <div class="quiz-leaderboard" style="margin-bottom:1.5rem;box-shadow:none">
+        <div class="qlb-title">Итоговая таблица</div>
+        ${players.map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${medals[i]||`${i+1}`}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div class="qlb-name">${escH(p.name)}</div>
+            <div class="qlb-score">${p.score||0} очков</div>
+          </div>`).join('')}
+      </div>
+      <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
+        ${quizIsHost(room)?`<button class="qbtn qbtn-primary" onclick="quizRestart()">🔄 Играть снова</button>`:''}
+        <button class="qbtn qbtn-secondary" onclick="quizLeave()">Выйти</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── ACTIONS ── */
+window.quizCreate = async()=>{
+  const pin = makePin();
+  const me = S.members[S.user.id]||S.user;
+  const playerData = {id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0],score:0};
+  const room = {
+    hostId:me.id,
+    status:'waiting',
+    currentQuestion:0,
+    players:{[me.id]:playerData},
+    answers:{},
+    showAnswers:false,
+    timeLeft:QUIZ_TIME,
+    lastPoints:{},
+    createdAt:Date.now()
+  };
+  await fbSet(`quiz/rooms/${pin}`, room);
+  S.quizRoomId = pin;
+  fbListen(`quiz/rooms/${pin}`, v=>{
+    S.quizRoom=v;
+    if(S.page==='quiz') rerender();
+  });
+  rerender();
+};
+
+window.quizJoin = async()=>{
+  const pin = (document.getElementById('quiz-pin-inp')?.value||'').trim();
+  if(pin.length!==4){showToast('Введите 4-значный PIN',true);return;}
+  const room = await fbGet(`quiz/rooms/${pin}`);
+  if(!room){showToast('Комната не найдена',true);return;}
+  if(room.status!=='waiting'){showToast('Игра уже началась',true);return;}
+  const me = S.members[S.user.id]||S.user;
+  const playerData = {id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0],score:0};
+  await fbUpd(`quiz/rooms/${pin}/players`,{[me.id]:playerData});
+  S.quizRoomId = pin;
+  fbListen(`quiz/rooms/${pin}`, v=>{
+    S.quizRoom=v;
+    if(S.page==='quiz') rerender();
+  });
+  rerender();
+};
+
+window.quizStart = async()=>{
+  if(!S.quizRoomId)return;
+  const questions = shuffleQuiz(QUIZ_QUESTIONS).slice(0,15);
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'question', currentQuestion:0,
+    questionOrder: questions.map((_,i)=>i),
+    shuffledQuestions: questions,
+    answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+  startQuizTimer();
+};
+
+window.quizAnswer = async(idx)=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const room = S.quizRoom;
+  if(room.answers&&room.answers[S.user.id]!==undefined)return;
+  const timeLeft = room.timeLeft||0;
+  // Score: max 1000 points, decreases with time
+  const pts = Math.max(100, Math.round(1000*(timeLeft/QUIZ_TIME)));
+  await fbUpd(`quiz/rooms/${S.quizRoomId}/answers`,{[S.user.id]:idx});
+  // Store time-based score for this answer
+  await fbUpd(`quiz/rooms/${S.quizRoomId}/answerTimes`,{[S.user.id]:timeLeft});
+  rerender();
+};
+
+window.quizNextQuestion = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  stopQuizTimer();
+  const room = S.quizRoom;
+  const next = (room.currentQuestion||0)+1;
+  if(next >= (room.shuffledQuestions||QUIZ_QUESTIONS).length){
+    await quizFinish(); return;
+  }
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'question', currentQuestion:next,
+    answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+  startQuizTimer();
+};
+
+window.quizFinish = async()=>{
+  if(!S.quizRoomId)return;
+  stopQuizTimer();
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{status:'finished'});
+};
+
+window.quizLeave = async()=>{
+  stopQuizTimer();
+  if(S.quizRoomId&&S.user){
+    await fbDel(`quiz/rooms/${S.quizRoomId}/players/${S.user.id}`);
+  }
+  S.quizRoomId=null; S.quizRoom=null;
+  rerender();
+};
+
+window.quizRestart = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const players = S.quizRoom.players||{};
+  // Reset scores
+  const resetPlayers = {};
+  Object.entries(players).forEach(([id,p])=>{resetPlayers[id]={...p,score:0};});
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'waiting', currentQuestion:0,
+    players:resetPlayers, answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+};
+
+/* ── TIMER (host only) ── */
+function startQuizTimer(){
+  stopQuizTimer();
+  if(!quizIsHost(S.quizRoom))return;
+  quizTimeLeft = QUIZ_TIME;
+  quizTimer = setInterval(async()=>{
+    quizTimeLeft--;
+    if(!S.quizRoomId)return clearInterval(quizTimer);
+    await fbUpd(`quiz/rooms/${S.quizRoomId}`,{timeLeft:quizTimeLeft});
+    if(quizTimeLeft<=0){
+      clearInterval(quizTimer);
+      await quizRevealAnswer();
+    }
+  },1000);
+}
+
+function stopQuizTimer(){
+  if(quizTimer){clearInterval(quizTimer);quizTimer=null;}
+}
+
+async function quizRevealAnswer(){
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const room = S.quizRoom;
+  const qi = room.currentQuestion||0;
+  const qs = room.shuffledQuestions||QUIZ_QUESTIONS;
+  const q = qs[qi];
+  if(!q)return;
+  // Calculate points for each player
+  const updates = {};
+  const lastPts = {};
+  const players = room.players||{};
+  const answers = room.answers||{};
+  const times = room.answerTimes||{};
+  Object.entries(players).forEach(([pid,p])=>{
+    const ans = answers[pid];
+    const t = times[pid]||0;
+    if(ans===q.cor){
+      const pts = Math.max(100, Math.round(1000*(t/QUIZ_TIME)));
+      updates[`players/${pid}/score`] = (p.score||0)+pts;
+      lastPts[pid] = pts;
+    } else {
+      lastPts[pid] = 0;
+    }
+  });
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    ...updates, showAnswers:true, lastPoints:lastPts, status:'leaderboard'
+  });
+}
+
+function shuffleQuiz(arr){
+  return arr.slice().sort(()=>Math.random()-.5);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   ВИКТОРИНА — KAHOOT-STYLE
+   Логика: host создаёт комнату → все заходят по PIN →
+   host запускает → вопросы идут синхронно через Firebase →
+   таймер на клиенте → очки за скорость → таблица лидеров
+══════════════════════════════════════════════════════ */
+
+/* ── ВОПРОСЫ (без CMG) ── */
+const QUIZ_QUESTIONS = [
+  // ГЕОЛОГИЯ И ПЛАСТЫ
+  {cat:'Геология',q:'Что такое пористость горной породы?',
+   opts:['Способность пропускать флюиды','Доля пустот в общем объёме породы','Давление на глубине пласта','Вязкость нефти'],
+   ans:1,explain:'Пористость — отношение объёма пустот (пор) к общему объёму породы. Измеряется в долях или процентах.'},
+  {cat:'Геология',q:'Какой тип коллектора наиболее распространён в Казахстане?',
+   opts:['Карбонатный','Терригенный','Вулканический','Соленосный'],
+   ans:1,explain:'Большинство крупных месторождений Казахстана (Тенгиз, Кашаган) приурочены к терригенным и карбонатным коллекторам.'},
+  {cat:'Геология',q:'Что означает аббревиатура ГВК?',
+   opts:['Горизонтальный водяной контакт','Газоводяной контакт','Газоводяной клапан','Горизонтальная водяная карта'],
+   ans:1,explain:'ГВК — газоводяной контакт, поверхность раздела газовой и водяной фаз в пласте.'},
+  {cat:'Геология',q:'Какой параметр характеризует способность пласта пропускать флюид?',
+   opts:['Пористость','Насыщённость','Проницаемость','Сжимаемость'],
+   ans:2,explain:'Проницаемость (дарси, мД) определяет способность породы пропускать жидкость или газ под действием перепада давления.'},
+  {cat:'Геология',q:'В чём измеряется проницаемость пласта?',
+   opts:['Паскаль','Дарси (Д)','Ньютон','Дебит'],
+   ans:1,explain:'Проницаемость измеряется в дарси (Д) или миллидарси (мД). 1 Д = 9.869×10⁻¹³ м².'},
+  {cat:'Геология',q:'Что такое нефтенасыщенность?',
+   opts:['Объём нефти в резервуаре','Доля пор, заполненных нефтью','Давление нефти в пласте','Вязкость нефти при пластовых условиях'],
+   ans:1,explain:'Нефтенасыщенность — отношение объёма пор, занятых нефтью, к общему объёму порового пространства.'},
+
+  // РАЗРАБОТКА МЕСТОРОЖДЕНИЙ
+  {cat:'Разработка',q:'Что такое КИН?',
+   opts:['Коэффициент извлечения нефти','Контроль изоляции нефти','Кривая изменения нагнетания','Константа инфильтрации насыщения'],
+   ans:0,explain:'КИН (коэффициент извлечения нефти) — отношение извлекаемых запасов нефти к геологическим. Обычно 0.25–0.50.'},
+  {cat:'Разработка',q:'Что такое забойное давление?',
+   opts:['Давление на поверхности скважины','Давление в призабойной зоне пласта','Давление нагнетания воды','Атмосферное давление'],
+   ans:1,explain:'Забойное давление — давление флюида у забоя (нижней части) скважины при её работе.'},
+  {cat:'Разработка',q:'Какой метод повышения нефтеотдачи относится к тепловым?',
+   opts:['Заводнение','Закачка CO₂','Паротепловое воздействие','Гидроразрыв пласта'],
+   ans:2,explain:'Паротепловое воздействие (паростимуляция) — закачка горячего пара для снижения вязкости нефти. Применяется на месторождениях тяжёлой нефти.'},
+  {cat:'Разработка',q:'Что означает ГРП в нефтяной отрасли?',
+   opts:['Геологическое расположение пласта','Гидравлический разрыв пласта','Горизонтальное расположение перфорации','Газовое регулирование потока'],
+   ans:1,explain:'ГРП — гидравлический разрыв пласта. Создание трещин в породе под высоким давлением жидкости для увеличения притока.'},
+  {cat:'Разработка',q:'Что такое обводнённость продукции скважины?',
+   opts:['Содержание газа в нефти','Доля воды в общей добыче жидкости','Объём закачиваемой воды','Давление в водоносном пласте'],
+   ans:1,explain:'Обводнённость — отношение объёма добываемой воды к общему объёму жидкости (нефть + вода). Измеряется в %.'},
+  {cat:'Разработка',q:'Какой показатель характеризует интенсивность притока жидкости к скважине?',
+   opts:['Пластовое давление','Индекс продуктивности (PI)','Газовый фактор','Вязкость нефти'],
+   ans:1,explain:'Индекс продуктивности PI = Q/(Pпл-Pзаб) — дебит скважины на единицу депрессии. Единица: м³/сут/атм.'},
+
+  // ФИЗИКА ПЛАСТА
+  {cat:'Физика пласта',q:'При каком условии нефть содержит растворённый газ?',
+   opts:['При давлении ниже давления насыщения','При давлении выше давления насыщения','При любом давлении','Только при температуре выше 100°C'],
+   ans:1,explain:'Газ остаётся растворённым в нефти при давлении выше давления насыщения (давления пузырькообразования).'},
+  {cat:'Физика пласта',q:'Что такое газовый фактор (GOR)?',
+   opts:['Отношение газа к воде','Объём газа на единицу добытой нефти','Давление газовой шапки','Проницаемость для газа'],
+   ans:1,explain:'GOR (Gas-Oil Ratio) — газовый фактор, объём попутного газа на единицу добытой нефти. Измеряется в м³/м³ или SCF/STB.'},
+  {cat:'Физика пласта',q:'Что происходит с вязкостью нефти при повышении температуры?',
+   opts:['Увеличивается','Уменьшается','Не изменяется','Сначала растёт, потом падает'],
+   ans:1,explain:'При повышении температуры молекулярные связи ослабевают, и вязкость нефти снижается. На этом принципе основано паровое воздействие.'},
+  {cat:'Физика пласта',q:'Как называется зависимость дебита нефтяной скважины от забойного давления?',
+   opts:['Кривая Дарси','Индикаторная диаграмма (IPR)','График Хорнера','Воронка депрессии'],
+   ans:1,explain:'IPR (Inflow Performance Relationship) — индикаторная диаграмма, показывает связь между дебитом и забойным давлением. Для газа часто используется формула Вогеля.'},
+
+  // СИМУЛЯЦИЯ
+  {cat:'Симуляция',q:'Что такое симулятор пласта?',
+   opts:['Прибор для измерения давления','Программа для математического моделирования поведения пласта','Устройство для отбора керна','Насос для закачки воды'],
+   ans:1,explain:'Симулятор пласта — программный комплекс, решающий уравнения фильтрации многофазных флюидов в пористой среде для прогноза добычи.'},
+  {cat:'Симуляция',q:'Что такое историческая адаптация (history matching)?',
+   opts:['Запись истории бурения','Подбор параметров модели для воспроизведения фактических данных добычи','Анализ архивных геологических карт','Составление отчёта по разработке'],
+   ans:1,explain:'History matching — настройка геолого-гидродинамической модели путём изменения параметров пласта так, чтобы расчётные данные совпадали с фактической историей добычи.'},
+  {cat:'Симуляция',q:'Что означает чёрная нефть (black oil) в контексте симуляции?',
+   opts:['Тяжёлая нефть с плотностью выше 900 кг/м³','Упрощённая модель флюида с двумя компонентами','Нефть с высоким содержанием серы','Загрязнённая нефть'],
+   ans:1,explain:'Black oil — упрощённая модель флюида (нефть + газ + вода), где нефть и газ описываются PVT-таблицами (Bo, Rs, Bg). Подходит для большинства задач.'},
+  {cat:'Симуляция',q:'Что такое ячейка грида в симуляторе?',
+   opts:['Ячейка электронной таблицы','Минимальный объёмный элемент геологической модели','Точка измерения давления','Участок трубопровода'],
+   ans:1,explain:'Грид (сетка) делит пласт на ячейки. Каждая ячейка имеет свои петрофизические свойства. Чем мельче ячейки — тем точнее, но дольше считает модель.'},
+  {cat:'Симуляция',q:'Какой симулятор разработан компанией Schlumberger?',
+   opts:['tNavigator','ECLIPSE','CMG IMEX','VIP'],
+   ans:1,explain:'ECLIPSE — один из наиболее распространённых симуляторов пласта, разработанный Schlumberger (ныне SLB). Включает ECLIPSE 100 (black oil) и ECLIPSE 300 (композиционный).'},
+  {cat:'Симуляция',q:'Что такое upscaling в геологическом моделировании?',
+   opts:['Увеличение масштаба карты','Укрупнение ячеек геологической модели при переносе в симулятор','Повышение точности расчётов','Перевод данных в международную систему единиц'],
+   ans:1,explain:'Upscaling — процесс укрупнения детальной геологической модели (миллионы ячеек) до размеров симуляционной модели (тысячи ячеек) при сохранении основных свойств.'},
+
+  // БУРЕНИЕ
+  {cat:'Бурение',q:'Что такое буровой раствор (drilling mud)?',
+   opts:['Смазочное масло для бурового инструмента','Специальная жидкость, закачиваемая в скважину при бурении','Раствор для цементирования','Кислота для обработки пласта'],
+   ans:1,explain:'Буровой раствор — циркулирующая жидкость при бурении. Выносит шлам, охлаждает долото, создаёт давление на пласт для предотвращения выбросов.'},
+  {cat:'Бурение',q:'Что такое горизонтальное бурение?',
+   opts:['Бурение строго вертикально','Бурение скважин с горизонтальным участком ствола в пласте','Бурение под углом 45°','Бурение нескольких скважин с одной точки'],
+   ans:1,explain:'Горизонтальное бурение позволяет разместить скважину вдоль пласта, увеличив область дренирования. Особенно эффективно в тонких или трещиноватых пластах.'},
+  {cat:'Бурение',q:'Что такое обсадная колонна?',
+   opts:['Колонна бурильных труб','Стальные трубы для крепления стенок скважины','Инструмент для перфорации','Насосные трубы'],
+   ans:1,explain:'Обсадная колонна — стальные трубы, спускаемые в скважину и цементируемые для изоляции пластов и предотвращения обрушения стенок.'},
+
+  // КАЗАХСТАН
+  {cat:'Нефтянка Казахстана',q:'Какое месторождение является крупнейшим в Казахстане по запасам?',
+   opts:['Тенгиз','Кашаган','Карачаганак','Жанажол'],
+   ans:1,explain:'Кашаган — крупнейшее нефтяное месторождение Казахстана и одно из крупнейших в мире. Открыто в 2000 году на шельфе Каспийского моря.'},
+  {cat:'Нефтянка Казахстана',q:'Какая компания является оператором месторождения Тенгиз?',
+   opts:['КазМунайГаз','TengizChevroil','Shell','ExxonMobil'],
+   ans:1,explain:'TengizChevroil (TCO) — совместное предприятие Chevron, ExxonMobil, КазМунайГаза и LukArco. Оператор Тенгизского месторождения с 1993 года.'},
+  {cat:'Нефтянка Казахстана',q:'В каком море находится месторождение Кашаган?',
+   opts:['Аральское','Каспийское','Чёрное','Балтийское'],
+   ans:1,explain:'Кашаган расположен на северном шельфе Каспийского моря в 80 км от Атырау.'},
+  {cat:'Нефтянка Казахстана',q:'Как называется национальная нефтяная компания Казахстана?',
+   opts:['КазойлГаз','КазМунайГаз','НацНефтеГаз','ЭнергоКазахстан'],
+   ans:1,explain:'КазМунайГаз (КМГ) — национальная компания по разведке и добыче углеводородов в Казахстане. Основана в 2002 году.'},
+  {cat:'Нефтянка Казахстана',q:'Какое месторождение известно высоким содержанием серы в нефти?',
+   opts:['Узень','Жанажол','Тенгиз','Каламкас'],
+   ans:2,explain:'Тенгизская нефть содержит около 0.7% серы и значительное количество H₂S (сероводорода), что требует специальных технологий переработки.'},
+];
+
+/* ── HELPERS ── */
+function quizPIN(){
+  return String(Math.floor(1000+Math.random()*9000));
+}
+function quizShuffle(arr){
+  return arr.slice().sort(()=>Math.random()-.5);
+}
+function getQSet(n=20){
+  // Берём по несколько вопросов из каждой категории
+  const cats={};
+  QUIZ_QUESTIONS.forEach((q,i)=>{
+    if(!cats[q.cat])cats[q.cat]=[];
+    cats[q.cat].push(i);
+  });
+  const selected=[];
+  Object.values(cats).forEach(idxs=>{
+    quizShuffle(idxs).slice(0,Math.ceil(n/Object.keys(cats).length)+1).forEach(i=>selected.push(i));
+  });
+  return quizShuffle(selected).slice(0,n).map(i=>QUIZ_QUESTIONS[i]);
+}
+
+let _quizTimer=null;
+
+function clearQuizTimer(){ if(_quizTimer){clearInterval(_quizTimer);_quizTimer=null;} }
+
+/* ── RENDER QUIZ ── */
+function renderQuiz(){
+  const r=S.quizRoom;
+  const rid=S.quizRoomId;
+
+  // No room
+  if(!r||!rid) return renderQuizLobby();
+
+  // Check I'm in this room
+  const allP=[...Object.values(r.players||{})];
+  const me=allP.find(p=>p.id===S.user.id);
+  if(!me) return renderQuizLobby();
+
+  // Final
+  if(r.status==='finished') return renderQuizFinal(r);
+
+  // Between questions — show leaderboard
+  if(r.status==='leaderboard') return renderQuizLeaderboard(r,false);
+
+  // Question active
+  if(r.status==='question') return renderQuizQuestion(r,me);
+
+  // Waiting room
+  return renderQuizWaiting(r);
+}
+
+function renderQuizLobby(){
+  return`<div class="quiz-wrap">
+    <div class="quiz-lobby">
+      <div class="quiz-logo">🧠</div>
+      <div class="quiz-title">Викторина — Нефтянка</div>
+      <div class="quiz-sub">Соревновательная викторина для команды · Kahoot-стиль</div>
+      <div class="quiz-lobby-btns">
+        <button class="qbtn qbtn-primary" onclick="quizCreate()">🎯 Создать игру</button>
+        <button class="qbtn qbtn-secondary" onclick="quizShowJoin()">🚪 Войти по PIN</button>
+      </div>
+      <div id="quiz-join-form" style="display:none;margin-bottom:1.5rem">
+        <div class="quiz-join-row">
+          <input class="quiz-pin-input" id="quiz-pin-inp" placeholder="PIN" maxlength="4"
+            oninput="this.value=this.value.replace(/\D/g,'')"
+            onkeydown="if(event.key==='Enter')quizJoin()">
+          <button class="qbtn qbtn-primary" onclick="quizJoin()">Войти →</button>
+        </div>
+      </div>
+      <div class="quiz-rules">
+        <div class="quiz-rules-title">📋 Как играть</div>
+        <ul>
+          <li>Один создаёт игру и получает PIN-код</li>
+          <li>Остальные вводят PIN и заходят</li>
+          <li>Ведущий нажимает «Начать игру»</li>
+          <li>На каждый вопрос — 20 секунд</li>
+          <li>Чем быстрее правильный ответ — тем больше очков (макс. 1000)</li>
+          <li>Побеждает тот, кто наберёт больше всего очков</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizWaiting(r){
+  const players=Object.values(r.players||{});
+  const isHost=r.hostId===S.user.id;
+  const canStart=players.length>=1;
+  return`<div class="quiz-wrap">
+    <div class="quiz-waiting">
+      <div class="quiz-waiting-header">
+        <div class="quiz-waiting-pin">PIN-код для входа</div>
+        <div class="quiz-pin-display">${S.quizRoomId}</div>
+        <div class="quiz-waiting-title">${players.length} игрок${players.length===1?'':'ов'} в комнате</div>
+      </div>
+      <div class="quiz-players-grid">
+        ${players.map(p=>`
+          <div class="quiz-player-chip ${p.id===r.hostId?'host':''}">
+            ${avImg(p.avatar,p.name,24,p.color||COLORS[0])}
+            <div>
+              <div class="qpc-name">${escH(p.name.split(' ')[0])}</div>
+              ${p.id===r.hostId?'<div class="qpc-badge">👑 ведущий</div>':''}
+            </div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" ${canStart?'':'disabled'} onclick="quizStart()">
+            🚀 Начать игру (${(r.questions||[]).length} вопросов)
+          </button>
+          <div style="margin-top:.625rem">
+            <button class="qbtn qbtn-secondary" style="padding:8px 18px;font-size:13px" onclick="quizLeave()">Отменить</button>
+          </div>
+        </div>`:`
+        <div style="text-align:center">
+          <div style="font-size:14px;color:var(--t2);margin-bottom:.875rem">Ждём пока ведущий начнёт…</div>
+          <button class="qbtn qbtn-secondary" style="padding:8px 18px;font-size:13px" onclick="quizLeave()">Выйти</button>
+        </div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizQuestion(r,me){
+  const qi=r.currentQ||0;
+  const q=(r.questions||[])[qi];
+  if(!q) return renderQuizLobby();
+
+  const isHost=r.hostId===S.user.id;
+  const total=(r.questions||[]).length;
+  const timeLeft=r.timeLeft!==undefined?r.timeLeft:20;
+  const timerPct=(timeLeft/20*100).toFixed(1);
+  const myAnswers=r.answers||{};
+  const myAns=myAnswers[S.user.id];
+  const answered=myAns!==undefined;
+  const answersCount=Object.keys(myAnswers).length;
+  const totalPlayers=Object.keys(r.players||{}).length;
+  const myScore=(r.scores&&r.scores[S.user.id])||0;
+  const urgent=timeLeft<=5;
+
+  // If already answered — show waiting
+  if(answered&&!isHost){
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${total}</div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timerPct}%"></div>
+            </div>
+          </div>
+          <div><div class="quiz-score-display">${myScore}</div><div class="quiz-score-label">очков</div></div>
+        </div>
+        <div class="quiz-waiting-answer">
+          <div class="qwa-icon">⏳</div>
+          <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:.5rem">Ответ принят!</div>
+          <div style="font-size:14px;color:var(--t2)">Ждём остальных… ${answersCount}/${totalPlayers}</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <!-- Top bar -->
+      <div class="quiz-topbar">
+        <div class="quiz-q-num">ВОПРОС ${qi+1} / ${total} · <span style="color:var(--accent)">${escH(q.cat)}</span></div>
+        <div class="quiz-timer-wrap">
+          <div class="quiz-timer ${urgent?'urgent':''}" id="quiz-timer-num">${timeLeft}</div>
+          <div class="quiz-timer-bar-wrap">
+            <div class="quiz-timer-bar ${urgent?'urgent':''}" id="quiz-timer-bar" style="width:${timerPct}%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="quiz-score-display">${myScore}</div>
+          <div class="quiz-score-label">очков</div>
+        </div>
+      </div>
+
+      <!-- Question card -->
+      <div class="quiz-card">
+        <div class="quiz-q-cat">${escH(q.cat)}</div>
+        <div class="quiz-q-text">${escH(q.q)}</div>
+        ${isHost?`<div style="font-size:13px;color:var(--t2);margin-top:.75rem">Ответили: ${answersCount} / ${totalPlayers}</div>`:''}
+      </div>
+
+      <!-- Answer buttons -->
+      <div class="quiz-answers">
+        ${q.opts.map((opt,i)=>{
+          const icons=['▲','◆','●','★'];
+          return`<button class="quiz-answer qa-${i} ${answered&&myAns===i?'selected':''}"
+            ${answered||isHost?'disabled':''} onclick="quizAnswer(${i})">
+            <span class="qa-icon">${icons[i]}</span>
+            <span class="qa-text">${escH(opt)}</span>
+          </button>`;
+        }).join('')}
+      </div>
+
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" onclick="quizNextStep()">
+            ${qi+1>=total?'Завершить':'Следующий вопрос →'}
+          </button>
+        </div>`:''}
+    </div>
+  </div>`;
+}
+
+function renderQuizLeaderboard(r,isFinal){
+  const players=Object.values(r.players||{});
+  const scores=r.scores||{};
+  const qi=r.currentQ||0;
+  const total=(r.questions||[]).length;
+  const isHost=r.hostId===S.user.id;
+  const lastQ=(r.questions||[])[Math.max(0,qi-1)];
+  const lastAns=r.answers||{};
+
+  const sorted=players.map(p=>({
+    ...p,score:scores[p.id]||0,
+    answered:lastAns[p.id]!==undefined,
+    correct:lastAns[p.id]===((r.questions||[])[r.currentQ>=total?total-1:r.currentQ-1]||{}).ans
+  })).sort((a,b)=>b.score-a.score);
+
+  const medals=['🥇','🥈','🥉'];
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      ${lastQ?`
+      <div class="quiz-result-overlay">
+        <div class="qro-emoji">${lastQ.ans!==undefined?'✅':''}</div>
+        <div class="qro-correct">Правильный ответ: ${escH(lastQ.opts[lastQ.ans])}</div>
+        <div class="qro-explain">${escH(lastQ.explain||'')}</div>
+      </div>`:''}
+      <div class="quiz-leaderboard">
+        <div class="qlb-title">🏆 Таблица лидеров</div>
+        ${sorted.slice(0,10).map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${i<3?medals[i]:i+1}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div style="flex:1;min-width:0">
+              <div class="qlb-name">${escH(p.name)} ${p.id===S.user.id?'<span style="font-size:11px;color:var(--accent)">(вы)</span>':''}</div>
+              <div class="qlb-streak">${p.answered?(p.correct?'✅ верно':'❌ неверно'):'— не ответил'}</div>
+            </div>
+            <div class="qlb-score">+${p.score}</div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" onclick="quizNextQuestion()">
+            ${qi>=total?'Завершить игру 🏁':'Следующий вопрос →'}
+          </button>
+        </div>`:`<div style="text-align:center;font-size:14px;color:var(--t2)">Ждём ведущего…</div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizFinal(r){
+  const players=Object.values(r.players||{});
+  const scores=r.scores||{};
+  const isHost=r.hostId===S.user.id;
+  const sorted=players.map(p=>({...p,score:scores[p.id]||0})).sort((a,b)=>b.score-a.score);
+  const winner=sorted[0];
+  const medals=['🥇','🥈','🥉'];
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <div class="quiz-final">
+        <div class="quiz-winner-trophy">🏆</div>
+        <div class="quiz-winner-name">${escH(winner?.name||'?')}</div>
+        <div class="quiz-winner-sub">Победитель викторины · ${scores[winner?.id]||0} очков</div>
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+          ${isHost?`<button class="qbtn qbtn-primary" onclick="quizRestart()">🔄 Играть снова</button>`:''}
+          <button class="qbtn qbtn-secondary" onclick="quizLeave()">Выйти</button>
+        </div>
+      </div>
+      <div class="quiz-leaderboard" style="margin-top:1rem">
+        <div class="qlb-title">Итоговая таблица</div>
+        ${sorted.map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${i<3?medals[i]:i+1}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div style="flex:1"><div class="qlb-name">${escH(p.name)}</div></div>
+            <div class="qlb-score">${p.score}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── QUIZ ACTIONS ── */
+window.quizShowJoin = ()=>{
+  const f=document.getElementById('quiz-join-form');
+  if(f){f.style.display=f.style.display==='none'?'block':'none';}
+  setTimeout(()=>document.getElementById('quiz-pin-inp')?.focus(),50);
+};
+
+window.quizCreate = async()=>{
+  const me=S.members[S.user.id]||S.user;
+  const pin=quizPIN();
+  const qs=getQSet(20);
+  const room={
+    hostId:me.id,
+    status:'waiting',
+    currentQ:0,
+    timeLeft:20,
+    questions:qs,
+    players:{[me.id]:{id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]}},
+    scores:{},
+    answers:{},
+    createdAt:Date.now()
+  };
+  await fbSet(`quiz/${pin}`,room);
+  S.quizRoomId=pin;
+  fbListen(`quiz/${pin}`,v=>{S.quizRoom=v;if(S.page==='quiz')rerender();});
+  showToast(`Комната создана! PIN: ${pin}`);
+  rerender();
+};
+
+window.quizJoin = async()=>{
+  const pin=(document.getElementById('quiz-pin-inp')?.value||'').trim();
+  if(pin.length!==4){showToast('Введите 4-значный PIN',true);return;}
+  const room=await fbGet(`quiz/${pin}`);
+  if(!room){showToast('Комната не найдена',true);return;}
+  if(room.status!=='waiting'){showToast('Игра уже началась',true);return;}
+  const me=S.members[S.user.id]||S.user;
+  await fbUpd(`quiz/${pin}/players`,{
+    [me.id]:{id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]}
+  });
+  S.quizRoomId=pin;
+  fbListen(`quiz/${pin}`,v=>{S.quizRoom=v;if(S.page==='quiz')rerender();});
+  rerender();
+};
+
+window.quizStart = async()=>{
+  if(!S.quizRoomId)return;
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'question',currentQ:0,timeLeft:20,answers:{},scores:{}});
+  quizStartTimer();
+};
+
+function quizStartTimer(){
+  clearQuizTimer();
+  let t=20;
+  _quizTimer=setInterval(async()=>{
+    if(!S.quizRoomId||S.quizRoom?.hostId!==S.user.id){clearQuizTimer();return;}
+    t--;
+    await fbUpd(`quiz/${S.quizRoomId}`,{timeLeft:t});
+    if(t<=0){
+      clearQuizTimer();
+      // Auto-advance to leaderboard
+      await quizShowLeaderboard();
+    }
+  },1000);
+}
+
+async function quizShowLeaderboard(){
+  if(!S.quizRoomId)return;
+  const r=await fbGet(`quiz/${S.quizRoomId}`);
+  if(!r)return;
+  // Calculate scores for this round
+  const qi=r.currentQ||0;
+  const q=(r.questions||[])[qi];
+  const answers=r.answers||{};
+  const scores={...(r.scores||{})};
+  const timeLeft=r.timeLeft||0;
+  Object.entries(answers).forEach(([pid,ans])=>{
+    if(ans===q?.ans){
+      // Points: base 500 + up to 500 for speed
+      const speedBonus=Math.round((timeLeft/20)*500);
+      scores[pid]=(scores[pid]||0)+500+speedBonus;
+    }
+  });
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'leaderboard',scores,currentQ:qi+1});
+}
+
+window.quizNextStep = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  if(S.quizRoom.hostId!==S.user.id)return;
+  clearQuizTimer();
+  await quizShowLeaderboard();
+};
+
+window.quizNextQuestion = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  if(S.quizRoom.hostId!==S.user.id)return;
+  const qi=S.quizRoom.currentQ||0;
+  const total=(S.quizRoom.questions||[]).length;
+  if(qi>=total){
+    await fbUpd(`quiz/${S.quizRoomId}`,{status:'finished'});
+    return;
+  }
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'question',timeLeft:20,answers:{}});
+  quizStartTimer();
+};
+
+window.quizAnswer = async(idx)=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const r=S.quizRoom;
+  if(r.status!=='question')return;
+  const myAnswers=r.answers||{};
+  if(myAnswers[S.user.id]!==undefined)return; // already answered
+  await fbUpd(`quiz/${S.quizRoomId}/answers`,{[S.user.id]:idx});
+};
+
+window.quizRestart = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const qs=getQSet(20);
+  await fbUpd(`quiz/${S.quizRoomId}`,{
+    status:'waiting',currentQ:0,timeLeft:20,
+    questions:qs,scores:{},answers:{}
+  });
+};
+
+window.quizLeave = async()=>{
+  if(!S.quizRoomId)return;
+  const me=S.user.id;
+  const r=S.quizRoom;
+  if(r&&r.hostId===me){
+    // Host leaves — delete room
+    await fbDel(`quiz/${S.quizRoomId}`);
+  } else {
+    await fbDel(`quiz/${S.quizRoomId}/players/${me}`);
+  }
+  clearQuizTimer();
+  S.quizRoomId=null;
+  S.quizRoom=null;
+  rerender();
+};
+
 document.addEventListener('click',e=>{
   if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('[data-notif]')){
     S.notifOpen=false;document.getElementById('npanel').className='notif-panel';

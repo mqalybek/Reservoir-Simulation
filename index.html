@@ -735,6 +735,7 @@ select option{background:var(--bg2)}
 <div class="app" id="app"></div>
 <div class="toast" id="toast"></div>
 <div class="bottom-nav" id="bottom-nav"></div>
+<div id="modal-root"></div>
 <div class="notif-panel" id="npanel">
   <div class="np-head">
     <span class="np-title">Уведомления</span>
@@ -908,12 +909,27 @@ function startListeners(){
 function rerender(){
   const app=document.getElementById('app');
   if(!app)return;
-  if(S.page==='loading'){app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;return;}
-  if(S.page==='auth'){app.innerHTML=renderAuth();return;}
+  if(S.page==='loading'){
+    app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;
+    renderModalRoot();
+    return;
+  }
+  if(S.page==='auth'){app.innerHTML=renderAuth();renderModalRoot();return;}
   app.innerHTML=renderShell();
   renderNotifPanel();
   renderBottomNav();
+  renderModalRoot();
   setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
+}
+
+function renderModalRoot(){
+  const mr=document.getElementById('modal-root');
+  if(!mr)return;
+  if(S.modal&&S.modal.type&&S.modal.data!==undefined){
+    mr.innerHTML=renderModal();
+  } else {
+    mr.innerHTML='';
+  }
 }
 
 /* ── AUTH ── */
@@ -1808,9 +1824,11 @@ function renderMessages(){
 /* ── MODAL ── */
 function renderModal(){
   if(!S.modal||!S.modal.type)return'';
-  if(S.modal.type==='editProfile') return renderEditProfileModal();
-  if(S.modal.type==='editVac'&&S.modal.data) return renderEditVacModal();
-  if(S.modal.type==='viewProfile') return renderViewProfileModal();
+  try{
+    if(S.modal.type==='editProfile') return renderEditProfileModal();
+    if(S.modal.type==='editVac'&&S.modal.data) return renderEditVacModal();
+    if(S.modal.type==='viewProfile') return renderViewProfileModal();
+  }catch(e){console.warn('modal render error',e);S.modal=null;}
   return'';
 }
 
@@ -1880,7 +1898,12 @@ function renderEditVacModal(){
 window.setAt = t=>{ S.authTab=t; rerender(); };
 window.gp = p=>{ S.page=p; S.modal=null; rerender(); if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80); };
 window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; rerender(); };
-window.closeModal = ()=>{ S.modal=null; rerender(); };
+window.closeModal = ()=>{
+  S.modal=null;
+  const mr=document.getElementById('modal-root');
+  if(mr)mr.innerHTML='';
+  rerender();
+};
 window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{

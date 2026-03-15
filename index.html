@@ -57,12 +57,15 @@ body::after{content:'';position:fixed;inset:0;
   font-size:12px;font-weight:700;color:var(--accent);cursor:pointer}
 
 /* ── LAYOUT ── */
-.layout{display:grid;grid-template-columns:240px 1fr 280px;
-  max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem}
+.layout{display:flex;flex-direction:row;
+  max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem;
+  align-items:flex-start}
 
 /* ── LEFT SIDEBAR ── */
-.sidebar-left{position:sticky;top:70px;align-self:start;z-index:10;position:relative}
-.nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06);position:relative;z-index:10}
+.sidebar-left{width:240px;flex-shrink:0;position:sticky;top:70px;z-index:50}
+.nav-card{background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+  box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .nav-profile{padding:1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-profile:hover{background:rgba(255,255,255,.02)}
 .nav-pav{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);flex-shrink:0}
@@ -71,10 +74,11 @@ body::after{content:'';position:fixed;inset:0;
   font-size:14px;font-weight:700;flex-shrink:0}
 .nav-pname{font-weight:600;font-size:14px}
 .nav-prole{font-size:11px;color:var(--accent);margin-top:2px}
-.nav-items{padding:.5rem}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;pointer-events:auto;
+.nav-items{padding:.5rem;position:relative;z-index:1}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
   cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans'}
+  transition:all .2s;border:none;background:none;width:100%;text-align:left;
+  font-family:'Plus Jakarta Sans';position:relative;z-index:1}
 .nav-item:hover{background:var(--bg3);color:var(--t1)}
 .nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
@@ -82,7 +86,7 @@ body::after{content:'';position:fixed;inset:0;
   border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700}
 
 /* ── FEED ── */
-.feed{display:flex;flex-direction:column;gap:1rem}
+.feed{display:flex;flex-direction:column;gap:1rem;width:100%;min-width:0}
 
 /* Composer */
 .composer{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
@@ -158,7 +162,7 @@ body::after{content:'';position:fixed;inset:0;
 .comment-send:hover{opacity:.85}
 
 /* ── RIGHT SIDEBAR ── */
-.sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
+.sidebar-right{width:280px;flex-shrink:0;position:sticky;top:70px;display:flex;flex-direction:column;gap:1rem}
 .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .widget-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
@@ -175,7 +179,7 @@ body::after{content:'';position:fixed;inset:0;
 .sdot.on{background:var(--green)}.sdot.vac{background:var(--gold)}
 
 /* ── PAGES ── */
-.page-wrap{display:flex;flex-direction:column;gap:1rem}
+.page-wrap{display:flex;flex-direction:column;gap:1rem;width:100%;min-width:0}
 
 /* Profile page */
 .profile-cover{height:160px;background:linear-gradient(135deg,#dbeafe,#ede9fe);
@@ -416,15 +420,15 @@ select option{background:var(--bg2)}
 .iitem .il{font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:3px}
 .iitem .iv{font-size:13px;font-weight:500}
 
-@media(max-width:1100px){.layout{grid-template-columns:200px 1fr 240px}}
-@media(max-width:900px){.layout{grid-template-columns:1fr};.sidebar-left,.sidebar-right{display:none}}
+@media(max-width:1100px){.sidebar-left{width:200px}.sidebar-right{width:240px}}
+@media(max-width:900px){.sidebar-left,.sidebar-right{display:none}}
 @media(max-width:600px){.auth-card{padding:1.5rem}.row2,.row3{grid-template-columns:1fr}}
 
 /* ── BOTTOM MOBILE NAV ── */
 .bottom-nav{display:none}
 @media(max-width:760px){
   .sidebar-left,.sidebar-right{display:none !important}
-  .layout{grid-template-columns:1fr !important;padding:1rem !important;padding-bottom:74px !important}
+  .layout{flex-direction:column !important;padding:1rem !important;padding-bottom:74px !important}
   .bottom-nav{
     display:flex;position:fixed;bottom:0;left:0;right:0;z-index:400;
     background:#fff;border-top:1px solid var(--border);
@@ -1009,7 +1013,7 @@ function renderShell(){
     </div>
 
     <!-- MAIN -->
-    <div style="min-width:0;overflow:visible">
+    <div style="flex:1;min-width:0;overflow:hidden">
       ${renderPage()}
     </div>
 

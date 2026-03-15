@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RS Team — Reservoir Simulation</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -15,7 +15,7 @@
   --border:rgba(40,120,232,0.12);--border2:rgba(40,120,232,0.24);
   --card:#ffffff;--r:14px;
 }
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
 body::after{content:'';position:fixed;inset:0;
   background:radial-gradient(ellipse 60% 40% at 80% 5%,rgba(40,120,232,0.04),transparent),
   radial-gradient(ellipse 50% 30% at 5% 95%,rgba(124,92,232,0.03),transparent);
@@ -30,12 +30,12 @@ body::after{content:'';position:fixed;inset:0;
 .tn-logo-mark{width:30px;height:30px;border-radius:8px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne';font-size:13px;font-weight:800;color:#fff}
-.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:var(--t1)}
+  font-family:'Space Grotesk';font-size:13px;font-weight:800;color:#fff}
+.tn-logo-name{font-family:'Space Grotesk';font-size:15px;font-weight:700;color:var(--t1)}
 .tn-search{flex:1;max-width:320px;margin:0 1.5rem;position:relative}
 .tn-search input{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px 7px 34px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .tn-search input:focus{border-color:var(--accent)}
 .tn-search input::placeholder{color:var(--t3)}
 .tn-search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
@@ -74,7 +74,7 @@ body::after{content:'';position:fixed;inset:0;
 .nav-items{padding:.5rem}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
   cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
+  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans'}
 .nav-item:hover{background:var(--bg3);color:var(--t1)}
 .nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
@@ -89,7 +89,7 @@ body::after{content:'';position:fixed;inset:0;
 .composer-top{display:flex;gap:10px;align-items:flex-start}
 .composer-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;color:var(--t1);font-size:14px;
-  font-family:'Inter';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
+  font-family:'Plus Jakarta Sans';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
 .composer-input:focus{border-color:var(--accent);min-height:80px}
 .composer-input::placeholder{color:var(--t3)}
 .composer-actions{display:flex;align-items:center;justify-content:space-between;margin-top:.75rem}
@@ -100,7 +100,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-btn{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:600;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Inter'}
+  transition:all .2s;font-family:'Plus Jakarta Sans'}
 .post-btn:hover{opacity:.9;transform:translateY(-1px)}
 .post-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .img-preview-wrap{margin-top:.75rem;position:relative;display:inline-block}
@@ -130,7 +130,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-footer{padding:.625rem 1rem;border-top:1px solid var(--border);
   display:flex;align-items:center;gap:1rem}
 .post-action{display:flex;align-items:center;gap:5px;background:none;border:none;
-  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Inter';
+  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Plus Jakarta Sans';
   padding:5px 10px;border-radius:8px;transition:all .2s}
 .post-action:hover{background:var(--bg3);color:var(--t1)}
 .post-action.liked{color:var(--red)}
@@ -150,7 +150,7 @@ body::after{content:'';position:fixed;inset:0;
 .comment-input-row{display:flex;gap:8px;align-items:center;margin-top:.625rem}
 .comment-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .comment-input:focus{border-color:var(--accent)}
 .comment-send{background:var(--accent);border:none;border-radius:50%;
   width:30px;height:30px;display:flex;align-items:center;justify-content:center;
@@ -160,7 +160,7 @@ body::after{content:'';position:fixed;inset:0;
 /* ── RIGHT SIDEBAR ── */
 .sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
 .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.widget-title{font-family:'Syne';font-size:13px;font-weight:700;color:var(--t2);
+.widget-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
 .member-row{display:flex;align-items:center;gap:9px;margin-bottom:.75rem;cursor:pointer}
 .member-row:last-child{margin-bottom:0}
@@ -196,34 +196,34 @@ body::after{content:'';position:fixed;inset:0;
 .profile-av-edit{position:absolute;bottom:2px;right:2px;width:24px;height:24px;
   background:var(--accent);border-radius:50%;display:flex;align-items:center;
   justify-content:center;cursor:pointer;font-size:12px;border:2px solid var(--bg2)}
-.profile-name{font-family:'Syne';font-size:20px;font-weight:800}
+.profile-name{font-family:'Space Grotesk';font-size:20px;font-weight:800}
 .profile-role{color:var(--accent);font-size:13px;margin-top:3px;font-weight:500}
 .profile-bio{font-size:13px;color:var(--t2);margin-top:.5rem;line-height:1.6}
 .profile-stats{display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
 .pstat{text-align:center}
-.pstat-n{font-family:'Syne';font-size:18px;font-weight:700}
+.pstat-n{font-family:'Space Grotesk';font-size:18px;font-weight:700}
 .pstat-l{font-size:11px;color:var(--t3);margin-top:2px}
 .profile-actions{display:flex;gap:.625rem;margin-top:1rem}
 .btn-primary{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter'}
+  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .btn-primary:hover{opacity:.9}
 .btn-secondary{padding:8px 20px;border-radius:20px;border:1px solid var(--border2);
   background:none;color:var(--t1);font-weight:500;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Inter'}
+  transition:all .2s;font-family:'Plus Jakarta Sans'}
 .btn-secondary:hover{background:var(--bg3)}
 
 /* Calendar page */
 .cal-page{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .cal-year-nav{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
-.cal-year-val{font-family:'Syne';font-size:18px;font-weight:700;min-width:56px;text-align:center}
+.cal-year-val{font-family:'Space Grotesk';font-size:18px;font-weight:700;min-width:56px;text-align:center}
 .cnbtn{padding:6px 12px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Inter'}
+  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .cnbtn:hover{border-color:var(--accent);color:var(--accent)}
 .year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
 .mini-month{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.75rem}
 .mm-title{font-size:11px;font-weight:700;color:var(--t2);text-align:center;
-  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Syne'}
+  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Space Grotesk'}
 .mm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
 .mm-dh{text-align:center;font-size:8px;color:var(--t3);padding:2px 0}
 .mm-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
@@ -240,7 +240,7 @@ body::after{content:'';position:fixed;inset:0;
   padding:1.125rem;margin-bottom:1rem;animation:fdIn .15s ease}
 @keyframes fdIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .dd-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
-.dd-date{font-family:'Syne';font-size:15px;font-weight:700}
+.dd-date{font-family:'Space Grotesk';font-size:15px;font-weight:700}
 .cal-legend{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
 .li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .ld{width:10px;height:10px;border-radius:3px}
@@ -253,7 +253,7 @@ body::after{content:'';position:fixed;inset:0;
 .vac-item-who{font-size:11px;color:var(--t3);margin-top:2px}
 .vac-actions{display:flex;gap:6px}
 .vac-btn{background:none;border:1px solid var(--border);border-radius:6px;
-  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Inter';transition:all .2s}
+  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .vac-btn.edit{color:var(--accent);border-color:rgba(61,142,240,.3)}
 .vac-btn.edit:hover{background:rgba(61,142,240,.1)}
 .vac-btn.del{color:var(--red);border-color:rgba(240,88,88,.3)}
@@ -264,7 +264,7 @@ body::after{content:'';position:fixed;inset:0;
 .dm-list{width:280px;flex-shrink:0;background:var(--card);border:1px solid var(--border);
   border-radius:var(--r);overflow:hidden}
 .dm-list-head{padding:1rem;border-bottom:1px solid var(--border);
-  font-family:'Syne';font-size:14px;font-weight:700}
+  font-family:'Space Grotesk';font-size:14px;font-weight:700}
 .dm-item{display:flex;align-items:center;gap:10px;padding:10px 14px;
   cursor:pointer;transition:background .2s;border-left:3px solid transparent}
 .dm-item:hover{background:var(--bg3)}
@@ -281,7 +281,7 @@ body::after{content:'';position:fixed;inset:0;
   border-radius:var(--r);display:flex;flex-direction:column;min-height:500px}
 .dm-chat-hdr{padding:.875rem 1rem;border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:10px;flex-shrink:0}
-.dm-chat-name{font-family:'Syne';font-size:14px;font-weight:700}
+.dm-chat-name{font-family:'Space Grotesk';font-size:14px;font-weight:700}
 .dm-chat-role{font-size:11px;color:var(--t2)}
 .dm-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
 .msg{display:flex;gap:8px;max-width:75%;align-items:flex-end}
@@ -296,7 +296,7 @@ body::after{content:'';position:fixed;inset:0;
   display:flex;gap:8px;align-items:center}
 .dm-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:8px 14px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .dm-input:focus{border-color:var(--accent)}
 .dm-send{background:var(--accent);border:none;border-radius:50%;
   width:34px;height:34px;display:flex;align-items:center;justify-content:center;
@@ -330,19 +330,19 @@ body::after{content:'';position:fixed;inset:0;
 .auth-logo-big{width:56px;height:56px;border-radius:16px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;
-  font-family:'Syne';font-size:20px;font-weight:800;color:#fff}
-.auth-title{font-family:'Syne';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
+  font-family:'Space Grotesk';font-size:20px;font-weight:800;color:#fff}
+.auth-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
 .auth-sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:1.5rem}
 .auth-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;box-shadow:0 4px 24px rgba(40,120,232,0.08)}
 .atabs{display:flex;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.5rem;gap:3px}
 .atab{flex:1;padding:8px;text-align:center;cursor:pointer;font-size:13px;font-weight:500;
-  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Inter'}
+  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .atab.active{background:var(--bg2);color:var(--accent);border:1px solid var(--border2)}
 .fg{margin-bottom:.875rem}
 label{display:block;font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:500;letter-spacing:.5px}
 input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:9px 13px;color:var(--t1);font-size:13px;
-  font-family:'Inter';transition:border .2s;outline:none}
+  font-family:'Plus Jakarta Sans';transition:border .2s;outline:none}
 input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 input::placeholder,textarea::placeholder{color:var(--t3)}
 select option{background:var(--bg2)}
@@ -351,7 +351,7 @@ select option{background:var(--bg2)}
 .submit-btn{width:100%;padding:11px;border-radius:10px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:700;font-size:14px;cursor:pointer;
-  transition:all .2s;font-family:'Inter';margin-top:4px}
+  transition:all .2s;font-family:'Plus Jakarta Sans';margin-top:4px}
 .submit-btn:hover{opacity:.9;transform:translateY(-1px)}
 .submit-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .auth-hint{text-align:center;font-size:12px;color:var(--t3);margin-top:1rem}
@@ -366,7 +366,7 @@ select option{background:var(--bg2)}
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
   box-shadow:0 8px 40px rgba(40,120,232,0.12)}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
-.modal-title{font-family:'Syne';font-size:16px;font-weight:700}
+.modal-title{font-family:'Space Grotesk';font-size:16px;font-weight:700}
 .btnx{background:none;border:1px solid var(--border);color:var(--t2);
   width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;
   display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -380,7 +380,7 @@ select option{background:var(--bg2)}
 .np-head{padding:12px 16px 8px;border-bottom:1px solid var(--border);
   display:flex;justify-content:space-between;align-items:center;
   position:sticky;top:0;background:#fff}
-.np-title{font-family:'Syne';font-size:13px;font-weight:700}
+.np-title{font-family:'Space Grotesk';font-size:13px;font-weight:700}
 .np-clear{font-size:11px;color:var(--accent);cursor:pointer;border:none;background:none}
 .np-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;gap:10px}
 .np-item.unread{background:rgba(61,142,240,.05)}
@@ -434,7 +434,7 @@ select option{background:var(--bg2)}
   }
   .bnav-item{
     flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:2px;cursor:pointer;border:none;background:none;font-family:'Inter';
+    gap:2px;cursor:pointer;border:none;background:none;font-family:'Plus Jakarta Sans';
     color:var(--t3);transition:all .15s;padding:6px 2px;
     position:relative;-webkit-tap-highlight-color:transparent;
   }
@@ -459,32 +459,32 @@ select option{background:var(--bg2)}
 .game-wrap{max-width:900px;margin:0 auto}
 .game-lobby{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.game-title{font-family:'Syne';font-size:24px;font-weight:800;margin-bottom:.5rem}
+.game-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;margin-bottom:.5rem}
 .game-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
 .game-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
 .gbtn{padding:12px 28px;border-radius:12px;border:none;font-weight:700;font-size:15px;
-  cursor:pointer;font-family:'Inter';transition:all .2s}
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .gbtn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
 .gbtn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .gbtn-secondary{background:var(--bg3);color:var(--t1);border:1px solid var(--border)}
 .gbtn-secondary:hover{background:var(--bg4)}
-.room-code-display{font-family:'Syne';font-size:42px;font-weight:800;
+.room-code-display{font-family:'Space Grotesk';font-size:42px;font-weight:800;
   color:var(--accent);letter-spacing:8px;margin:1rem 0}
 .room-join-row{display:flex;gap:.625rem;justify-content:center;margin-top:1rem}
 .room-input{width:160px;text-align:center;font-size:20px;letter-spacing:4px;
-  font-family:'Syne';font-weight:700;text-transform:uppercase}
+  font-family:'Space Grotesk';font-weight:700;text-transform:uppercase}
 /* Teams */
 .teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
 .team-box{border-radius:12px;padding:1.25rem;border:2px solid}
 .team-red{background:rgba(224,58,58,.06);border-color:rgba(224,58,58,.25)}
 .team-blue{background:rgba(40,120,232,.06);border-color:rgba(40,120,232,.25)}
-.team-title{font-family:'Syne';font-size:14px;font-weight:700;margin-bottom:.75rem}
+.team-title{font-family:'Space Grotesk';font-size:14px;font-weight:700;margin-bottom:.75rem}
 .team-title.red{color:var(--red)}.team-title.blue{color:var(--accent)}
 .team-player{display:flex;align-items:center;gap:7px;margin-bottom:.5rem;font-size:13px}
 .team-player-crown{font-size:12px}
 .team-btns{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
 .tbtn{padding:5px 12px;border-radius:8px;border:none;font-size:12px;font-weight:600;
-  cursor:pointer;font-family:'Inter';transition:all .2s}
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .tbtn-red{background:rgba(224,58,58,.12);color:var(--red)}
 .tbtn-red:hover{background:rgba(224,58,58,.2)}
 .tbtn-blue{background:rgba(40,120,232,.12);color:var(--accent)}
@@ -497,8 +497,8 @@ select option{background:var(--bg2)}
   padding:.875rem 1.25rem;display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:.5rem;box-shadow:0 2px 8px rgba(40,120,232,0.05)}
 .game-score{display:flex;gap:1.5rem;align-items:center}
-.score-red{font-family:'Syne';font-size:20px;font-weight:800;color:var(--red)}
-.score-blue{font-family:'Syne';font-size:20px;font-weight:800;color:var(--accent)}
+.score-red{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--red)}
+.score-blue{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--accent)}
 .score-sep{font-size:18px;color:var(--t3)}
 .turn-indicator{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
 .turn-red{background:rgba(224,58,58,.12);color:var(--red)}
@@ -532,19 +532,347 @@ select option{background:var(--bg2)}
 .clue-input{flex:1;min-width:140px;font-size:14px}
 .clue-num-select{width:80px;font-size:14px}
 .end-turn-btn{padding:8px 18px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter';transition:all .2s}
+  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .end-turn-btn:hover{border-color:var(--accent);color:var(--accent)}
 /* Win screen */
 .win-screen{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:3rem 2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.08)}
 .win-emoji{font-size:64px;margin-bottom:1rem}
-.win-title{font-family:'Syne';font-size:28px;font-weight:800;margin-bottom:.5rem}
+.win-title{font-family:'Space Grotesk';font-size:28px;font-weight:800;margin-bottom:.5rem}
 .win-sub{font-size:15px;color:var(--t2);margin-bottom:2rem}
 @media(max-width:600px){
   .cards-grid{grid-template-columns:repeat(5,1fr);gap:.25rem}
   .game-card{font-size:10px;padding:.5rem .25rem;min-height:48px;border-radius:7px}
   .teams-grid{grid-template-columns:1fr}
 }
+
+/* ── BIRTHDAYS WIDGET ── */
+.bday-widget{background:linear-gradient(135deg,rgba(212,146,10,.08),rgba(224,58,58,.06));
+  border:1px solid rgba(212,146,10,.25);border-radius:var(--r);padding:1.25rem;margin-bottom:1rem}
+.bday-today{display:flex;align-items:center;gap:10px;margin-bottom:.5rem}
+.bday-emoji{font-size:32px}
+.bday-name{font-family:'Space Grotesk';font-size:15px;font-weight:700}
+.bday-sub{font-size:12px;color:var(--t2)}
+.bday-upcoming{font-size:12px;color:var(--t2);margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(212,146,10,.2)}
+
+/* ── POLLS ── */
+.poll-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.25rem;margin-bottom:.875rem;box-shadow:0 2px 8px rgba(40,120,232,.05)}
+.poll-q{font-weight:700;font-size:15px;margin-bottom:.875rem}
+.poll-option{background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:9px 14px;margin-bottom:.5rem;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.poll-option:hover{border-color:var(--accent)}
+.poll-option.voted{border-color:var(--accent);background:rgba(40,120,232,.06)}
+.poll-bar{position:absolute;left:0;top:0;bottom:0;background:rgba(40,120,232,.1);
+  transition:width .5s ease;z-index:0}
+.poll-option-text{position:relative;z-index:1;font-size:13px;font-weight:500}
+.poll-pct{position:relative;z-index:1;font-size:12px;color:var(--accent);font-weight:700}
+.poll-meta{font-size:11px;color:var(--t3);margin-top:.5rem}
+.create-poll-form{background:var(--bg3);border:1px solid var(--border);border-radius:12px;
+  padding:1.25rem;margin-bottom:1rem;display:none}
+.poll-option-input{display:flex;gap:.5rem;margin-bottom:.5rem;align-items:center}
+.remove-opt{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
+  padding:4px;transition:color .2s}
+.remove-opt:hover{color:var(--red)}
+
+/* ── KANBAN ── */
+.kanban-board{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;overflow-x:auto}
+.kanban-col{background:var(--bg3);border-radius:12px;padding:.875rem;min-height:300px}
+.kanban-col-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;
+  margin-bottom:.875rem;display:flex;align-items:center;gap:6px}
+.kanban-col-count{background:var(--bg4);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:600;color:var(--t2)}
+.kanban-card{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:.875rem;margin-bottom:.625rem;cursor:pointer;transition:all .2s;
+  box-shadow:0 1px 4px rgba(40,120,232,.04)}
+.kanban-card:hover{border-color:var(--accent);box-shadow:0 3px 10px rgba(40,120,232,.1)}
+.kanban-card-title{font-size:13px;font-weight:600;margin-bottom:.375rem}
+.kanban-card-meta{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:6px}
+.kanban-add{width:100%;background:none;border:1.5px dashed var(--border);border-radius:8px;
+  padding:8px;color:var(--t3);font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
+.kanban-add:hover{border-color:var(--accent);color:var(--accent)}
+.ktag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
+.ktag-todo{background:rgba(143,163,190,.15);color:var(--t2)}
+.ktag-doing{background:rgba(40,120,232,.12);color:var(--accent)}
+.ktag-done{background:rgba(22,180,122,.12);color:var(--green)}
+
+/* ── CALC ── */
+.calc-page{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,.06)}
+.calc-tabs{display:flex;gap:4px;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.25rem}
+.calc-tab{flex:1;padding:7px;text-align:center;border:none;background:none;border-radius:7px;
+  font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
+.calc-tab.active{background:var(--card);color:var(--accent);border:1px solid var(--border)}
+.calc-section{display:none}
+.calc-section.active{display:block}
+.calc-group{background:var(--bg3);border-radius:10px;padding:1rem;margin-bottom:.875rem}
+.calc-label{font-size:11px;color:var(--t3);letter-spacing:.5px;margin-bottom:.375rem;font-weight:500}
+.calc-result{background:linear-gradient(135deg,rgba(40,120,232,.08),rgba(124,92,232,.06));
+  border:1px solid var(--border2);border-radius:10px;padding:1rem;text-align:center;margin-top:.875rem}
+.calc-result-val{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--accent)}
+.calc-result-unit{font-size:13px;color:var(--t2);margin-top:3px}
+
+/* ── WEATHER WIDGET ── */
+.weather-widget{background:linear-gradient(135deg,#e8f4ff,#f0f8ff);
+  border:1px solid rgba(40,120,232,.2);border-radius:var(--r);padding:1.25rem;
+  margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
+.weather-icon{font-size:42px}
+.weather-info{}
+.weather-temp{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--t1)}
+.weather-desc{font-size:13px;color:var(--t2);margin-top:2px}
+.weather-details{font-size:12px;color:var(--t3);margin-top:4px}
+
+/* ── WIKI ── */
+.wiki-list{display:flex;flex-direction:column;gap:.625rem}
+.wiki-item{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.25rem;cursor:pointer;transition:all .2s}
+.wiki-item:hover{border-color:var(--accent)}
+.wiki-item-title{font-weight:600;font-size:14px;margin-bottom:3px}
+.wiki-item-meta{font-size:11px;color:var(--t3)}
+.wiki-item-preview{font-size:13px;color:var(--t2);margin-top:.375rem;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wiki-editor{background:var(--bg3);border:1px solid var(--border);border-radius:12px;
+  padding:1.25rem;margin-bottom:1rem;display:none}
+.wiki-full{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem}
+.wiki-full-title{font-family:'Space Grotesk';font-size:20px;font-weight:800;margin-bottom:.5rem}
+.wiki-full-meta{font-size:12px;color:var(--t3);margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.wiki-full-body{font-size:14px;color:var(--t2);line-height:1.8;white-space:pre-wrap}
+
+@media(max-width:700px){
+  .kanban-board{grid-template-columns:1fr}
+  .calc-tabs{flex-wrap:wrap}
+}
+
+/* ── NEW CALENDAR ── */
+.cal-outer{max-width:1000px}
+.cal-header-bar{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem}
+.cal-header-left{display:flex;align-items:baseline;gap:.625rem}
+.cal-big-month{font-family:'Space Grotesk';font-size:28px;font-weight:700}
+.cal-big-year{font-size:16px;color:var(--t3);font-weight:500}
+.cal-header-right{display:flex;align-items:center;gap:6px}
+.cal-nav-btn{background:none;border:1px solid var(--border);border-radius:8px;
+  padding:7px 12px;cursor:pointer;font-size:14px;color:var(--t2);transition:all .2s;font-family:'Plus Jakarta Sans'}
+.cal-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Month strip */
+.month-strip{display:flex;gap:4px;overflow-x:auto;margin-bottom:1.25rem;padding-bottom:2px;
+  scrollbar-width:none}
+.month-strip::-webkit-scrollbar{display:none}
+.mstrip-btn{flex-shrink:0;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:3px;min-width:52px}
+.mstrip-btn:hover{border-color:var(--accent);background:rgba(40,120,232,.05)}
+.mstrip-btn.active{background:var(--accent);border-color:var(--accent)}
+.mstrip-btn.active .mstrip-name{color:#fff}
+.mstrip-name{font-size:11px;font-weight:600;color:var(--t2)}
+.mstrip-btn.active .mstrip-name{color:#fff}
+.mstrip-dots{display:flex;gap:3px}
+.mstrip-dot{width:4px;height:4px;border-radius:50%}
+
+/* Main layout */
+.cal-main-layout{display:grid;grid-template-columns:1fr 280px;gap:1.25rem;align-items:start}
+.big-cal-wrap{}
+
+/* Big calendar grid */
+.big-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.big-dh{text-align:center;font-size:11px;font-weight:600;color:var(--t3);
+  padding:.5rem 0;letter-spacing:.5px}
+.big-day{min-height:72px;border-radius:10px;padding:.5rem;cursor:pointer;
+  position:relative;transition:all .15s;border:1.5px solid transparent;background:var(--bg3)}
+.big-day:hover:not(.other){background:var(--bg4);border-color:var(--border)}
+.big-day.other{opacity:.35;cursor:default;background:transparent}
+.big-day.big-today{background:var(--accent);border-color:var(--accent)}
+.big-day.big-today .big-day-num{color:#fff;font-weight:800}
+.big-day.big-today .big-day-hol{color:rgba(255,255,255,.8)}
+.big-day.big-hol{background:rgba(212,146,10,.08);border-color:rgba(212,146,10,.2)}
+.big-day.big-myvac{background:rgba(40,120,232,.1);border-color:rgba(40,120,232,.25)}
+.big-day.big-sel{border-color:var(--accent);background:rgba(40,120,232,.06);box-shadow:0 0 0 3px rgba(40,120,232,.12)}
+.big-day-num{font-size:13px;font-weight:600;color:var(--t1);display:block}
+.big-day-hol{font-size:9px;color:var(--gold);display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.day-pips{display:flex;gap:2px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
+.day-pip{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Right column */
+.cal-right-col{display:flex;flex-direction:column;gap:.875rem}
+
+/* Detail panel */
+.cal-detail-panel{background:var(--card);border:1px solid var(--border2);border-radius:12px;
+  padding:1.125rem;box-shadow:0 4px 16px rgba(40,120,232,.08);animation:fdIn .15s ease}
+.cdp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
+.cdp-date{font-family:'Space Grotesk';font-size:17px;font-weight:700}
+.cdp-close{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
+  width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  transition:all .2s}
+.cdp-close:hover{background:var(--bg3);color:var(--red)}
+.cdp-holiday{background:rgba(212,146,10,.08);border:1px solid rgba(212,146,10,.2);
+  border-radius:8px;padding:7px 10px;font-size:12px;color:var(--gold);
+  font-weight:500;margin-bottom:.75rem}
+.cdp-section{font-size:10px;color:var(--t3);letter-spacing:1px;font-weight:600;
+  margin-bottom:.5rem}
+.cdp-vac-item{background:var(--bg3);border-radius:8px;padding:.625rem .875rem;margin-bottom:.5rem}
+.cdp-vac-range{font-size:13px;font-weight:500}
+.cdp-add-vac{border-top:1px solid var(--border);padding-top:.875rem;margin-top:.875rem}
+.cal-upcoming{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1rem}
+
+@media(max-width:800px){
+  .cal-main-layout{grid-template-columns:1fr}
+  .cal-right-col{display:none}
+  .big-day{min-height:52px}
+  .big-day-hol{display:none}
+}
+@media(max-width:480px){
+  .big-day{min-height:40px;padding:.375rem}
+  .big-day-num{font-size:11px}
+  .day-pips{display:none}
+}
+
+/* ════════════════════════════════
+   QUIZ — ВИКТОРИНА (Kahoot-style)
+════════════════════════════════ */
+.quiz-wrap{max-width:860px;margin:0 auto}
+
+/* ── Lobby ── */
+.quiz-lobby{background:#fff;border-radius:20px;padding:2.5rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.10);border:1px solid var(--border)}
+.quiz-logo{font-size:56px;margin-bottom:.75rem}
+.quiz-title{font-family:'Space Grotesk';font-size:26px;font-weight:800;margin-bottom:.375rem}
+.quiz-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
+.quiz-lobby-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.qbtn{padding:13px 32px;border-radius:14px;border:none;font-weight:700;font-size:15px;
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;letter-spacing:.3px}
+.qbtn-primary{background:linear-gradient(135deg,#2878e8,#1a65d4);color:#fff;
+  box-shadow:0 4px 14px rgba(40,120,232,.3)}
+.qbtn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(40,120,232,.4)}
+.qbtn-secondary{background:#f0f4fa;color:#0f1f35;border:1.5px solid #e0e8f5}
+.qbtn-secondary:hover{background:#e4ecf8;transform:translateY(-1px)}
+.qbtn:active{transform:translateY(0) !important}
+.qbtn:disabled{opacity:.45;cursor:not-allowed;transform:none !important}
+.quiz-join-row{display:flex;gap:.75rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.quiz-pin-input{text-align:center;font-size:22px;letter-spacing:6px;font-weight:700;
+  font-family:'Space Grotesk';width:180px;padding:12px 16px;border-radius:12px;
+  border:2px solid var(--border);background:#f5f7fb;text-transform:uppercase;outline:none}
+.quiz-pin-input:focus{border-color:var(--accent)}
+.quiz-pin-display{font-family:'Space Grotesk';font-size:52px;font-weight:800;
+  color:var(--accent);letter-spacing:10px;margin:1rem 0}
+.quiz-rules{background:#f5f7fb;border-radius:14px;padding:1.25rem 1.5rem;
+  text-align:left;margin-top:1.5rem;border:1px solid #e4ecf8}
+.quiz-rules-title{font-weight:700;font-size:14px;margin-bottom:.75rem}
+.quiz-rules li{font-size:13px;color:var(--t2);line-height:1.9;margin-left:1.25rem}
+
+/* ── Waiting room ── */
+.quiz-waiting{background:#fff;border-radius:20px;padding:2rem;
+  box-shadow:0 4px 24px rgba(40,120,232,.10);border:1px solid var(--border)}
+.quiz-waiting-header{text-align:center;margin-bottom:1.5rem}
+.quiz-waiting-pin{font-size:13px;color:var(--t2);margin-bottom:.375rem}
+.quiz-waiting-title{font-family:'Space Grotesk';font-size:18px;font-weight:700}
+.quiz-players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.625rem;margin-bottom:1.5rem}
+.quiz-player-chip{background:var(--bg3);border-radius:10px;padding:.625rem .875rem;
+  display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);
+  animation:chipIn .2s ease}
+@keyframes chipIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.quiz-player-chip.host{border-color:rgba(40,120,232,.4);background:rgba(40,120,232,.06)}
+.qpc-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qpc-badge{font-size:10px;color:var(--accent);font-weight:600}
+
+/* ── Question screen ── */
+.quiz-question-screen{display:flex;flex-direction:column;gap:1rem}
+.quiz-topbar{background:#fff;border-radius:16px;padding:1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;
+  box-shadow:0 2px 12px rgba(40,120,232,.08);border:1px solid var(--border)}
+.quiz-q-num{font-size:12px;color:var(--t2);font-weight:600;letter-spacing:.5px}
+.quiz-timer-wrap{display:flex;flex-direction:column;align-items:center;gap:4px}
+.quiz-timer{font-family:'Space Grotesk';font-size:28px;font-weight:800;
+  color:var(--accent);min-width:48px;text-align:center;line-height:1}
+.quiz-timer.urgent{color:#e03a3a;animation:pulse .5s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.quiz-timer-bar-wrap{width:200px;height:6px;background:#f0f4fa;border-radius:6px;overflow:hidden}
+.quiz-timer-bar{height:100%;border-radius:6px;
+  background:linear-gradient(90deg,#2878e8,#60c8ff);transition:width .9s linear}
+.quiz-timer-bar.urgent{background:linear-gradient(90deg,#e03a3a,#f87171)}
+.quiz-score-display{font-family:'Space Grotesk';font-size:18px;font-weight:700;color:var(--t1)}
+.quiz-score-label{font-size:11px;color:var(--t3);text-align:center}
+
+.quiz-card{background:#fff;border-radius:20px;padding:2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.08);border:1px solid var(--border)}
+.quiz-q-text{font-family:'Space Grotesk';font-size:20px;font-weight:700;
+  line-height:1.45;margin-bottom:.5rem;color:#0f1f35}
+.quiz-q-cat{font-size:11px;color:var(--t3);letter-spacing:.5px;font-weight:500;
+  margin-bottom:1rem;text-transform:uppercase}
+
+.quiz-answers{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.quiz-answer{border:none;border-radius:16px;padding:1.25rem 1.5rem;cursor:pointer;
+  font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans';
+  transition:all .2s;text-align:left;display:flex;align-items:center;gap:.875rem;
+  min-height:72px;line-height:1.35;position:relative;overflow:hidden}
+.quiz-answer:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.05)}
+.quiz-answer:active:not(:disabled){transform:translateY(0)}
+.quiz-answer:disabled{cursor:default}
+.qa-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.qa-text{flex:1;color:#fff}
+.qa-0{background:linear-gradient(135deg,#e03a3a,#c82020)}
+.qa-1{background:linear-gradient(135deg,#2878e8,#1a65d4)}
+.qa-2{background:linear-gradient(135deg,#d4920a,#b87b00)}
+.qa-3{background:linear-gradient(135deg,#16b47a,#0e9566)}
+.quiz-answer.selected{box-shadow:0 0 0 4px rgba(255,255,255,.6),0 4px 20px rgba(0,0,0,.2);
+  transform:scale(1.02)}
+.quiz-answer.correct{animation:correctFlash .4s ease}
+.quiz-answer.wrong{opacity:.55;filter:grayscale(.4)}
+.quiz-answer.show-correct{box-shadow:0 0 0 4px #fff,0 0 0 7px #16b47a}
+@keyframes correctFlash{0%,100%{transform:scale(1.02)}50%{transform:scale(1.06)}}
+
+/* ── Result overlay ── */
+.quiz-result-overlay{background:#fff;border-radius:20px;padding:1.5rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border);
+  animation:slideUp .3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.qro-emoji{font-size:48px;margin-bottom:.5rem}
+.qro-correct{font-family:'Space Grotesk';font-size:18px;font-weight:800;margin-bottom:.25rem}
+.qro-pts{font-size:14px;color:var(--accent);font-weight:700}
+.qro-explain{font-size:13px;color:var(--t2);margin-top:.5rem;line-height:1.6}
+
+/* ── Leaderboard ── */
+.quiz-leaderboard{background:#fff;border-radius:20px;padding:1.75rem;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.qlb-title{font-family:'Space Grotesk';font-size:18px;font-weight:800;
+  text-align:center;margin-bottom:1.25rem}
+.qlb-item{display:flex;align-items:center;gap:.875rem;padding:.75rem 1rem;
+  border-radius:12px;margin-bottom:.5rem;transition:all .2s;
+  background:var(--bg3);border:1.5px solid var(--border)}
+.qlb-item.top-1{background:linear-gradient(135deg,#fff8e1,#fff3c4);border-color:#f5c842}
+.qlb-item.top-2{background:linear-gradient(135deg,#f5f5f5,#ebebeb);border-color:#bbb}
+.qlb-item.top-3{background:linear-gradient(135deg,#fdf0e6,#fde4cc);border-color:#f59e42}
+.qlb-item.me{border-color:var(--accent) !important;background:rgba(40,120,232,.05) !important}
+.qlb-rank{font-family:'Space Grotesk';font-size:18px;font-weight:800;
+  width:32px;text-align:center;flex-shrink:0}
+.qlb-name{flex:1;font-weight:600;font-size:14px}
+.qlb-score{font-family:'Space Grotesk';font-size:16px;font-weight:800;color:var(--accent)}
+.qlb-streak{font-size:11px;color:var(--t3);margin-top:1px}
+
+/* ── Final screen ── */
+.quiz-final{background:#fff;border-radius:20px;padding:2.5rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.quiz-winner-trophy{font-size:72px;margin-bottom:1rem;
+  animation:trophyBounce .6s ease infinite alternate}
+@keyframes trophyBounce{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.quiz-winner-name{font-family:'Space Grotesk';font-size:26px;font-weight:800;margin-bottom:.25rem}
+.quiz-winner-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
+
+/* Waiting for answer (player view) */
+.quiz-waiting-answer{background:#fff;border-radius:20px;padding:3rem 2rem;text-align:center;
+  box-shadow:0 4px 24px rgba(40,120,232,.1);border:1px solid var(--border)}
+.qwa-icon{font-size:56px;margin-bottom:1rem;animation:spin 2s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+@media(max-width:600px){
+  .quiz-answers{grid-template-columns:1fr}
+  .quiz-answer{min-height:58px;padding:1rem 1.25rem}
+  .quiz-q-text{font-size:17px}
+  .quiz-timer-bar-wrap{width:120px}
+}
+
 </style>
 </head>
 <body>
@@ -604,6 +932,10 @@ let S={
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
   game:null, gameRoom:null,
+  quizRoom:null, quizRoomId:null, quizMyAnswer:null, quizShowResult:false,
+  calMonth:new Date().getMonth(),
+  polls:{}, kanban:{}, wiki:{}, weather:null,
+  wikiView:null, calcTab:'pressure', activeKanbanForm:null,
   activeDM:null, notifOpen:false,
   modal:null, // {type, data}
   viewProfileId:null,
@@ -685,6 +1017,11 @@ function startListeners(){
   fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
   fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
   fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
+  fbListen('quiz', v=>{ S.quizRoom=v||null; if(S.page==='quiz')rerender(); });
+  fbListen('polls', v=>{ S.polls=v||{}; if(S.page==='feed')rerender(); });
+  fbListen('kanban', v=>{ S.kanban=v||{}; if(S.page==='kanban')rerender(); });
+  fbListen('wiki', v=>{ S.wiki=v||{}; if(S.page==='wiki')rerender(); });
+  fbListen('weather_cache', v=>{ S.weather=v||null; });
 }
 
 /* ── RENDER ROOT ── */
@@ -768,6 +1105,10 @@ function renderShell(){
     {id:'files',ico:'📁',label:'Файлы'},
     {id:'messages',ico:'💬',label:'Сообщения'},
     {id:'game',ico:'🎯',label:'Игра'},
+    {id:'kanban',ico:'📋',label:'Задачи'},
+    {id:'wiki',ico:'📚',label:'База знаний'},
+    {id:'tools',ico:'🧮',label:'Инструменты'},
+    {id:'quiz',ico:'🧠',label:'Викторина'},
   ];
   const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
     if(!key.includes(S.user.id))return acc;
@@ -830,10 +1171,53 @@ function renderShell(){
   ${S.modal?renderModal():''}`;
 }
 
+function getBirthdays(){
+  const today=new Date();
+  const mm=String(today.getMonth()+1).padStart(2,'0');
+  const dd=String(today.getDate()).padStart(2,'0');
+  const todayMD=`${mm}-${dd}`;
+  const results={today:[],soon:[]};
+  membersArr().forEach(m=>{
+    if(!m.birthday)return;
+    const parts=m.birthday.split('-');
+    if(parts.length<3)return;
+    const mmd=`${parts[1]}-${parts[2]}`;
+    if(mmd===todayMD){results.today.push(m);return;}
+    // within next 7 days
+    const bday=new Date(today.getFullYear(),parseInt(parts[1])-1,parseInt(parts[2]));
+    if(bday<today)bday.setFullYear(today.getFullYear()+1);
+    const diff=Math.ceil((bday-today)/(1000*60*60*24));
+    if(diff<=7)results.soon.push({...m,daysLeft:diff});
+  });
+  return results;
+}
 function renderRightSidebar(){
   const members=membersArr().filter(m=>m.id!==S.user.id).slice(0,6);
   const myVacs=Object.values(S.vacations||{}).filter(v=>v.memberId===S.user.id);
+  const bdays=getBirthdays();
+  const bdayWidget=bdays.today.length?`
+    <div class="bday-widget">
+      ${bdays.today.map(m=>`
+        <div class="bday-today">
+          <div class="bday-emoji">🎂</div>
+          <div>
+            <div class="bday-name">${escH(m.name)}</div>
+            <div class="bday-sub">Сегодня день рождения! 🎉</div>
+          </div>
+        </div>`).join('')}
+      ${bdays.soon.length?`<div class="bday-upcoming">
+        ${bdays.soon.map(m=>`📅 ${escH(m.name.split(' ')[0])} — через ${m.daysLeft} дн.`).join('<br>')}
+      </div>`:''}
+    </div>`:
+    bdays.soon.length?`<div class="bday-widget" style="background:rgba(40,120,232,.04);border-color:rgba(40,120,232,.15)">
+      <div class="bday-sub" style="font-weight:600;color:var(--t1);margin-bottom:.375rem">Ближайшие дни рождения</div>
+      ${bdays.soon.map(m=>`<div class="bday-upcoming" style="border:none;padding:0;margin:0">
+        🎂 ${escH(m.name.split(' ')[0])} — через ${m.daysLeft} дн.
+      </div>`).join('')}
+    </div>`:'';
+
   return`
+  ${bdayWidget}
   <div class="widget">
     <div class="widget-title">КОЛЛЕГИ</div>
     ${members.length?members.map(m=>`
@@ -865,6 +1249,10 @@ function renderPage(){
   if(S.page==='files')    return renderFiles();
   if(S.page==='messages') return renderMessages();
   if(S.page==='game')     return renderGame();
+  if(S.page==='kanban')   return renderKanban();
+  if(S.page==='wiki')     return renderWiki();
+  if(S.page==='tools')    return renderTools();
+  if(S.page==='quiz')     return renderQuiz();
   return '';
 }
 
@@ -885,11 +1273,24 @@ function renderFeed(){
         <div class="composer-tools">
           <button class="ctool" title="Добавить фото" onclick="document.getElementById('post-img-inp').click()">🖼</button>
           <input type="file" id="post-img-inp" accept="image/*" style="display:none" onchange="previewPostImg(event)">
+          <button class="ctool" title="Создать опрос" onclick="togglePollForm()">📊</button>
         </div>
         <button class="post-btn" onclick="submitPost()">Опубликовать</button>
       </div>
+      <!-- Poll form -->
+      <div id="poll-form" style="display:none;margin-top:.75rem;border-top:1px solid var(--border);padding-top:.875rem">
+        <div class="fg" style="margin-bottom:.625rem"><label>ВОПРОС ОПРОСА</label>
+          <input type="text" id="poll-q" placeholder="Задайте вопрос команде..."></div>
+        <div id="poll-opts-wrap">
+          <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 1"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
+          <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 2"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
+        </div>
+        <button onclick="addPollOpt()" style="background:none;border:1.5px dashed var(--border);border-radius:7px;padding:5px 12px;font-size:12px;color:var(--t3);cursor:pointer;margin-bottom:.625rem;font-family:'Plus Jakarta Sans'">+ Добавить вариант</button>
+        <div><button class="post-btn" style="width:auto;padding:8px 20px" onclick="submitPoll()">Опубликовать опрос</button></div>
+      </div>
     </div>
     <!-- Posts -->
+    ${renderActivePolls()}
     ${posts.length?posts.map(p=>renderPost(p)).join(''):`
       <div class="empty-state">
         <div class="empty-state-ico">✍️</div>
@@ -1012,7 +1413,7 @@ function renderProfile(uid){
 function renderTeam(){
   const members=membersArr();
   return`<div class="page-wrap">
-    <div style="font-family:'Syne';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
+    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
     ${members.length===0?`<div class="empty-state"><div class="empty-state-ico">👥</div>Коллеги появятся после регистрации</div>`:
     `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem">
       ${members.map(m=>`
@@ -1036,8 +1437,10 @@ function renderTeam(){
 /* ── CALENDAR ── */
 function renderCalendar(){
   const y=S.calYear;
-  const todayStr=new Date().toISOString().split('T')[0];
-  // build vac date map
+  const today=new Date();
+  const todayStr=today.toISOString().split('T')[0];
+
+  // Build vac map
   const vacD={};
   Object.entries(S.vacations||{}).forEach(([k,v])=>{
     let d=new Date(v.from);const e=new Date(v.to);
@@ -1049,157 +1452,351 @@ function renderCalendar(){
     }
   });
 
-  const months=Array.from({length:12},(_,m)=>{
-    const fd=new Date(y,m,1).getDay(),off=fd===0?6:fd-1,dim=new Date(y,m+1,0).getDate();
-    let cells='';
-    for(let i=0;i<off;i++)cells+=`<div class="mm-day empty"></div>`;
-    for(let d=1;d<=dim;d++){
-      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const isT=ds===todayStr,isH=!!HOLIDAYS[ds];
-      const dayVacs=vacD[ds]||[];
-      const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
-      const isTeamVac=dayVacs.some(v=>v.memberId!==S.user.id);
-      const isSel=S.selectedDay===ds;
-      let cls='mm-day';
-      if(isSel)cls+=' selected';else if(isT)cls+=' today';
-      if(isH&&!isSel)cls+=' hol';
-      if(isMyVac&&!isSel)cls+=' myvac';
-      else if(isTeamVac&&!isSel)cls+=' teamvac';
-      cells+=`<div class="${cls}" onclick="selectDay('${ds}')">${d}${isTeamVac&&!isMyVac&&!isSel?'<div class="md"></div>':''}</div>`;
-    }
-    return`<div class="mini-month">
-      <div class="mm-title">${MN_S[m]}</div>
-      <div class="mm-grid">
-        ${['П','В','С','Ч','П','С','В'].map(d=>`<div class="mm-dh">${d}</div>`).join('')}
-        ${cells}
-      </div>
-    </div>`;
-  }).join('');
+  // ── Current month big calendar ──
+  const curM=S.calMonth!==undefined?S.calMonth:today.getMonth();
+  const curY=S.calYear||today.getFullYear();
+  const fd=new Date(curY,curM,1).getDay();
+  const off=fd===0?6:fd-1;
+  const dim=new Date(curY,curM+1,0).getDate();
+  const prevDim=new Date(curY,curM,0).getDate();
 
-  // day detail
+  // Get all events for current month
+  const monthHols=Object.entries(HOLIDAYS)
+    .filter(([k])=>k.startsWith(`${curY}-${String(curM+1).padStart(2,'0')}`));
+  const monthVacs=Object.entries(S.vacations||{})
+    .filter(([,v])=>v.from.substring(0,7)===`${curY}-${String(curM+1).padStart(2,'0')}`)
+    .map(([k,v])=>({...v,_key:k}));
+  const myVacsAll=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
+
+  // ── Big month grid ──
+  let cells='';
+  // Prev month grey days
+  for(let i=0;i<off;i++){
+    cells+=`<div class="big-day other">${prevDim-off+1+i}</div>`;
+  }
+  for(let d=1;d<=dim;d++){
+    const ds=`${curY}-${String(curM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isT=ds===todayStr;
+    const isH=!!HOLIDAYS[ds];
+    const dayVacs=vacD[ds]||[];
+    const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
+    const teamVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
+    const isSel=S.selectedDay===ds;
+    let cls='big-day';
+    if(isSel) cls+=' big-sel';
+    else if(isT) cls+=' big-today';
+    if(isH) cls+=' big-hol';
+    if(isMyVac) cls+=' big-myvac';
+
+    const dots=teamVacs.slice(0,3).map(v=>{
+      const mem=S.members[v.memberId];
+      return`<span class="day-pip" style="background:${mem?mem.color||'#2878e8':'#2878e8'}"></span>`;
+    }).join('');
+
+    cells+=`<div class="${cls}" onclick="selectDay('${ds}')">
+      <span class="big-day-num">${d}</span>
+      ${isH?`<span class="big-day-hol">${HOLIDAYS[ds].split(' ')[0]}</span>`:''}
+      ${dots?`<div class="day-pips">${dots}</div>`:''}
+    </div>`;
+  }
+  // Next month fill
+  const total=off+dim;
+  const rem=(7-total%7)%7;
+  for(let i=1;i<=rem;i++) cells+=`<div class="big-day other">${i}</div>`;
+
+  // ── Selected day detail ──
   let detail='';
   if(S.selectedDay){
     const ds=S.selectedDay;
-    const [dy,dm,dd]=ds.split('-');
+    const [dy,dm2,dd]=ds.split('-');
     const hol=HOLIDAYS[ds];
     const dayVacs=vacD[ds]||[];
-    const myDayVacs=dayVacs.filter(v=>v.memberId===S.user.id);
-    const teamDayVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
-    const isFuture=ds>=todayStr;
+    const myDV=dayVacs.filter(v=>v.memberId===S.user.id);
+    const teamDV=[...new Map(dayVacs.filter(v=>v.memberId!==S.user.id).map(v=>[v._key,v])).values()];
+    const isFut=ds>=todayStr;
 
-    detail=`<div class="day-detail">
-      <div class="dd-head">
-        <div class="dd-date">${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</div>
-        <button class="btnx" onclick="S.selectedDay=null;rerender()">✕</button>
+    detail=`<div class="cal-detail-panel">
+      <div class="cdp-head">
+        <div class="cdp-date">${parseInt(dd)} ${MN_FULL[parseInt(dm2)-1]}</div>
+        <button onclick="S.selectedDay=null;rerender()" class="cdp-close">✕</button>
       </div>
-      ${hol?`<div style="margin-bottom:.75rem"><span style="background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gold)">🎉 ${hol}</span></div>`:''}
-
-      ${myDayVacs.length?`
-        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">МОИ ОТПУСКА В ЭТОТ ДЕНЬ</div>
-        ${[...new Map(myDayVacs.map(v=>[v._key,v])).values()].map(v=>`
-          <div class="vac-item">
-            <div class="vac-item-info">
-              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
-              <div class="vac-item-who">Мой отпуск</div>
-            </div>
-            <div class="vac-actions">
-              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">✏ Изменить</button>
-              <button class="vac-btn del" onclick="delVac('${v._key}')">✕ Отменить</button>
+      ${hol?`<div class="cdp-holiday">🎉 ${escH(hol)}</div>`:''}
+      ${myDV.length?`
+        <div class="cdp-section">МОЙ ОТПУСК</div>
+        ${[...new Map(myDV.map(v=>[v._key,v])).values()].map(v=>`
+          <div class="cdp-vac-item">
+            <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
+            <div style="display:flex;gap:4px;margin-top:4px">
+              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">Изменить</button>
+              <button class="vac-btn del" onclick="delVac('${v._key}')">Отменить</button>
             </div>
           </div>`).join('')}
       `:''}
-
-      ${teamDayVacs.length?`
-        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin:${myDayVacs.length?'.75rem':0} 0 .5rem">КОЛЛЕГИ В ОТПУСКЕ</div>
-        ${[...new Map(teamDayVacs.map(v=>[v._key,v])).values()].map(v=>{
-          const mem=S.members[v.memberId]||{name:'?',color:COLORS[0]};
-          return`<div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem;font-size:13px">
-            ${avImg(mem.avatar,mem.name,24,mem.color||COLORS[0])}
-            <span>${escH(mem.name)}</span>
-            <span style="color:var(--t3);font-size:11px">${v.from} — ${v.to}</span>
+      ${teamDV.length?`
+        <div class="cdp-section" style="margin-top:${myDV.length?'.75rem':'0'}">КОЛЛЕГИ В ОТПУСКЕ</div>
+        ${teamDV.map(v=>{
+          const mem=S.members[v.memberId]||{name:'?'};
+          return`<div style="display:flex;align-items:center;gap:8px;padding:.375rem 0">
+            ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
+            <div>
+              <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
+              <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
+            </div>
           </div>`;
         }).join('')}
       `:''}
-
-      ${!myDayVacs.length&&!teamDayVacs.length&&!hol?`<div style="font-size:13px;color:var(--t3)">Нет событий</div>`:''}
-
-      ${isFuture?`
-        <div style="border-top:1px solid var(--border);padding-top:.875rem;margin-top:${(myDayVacs.length||teamDayVacs.length||hol)?'.875rem':'0'}">
-          <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">ДОБАВИТЬ ОТПУСК</div>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2)">
-              С <input type="date" id="vfrom" value="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
-              по <input type="date" id="vto" value="${ds}" min="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
-            </div>
-            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter">+ Добавить</button>
+      ${!myDV.length&&!teamDV.length&&!hol?`<div style="font-size:13px;color:var(--t3);padding:.5rem 0">Нет событий</div>`:''}
+      ${isFut?`
+        <div class="cdp-add-vac">
+          <div class="cdp-section">ДОБАВИТЬ ОТПУСК</div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <input type="date" id="vfrom" value="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
+            <span style="font-size:12px;color:var(--t2)">—</span>
+            <input type="date" id="vto" value="${ds}" min="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
+            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">+ Добавить</button>
           </div>
         </div>`:''}
     </div>`;
   }
 
-  // My upcoming vacs
-  const myVacs=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
+  // ── Mini year strip ──
+  const miniStrip=Array.from({length:12},(_,m)=>{
+    const isActive=m===curM;
+    const hasHol=Object.keys(HOLIDAYS).some(k=>k.startsWith(`${curY}-${String(m+1).padStart(2,'0')}`));
+    const hasVac=Object.values(S.vacations||{}).some(v=>v.from.substring(0,7)===`${curY}-${String(m+1).padStart(2,'0')}`);
+    return`<button class="mstrip-btn ${isActive?'active':''}" onclick="S.calMonth=${m};S.selectedDay=null;rerender()">
+      <span class="mstrip-name">${MN_S[m]}</span>
+      <div class="mstrip-dots">
+        ${hasHol?'<span class="mstrip-dot" style="background:var(--gold)"></span>':''}
+        ${hasVac?'<span class="mstrip-dot" style="background:var(--green)"></span>':''}
+      </div>
+    </button>`;
+  }).join('');
 
-  return`<div class="cal-page">
-    <div class="cal-year-nav">
-      <button class="cnbtn" onclick="S.calYear--;rerender()">← ${y-1}</button>
-      <div class="cal-year-val">${y}</div>
-      <button class="cnbtn" onclick="S.calYear++;rerender()">${y+1} →</button>
+  return`<div class="cal-outer">
+    <!-- Header -->
+    <div class="cal-header-bar">
+      <div class="cal-header-left">
+        <div class="cal-big-month">${MN_FULL[curM]}</div>
+        <div class="cal-big-year">${curY}</div>
+      </div>
+      <div class="cal-header-right">
+        <button class="cal-nav-btn" onclick="prevMonth()">←</button>
+        <button class="cal-nav-btn" onclick="goToday()" style="padding:6px 14px;border-radius:8px;font-size:12px">Сегодня</button>
+        <button class="cal-nav-btn" onclick="nextMonth()">→</button>
+      </div>
     </div>
-    ${detail}
-    <div class="year-grid">${months}</div>
-    <div class="cal-legend">
-      <div class="li"><div class="ld" style="background:rgba(61,142,240,.4)"></div>Сегодня</div>
-      <div class="li"><div class="ld" style="background:rgba(61,142,240,.55)"></div>Мой отпуск</div>
-      <div class="li"><div class="ld" style="background:rgba(47,217,154,.3)"></div>Отпуск коллеги</div>
-      <div class="li"><div class="ld" style="background:rgba(245,200,66,.35)"></div>Праздник РК</div>
+
+    <!-- Month strip -->
+    <div class="month-strip">${miniStrip}</div>
+
+    <!-- Main grid + detail panel -->
+    <div class="cal-main-layout">
+      <div class="big-cal-wrap">
+        <!-- Day headers -->
+        <div class="big-cal-grid">
+          ${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(d=>`<div class="big-dh">${d}</div>`).join('')}
+          ${cells}
+        </div>
+        <!-- Legend -->
+        <div class="cal-legend" style="margin-top:.75rem">
+          <div class="li"><div class="ld" style="background:var(--accent);border-radius:50%"></div>Сегодня</div>
+          <div class="li"><div class="ld" style="background:rgba(40,120,232,.3)"></div>Мой отпуск</div>
+          <div class="li"><div class="ld" style="background:rgba(212,146,10,.35)"></div>Праздник РК</div>
+          <div class="li"><span style="font-size:10px">●</span> Отпуск коллеги</div>
+        </div>
+      </div>
+
+      <!-- Right panel: detail + upcoming -->
+      <div class="cal-right-col">
+        ${detail}
+        <!-- Upcoming vacations -->
+        ${myVacsAll.length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">МОИ ОТПУСКА</div>
+            ${myVacsAll.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
+              <div class="cdp-vac-item">
+                <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
+                <div style="display:flex;gap:4px;margin-top:4px">
+                  <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">Изменить</button>
+                  <button class="vac-btn del" onclick="delVac('${k}')">Отменить</button>
+                </div>
+              </div>`).join('')}
+          </div>`:''}
+        <!-- Upcoming holidays -->
+        ${monthHols.length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">ПРАЗДНИКИ МЕСЯЦА</div>
+            ${monthHols.map(([k,n])=>`
+              <div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
+                <span style="font-size:18px">🎉</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">${escH(n)}</div>
+                  <div style="font-size:11px;color:var(--t3)">${k}</div>
+                </div>
+              </div>`).join('')}
+          </div>`:''}
+        <!-- Team on vacation this month -->
+        ${monthVacs.filter(v=>v.memberId!==S.user.id).length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">ОТПУСКА КОЛЛЕГ</div>
+            ${monthVacs.filter(v=>v.memberId!==S.user.id).map(v=>{
+              const mem=S.members[v.memberId]||{name:'?'};
+              return`<div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
+                ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
+                <div>
+                  <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
+                  <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>`:''}
+      </div>
     </div>
-    ${myVacs.length?`
-      <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.25rem">
-        <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.75rem">МОИ ОТПУСКА</div>
-        ${myVacs.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
-          <div class="vac-item">
-            <div class="vac-item-info">
-              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
-            </div>
-            <div class="vac-actions">
-              <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">✏ Изменить</button>
-              <button class="vac-btn del" onclick="delVac('${k}')">✕ Отменить</button>
-            </div>
-          </div>`).join('')}
-      </div>`:''}
   </div>`;
 }
 
+window.prevMonth=()=>{
+  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
+  const y=S.calYear||new Date().getFullYear();
+  if(m===0){S.calMonth=11;S.calYear=y-1;}else{S.calMonth=m-1;}
+  S.selectedDay=null;rerender();
+};
+window.nextMonth=()=>{
+  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
+  const y=S.calYear||new Date().getFullYear();
+  if(m===11){S.calMonth=0;S.calYear=y+1;}else{S.calMonth=m+1;}
+  S.selectedDay=null;rerender();
+};
+window.goToday=()=>{
+  const t=new Date();S.calMonth=t.getMonth();S.calYear=t.getFullYear();S.selectedDay=null;rerender();
+};
+
 /* ── FILES ── */
+function gdriveDirect(url){
+  // Convert Google Drive share link to direct download link
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/uc?export=download&id=${m[1]}`;
+  return url;
+}
+function gdrivePreview(url){
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/file/d/${m[1]}/preview`;
+  return url;
+}
+function gdriveViewUrl(url){
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/file/d/${m[1]}/view`;
+  return url;
+}
+function fileIcon(name){
+  const ext=(name||'').split('.').pop().toLowerCase();
+  const map={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',
+    pptx:'📊',ppt:'📊',dat:'💾',txt:'📋',csv:'📊',
+    png:'🖼',jpg:'🖼',jpeg:'🖼',gif:'🖼',mp4:'🎬',
+    avi:'🎬',mov:'🎬',zip:'📦',rar:'📦',mp3:'🎵'};
+  return map[ext]||'📎';
+}
+
 function renderFiles(){
-  const ICONS={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',pptx:'📊',dat:'💾',txt:'📋',csv:'📊',png:'🖼',jpg:'🖼',jpeg:'🖼',zip:'📦',rar:'📦'};
-  const allF=Object.entries(S.files||{});
+  const allF=Object.entries(S.files||{}).sort((a,b)=>(b[1].ts||0)-(a[1].ts||0));
   const myF=allF.filter(([,f])=>f.memberId===S.user.id);
   const tmF=allF.filter(([,f])=>f.memberId!==S.user.id);
+
   const fi=([id,f],canDel)=>{
-    const ext=(f.name.split('.').pop()||'').toLowerCase();
     const mem=S.members[f.memberId]||{name:''};
-    return`<div class="fitem">
-      <div class="fico">${ICONS[ext]||'📎'}</div>
-      <div class="fi"><div class="fn">${escH(f.name)}</div>
-        <div class="fm">${escH(mem.name)} · ${f.date} · ${f.size}</div></div>
-      ${canDel?`<button class="fdel" onclick="delF('${id}')">🗑</button>`:''}
+    const hasLink=!!f.driveUrl;
+    return`<div class="fitem" style="flex-direction:column;align-items:stretch;gap:.5rem;padding:1rem">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="fico">${fileIcon(f.name)}</div>
+        <div class="fi">
+          <div class="fn">${escH(f.name)}</div>
+          <div class="fm">${escH(mem.name)} · ${f.date}${f.size?' · '+f.size:''}</div>
+        </div>
+        ${canDel?`<button class="fdel" onclick="delF('${id}')" title="Удалить">🗑</button>`:''}
+      </div>
+      ${f.desc?`<div style="font-size:12px;color:var(--t2);padding:0 2px">${escH(f.desc)}</div>`:''}
+      ${hasLink?`
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <a href="${escA(gdriveViewUrl(f.driveUrl))}" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
+              border-radius:8px;background:rgba(40,120,232,.1);color:var(--accent);
+              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(40,120,232,.2);
+              transition:all .2s" onmouseover="this.style.background='rgba(40,120,232,.18)'"
+              onmouseout="this.style.background='rgba(40,120,232,.1)'">
+            👁 Открыть
+          </a>
+          <a href="${escA(gdriveDirect(f.driveUrl))}" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
+              border-radius:8px;background:rgba(22,180,122,.1);color:var(--green);
+              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(22,180,122,.2);
+              transition:all .2s" onmouseover="this.style.background='rgba(22,180,122,.18)'"
+              onmouseout="this.style.background='rgba(22,180,122,.1)'">
+            ⬇ Скачать
+          </a>
+        </div>`
+      :`<div style="font-size:11px;color:var(--t3);font-style:italic">Ссылка не добавлена</div>`}
     </div>`;
   };
+
   return`<div class="files-page">
-    <div style="font-family:'Syne';font-size:16px;font-weight:700;margin-bottom:1rem">Файлы отдела</div>
-    <div class="upzone" onclick="document.getElementById('fi').click()">
-      <div class="upico">📁</div>
-      <div class="upt">Перетащите или <span>выберите файл</span></div>
-      <div style="font-size:11px;color:var(--t3);margin-top:3px">PDF, XLSX, DOCX, DAT, CSV и другие</div>
-      <input type="file" id="fi" style="display:none" onchange="upF(event)" multiple>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+      <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">Файлы отдела</div>
+      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showAddFileForm()">+ Добавить файл</button>
     </div>
-    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">МОИ ФАЙЛЫ (${myF.length})</div>
-    ${myF.length?`<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`:'<div style="font-size:13px;color:var(--t3);margin-bottom:1rem">Вы ещё не загружали файлы</div>'}
-    ${tmF.length?`<div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
-      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">ФАЙЛЫ КОМАНДЫ (${tmF.length})</div>
-      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`:''}
+
+    <!-- Add file form -->
+    <div id="add-file-form" style="display:none;background:var(--bg3);border:1px solid var(--border);
+      border-radius:12px;padding:1.25rem;margin-bottom:1rem">
+      <div style="font-weight:600;font-size:14px;margin-bottom:.875rem">📎 Добавить файл через Google Drive</div>
+      <div class="fg"><label>НАЗВАНИЕ ФАЙЛА</label>
+        <input type="text" id="f-name" placeholder="Отчёт Q1 2026.pdf"></div>
+      <div class="fg"><label>ССЫЛКА GOOGLE DRIVE</label>
+        <input type="url" id="f-url" placeholder="https://drive.google.com/file/d/..."></div>
+      <div class="fg"><label>ОПИСАНИЕ (необязательно)</label>
+        <input type="text" id="f-desc" placeholder="Краткое описание файла..."></div>
+      <div style="background:rgba(40,120,232,.06);border:1px solid var(--border);border-radius:8px;
+        padding:.875rem;margin-bottom:.875rem;font-size:12px;color:var(--t2);line-height:1.7">
+        <strong style="color:var(--t1)">Как получить ссылку из Google Drive:</strong><br>
+        1. Откройте файл на Google Drive<br>
+        2. Нажмите правой кнопкой → «Поделиться»<br>
+        3. Доступ → «Все, у кого есть ссылка»<br>
+        4. Нажмите «Копировать ссылку» и вставьте сюда
+      </div>
+      <div style="display:flex;gap:.625rem">
+        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="addDriveFile()">Сохранить</button>
+        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="hideAddFileForm()">Отмена</button>
+      </div>
+    </div>
+
+    <!-- My files -->
+    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
+      МОИ ФАЙЛЫ (${myF.length})
+    </div>
+    ${myF.length
+      ? `<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`
+      : `<div style="font-size:13px;color:var(--t3);margin-bottom:1rem;padding:.5rem 0">
+          Вы ещё не добавляли файлы
+        </div>`}
+
+    <!-- Team files -->
+    ${tmF.length?`
+      <div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
+        ФАЙЛЫ КОМАНДЫ (${tmF.length})
+      </div>
+      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`
+    :''}
+
+    ${!myF.length&&!tmF.length?`
+      <div style="text-align:center;padding:2rem 0;color:var(--t3)">
+        <div style="font-size:36px;margin-bottom:.5rem">📂</div>
+        <div style="font-size:14px">Файлы появятся здесь</div>
+        <div style="font-size:12px;margin-top:.375rem">Нажмите «+ Добавить файл» чтобы поделиться документом</div>
+      </div>`:''}
   </div>`;
 }
 
@@ -1535,14 +2132,33 @@ window.sendDM = async peerId=>{
   setTimeout(()=>{scrollEl('dm-msgs');document.getElementById('dminp')?.focus();},50);
 };
 
-window.upF = async e=>{
-  const files=e.target.files;if(!files.length)return;
-  for(const f of Array.from(files)){
-    await fbPush('files',{name:f.name,memberId:S.user.id,
-      date:new Date().toLocaleDateString('ru'),
-      size:f.size>1048576?(f.size/1048576).toFixed(1)+' МБ':Math.round(f.size/1024)+' КБ',ts:Date.now()});
-  }
-  showToast(`Загружено: ${files.length} файл(ов)`);
+window.showAddFileForm = ()=>{
+  const f=document.getElementById('add-file-form');
+  if(f)f.style.display='block';
+  setTimeout(()=>document.getElementById('f-name')?.focus(),50);
+};
+window.hideAddFileForm = ()=>{
+  const f=document.getElementById('add-file-form');
+  if(f)f.style.display='none';
+};
+
+window.addDriveFile = async()=>{
+  const name=(document.getElementById('f-name')?.value||'').trim();
+  const url=(document.getElementById('f-url')?.value||'').trim();
+  const desc=(document.getElementById('f-desc')?.value||'').trim();
+  if(!name){showToast('Введите название файла',true);return;}
+  if(!url){showToast('Вставьте ссылку Google Drive',true);return;}
+  if(!url.includes('drive.google.com')){showToast('Ссылка должна быть с Google Drive',true);return;}
+  await fbPush('files',{
+    name, driveUrl:url, desc,
+    memberId:S.user.id,
+    date:new Date().toLocaleDateString('ru'),
+    ts:Date.now()
+  });
+  // Clear form
+  ['f-name','f-url','f-desc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  window.hideAddFileForm();
+  showToast('Файл добавлен!');
 };
 
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
@@ -1569,7 +2185,9 @@ function renderBottomNav(){
     {id:'team',ico:'👥',label:'Команда'},
     {id:'calendar',ico:'📅',label:'Календарь'},
     {id:'messages',ico:'💬',label:'Чат',badge:dmUnread},
+    {id:'kanban',ico:'📋',label:'Задачи'},
     {id:'game',ico:'🎯',label:'Игра'},
+    {id:'quiz',ico:'🧠',label:'Викторина'},
     {id:'profile',ico:'👤',label:'Профиль'},
   ];
   bn.innerHTML=items.map(it=>`
@@ -2011,6 +2629,1590 @@ window.leaveRoom = async()=>{
   if(g.redCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/redCaptain`,null);
   if(g.blueCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/blueCaptain`,null);
   S.gameRoom=null; S.game=null;
+  rerender();
+};
+
+
+/* ══════════════════════════════════
+   POLLS
+══════════════════════════════════ */
+function renderActivePolls(){
+  const polls=Object.entries(S.polls||{}).sort((a,b)=>(b[1].ts||0)-(a[1].ts||0)).slice(0,3);
+  if(!polls.length)return'';
+  return polls.map(([id,p])=>{
+    const total=Object.values(p.votes||{}).reduce((s,v)=>s+(v||0),0)||1;
+    const myVote=p.userVotes&&p.userVotes[S.user.id];
+    const isAuthor=p.authorId===S.user.id;
+    return`<div class="poll-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem">
+        <div>
+          <div style="font-size:11px;color:var(--t3);margin-bottom:3px">📊 ОПРОС</div>
+          <div class="poll-q">${escH(p.question)}</div>
+        </div>
+        ${isAuthor?`<button class="fdel" onclick="delPoll('${id}')" title="Удалить">🗑</button>`:''}
+      </div>
+      ${(p.options||[]).map((opt,i)=>{
+        const cnt=p.votes&&p.votes[i]?p.votes[i]:0;
+        const pct=Math.round(cnt/total*100);
+        const voted=myVote===String(i);
+        return`<div class="poll-option ${voted?'voted':''}" onclick="votePoll('${id}',${i})">
+          <div class="poll-bar" style="width:${myVote!==undefined?pct:0}%"></div>
+          <span class="poll-option-text">${voted?'✓ ':''}${escH(opt)}</span>
+          ${myVote!==undefined?`<span class="poll-pct">${pct}%</span>`:''}
+        </div>`;
+      }).join('')}
+      <div class="poll-meta">
+        ${Object.values(p.userVotes||{}).length} голосов · ${p.authorName||''}
+        ${myVote===undefined?'<span style="color:var(--accent);margin-left:4px">· Нажмите чтобы проголосовать</span>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window.togglePollForm=()=>{
+  const f=document.getElementById('poll-form');
+  if(f)f.style.display=f.style.display==='none'?'block':'none';
+};
+window.addPollOpt=()=>{
+  const wrap=document.getElementById('poll-opts-wrap');if(!wrap)return;
+  const n=document.createElement('div');n.className='poll-option-input';
+  n.innerHTML=`<input type="text" class="poll-opt-inp" placeholder="Вариант ${wrap.children.length+1}"><button class="remove-opt" onclick="removePollOpt(this)">✕</button>`;
+  wrap.appendChild(n);
+};
+window.removePollOpt=btn=>{
+  const row=btn.parentElement;
+  if(document.querySelectorAll('.poll-opt-inp').length>2)row.remove();
+};
+window.submitPoll=async()=>{
+  const q=(document.getElementById('poll-q')?.value||'').trim();
+  const opts=[...document.querySelectorAll('.poll-opt-inp')].map(i=>i.value.trim()).filter(Boolean);
+  if(!q||opts.length<2){showToast('Вопрос и минимум 2 варианта',true);return;}
+  const me=S.members[S.user.id]||S.user;
+  await fbPush('polls',{question:q,options:opts,votes:{},userVotes:{},
+    authorId:S.user.id,authorName:me.name,ts:Date.now()});
+  document.getElementById('poll-q').value='';
+  document.querySelectorAll('.poll-opt-inp').forEach((el,i)=>{el.value='';});
+  window.togglePollForm();
+  showToast('Опрос создан!');
+};
+window.votePoll=async(pollId,optIdx)=>{
+  const p=S.polls[pollId];if(!p)return;
+  if(p.userVotes&&p.userVotes[S.user.id]!==undefined)return;
+  const cur=p.votes&&p.votes[optIdx]?p.votes[optIdx]:0;
+  await fbUpd(`polls/${pollId}`,{
+    [`votes/${optIdx}`]:cur+1,
+    [`userVotes/${S.user.id}`]:String(optIdx)
+  });
+};
+window.delPoll=async id=>{if(confirm('Удалить опрос?'))await fbDel(`polls/${id}`);};
+
+/* ══════════════════════════════════
+   KANBAN
+══════════════════════════════════ */
+function renderKanban(){
+  const cols=[
+    {id:'todo',label:'📋 Нужно сделать',cls:'ktag-todo'},
+    {id:'doing',label:'⚡ В процессе',cls:'ktag-doing'},
+    {id:'done',label:'✅ Готово',cls:'ktag-done'},
+  ];
+  const cards=Object.entries(S.kanban||{}).map(([k,v])=>({...v,_key:k}));
+  return`<div class="page-wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📋 Доска задач</div>
+      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showKanbanForm('todo')">+ Новая задача</button>
+    </div>
+    ${S.activeKanbanForm?`
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem">
+      <div style="font-weight:600;margin-bottom:.875rem">Новая задача</div>
+      <div class="fg"><label>НАЗВАНИЕ</label><input type="text" id="k-title" placeholder="Что нужно сделать?"></div>
+      <div class="fg"><label>ОПИСАНИЕ</label><textarea id="k-desc" rows="2" placeholder="Детали..."></textarea></div>
+      <div class="row2">
+        <div class="fg"><label>КОЛОНКА</label>
+          <select id="k-col">
+            <option value="todo">Нужно сделать</option>
+            <option value="doing">В процессе</option>
+            <option value="done">Готово</option>
+          </select>
+        </div>
+        <div class="fg"><label>ИСПОЛНИТЕЛЬ</label>
+          <select id="k-assignee">
+            <option value="">Не назначен</option>
+            ${membersArr().map(m=>`<option value="${m.id}">${escH(m.name)}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:.625rem">
+        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="addKanbanCard()">Создать</button>
+        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="S.activeKanbanForm=null;rerender()">Отмена</button>
+      </div>
+    </div>`:''}
+    <div class="kanban-board">
+      ${cols.map(col=>{
+        const colCards=cards.filter(c=>c.col===col.id).sort((a,b)=>(b.ts||0)-(a.ts||0));
+        return`<div class="kanban-col">
+          <div class="kanban-col-title">
+            ${col.label}
+            <span class="kanban-col-count">${colCards.length}</span>
+          </div>
+          ${colCards.map(c=>{
+            const assignee=c.assigneeId?S.members[c.assigneeId]:null;
+            const isOwner=c.creatorId===S.user.id;
+            return`<div class="kanban-card">
+              <div class="kanban-card-title">${escH(c.title)}</div>
+              ${c.desc?`<div style="font-size:12px;color:var(--t2);margin-bottom:.375rem">${escH(c.desc)}</div>`:''}
+              <div class="kanban-card-meta">
+                ${assignee?avImg(assignee.avatar,assignee.name,18,assignee.color||COLORS[0]):''}
+                ${assignee?`<span>${escH(assignee.name.split(' ')[0])}</span>`:'<span style="color:var(--t3)">Не назначен</span>'}
+                ${isOwner?`
+                  <span style="margin-left:auto;display:flex;gap:4px">
+                    ${col.id!=='todo'?`<button onclick="moveCard('${c._key}','todo')" class="kanban-add" style="width:auto;padding:2px 6px;font-size:10px;border-radius:4px">◀</button>`:''}
+                    ${col.id!=='done'?`<button onclick="moveCard('${c._key}',${col.id==='todo'?'"doing"':'"done"'})" class="kanban-add" style="width:auto;padding:2px 6px;font-size:10px;border-radius:4px">▶</button>`:''}
+                    <button onclick="delCard('${c._key}')" class="fdel" style="font-size:11px;padding:2px 5px">🗑</button>
+                  </span>`:''}
+              </div>
+            </div>`;
+          }).join('')}
+          <button class="kanban-add" onclick="S.activeKanbanForm='${col.id}';document.getElementById('k-col')&&(document.getElementById('k-col').value='${col.id}');rerender()">+ Добавить</button>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+window.showKanbanForm=col=>{S.activeKanbanForm=col;rerender();setTimeout(()=>document.getElementById('k-title')?.focus(),50);};
+window.addKanbanCard=async()=>{
+  const title=(document.getElementById('k-title')?.value||'').trim();
+  if(!title){showToast('Введите название задачи',true);return;}
+  const col=document.getElementById('k-col')?.value||'todo';
+  const assigneeId=document.getElementById('k-assignee')?.value||'';
+  const desc=document.getElementById('k-desc')?.value||'';
+  await fbPush('kanban',{title,desc,col,assigneeId,creatorId:S.user.id,ts:Date.now()});
+  S.activeKanbanForm=null;showToast('Задача создана!');
+};
+window.moveCard=async(id,col)=>await fbUpd(`kanban/${id}`,{col});
+window.delCard=async id=>{if(confirm('Удалить задачу?'))await fbDel(`kanban/${id}`);};
+
+/* ══════════════════════════════════
+   WIKI / БАЗА ЗНАНИЙ
+══════════════════════════════════ */
+function renderWiki(){
+  const articles=Object.entries(S.wiki||{}).map(([k,v])=>({...v,_key:k}))
+    .sort((a,b)=>(b.ts||0)-(a.ts||0));
+  if(S.wikiView){
+    const a=S.wiki[S.wikiView];
+    if(!a)return renderWikiList(articles);
+    const author=S.members[a.authorId]||{name:'?'};
+    const isOwner=a.authorId===S.user.id;
+    return`<div class="page-wrap">
+      <div style="display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap">
+        <button class="gbtn gbtn-secondary" style="padding:7px 14px;font-size:13px" onclick="S.wikiView=null;rerender()">← Назад</button>
+        ${isOwner?`<button class="gbtn gbtn-secondary" style="padding:7px 14px;font-size:13px;color:var(--red)" onclick="delWiki('${S.wikiView}')">🗑 Удалить</button>`:''}
+      </div>
+      <div class="wiki-full">
+        <div class="wiki-full-title">${escH(a.title)}</div>
+        <div class="wiki-full-meta">
+          ${avImg(author.avatar,author.name,20,author.color||COLORS[0])}
+          <span style="margin-left:4px">${escH(author.name)}</span> ·
+          ${new Date(a.ts||0).toLocaleDateString('ru')}
+          ${a.tag?`<span class="tag" style="margin-left:6px">${escH(a.tag)}</span>`:''}
+        </div>
+        <div class="wiki-full-body">${escH(a.body)}</div>
+      </div>
+    </div>`;
+  }
+  return renderWikiList(articles);
+}
+function renderWikiList(articles){
+  const tags=[...new Set(articles.map(a=>a.tag).filter(Boolean))];
+  return`<div class="page-wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📚 База знаний</div>
+      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="toggleWikiEditor()">+ Написать статью</button>
+    </div>
+    <div class="wiki-editor" id="wiki-editor">
+      <div class="fg"><label>ЗАГОЛОВОК</label><input type="text" id="w-title" placeholder="Название статьи..."></div>
+      <div class="fg"><label>КАТЕГОРИЯ</label><input type="text" id="w-tag" placeholder="Eclipse, Petrel, Общее..."></div>
+      <div class="fg"><label>СОДЕРЖАНИЕ</label><textarea id="w-body" rows="8" placeholder="Напишите статью..."></textarea></div>
+      <div style="display:flex;gap:.625rem">
+        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="submitWiki()">Опубликовать</button>
+        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="toggleWikiEditor()">Отмена</button>
+      </div>
+    </div>
+    ${tags.length?`<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.875rem">
+      ${tags.map(t=>`<span class="tag" style="cursor:pointer;padding:4px 10px">${escH(t)}</span>`).join('')}
+    </div>`:''}
+    ${articles.length?`<div class="wiki-list">
+      ${articles.map(a=>{
+        const author=S.members[a.authorId]||{name:'?'};
+        return`<div class="wiki-item" onclick="S.wikiView='${a._key}';rerender()">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div class="wiki-item-title">${escH(a.title)}</div>
+            ${a.tag?`<span class="tag">${escH(a.tag)}</span>`:''}
+          </div>
+          <div class="wiki-item-meta">${escH(author.name)} · ${new Date(a.ts||0).toLocaleDateString('ru')}</div>
+          <div class="wiki-item-preview">${escH(a.body)}</div>
+        </div>`;
+      }).join('')}
+    </div>`:`<div class="empty-state"><div class="empty-state-ico">📝</div>
+      <div>Статей пока нет</div>
+      <div style="font-size:12px;margin-top:.375rem">Напишите первую статью для команды!</div>
+    </div>`}
+  </div>`;
+}
+window.toggleWikiEditor=()=>{
+  const el=document.getElementById('wiki-editor');
+  if(el)el.style.display=el.style.display==='none'?'block':'none';
+  setTimeout(()=>document.getElementById('w-title')?.focus(),50);
+};
+window.submitWiki=async()=>{
+  const title=(document.getElementById('w-title')?.value||'').trim();
+  const body=(document.getElementById('w-body')?.value||'').trim();
+  const tag=(document.getElementById('w-tag')?.value||'').trim();
+  if(!title||!body){showToast('Заполните заголовок и содержание',true);return;}
+  await fbPush('wiki',{title,body,tag,authorId:S.user.id,ts:Date.now()});
+  window.toggleWikiEditor();showToast('Статья опубликована!');
+};
+window.delWiki=async id=>{
+  if(confirm('Удалить статью?')){await fbDel(`wiki/${id}`);S.wikiView=null;showToast('Удалено');}
+};
+
+/* ══════════════════════════════════
+   ENGINEERING TOOLS + WEATHER
+══════════════════════════════════ */
+function renderTools(){
+  return`<div class="page-wrap">
+    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">🧮 Инструменты</div>
+    ${renderWeatherWidget()}
+    <div class="calc-page">
+      <div style="font-weight:700;font-size:15px;margin-bottom:1rem">Инженерный калькулятор</div>
+      <div class="calc-tabs">
+        <button class="calc-tab active" id="ctab-pressure" onclick="switchCalc('pressure')">Давление</button>
+        <button class="calc-tab" id="ctab-flowrate" onclick="switchCalc('flowrate')">Дебит</button>
+        <button class="calc-tab" id="ctab-units" onclick="switchCalc('units')">Единицы</button>
+      </div>
+      <div id="csec-pressure">${renderPressureCalc()}</div>
+      <div id="csec-flowrate" style="display:none">${renderFlowrateCalc()}</div>
+      <div id="csec-units" style="display:none">${renderUnitsCalc()}</div>
+    </div>
+  </div>`;
+}
+
+function renderWeatherWidget(){
+  if(S.weather&&(Date.now()-S.weather.ts)<600000){
+    const w=S.weather;
+    const icons={'Clear':'☀️','Clouds':'☁️','Rain':'🌧','Snow':'❄️','Wind':'💨','Thunderstorm':'⛈','Drizzle':'🌦','Mist':'🌫','Fog':'🌫'};
+    const ico=icons[w.main]||'🌤';
+    return`<div class="weather-widget">
+      <div class="weather-icon">${ico}</div>
+      <div class="weather-info">
+        <div class="weather-temp">${Math.round(w.temp)}°C</div>
+        <div class="weather-desc">Атырау · ${escH(w.desc)}</div>
+        <div class="weather-details">💧 ${w.humidity}% · 💨 ${w.wind} м/с · ощущается ${Math.round(w.feels)}°C</div>
+      </div>
+    </div>`;
+  }
+  return`<div class="weather-widget" style="cursor:pointer" onclick="fetchWeather()">
+    <div class="weather-icon">🌤</div>
+    <div class="weather-info">
+      <div class="weather-temp" style="font-size:16px;color:var(--t2)">Погода в Атырау</div>
+      <div class="weather-desc">Нажмите чтобы загрузить</div>
+    </div>
+  </div>`;
+}
+
+window.fetchWeather=async()=>{
+  try{
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=47.1167&longitude=51.8833&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&wind_speed_unit=ms');
+    const d=await r.json();
+    const c=d.current;
+    const code=c.weather_code;
+    let main='Clear',desc='Ясно';
+    if(code>=95){main='Thunderstorm';desc='Гроза';}
+    else if(code>=71){main='Snow';desc='Снег';}
+    else if(code>=61){main='Rain';desc='Дождь';}
+    else if(code>=51){main='Drizzle';desc='Морось';}
+    else if(code>=45){main='Fog';desc='Туман';}
+    else if(code>=3){main='Clouds';desc='Облачно';}
+    else if(code>=1){main='Clouds';desc='Переменная облачность';}
+    const w={temp:c.temperature_2m,feels:c.apparent_temperature,humidity:c.relative_humidity_2m,
+      wind:c.wind_speed_10m,main,desc,ts:Date.now()};
+    S.weather=w;
+    await fbSet('weather_cache',w);
+    rerender();
+  }catch(e){showToast('Не удалось загрузить погоду',true);}
+};
+
+function calcResult(val,unit){
+  return`<div class="calc-result"><div class="calc-result-val">${val}</div><div class="calc-result-unit">${unit}</div></div>`;
+}
+
+function renderPressureCalc(){
+  return`<div class="calc-section active">
+    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Конвертер давления</div>
+    <div class="calc-group">
+      <div class="calc-label">ЗНАЧЕНИЕ</div>
+      <input type="number" id="p-val" placeholder="Введите значение" oninput="calcPressure()">
+      <div style="margin-top:.5rem"><label>ИЗ:</label>
+        <select id="p-from" onchange="calcPressure()" style="margin-top:4px">
+          <option value="psi">psi</option><option value="bar">bar</option>
+          <option value="atm">атм</option><option value="mpa">МПа</option><option value="kpa">кПа</option>
+        </select>
+      </div>
+    </div>
+    <div id="p-result" style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem"></div>
+  </div>`;
+}
+window.calcPressure=()=>{
+  const v=parseFloat(document.getElementById('p-val')?.value)||0;
+  const from=document.getElementById('p-from')?.value||'psi';
+  const toBar={psi:0.0689476,bar:1,atm:1.01325,mpa:10,kpa:0.01};
+  const fromBar={psi:14.5038,bar:1,atm:0.986923,mpa:0.1,kpa:100};
+  const bar=v*(toBar[from]||1);
+  const res=document.getElementById('p-result');
+  if(!res)return;
+  const units=['psi','bar','atm','mpa','kpa'];
+  const labels={psi:'psi',bar:'bar',atm:'атм',mpa:'МПа',kpa:'кПа'};
+  res.innerHTML=units.filter(u=>u!==from).map(u=>`
+    <div class="calc-result">
+      <div class="calc-result-val">${(bar*fromBar[u]).toFixed(4).replace(/\.?0+$/,'')}</div>
+      <div class="calc-result-unit">${labels[u]}</div>
+    </div>`).join('');
+};
+
+function renderFlowrateCalc(){
+  return`<div class="calc-section active">
+    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Расчёт дебита скважины</div>
+    <div class="calc-group">
+      <div class="calc-label">ПРОДУКТИВНОСТЬ (м³/сут/атм)</div>
+      <input type="number" id="f-pi" placeholder="Индекс продуктивности" oninput="calcFlow()" step="0.1">
+    </div>
+    <div class="calc-group">
+      <div class="calc-label">ПЛАСТОВОЕ ДАВЛЕНИЕ (атм)</div>
+      <input type="number" id="f-pr" placeholder="Пластовое давление" oninput="calcFlow()">
+    </div>
+    <div class="calc-group">
+      <div class="calc-label">ЗАБОЙНОЕ ДАВЛЕНИЕ (атм)</div>
+      <input type="number" id="f-pwf" placeholder="Забойное давление" oninput="calcFlow()">
+    </div>
+    <div id="f-result"></div>
+  </div>`;
+}
+window.calcFlow=()=>{
+  const pi=parseFloat(document.getElementById('f-pi')?.value)||0;
+  const pr=parseFloat(document.getElementById('f-pr')?.value)||0;
+  const pwf=parseFloat(document.getElementById('f-pwf')?.value)||0;
+  const q=pi*(pr-pwf);
+  const res=document.getElementById('f-result');
+  if(!res||!pi||!pr)return;
+  res.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem">
+    <div class="calc-result"><div class="calc-result-val">${q.toFixed(1)}</div><div class="calc-result-unit">м³/сут</div></div>
+    <div class="calc-result"><div class="calc-result-val">${(q/6.29).toFixed(1)}</div><div class="calc-result-unit">баррель/сут</div></div>
+    <div class="calc-result"><div class="calc-result-val">${(q*1000/24/3600).toFixed(4)}</div><div class="calc-result-unit">м³/с</div></div>
+    <div class="calc-result"><div class="calc-result-val">${(q/30).toFixed(0)}</div><div class="calc-result-unit">м³/месяц</div></div>
+  </div>`;
+};
+
+function renderUnitsCalc(){
+  return`<div class="calc-section active">
+    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Конвертер нефтяных единиц</div>
+    <div class="calc-group">
+      <div class="calc-label">ОБЪЁМ — м³ в баррели</div>
+      <input type="number" id="u-m3" placeholder="м³" oninput="document.getElementById('u-bbl').value=(parseFloat(this.value)*6.2898).toFixed(2)">
+      <input type="number" id="u-bbl" placeholder="баррели (bbl)" style="margin-top:.5rem" oninput="document.getElementById('u-m3').value=(parseFloat(this.value)/6.2898).toFixed(4)">
+    </div>
+    <div class="calc-group">
+      <div class="calc-label">ТЕМПЕРАТУРА — °C в °F</div>
+      <input type="number" id="u-c" placeholder="°C" oninput="document.getElementById('u-f').value=(parseFloat(this.value)*9/5+32).toFixed(1)">
+      <input type="number" id="u-f" placeholder="°F" style="margin-top:.5rem" oninput="document.getElementById('u-c').value=((parseFloat(this.value)-32)*5/9).toFixed(2)">
+    </div>
+    <div class="calc-group">
+      <div class="calc-label">ДЛИНА — м в футы</div>
+      <input type="number" id="u-m" placeholder="метры" oninput="document.getElementById('u-ft').value=(parseFloat(this.value)*3.28084).toFixed(2)">
+      <input type="number" id="u-ft" placeholder="футы" style="margin-top:.5rem" oninput="document.getElementById('u-m').value=(parseFloat(this.value)/3.28084).toFixed(4)">
+    </div>
+  </div>`;
+}
+
+function renderCO2Calc(){
+  return`<div class="calc-section active">
+    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Оценка выбросов CO₂</div>
+    <div class="calc-group">
+      <div class="calc-label">ДОБЫЧА НЕФТИ (т/год)</div>
+      <input type="number" id="c-oil" placeholder="тонн нефти в год" oninput="calcCO2()">
+    </div>
+    <div class="calc-group">
+      <div class="calc-label">ДОБЫЧА ГАЗА (млн. м³/год)</div>
+      <input type="number" id="c-gas" placeholder="млн. м³ газа в год" oninput="calcCO2()">
+    </div>
+    <div id="c-result"></div>
+  </div>`;
+}
+window.calcCO2=()=>{
+  const oil=parseFloat(document.getElementById('c-oil')?.value)||0;
+  const gas=parseFloat(document.getElementById('c-gas')?.value)||0;
+  const co2oil=oil*3.07;
+  const co2gas=gas*1000*1.96;
+  const total=co2oil+co2gas;
+  const res=document.getElementById('c-result');
+  if(!res||(oil===0&&gas===0))return;
+  res.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem">
+    <div class="calc-result"><div class="calc-result-val">${(co2oil/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год (нефть)</div></div>
+    <div class="calc-result"><div class="calc-result-val">${(co2gas/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год (газ)</div></div>
+    <div class="calc-result" style="grid-column:span 2"><div class="calc-result-val">${(total/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год — итого</div></div>
+  </div>`;
+};
+
+
+window.switchCalc = id => {
+  ['pressure','flowrate','units'].forEach(t=>{
+    const sec=document.getElementById('csec-'+t);
+    const tab=document.getElementById('ctab-'+t);
+    if(sec) sec.style.display = t===id ? 'block' : 'none';
+    if(tab) tab.className = 'calc-tab' + (t===id ? ' active' : '');
+  });
+};
+
+/* ════════════════════════════════════════════════
+   QUIZ — ВИКТОРИНА (Kahoot-style)
+   Вопросы: нефтяная промышленность, геология,
+   бурение, разработка пластов, история нефти в КЗ
+════════════════════════════════════════════════ */
+
+const QUIZ_QUESTIONS = [
+  // ── ГЕОЛОГИЯ И ПЛАСТЫ ──
+  {cat:'Геология',q:'Что такое пористость горной породы?',
+   a:['Способность пропускать жидкость','Объём пустот к общему объёму породы','Твёрдость минералов','Температура кипения нефти'],cor:1,
+   exp:'Пористость — отношение объёма пор к общему объёму породы, выражается в %. Именно в порах хранится нефть и газ.'},
+  {cat:'Геология',q:'Какая порода чаще всего является коллектором нефти?',
+   a:['Гранит','Мрамор','Песчаник','Соль'],cor:2,
+   exp:'Песчаники — один из основных типов коллекторов благодаря высокой пористости и проницаемости.'},
+  {cat:'Геология',q:'Что такое проницаемость пласта?',
+   a:['Способность пропускать жидкость через поры','Плотность породы','Глубина залегания','Температура пласта'],cor:0,
+   exp:'Проницаемость (Дарси) — способность горной породы пропускать флюиды под действием перепада давления.'},
+  {cat:'Геология',q:'Единица измерения проницаемости в нефтяной промышленности?',
+   a:['Паскаль','Дарси (мД)','Ньютон','Бар'],cor:1,
+   exp:'Проницаемость измеряется в Дарси или миллидарси (мД). 1 Дарси = примерно 10⁻¹² м².'},
+  {cat:'Геология',q:'Что такое антиклиналь в геологии?',
+   a:['Прогиб пластов вниз','Выпуклый изгиб пластов вверх','Горизонтальный разлом','Тектонический разрыв'],cor:1,
+   exp:'Антиклиналь — складка пластов выпуклостью вверх. Нефть и газ скапливаются в сводовой части антиклинали.'},
+  {cat:'Геология',q:'Что такое ловушка в нефтяной геологии?',
+   a:['Место скопления нефти и газа','Инструмент бурения','Тип насоса','Разновидность скважины'],cor:0,
+   exp:'Ловушка — структура, удерживающая нефть и газ от миграции. Бывает структурная, стратиграфическая, литологическая.'},
+  {cat:'Геология',q:'Нефтематеринская порода — это:',
+   a:['Порода где хранится нефть','Порода в которой образовалась нефть из органики','Твёрдая непроницаемая порода','Кровля пласта'],cor:1,
+   exp:'Нефтематеринская порода (source rock) — богатая органикой порода, в которой при нагреве образуются нефть и газ.'},
+
+  // ── БУРЕНИЕ ──
+  {cat:'Бурение',q:'Что такое КНБК в бурении?',
+   a:['Контрольный насос бурового кольца','Компоновка низа бурильной колонны','Коэффициент нефтеносности бурового кернa','Кран нагнетания бурового концентрата'],cor:1,
+   exp:'КНБК — компоновка низа бурильной колонны. Включает долото, забойный двигатель, калибраторы, телесистему.'},
+  {cat:'Бурение',q:'Какой тип долота использует вращение шарошек?',
+   a:['PDC-долото','Алмазное долото','Шарошечное долото','Фрезерное долото'],cor:2,
+   exp:'Шарошечное долото разрушает породу вращением зубчатых конусов. PDC-долото режет породу поликристаллическими алмазными вставками.'},
+  {cat:'Бурение',q:'Для чего используется буровой раствор?',
+   a:['Только для смазки долота','Выноса шлама, охлаждения, удержания давления в пласте','Только для цементирования','Для разрушения породы'],cor:1,
+   exp:'Буровой раствор: выносит шлам, охлаждает долото, создаёт гидростатическое давление на пласт, укрепляет стенки скважины.'},
+  {cat:'Бурение',q:'Что такое ГРП?',
+   a:['Геологический разрез пласта','Гидравлический разрыв пласта','Горизонтальное расположение проекта','Главный регулятор потока'],cor:1,
+   exp:'ГРП (гидравлический разрыв пласта) — закачка жидкости под высоким давлением для создания трещин в пласте и увеличения добычи.'},
+  {cat:'Бурение',q:'Что означает аббревиатура ROP в бурении?',
+   a:['Rate of Production — дебит','Rate of Penetration — механическая скорость','Return of Pressure — возврат давления','Range of Porosity — диапазон пористости'],cor:1,
+   exp:'ROP (Rate of Penetration) — механическая скорость бурения, измеряется в м/ч или фут/ч.'},
+  {cat:'Бурение',q:'Что такое обсадная колонна?',
+   a:['Труба для закачки раствора','Стальная труба для крепления стенок скважины','Инструмент для цементирования','Вид насосной установки'],cor:1,
+   exp:'Обсадная колонна — стальные трубы, спускаемые в скважину для крепления стенок и изоляции горизонтов.'},
+
+  // ── РАЗРАБОТКА МЕСТОРОЖДЕНИЙ ──
+  {cat:'Разработка',q:'Что такое КИН?',
+   a:['Коэффициент извлечения нефти','Критический индекс насоса','Кривая изменения напора','Контроль интенсивности нагнетания'],cor:0,
+   exp:'КИН (коэффициент извлечения нефти) — отношение извлекаемых запасов к начальным геологическим. Обычно 0.25–0.45.'},
+  {cat:'Разработка',q:'Что такое обводнённость продукции?',
+   a:['Содержание газа в нефти','Доля воды в общем флюиде скважины','Давление на устье','Дебит жидкости'],cor:1,
+   exp:'Обводнённость — процентное содержание воды в добываемой жидкости. С разработкой месторождения растёт.'},
+  {cat:'Разработка',q:'Что такое газовый фактор?',
+   a:['Объём газа на объём добытой нефти','Давление газа в пласте','Состав попутного газа','Коэффициент сжимаемости газа'],cor:0,
+   exp:'Газовый фактор (GOR) — отношение объёма попутного газа к объёму нефти в стандартных условиях, м³/м³ или ст. куб. фут/баррель.'},
+  {cat:'Разработка',q:'Метод заводнения применяется для:',
+   a:['Бурения новых скважин','Поддержания пластового давления и вытеснения нефти','Освоения скважины','Цементирования'],cor:1,
+   exp:'Заводнение — закачка воды в нагнетательные скважины для поддержания давления и вытеснения нефти к добывающим скважинам.'},
+  {cat:'Разработка',q:'Что такое УЭЦН?',
+   a:['Установка эксплуатационного центробежного насоса','Устройство электрического центробежного насоса','Установка электрическая центробежная насосная','Уровень эксплуатационного центра нагнетания'],cor:2,
+   exp:'УЭЦН — установка электрическая центробежная насосная. Основной способ механизированной добычи нефти в мире.'},
+  {cat:'Разработка',q:'Что такое пластовое давление?',
+   a:['Давление на устье скважины','Давление жидкости и газа в порах пласта','Давление бурового раствора','Давление в трубопроводе'],cor:1,
+   exp:'Пластовое давление — давление флюида в поровом пространстве пласта. Определяет возможность фонтанирования скважины.'},
+  {cat:'Разработка',q:'Какой метод увеличения нефтеотдачи используует тепловое воздействие?',
+   a:['Заводнение','Закачка CO2','Паротепловая обработка','Кислотная обработка'],cor:2,
+   exp:'Паротепловая обработка (Steam injection) снижает вязкость тяжёлой нефти, улучшая её подвижность к скважине.'},
+
+  // ── СИМУЛЯЦИЯ ПЛАСТОВ ──
+  {cat:'Симуляция',q:'Что такое симулятор пласта?',
+   a:['Программа для бурения скважин','Математическая модель для прогноза поведения пласта','Устройство измерения давления','Система управления УЭЦН'],cor:1,
+   exp:'Симулятор пласта — компьютерная программа, решающая уравнения фильтрации флюидов для прогноза разработки месторождения.'},
+  {cat:'Симуляция',q:'Что такое History Matching (адаптация модели)?',
+   a:['Создание новой геологической модели','Подгонка модели пласта к фактическим данным добычи','Экспорт данных из симулятора','Построение сетки пласта'],cor:1,
+   exp:'History Matching — процесс настройки параметров модели (пористость, проницаемость, относительные фазовые проницаемости) для воспроизведения исторических данных.'},
+  {cat:'Симуляция',q:'Что означает BLACK OIL модель?',
+   a:['Модель для добычи тяжёлой нефти','Упрощённая модель с тремя компонентами: нефть, газ, вода','Модель без водоносного горизонта','Модель чёрного цвета в интерфейсе'],cor:1,
+   exp:'Black Oil — стандартная модель симуляции с тремя псевдокомпонентами. Достаточна для большинства задач разработки.'},
+  {cat:'Симуляция',q:'Что такое PVT-данные в симуляции пласта?',
+   a:['Pressure-Volume-Temperature — свойства флюидов','Plan-Volume-Target — плановые показатели','Pore-Volume-Total — объём пор','Pressure-Velocity-Time — данные бурения'],cor:0,
+   exp:'PVT (Pressure-Volume-Temperature) описывает фазовое поведение флюидов: объёмный коэффициент, газосодержание, вязкость при разных условиях.'},
+  {cat:'Симуляция',q:'Какой файл является основным входным в Eclipse?',
+   a:['.GRID','DATA-файл (.DATA)','EGRID-файл','FSMSPEC-файл'],cor:1,
+   exp:'Основной входной файл Eclipse — .DATA файл, содержащий все ключевые слова для описания пласта, скважин и расписания.'},
+  {cat:'Симуляция',q:'Что такое OOIP (HCPV)?',
+   a:['Добытые запасы нефти','Начальные геологические запасы нефти в пласте','Остаточные запасы после разработки','Извлекаемые запасы нефти'],cor:1,
+   exp:'OOIP (Original Oil In Place) — начальные геологические запасы нефти. Отличается от извлекаемых запасов на КИН.'},
+
+  // ── ИСТОРИЯ НЕФТИ В КАЗАХСТАНЕ ──
+  {cat:'Нефть Казахстана',q:'В каком году было открыто месторождение Тенгиз?',
+   a:['1966','1979','1953','1990'],cor:1,
+   exp:'Тенгиз открыт в 1979 году. Одно из крупнейших нефтяных месторождений мира, расположено в Атырауской области.'},
+  {cat:'Нефть Казахстана',q:'Какое самое большое нефтяное месторождение Казахстана?',
+   a:['Тенгиз','Жанажол','Кашаган','Карачаганак'],cor:2,
+   exp:'Кашаган — крупнейшее в Казахстане и одно из крупнейших в мире, открыто в 2000 году на Каспийском шельфе.'},
+  {cat:'Нефть Казахстана',q:'Когда была основана компания КазМунайГаз?',
+   a:['1995','2002','1991','2008'],cor:1,
+   exp:'КазМунайГаз создан в 2002 году путём слияния «Казахойл» и «Транспорт Нефти и Газ» как национальный оператор нефтегазовой отрасли.'},
+  {cat:'Нефть Казахстана',q:'Карачаганак — это преимущественно:',
+   a:['Нефтяное месторождение','Нефтегазоконденсатное месторождение','Газовое месторождение','Угольное месторождение'],cor:1,
+   exp:'Карачаганак — уникальное нефтегазоконденсатное месторождение в Западно-Казахстанской области, одно из крупнейших в мире.'},
+  {cat:'Нефть Казахстана',q:'В каком году Казахстан впервые добыл нефть на шельфе Каспия (Кашаган)?',
+   a:['2008','2013','2016','2020'],cor:2,
+   exp:'Промышленная добыча на Кашагане началась в 2013 году, хотя месторождение было открыто в 2000 году.'},
+  {cat:'Нефть Казахстана',q:'Через какой трубопровод экспортируется основная часть нефти Казахстана?',
+   a:['BTC (Баку-Тбилиси-Джейхан)','КТК (Каспийский трубопроводный консорциум)','Дружба','ВСТО'],cor:1,
+   exp:'КТК (Каспийский трубопроводный консорциум) — основной экспортный маршрут для казахстанской нефти через территорию России к порту Новороссийск.'},
+
+  // ── ФИЗИКА ПЛАСТА ──
+  {cat:'Физика пласта',q:'Что такое насыщение пласта (Sw)?',
+   a:['Температура пластовых вод','Доля порового пространства занятая водой','Солёность пластовой воды','Скорость фильтрации воды'],cor:1,
+   exp:'Водонасыщенность Sw — доля пор, заполненных водой. Sw + So + Sg = 1. Остаточное водонасыщение Swirr непреодолимо для вытеснения.'},
+  {cat:'Физика пласта',q:'Закон Дарси описывает:',
+   a:['Испарение нефти','Линейную фильтрацию жидкости в пористой среде','Сжимаемость газа','Вязкость нефти'],cor:1,
+   exp:'Закон Дарси: Q = kA·ΔP / (μL). Скорость фильтрации пропорциональна проницаемости и градиенту давления, обратно пропорциональна вязкости.'},
+  {cat:'Физика пласта',q:'Что такое относительная фазовая проницаемость (ОФП)?',
+   a:['Абсолютная проницаемость породы','Проницаемость для одной фазы при наличии других фаз','Вязкость нефти','Давление насыщения'],cor:1,
+   exp:'ОФП — отношение эффективной проницаемости для данной фазы к абсолютной. Зависит от насыщения и определяет соотношение добычи нефти/воды/газа.'},
+  {cat:'Физика пласта',q:'При каком давлении из нефти начинает выделяться газ?',
+   a:['При атмосферном давлении','При давлении насыщения (Pb)','При забойном давлении','При пластовом давлении'],cor:1,
+   exp:'Давление насыщения (Bubble Point) — давление, при котором из нефти начинают выделяться пузырьки газа. Важнейший параметр разработки.'},
+];
+
+const QUIZ_ICONS = ['🔴','🔵','🟡','🟢'];
+const QUIZ_TIME = 20; // секунд на вопрос
+
+let quizTimer = null;
+let quizTimeLeft = QUIZ_TIME;
+
+/* ── HELPERS ── */
+function quizKey(){ return S.quizRoomId ? `quiz/rooms/${S.quizRoomId}` : null; }
+function makePin(){ return Math.floor(1000+Math.random()*9000).toString(); }
+function quizMe(room){ return room&&room.players&&room.players[S.user.id]; }
+function quizIsHost(room){ return room&&room.hostId===S.user.id; }
+
+/* ── RENDER QUIZ ── */
+function renderQuiz(){
+  const room = S.quizRoom;
+  if(!room || !S.quizRoomId){
+    stopQuizTimer();
+    return renderQuizLobby();
+  }
+  if(room.status==='waiting') return renderQuizWaiting(room);
+  if(room.status==='question') return renderQuizQuestion(room);
+  if(room.status==='leaderboard') return renderQuizLeaderboard(room);
+  if(room.status==='finished') return renderQuizFinished(room);
+  return renderQuizLobby();
+}
+
+function renderQuizLobby(){
+  return`<div class="quiz-wrap">
+    <div class="quiz-lobby">
+      <div class="quiz-logo">🧠</div>
+      <div class="quiz-title">Викторина нефтяника</div>
+      <div class="quiz-sub">Kahoot-формат · ${QUIZ_QUESTIONS.length} вопросов · Геология, бурение, разработка, Казахстан</div>
+      <div class="quiz-lobby-btns">
+        <button class="qbtn qbtn-primary" onclick="quizCreate()">🚀 Создать игру</button>
+        <button class="qbtn qbtn-secondary" onclick="document.getElementById('quiz-join-wrap').style.display='block'">🚪 Войти по PIN</button>
+      </div>
+      <div id="quiz-join-wrap" style="display:none">
+        <div class="quiz-join-row">
+          <input class="quiz-pin-input" id="quiz-pin-inp" maxlength="4" placeholder="PIN"
+            oninput="this.value=this.value.replace(/\\D/g,'')"
+            onkeydown="if(event.key==='Enter')quizJoin()">
+          <button class="qbtn qbtn-primary" onclick="quizJoin()">Войти</button>
+        </div>
+      </div>
+      <div class="quiz-rules">
+        <div class="quiz-rules-title">📋 Как играть</div>
+        <ul>
+          <li>Один создаёт игру — остальные заходят по PIN-коду</li>
+          <li>На каждый вопрос <strong>${QUIZ_TIME} секунд</strong> — быстрее ответил = больше очков</li>
+          <li>За правильный ответ до <strong>1000 очков</strong> в зависимости от скорости</li>
+          <li>После каждого вопроса — таблица лидеров</li>
+          <li>Победитель — кто наберёт больше всего очков</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizWaiting(room){
+  const players = Object.values(room.players||{});
+  const isHost = quizIsHost(room);
+  const canStart = players.length >= 1;
+  return`<div class="quiz-wrap">
+    <div class="quiz-waiting">
+      <div class="quiz-waiting-header">
+        <div class="quiz-waiting-pin">PIN-КОД ИГРЫ</div>
+        <div class="quiz-pin-display">${S.quizRoomId}</div>
+        <div class="quiz-waiting-title">Ожидаем игроков... ${players.length} в комнате</div>
+      </div>
+      <div class="quiz-players-grid">
+        ${players.map(p=>`
+          <div class="quiz-player-chip ${p.id===room.hostId?'host':''}">
+            ${avImg(p.avatar,p.name,28,p.color||COLORS[0])}
+            <div>
+              <div class="qpc-name">${escH(p.name.split(' ')[0])}</div>
+              ${p.id===room.hostId?'<div class="qpc-badge">👑 Ведущий</div>':''}
+            </div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" ${canStart?'':'disabled'} onclick="quizStart()">
+            ▶ Начать игру (${players.length} игроков)
+          </button>
+          <div style="font-size:12px;color:var(--t3);margin-top:.5rem">Минимум 1 игрок для старта</div>
+        </div>`
+      :`<div style="text-align:center;font-size:14px;color:var(--t2);padding:1rem">
+          ⏳ Ждём пока ведущий начнёт игру...
+        </div>`}
+      <div style="text-align:center;margin-top:1rem">
+        <button class="qbtn qbtn-secondary" style="padding:8px 20px;font-size:13px" onclick="quizLeave()">Выйти</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizQuestion(room){
+  const qi = room.currentQuestion||0;
+  const q = QUIZ_QUESTIONS[qi];
+  if(!q) return renderQuizLobby();
+
+  const isHost = quizIsHost(room);
+  const myAnswer = room.answers&&room.answers[S.user.id];
+  const showAnswers = room.showAnswers;
+  const timeLeft = room.timeLeft!==undefined ? room.timeLeft : QUIZ_TIME;
+  const timePct = (timeLeft/QUIZ_TIME)*100;
+  const urgent = timeLeft<=5;
+
+  // Scores
+  const me = quizMe(room);
+  const myScore = me ? me.score||0 : 0;
+
+  if(isHost){
+    // Host sees question + answer count + timer
+    const answeredCount = Object.keys(room.answers||{}).length;
+    const totalPlayers = Object.keys(room.players||{}).length;
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div>
+            <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+            <div style="font-size:12px;color:var(--t3);margin-top:2px">${escH(q.cat)}</div>
+          </div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:800;font-family:'Space Grotesk'">${answeredCount}/${totalPlayers}</div>
+            <div style="font-size:11px;color:var(--t3)">ответили</div>
+          </div>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-q-cat">${escH(q.cat)}</div>
+          <div class="quiz-q-text">${escH(q.q)}</div>
+        </div>
+        <div class="quiz-answers">
+          ${q.a.map((ans,i)=>`
+            <div class="quiz-answer qa-${i} ${showAnswers&&i===q.cor?'show-correct':''}"
+              style="opacity:1;cursor:default">
+              <div class="qa-icon">${QUIZ_ICONS[i]}</div>
+              <div class="qa-text">${escH(ans)}</div>
+            </div>`).join('')}
+        </div>
+        ${showAnswers?`<div class="quiz-result-overlay" style="margin-top:1rem">
+          <div class="qro-correct" style="color:var(--green)">✓ Правильный ответ: ${escH(q.a[q.cor])}</div>
+          <div class="qro-explain">${escH(q.exp)}</div>
+          <button class="qbtn qbtn-primary" style="margin-top:1rem"
+            onclick="${qi+1<QUIZ_QUESTIONS.length?'quizNextQuestion()':'quizFinish()'}">
+            ${qi+1<QUIZ_QUESTIONS.length?'Следующий вопрос →':'🏆 Показать итоги'}
+          </button>
+        </div>`:''}
+      </div>
+    </div>`;
+  }
+
+  // Player view
+  if(showAnswers){
+    const correct = myAnswer===q.cor;
+    const pts = room.lastPoints&&room.lastPoints[S.user.id]||0;
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+          <div>
+            <div class="quiz-score-display">${myScore}</div>
+            <div class="quiz-score-label">очков</div>
+          </div>
+        </div>
+        <div class="quiz-result-overlay">
+          <div class="qro-emoji">${correct?'🎉':'😔'}</div>
+          <div class="qro-correct" style="color:${correct?'var(--green)':'var(--red)'}">
+            ${correct?'Правильно!':'Неверно'}
+          </div>
+          ${pts>0?`<div class="qro-pts">+${pts} очков</div>`:''}
+          <div class="qro-explain">${escH(q.exp)}</div>
+        </div>
+        <div class="quiz-answers" style="margin-top:.875rem">
+          ${q.a.map((ans,i)=>`
+            <div class="quiz-answer qa-${i} ${i===q.cor?'show-correct':myAnswer===i?'wrong':''}"
+              style="opacity:1;cursor:default;${i===q.cor?'':'opacity:.6'}">
+              <div class="qa-icon">${i===q.cor?'✓':QUIZ_ICONS[i]}</div>
+              <div class="qa-text">${escH(ans)}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  if(myAnswer!==undefined){
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="quiz-score-display">${myScore}</div>
+            <div class="quiz-score-label">очков</div>
+          </div>
+        </div>
+        <div class="quiz-waiting-answer">
+          <div class="qwa-icon">⏳</div>
+          <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700;margin-bottom:.375rem">Ответ принят!</div>
+          <div style="font-size:13px;color:var(--t2)">Ждём остальных игроков...</div>
+          <div style="margin-top:1rem">
+            <div class="quiz-answer qa-${myAnswer}" style="cursor:default;display:inline-flex;max-width:320px">
+              <div class="qa-icon">${QUIZ_ICONS[myAnswer]}</div>
+              <div class="qa-text">${escH(q.a[myAnswer])}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // Player answers
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <div class="quiz-topbar">
+        <div class="quiz-q-num">ВОПРОС ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+        <div class="quiz-timer-wrap">
+          <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+          <div class="quiz-timer-bar-wrap">
+            <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timePct}%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="quiz-score-display">${myScore}</div>
+          <div class="quiz-score-label">очков</div>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-q-cat">${escH(q.cat)}</div>
+        <div class="quiz-q-text">${escH(q.q)}</div>
+      </div>
+      <div class="quiz-answers">
+        ${q.a.map((ans,i)=>`
+          <button class="quiz-answer qa-${i}" onclick="quizAnswer(${i})">
+            <div class="qa-icon">${QUIZ_ICONS[i]}</div>
+            <div class="qa-text">${escH(ans)}</div>
+          </button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizLeaderboard(room){
+  const isHost = quizIsHost(room);
+  const qi = room.currentQuestion||0;
+  const players = Object.values(room.players||{})
+    .sort((a,b)=>(b.score||0)-(a.score||0));
+  const medals = ['🥇','🥈','🥉'];
+  return`<div class="quiz-wrap">
+    <div class="quiz-leaderboard">
+      <div class="qlb-title">📊 Таблица лидеров · Вопрос ${qi+1} / ${QUIZ_QUESTIONS.length}</div>
+      ${players.map((p,i)=>`
+        <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+          <div class="qlb-rank">${medals[i]||`${i+1}`}</div>
+          ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+          <div style="flex:1;min-width:0">
+            <div class="qlb-name">${escH(p.name)} ${p.id===S.user.id?'<span style="color:var(--accent);font-size:11px">(вы)</span>':''}</div>
+            <div class="qlb-streak">${(room.lastPoints&&room.lastPoints[p.id]>0)?`+${room.lastPoints[p.id]} за этот вопрос`:''}</div>
+          </div>
+          <div class="qlb-score">${p.score||0}</div>
+        </div>`).join('')}
+      ${isHost?`
+        <div style="text-align:center;margin-top:1.25rem">
+          <button class="qbtn qbtn-primary" onclick="${qi+1<QUIZ_QUESTIONS.length?'quizNextQuestion()':'quizFinish()'}">
+            ${qi+1<QUIZ_QUESTIONS.length?`Вопрос ${qi+2} →`:'🏆 Финал'}
+          </button>
+        </div>`
+      :`<div style="text-align:center;font-size:14px;color:var(--t2);margin-top:1rem">⏳ Ведущий готовит следующий вопрос...</div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizFinished(room){
+  const players = Object.values(room.players||{})
+    .sort((a,b)=>(b.score||0)-(a.score||0));
+  const winner = players[0];
+  const medals = ['🥇','🥈','🥉'];
+  return`<div class="quiz-wrap">
+    <div class="quiz-final">
+      <div class="quiz-winner-trophy">🏆</div>
+      <div class="quiz-winner-name">${escH(winner?winner.name:'?')}</div>
+      <div class="quiz-winner-sub">Победитель с ${winner?winner.score||0:0} очками!</div>
+      <div class="quiz-leaderboard" style="margin-bottom:1.5rem;box-shadow:none">
+        <div class="qlb-title">Итоговая таблица</div>
+        ${players.map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${medals[i]||`${i+1}`}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div class="qlb-name">${escH(p.name)}</div>
+            <div class="qlb-score">${p.score||0} очков</div>
+          </div>`).join('')}
+      </div>
+      <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
+        ${quizIsHost(room)?`<button class="qbtn qbtn-primary" onclick="quizRestart()">🔄 Играть снова</button>`:''}
+        <button class="qbtn qbtn-secondary" onclick="quizLeave()">Выйти</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── ACTIONS ── */
+window.quizCreate = async()=>{
+  const pin = makePin();
+  const me = S.members[S.user.id]||S.user;
+  const playerData = {id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0],score:0};
+  const room = {
+    hostId:me.id,
+    status:'waiting',
+    currentQuestion:0,
+    players:{[me.id]:playerData},
+    answers:{},
+    showAnswers:false,
+    timeLeft:QUIZ_TIME,
+    lastPoints:{},
+    createdAt:Date.now()
+  };
+  await fbSet(`quiz/rooms/${pin}`, room);
+  S.quizRoomId = pin;
+  fbListen(`quiz/rooms/${pin}`, v=>{
+    S.quizRoom=v;
+    if(S.page==='quiz') rerender();
+  });
+  rerender();
+};
+
+window.quizJoin = async()=>{
+  const pin = (document.getElementById('quiz-pin-inp')?.value||'').trim();
+  if(pin.length!==4){showToast('Введите 4-значный PIN',true);return;}
+  const room = await fbGet(`quiz/rooms/${pin}`);
+  if(!room){showToast('Комната не найдена',true);return;}
+  if(room.status!=='waiting'){showToast('Игра уже началась',true);return;}
+  const me = S.members[S.user.id]||S.user;
+  const playerData = {id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0],score:0};
+  await fbUpd(`quiz/rooms/${pin}/players`,{[me.id]:playerData});
+  S.quizRoomId = pin;
+  fbListen(`quiz/rooms/${pin}`, v=>{
+    S.quizRoom=v;
+    if(S.page==='quiz') rerender();
+  });
+  rerender();
+};
+
+window.quizStart = async()=>{
+  if(!S.quizRoomId)return;
+  const questions = shuffleQuiz(QUIZ_QUESTIONS).slice(0,15);
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'question', currentQuestion:0,
+    questionOrder: questions.map((_,i)=>i),
+    shuffledQuestions: questions,
+    answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+  startQuizTimer();
+};
+
+window.quizAnswer = async(idx)=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const room = S.quizRoom;
+  if(room.answers&&room.answers[S.user.id]!==undefined)return;
+  const timeLeft = room.timeLeft||0;
+  // Score: max 1000 points, decreases with time
+  const pts = Math.max(100, Math.round(1000*(timeLeft/QUIZ_TIME)));
+  await fbUpd(`quiz/rooms/${S.quizRoomId}/answers`,{[S.user.id]:idx});
+  // Store time-based score for this answer
+  await fbUpd(`quiz/rooms/${S.quizRoomId}/answerTimes`,{[S.user.id]:timeLeft});
+  rerender();
+};
+
+window.quizNextQuestion = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  stopQuizTimer();
+  const room = S.quizRoom;
+  const next = (room.currentQuestion||0)+1;
+  if(next >= (room.shuffledQuestions||QUIZ_QUESTIONS).length){
+    await quizFinish(); return;
+  }
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'question', currentQuestion:next,
+    answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+  startQuizTimer();
+};
+
+window.quizFinish = async()=>{
+  if(!S.quizRoomId)return;
+  stopQuizTimer();
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{status:'finished'});
+};
+
+window.quizLeave = async()=>{
+  stopQuizTimer();
+  if(S.quizRoomId&&S.user){
+    await fbDel(`quiz/rooms/${S.quizRoomId}/players/${S.user.id}`);
+  }
+  S.quizRoomId=null; S.quizRoom=null;
+  rerender();
+};
+
+window.quizRestart = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const players = S.quizRoom.players||{};
+  // Reset scores
+  const resetPlayers = {};
+  Object.entries(players).forEach(([id,p])=>{resetPlayers[id]={...p,score:0};});
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    status:'waiting', currentQuestion:0,
+    players:resetPlayers, answers:{}, showAnswers:false,
+    timeLeft:QUIZ_TIME, lastPoints:{}
+  });
+};
+
+/* ── TIMER (host only) ── */
+function startQuizTimer(){
+  stopQuizTimer();
+  if(!quizIsHost(S.quizRoom))return;
+  quizTimeLeft = QUIZ_TIME;
+  quizTimer = setInterval(async()=>{
+    quizTimeLeft--;
+    if(!S.quizRoomId)return clearInterval(quizTimer);
+    await fbUpd(`quiz/rooms/${S.quizRoomId}`,{timeLeft:quizTimeLeft});
+    if(quizTimeLeft<=0){
+      clearInterval(quizTimer);
+      await quizRevealAnswer();
+    }
+  },1000);
+}
+
+function stopQuizTimer(){
+  if(quizTimer){clearInterval(quizTimer);quizTimer=null;}
+}
+
+async function quizRevealAnswer(){
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const room = S.quizRoom;
+  const qi = room.currentQuestion||0;
+  const qs = room.shuffledQuestions||QUIZ_QUESTIONS;
+  const q = qs[qi];
+  if(!q)return;
+  // Calculate points for each player
+  const updates = {};
+  const lastPts = {};
+  const players = room.players||{};
+  const answers = room.answers||{};
+  const times = room.answerTimes||{};
+  Object.entries(players).forEach(([pid,p])=>{
+    const ans = answers[pid];
+    const t = times[pid]||0;
+    if(ans===q.cor){
+      const pts = Math.max(100, Math.round(1000*(t/QUIZ_TIME)));
+      updates[`players/${pid}/score`] = (p.score||0)+pts;
+      lastPts[pid] = pts;
+    } else {
+      lastPts[pid] = 0;
+    }
+  });
+  await fbUpd(`quiz/rooms/${S.quizRoomId}`,{
+    ...updates, showAnswers:true, lastPoints:lastPts, status:'leaderboard'
+  });
+}
+
+function shuffleQuiz(arr){
+  return arr.slice().sort(()=>Math.random()-.5);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   ВИКТОРИНА — KAHOOT-STYLE
+   Логика: host создаёт комнату → все заходят по PIN →
+   host запускает → вопросы идут синхронно через Firebase →
+   таймер на клиенте → очки за скорость → таблица лидеров
+══════════════════════════════════════════════════════ */
+
+/* ── ВОПРОСЫ (без CMG) ── */
+const QUIZ_QUESTIONS = [
+  // ГЕОЛОГИЯ И ПЛАСТЫ
+  {cat:'Геология',q:'Что такое пористость горной породы?',
+   opts:['Способность пропускать флюиды','Доля пустот в общем объёме породы','Давление на глубине пласта','Вязкость нефти'],
+   ans:1,explain:'Пористость — отношение объёма пустот (пор) к общему объёму породы. Измеряется в долях или процентах.'},
+  {cat:'Геология',q:'Какой тип коллектора наиболее распространён в Казахстане?',
+   opts:['Карбонатный','Терригенный','Вулканический','Соленосный'],
+   ans:1,explain:'Большинство крупных месторождений Казахстана (Тенгиз, Кашаган) приурочены к терригенным и карбонатным коллекторам.'},
+  {cat:'Геология',q:'Что означает аббревиатура ГВК?',
+   opts:['Горизонтальный водяной контакт','Газоводяной контакт','Газоводяной клапан','Горизонтальная водяная карта'],
+   ans:1,explain:'ГВК — газоводяной контакт, поверхность раздела газовой и водяной фаз в пласте.'},
+  {cat:'Геология',q:'Какой параметр характеризует способность пласта пропускать флюид?',
+   opts:['Пористость','Насыщённость','Проницаемость','Сжимаемость'],
+   ans:2,explain:'Проницаемость (дарси, мД) определяет способность породы пропускать жидкость или газ под действием перепада давления.'},
+  {cat:'Геология',q:'В чём измеряется проницаемость пласта?',
+   opts:['Паскаль','Дарси (Д)','Ньютон','Дебит'],
+   ans:1,explain:'Проницаемость измеряется в дарси (Д) или миллидарси (мД). 1 Д = 9.869×10⁻¹³ м².'},
+  {cat:'Геология',q:'Что такое нефтенасыщенность?',
+   opts:['Объём нефти в резервуаре','Доля пор, заполненных нефтью','Давление нефти в пласте','Вязкость нефти при пластовых условиях'],
+   ans:1,explain:'Нефтенасыщенность — отношение объёма пор, занятых нефтью, к общему объёму порового пространства.'},
+
+  // РАЗРАБОТКА МЕСТОРОЖДЕНИЙ
+  {cat:'Разработка',q:'Что такое КИН?',
+   opts:['Коэффициент извлечения нефти','Контроль изоляции нефти','Кривая изменения нагнетания','Константа инфильтрации насыщения'],
+   ans:0,explain:'КИН (коэффициент извлечения нефти) — отношение извлекаемых запасов нефти к геологическим. Обычно 0.25–0.50.'},
+  {cat:'Разработка',q:'Что такое забойное давление?',
+   opts:['Давление на поверхности скважины','Давление в призабойной зоне пласта','Давление нагнетания воды','Атмосферное давление'],
+   ans:1,explain:'Забойное давление — давление флюида у забоя (нижней части) скважины при её работе.'},
+  {cat:'Разработка',q:'Какой метод повышения нефтеотдачи относится к тепловым?',
+   opts:['Заводнение','Закачка CO₂','Паротепловое воздействие','Гидроразрыв пласта'],
+   ans:2,explain:'Паротепловое воздействие (паростимуляция) — закачка горячего пара для снижения вязкости нефти. Применяется на месторождениях тяжёлой нефти.'},
+  {cat:'Разработка',q:'Что означает ГРП в нефтяной отрасли?',
+   opts:['Геологическое расположение пласта','Гидравлический разрыв пласта','Горизонтальное расположение перфорации','Газовое регулирование потока'],
+   ans:1,explain:'ГРП — гидравлический разрыв пласта. Создание трещин в породе под высоким давлением жидкости для увеличения притока.'},
+  {cat:'Разработка',q:'Что такое обводнённость продукции скважины?',
+   opts:['Содержание газа в нефти','Доля воды в общей добыче жидкости','Объём закачиваемой воды','Давление в водоносном пласте'],
+   ans:1,explain:'Обводнённость — отношение объёма добываемой воды к общему объёму жидкости (нефть + вода). Измеряется в %.'},
+  {cat:'Разработка',q:'Какой показатель характеризует интенсивность притока жидкости к скважине?',
+   opts:['Пластовое давление','Индекс продуктивности (PI)','Газовый фактор','Вязкость нефти'],
+   ans:1,explain:'Индекс продуктивности PI = Q/(Pпл-Pзаб) — дебит скважины на единицу депрессии. Единица: м³/сут/атм.'},
+
+  // ФИЗИКА ПЛАСТА
+  {cat:'Физика пласта',q:'При каком условии нефть содержит растворённый газ?',
+   opts:['При давлении ниже давления насыщения','При давлении выше давления насыщения','При любом давлении','Только при температуре выше 100°C'],
+   ans:1,explain:'Газ остаётся растворённым в нефти при давлении выше давления насыщения (давления пузырькообразования).'},
+  {cat:'Физика пласта',q:'Что такое газовый фактор (GOR)?',
+   opts:['Отношение газа к воде','Объём газа на единицу добытой нефти','Давление газовой шапки','Проницаемость для газа'],
+   ans:1,explain:'GOR (Gas-Oil Ratio) — газовый фактор, объём попутного газа на единицу добытой нефти. Измеряется в м³/м³ или SCF/STB.'},
+  {cat:'Физика пласта',q:'Что происходит с вязкостью нефти при повышении температуры?',
+   opts:['Увеличивается','Уменьшается','Не изменяется','Сначала растёт, потом падает'],
+   ans:1,explain:'При повышении температуры молекулярные связи ослабевают, и вязкость нефти снижается. На этом принципе основано паровое воздействие.'},
+  {cat:'Физика пласта',q:'Как называется зависимость дебита нефтяной скважины от забойного давления?',
+   opts:['Кривая Дарси','Индикаторная диаграмма (IPR)','График Хорнера','Воронка депрессии'],
+   ans:1,explain:'IPR (Inflow Performance Relationship) — индикаторная диаграмма, показывает связь между дебитом и забойным давлением. Для газа часто используется формула Вогеля.'},
+
+  // СИМУЛЯЦИЯ
+  {cat:'Симуляция',q:'Что такое симулятор пласта?',
+   opts:['Прибор для измерения давления','Программа для математического моделирования поведения пласта','Устройство для отбора керна','Насос для закачки воды'],
+   ans:1,explain:'Симулятор пласта — программный комплекс, решающий уравнения фильтрации многофазных флюидов в пористой среде для прогноза добычи.'},
+  {cat:'Симуляция',q:'Что такое историческая адаптация (history matching)?',
+   opts:['Запись истории бурения','Подбор параметров модели для воспроизведения фактических данных добычи','Анализ архивных геологических карт','Составление отчёта по разработке'],
+   ans:1,explain:'History matching — настройка геолого-гидродинамической модели путём изменения параметров пласта так, чтобы расчётные данные совпадали с фактической историей добычи.'},
+  {cat:'Симуляция',q:'Что означает чёрная нефть (black oil) в контексте симуляции?',
+   opts:['Тяжёлая нефть с плотностью выше 900 кг/м³','Упрощённая модель флюида с двумя компонентами','Нефть с высоким содержанием серы','Загрязнённая нефть'],
+   ans:1,explain:'Black oil — упрощённая модель флюида (нефть + газ + вода), где нефть и газ описываются PVT-таблицами (Bo, Rs, Bg). Подходит для большинства задач.'},
+  {cat:'Симуляция',q:'Что такое ячейка грида в симуляторе?',
+   opts:['Ячейка электронной таблицы','Минимальный объёмный элемент геологической модели','Точка измерения давления','Участок трубопровода'],
+   ans:1,explain:'Грид (сетка) делит пласт на ячейки. Каждая ячейка имеет свои петрофизические свойства. Чем мельче ячейки — тем точнее, но дольше считает модель.'},
+  {cat:'Симуляция',q:'Какой симулятор разработан компанией Schlumberger?',
+   opts:['tNavigator','ECLIPSE','CMG IMEX','VIP'],
+   ans:1,explain:'ECLIPSE — один из наиболее распространённых симуляторов пласта, разработанный Schlumberger (ныне SLB). Включает ECLIPSE 100 (black oil) и ECLIPSE 300 (композиционный).'},
+  {cat:'Симуляция',q:'Что такое upscaling в геологическом моделировании?',
+   opts:['Увеличение масштаба карты','Укрупнение ячеек геологической модели при переносе в симулятор','Повышение точности расчётов','Перевод данных в международную систему единиц'],
+   ans:1,explain:'Upscaling — процесс укрупнения детальной геологической модели (миллионы ячеек) до размеров симуляционной модели (тысячи ячеек) при сохранении основных свойств.'},
+
+  // БУРЕНИЕ
+  {cat:'Бурение',q:'Что такое буровой раствор (drilling mud)?',
+   opts:['Смазочное масло для бурового инструмента','Специальная жидкость, закачиваемая в скважину при бурении','Раствор для цементирования','Кислота для обработки пласта'],
+   ans:1,explain:'Буровой раствор — циркулирующая жидкость при бурении. Выносит шлам, охлаждает долото, создаёт давление на пласт для предотвращения выбросов.'},
+  {cat:'Бурение',q:'Что такое горизонтальное бурение?',
+   opts:['Бурение строго вертикально','Бурение скважин с горизонтальным участком ствола в пласте','Бурение под углом 45°','Бурение нескольких скважин с одной точки'],
+   ans:1,explain:'Горизонтальное бурение позволяет разместить скважину вдоль пласта, увеличив область дренирования. Особенно эффективно в тонких или трещиноватых пластах.'},
+  {cat:'Бурение',q:'Что такое обсадная колонна?',
+   opts:['Колонна бурильных труб','Стальные трубы для крепления стенок скважины','Инструмент для перфорации','Насосные трубы'],
+   ans:1,explain:'Обсадная колонна — стальные трубы, спускаемые в скважину и цементируемые для изоляции пластов и предотвращения обрушения стенок.'},
+
+  // КАЗАХСТАН
+  {cat:'Нефтянка Казахстана',q:'Какое месторождение является крупнейшим в Казахстане по запасам?',
+   opts:['Тенгиз','Кашаган','Карачаганак','Жанажол'],
+   ans:1,explain:'Кашаган — крупнейшее нефтяное месторождение Казахстана и одно из крупнейших в мире. Открыто в 2000 году на шельфе Каспийского моря.'},
+  {cat:'Нефтянка Казахстана',q:'Какая компания является оператором месторождения Тенгиз?',
+   opts:['КазМунайГаз','TengizChevroil','Shell','ExxonMobil'],
+   ans:1,explain:'TengizChevroil (TCO) — совместное предприятие Chevron, ExxonMobil, КазМунайГаза и LukArco. Оператор Тенгизского месторождения с 1993 года.'},
+  {cat:'Нефтянка Казахстана',q:'В каком море находится месторождение Кашаган?',
+   opts:['Аральское','Каспийское','Чёрное','Балтийское'],
+   ans:1,explain:'Кашаган расположен на северном шельфе Каспийского моря в 80 км от Атырау.'},
+  {cat:'Нефтянка Казахстана',q:'Как называется национальная нефтяная компания Казахстана?',
+   opts:['КазойлГаз','КазМунайГаз','НацНефтеГаз','ЭнергоКазахстан'],
+   ans:1,explain:'КазМунайГаз (КМГ) — национальная компания по разведке и добыче углеводородов в Казахстане. Основана в 2002 году.'},
+  {cat:'Нефтянка Казахстана',q:'Какое месторождение известно высоким содержанием серы в нефти?',
+   opts:['Узень','Жанажол','Тенгиз','Каламкас'],
+   ans:2,explain:'Тенгизская нефть содержит около 0.7% серы и значительное количество H₂S (сероводорода), что требует специальных технологий переработки.'},
+];
+
+/* ── HELPERS ── */
+function quizPIN(){
+  return String(Math.floor(1000+Math.random()*9000));
+}
+function quizShuffle(arr){
+  return arr.slice().sort(()=>Math.random()-.5);
+}
+function getQSet(n=20){
+  // Берём по несколько вопросов из каждой категории
+  const cats={};
+  QUIZ_QUESTIONS.forEach((q,i)=>{
+    if(!cats[q.cat])cats[q.cat]=[];
+    cats[q.cat].push(i);
+  });
+  const selected=[];
+  Object.values(cats).forEach(idxs=>{
+    quizShuffle(idxs).slice(0,Math.ceil(n/Object.keys(cats).length)+1).forEach(i=>selected.push(i));
+  });
+  return quizShuffle(selected).slice(0,n).map(i=>QUIZ_QUESTIONS[i]);
+}
+
+let _quizTimer=null;
+
+function clearQuizTimer(){ if(_quizTimer){clearInterval(_quizTimer);_quizTimer=null;} }
+
+/* ── RENDER QUIZ ── */
+function renderQuiz(){
+  const r=S.quizRoom;
+  const rid=S.quizRoomId;
+
+  // No room
+  if(!r||!rid) return renderQuizLobby();
+
+  // Check I'm in this room
+  const allP=[...Object.values(r.players||{})];
+  const me=allP.find(p=>p.id===S.user.id);
+  if(!me) return renderQuizLobby();
+
+  // Final
+  if(r.status==='finished') return renderQuizFinal(r);
+
+  // Between questions — show leaderboard
+  if(r.status==='leaderboard') return renderQuizLeaderboard(r,false);
+
+  // Question active
+  if(r.status==='question') return renderQuizQuestion(r,me);
+
+  // Waiting room
+  return renderQuizWaiting(r);
+}
+
+function renderQuizLobby(){
+  return`<div class="quiz-wrap">
+    <div class="quiz-lobby">
+      <div class="quiz-logo">🧠</div>
+      <div class="quiz-title">Викторина — Нефтянка</div>
+      <div class="quiz-sub">Соревновательная викторина для команды · Kahoot-стиль</div>
+      <div class="quiz-lobby-btns">
+        <button class="qbtn qbtn-primary" onclick="quizCreate()">🎯 Создать игру</button>
+        <button class="qbtn qbtn-secondary" onclick="quizShowJoin()">🚪 Войти по PIN</button>
+      </div>
+      <div id="quiz-join-form" style="display:none;margin-bottom:1.5rem">
+        <div class="quiz-join-row">
+          <input class="quiz-pin-input" id="quiz-pin-inp" placeholder="PIN" maxlength="4"
+            oninput="this.value=this.value.replace(/\D/g,'')"
+            onkeydown="if(event.key==='Enter')quizJoin()">
+          <button class="qbtn qbtn-primary" onclick="quizJoin()">Войти →</button>
+        </div>
+      </div>
+      <div class="quiz-rules">
+        <div class="quiz-rules-title">📋 Как играть</div>
+        <ul>
+          <li>Один создаёт игру и получает PIN-код</li>
+          <li>Остальные вводят PIN и заходят</li>
+          <li>Ведущий нажимает «Начать игру»</li>
+          <li>На каждый вопрос — 20 секунд</li>
+          <li>Чем быстрее правильный ответ — тем больше очков (макс. 1000)</li>
+          <li>Побеждает тот, кто наберёт больше всего очков</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderQuizWaiting(r){
+  const players=Object.values(r.players||{});
+  const isHost=r.hostId===S.user.id;
+  const canStart=players.length>=1;
+  return`<div class="quiz-wrap">
+    <div class="quiz-waiting">
+      <div class="quiz-waiting-header">
+        <div class="quiz-waiting-pin">PIN-код для входа</div>
+        <div class="quiz-pin-display">${S.quizRoomId}</div>
+        <div class="quiz-waiting-title">${players.length} игрок${players.length===1?'':'ов'} в комнате</div>
+      </div>
+      <div class="quiz-players-grid">
+        ${players.map(p=>`
+          <div class="quiz-player-chip ${p.id===r.hostId?'host':''}">
+            ${avImg(p.avatar,p.name,24,p.color||COLORS[0])}
+            <div>
+              <div class="qpc-name">${escH(p.name.split(' ')[0])}</div>
+              ${p.id===r.hostId?'<div class="qpc-badge">👑 ведущий</div>':''}
+            </div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" ${canStart?'':'disabled'} onclick="quizStart()">
+            🚀 Начать игру (${(r.questions||[]).length} вопросов)
+          </button>
+          <div style="margin-top:.625rem">
+            <button class="qbtn qbtn-secondary" style="padding:8px 18px;font-size:13px" onclick="quizLeave()">Отменить</button>
+          </div>
+        </div>`:`
+        <div style="text-align:center">
+          <div style="font-size:14px;color:var(--t2);margin-bottom:.875rem">Ждём пока ведущий начнёт…</div>
+          <button class="qbtn qbtn-secondary" style="padding:8px 18px;font-size:13px" onclick="quizLeave()">Выйти</button>
+        </div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizQuestion(r,me){
+  const qi=r.currentQ||0;
+  const q=(r.questions||[])[qi];
+  if(!q) return renderQuizLobby();
+
+  const isHost=r.hostId===S.user.id;
+  const total=(r.questions||[]).length;
+  const timeLeft=r.timeLeft!==undefined?r.timeLeft:20;
+  const timerPct=(timeLeft/20*100).toFixed(1);
+  const myAnswers=r.answers||{};
+  const myAns=myAnswers[S.user.id];
+  const answered=myAns!==undefined;
+  const answersCount=Object.keys(myAnswers).length;
+  const totalPlayers=Object.keys(r.players||{}).length;
+  const myScore=(r.scores&&r.scores[S.user.id])||0;
+  const urgent=timeLeft<=5;
+
+  // If already answered — show waiting
+  if(answered&&!isHost){
+    return`<div class="quiz-wrap">
+      <div class="quiz-question-screen">
+        <div class="quiz-topbar">
+          <div class="quiz-q-num">ВОПРОС ${qi+1} / ${total}</div>
+          <div class="quiz-timer-wrap">
+            <div class="quiz-timer ${urgent?'urgent':''}">${timeLeft}</div>
+            <div class="quiz-timer-bar-wrap">
+              <div class="quiz-timer-bar ${urgent?'urgent':''}" style="width:${timerPct}%"></div>
+            </div>
+          </div>
+          <div><div class="quiz-score-display">${myScore}</div><div class="quiz-score-label">очков</div></div>
+        </div>
+        <div class="quiz-waiting-answer">
+          <div class="qwa-icon">⏳</div>
+          <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:.5rem">Ответ принят!</div>
+          <div style="font-size:14px;color:var(--t2)">Ждём остальных… ${answersCount}/${totalPlayers}</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <!-- Top bar -->
+      <div class="quiz-topbar">
+        <div class="quiz-q-num">ВОПРОС ${qi+1} / ${total} · <span style="color:var(--accent)">${escH(q.cat)}</span></div>
+        <div class="quiz-timer-wrap">
+          <div class="quiz-timer ${urgent?'urgent':''}" id="quiz-timer-num">${timeLeft}</div>
+          <div class="quiz-timer-bar-wrap">
+            <div class="quiz-timer-bar ${urgent?'urgent':''}" id="quiz-timer-bar" style="width:${timerPct}%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="quiz-score-display">${myScore}</div>
+          <div class="quiz-score-label">очков</div>
+        </div>
+      </div>
+
+      <!-- Question card -->
+      <div class="quiz-card">
+        <div class="quiz-q-cat">${escH(q.cat)}</div>
+        <div class="quiz-q-text">${escH(q.q)}</div>
+        ${isHost?`<div style="font-size:13px;color:var(--t2);margin-top:.75rem">Ответили: ${answersCount} / ${totalPlayers}</div>`:''}
+      </div>
+
+      <!-- Answer buttons -->
+      <div class="quiz-answers">
+        ${q.opts.map((opt,i)=>{
+          const icons=['▲','◆','●','★'];
+          return`<button class="quiz-answer qa-${i} ${answered&&myAns===i?'selected':''}"
+            ${answered||isHost?'disabled':''} onclick="quizAnswer(${i})">
+            <span class="qa-icon">${icons[i]}</span>
+            <span class="qa-text">${escH(opt)}</span>
+          </button>`;
+        }).join('')}
+      </div>
+
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" onclick="quizNextStep()">
+            ${qi+1>=total?'Завершить':'Следующий вопрос →'}
+          </button>
+        </div>`:''}
+    </div>
+  </div>`;
+}
+
+function renderQuizLeaderboard(r,isFinal){
+  const players=Object.values(r.players||{});
+  const scores=r.scores||{};
+  const qi=r.currentQ||0;
+  const total=(r.questions||[]).length;
+  const isHost=r.hostId===S.user.id;
+  const lastQ=(r.questions||[])[Math.max(0,qi-1)];
+  const lastAns=r.answers||{};
+
+  const sorted=players.map(p=>({
+    ...p,score:scores[p.id]||0,
+    answered:lastAns[p.id]!==undefined,
+    correct:lastAns[p.id]===((r.questions||[])[r.currentQ>=total?total-1:r.currentQ-1]||{}).ans
+  })).sort((a,b)=>b.score-a.score);
+
+  const medals=['🥇','🥈','🥉'];
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      ${lastQ?`
+      <div class="quiz-result-overlay">
+        <div class="qro-emoji">${lastQ.ans!==undefined?'✅':''}</div>
+        <div class="qro-correct">Правильный ответ: ${escH(lastQ.opts[lastQ.ans])}</div>
+        <div class="qro-explain">${escH(lastQ.explain||'')}</div>
+      </div>`:''}
+      <div class="quiz-leaderboard">
+        <div class="qlb-title">🏆 Таблица лидеров</div>
+        ${sorted.slice(0,10).map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${i<3?medals[i]:i+1}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div style="flex:1;min-width:0">
+              <div class="qlb-name">${escH(p.name)} ${p.id===S.user.id?'<span style="font-size:11px;color:var(--accent)">(вы)</span>':''}</div>
+              <div class="qlb-streak">${p.answered?(p.correct?'✅ верно':'❌ неверно'):'— не ответил'}</div>
+            </div>
+            <div class="qlb-score">+${p.score}</div>
+          </div>`).join('')}
+      </div>
+      ${isHost?`
+        <div style="text-align:center">
+          <button class="qbtn qbtn-primary" onclick="quizNextQuestion()">
+            ${qi>=total?'Завершить игру 🏁':'Следующий вопрос →'}
+          </button>
+        </div>`:`<div style="text-align:center;font-size:14px;color:var(--t2)">Ждём ведущего…</div>`}
+    </div>
+  </div>`;
+}
+
+function renderQuizFinal(r){
+  const players=Object.values(r.players||{});
+  const scores=r.scores||{};
+  const isHost=r.hostId===S.user.id;
+  const sorted=players.map(p=>({...p,score:scores[p.id]||0})).sort((a,b)=>b.score-a.score);
+  const winner=sorted[0];
+  const medals=['🥇','🥈','🥉'];
+
+  return`<div class="quiz-wrap">
+    <div class="quiz-question-screen">
+      <div class="quiz-final">
+        <div class="quiz-winner-trophy">🏆</div>
+        <div class="quiz-winner-name">${escH(winner?.name||'?')}</div>
+        <div class="quiz-winner-sub">Победитель викторины · ${scores[winner?.id]||0} очков</div>
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+          ${isHost?`<button class="qbtn qbtn-primary" onclick="quizRestart()">🔄 Играть снова</button>`:''}
+          <button class="qbtn qbtn-secondary" onclick="quizLeave()">Выйти</button>
+        </div>
+      </div>
+      <div class="quiz-leaderboard" style="margin-top:1rem">
+        <div class="qlb-title">Итоговая таблица</div>
+        ${sorted.map((p,i)=>`
+          <div class="qlb-item ${i===0?'top-1':i===1?'top-2':i===2?'top-3':''} ${p.id===S.user.id?'me':''}">
+            <div class="qlb-rank">${i<3?medals[i]:i+1}</div>
+            ${avImg(p.avatar,p.name,32,p.color||COLORS[0])}
+            <div style="flex:1"><div class="qlb-name">${escH(p.name)}</div></div>
+            <div class="qlb-score">${p.score}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── QUIZ ACTIONS ── */
+window.quizShowJoin = ()=>{
+  const f=document.getElementById('quiz-join-form');
+  if(f){f.style.display=f.style.display==='none'?'block':'none';}
+  setTimeout(()=>document.getElementById('quiz-pin-inp')?.focus(),50);
+};
+
+window.quizCreate = async()=>{
+  const me=S.members[S.user.id]||S.user;
+  const pin=quizPIN();
+  const qs=getQSet(20);
+  const room={
+    hostId:me.id,
+    status:'waiting',
+    currentQ:0,
+    timeLeft:20,
+    questions:qs,
+    players:{[me.id]:{id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]}},
+    scores:{},
+    answers:{},
+    createdAt:Date.now()
+  };
+  await fbSet(`quiz/${pin}`,room);
+  S.quizRoomId=pin;
+  fbListen(`quiz/${pin}`,v=>{S.quizRoom=v;if(S.page==='quiz')rerender();});
+  showToast(`Комната создана! PIN: ${pin}`);
+  rerender();
+};
+
+window.quizJoin = async()=>{
+  const pin=(document.getElementById('quiz-pin-inp')?.value||'').trim();
+  if(pin.length!==4){showToast('Введите 4-значный PIN',true);return;}
+  const room=await fbGet(`quiz/${pin}`);
+  if(!room){showToast('Комната не найдена',true);return;}
+  if(room.status!=='waiting'){showToast('Игра уже началась',true);return;}
+  const me=S.members[S.user.id]||S.user;
+  await fbUpd(`quiz/${pin}/players`,{
+    [me.id]:{id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]}
+  });
+  S.quizRoomId=pin;
+  fbListen(`quiz/${pin}`,v=>{S.quizRoom=v;if(S.page==='quiz')rerender();});
+  rerender();
+};
+
+window.quizStart = async()=>{
+  if(!S.quizRoomId)return;
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'question',currentQ:0,timeLeft:20,answers:{},scores:{}});
+  quizStartTimer();
+};
+
+function quizStartTimer(){
+  clearQuizTimer();
+  let t=20;
+  _quizTimer=setInterval(async()=>{
+    if(!S.quizRoomId||S.quizRoom?.hostId!==S.user.id){clearQuizTimer();return;}
+    t--;
+    await fbUpd(`quiz/${S.quizRoomId}`,{timeLeft:t});
+    if(t<=0){
+      clearQuizTimer();
+      // Auto-advance to leaderboard
+      await quizShowLeaderboard();
+    }
+  },1000);
+}
+
+async function quizShowLeaderboard(){
+  if(!S.quizRoomId)return;
+  const r=await fbGet(`quiz/${S.quizRoomId}`);
+  if(!r)return;
+  // Calculate scores for this round
+  const qi=r.currentQ||0;
+  const q=(r.questions||[])[qi];
+  const answers=r.answers||{};
+  const scores={...(r.scores||{})};
+  const timeLeft=r.timeLeft||0;
+  Object.entries(answers).forEach(([pid,ans])=>{
+    if(ans===q?.ans){
+      // Points: base 500 + up to 500 for speed
+      const speedBonus=Math.round((timeLeft/20)*500);
+      scores[pid]=(scores[pid]||0)+500+speedBonus;
+    }
+  });
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'leaderboard',scores,currentQ:qi+1});
+}
+
+window.quizNextStep = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  if(S.quizRoom.hostId!==S.user.id)return;
+  clearQuizTimer();
+  await quizShowLeaderboard();
+};
+
+window.quizNextQuestion = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  if(S.quizRoom.hostId!==S.user.id)return;
+  const qi=S.quizRoom.currentQ||0;
+  const total=(S.quizRoom.questions||[]).length;
+  if(qi>=total){
+    await fbUpd(`quiz/${S.quizRoomId}`,{status:'finished'});
+    return;
+  }
+  await fbUpd(`quiz/${S.quizRoomId}`,{status:'question',timeLeft:20,answers:{}});
+  quizStartTimer();
+};
+
+window.quizAnswer = async(idx)=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const r=S.quizRoom;
+  if(r.status!=='question')return;
+  const myAnswers=r.answers||{};
+  if(myAnswers[S.user.id]!==undefined)return; // already answered
+  await fbUpd(`quiz/${S.quizRoomId}/answers`,{[S.user.id]:idx});
+};
+
+window.quizRestart = async()=>{
+  if(!S.quizRoomId||!S.quizRoom)return;
+  const qs=getQSet(20);
+  await fbUpd(`quiz/${S.quizRoomId}`,{
+    status:'waiting',currentQ:0,timeLeft:20,
+    questions:qs,scores:{},answers:{}
+  });
+};
+
+window.quizLeave = async()=>{
+  if(!S.quizRoomId)return;
+  const me=S.user.id;
+  const r=S.quizRoom;
+  if(r&&r.hostId===me){
+    // Host leaves — delete room
+    await fbDel(`quiz/${S.quizRoomId}`);
+  } else {
+    await fbDel(`quiz/${S.quizRoomId}/players/${me}`);
+  }
+  clearQuizTimer();
+  S.quizRoomId=null;
+  S.quizRoom=null;
   rerender();
 };
 

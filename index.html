@@ -57,12 +57,12 @@ body::after{content:'';position:fixed;inset:0;
   font-size:12px;font-weight:700;color:var(--accent);cursor:pointer}
 
 /* ── LAYOUT ── */
-.layout{display:grid;grid-template-columns:240px 1fr 280px;gap:0;
+.layout{display:grid;grid-template-columns:240px 1fr 280px;
   max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem}
 
 /* ── LEFT SIDEBAR ── */
-.sidebar-left{position:sticky;top:70px;align-self:start}
-.nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
+.sidebar-left{position:sticky;top:70px;align-self:start;z-index:10;position:relative}
+.nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06);position:relative;z-index:10}
 .nav-profile{padding:1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-profile:hover{background:rgba(255,255,255,.02)}
 .nav-pav{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);flex-shrink:0}
@@ -72,7 +72,7 @@ body::after{content:'';position:fixed;inset:0;
 .nav-pname{font-weight:600;font-size:14px}
 .nav-prole{font-size:11px;color:var(--accent);margin-top:2px}
 .nav-items{padding:.5rem}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;pointer-events:auto;
   cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
   transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans'}
 .nav-item:hover{background:var(--bg3);color:var(--t1)}
@@ -1009,7 +1009,7 @@ function renderShell(){
     </div>
 
     <!-- MAIN -->
-    <div>
+    <div style="min-width:0;overflow:visible">
       ${renderPage()}
     </div>
 

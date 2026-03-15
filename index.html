@@ -923,12 +923,11 @@ function rerender(){
 }
 
 function renderModalRoot(){
-  const mr=document.getElementById('modal-root');
-  if(!mr)return;
-  if(S.modal&&S.modal.type&&S.modal.data!==undefined){
-    mr.innerHTML=renderModal();
-  } else {
-    mr.innerHTML='';
+  // Modal is now managed directly via openEditVac/closeVacModal
+  // Only clear if S.modal is null (safety cleanup)
+  if(!S.modal){
+    const mr=document.getElementById('modal-root');
+    if(mr&&mr.innerHTML&&mr.innerHTML.includes('vac-modal-bg'))return; // don't clear active modal
   }
 }
 
@@ -1061,9 +1060,7 @@ function renderShell(){
     <div class="sidebar-right">
       ${renderRightSidebar()}
     </div>
-  </div>
-
-  ${S.modal?renderModal():''}`;
+  </div>`;
 }
 
 function getBirthdays(){
@@ -1904,6 +1901,10 @@ window.closeModal = ()=>{
   if(mr)mr.innerHTML='';
   rerender();
 };
+window.closeVacModal = ()=>{
+  const mr=document.getElementById('modal-root');
+  if(mr)mr.innerHTML='';
+};
 window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{
@@ -1914,7 +1915,53 @@ window.toggleNotif = ()=>{
 };
 window.viewProfile = id=>{ S.page='profile'; S.user.id===id ? S.page='profile' : null; S.viewProfileId=id; rerender(); };
 window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; rerender(); };
-window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; rerender(); };
+window.openEditVac = (key,from,to)=>{
+  const mr=document.getElementById('modal-root');
+  if(!mr)return;
+  mr.innerHTML=`<div style="position:fixed;inset:0;background:rgba(15,31,53,.55);z-index:9999;
+    display:flex;align-items:center;justify-content:center;padding:1rem" id="vac-modal-bg">
+    <div style="background:#fff;border-radius:14px;padding:1.75rem;width:100%;max-width:380px;
+      box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative;z-index:10000">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+        <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">✏ Изменить отпуск</div>
+        <button type="button" onclick="window.closeVacModal()"
+          style="background:none;border:1px solid #e0e0e0;border-radius:8px;width:30px;height:30px;
+          cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center">✕</button>
+      </div>
+      <div style="margin-bottom:.875rem">
+        <label style="display:block;font-size:10px;color:#8fa3be;letter-spacing:.5px;margin-bottom:4px;font-weight:500">ДАТА НАЧАЛА</label>
+        <input type="date" id="evfrom" value="${from}"
+          style="width:100%;background:#f5f7fb;border:1px solid #e0e8f5;border-radius:8px;
+          padding:9px 12px;font-size:13px;font-family:'Plus Jakarta Sans';color:#0f1f35;outline:none">
+      </div>
+      <div style="margin-bottom:1.25rem">
+        <label style="display:block;font-size:10px;color:#8fa3be;letter-spacing:.5px;margin-bottom:4px;font-weight:500">ДАТА ОКОНЧАНИЯ</label>
+        <input type="date" id="evto" value="${to}"
+          style="width:100%;background:#f5f7fb;border:1px solid #e0e8f5;border-radius:8px;
+          padding:9px 12px;font-size:13px;font-family:'Plus Jakarta Sans';color:#0f1f35;outline:none">
+      </div>
+      <div style="display:flex;gap:.625rem">
+        <button type="button" onclick="window.saveEditVac('${key}')"
+          style="flex:1;padding:10px;border-radius:8px;border:none;
+          background:linear-gradient(135deg,#2878e8,#1a65d4);color:#fff;
+          font-weight:700;font-size:14px;cursor:pointer;font-family:'Plus Jakarta Sans'">
+          Сохранить
+        </button>
+        <button type="button" onclick="window.delVac('${key}')"
+          style="padding:10px 14px;border-radius:8px;border:1px solid rgba(224,58,58,.4);
+          background:none;color:#e03a3a;font-weight:600;font-size:13px;cursor:pointer;
+          font-family:'Plus Jakarta Sans'">
+          Отменить отпуск
+        </button>
+      </div>
+      <div style="text-align:center;margin-top:.75rem">
+        <button type="button" onclick="window.closeVacModal()"
+          style="background:none;border:none;color:#8fa3be;font-size:13px;cursor:pointer;
+          font-family:'Plus Jakarta Sans'">Закрыть</button>
+      </div>
+    </div>
+  </div>`;
+};
 window.openDM = id=>{ S.activeDM=id; rerender(); setTimeout(()=>scrollEl('dm-msgs'),80); };
 window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; rerender(); };
 window.autoResize = el=>{ el.style.height='auto'; el.style.height=el.scrollHeight+'px'; };
@@ -2088,7 +2135,8 @@ window.saveVac = async()=>{
 window.delVac = async key=>{
   if(!confirm('Отменить отпуск?'))return;
   await fbDel(`vacations/${key}`);
-  showToast('Отпуск отменён');S.modal=null;rerender();
+  window.closeVacModal();
+  showToast('Отпуск отменён');
 };
 
 window.saveEditVac = async key=>{
@@ -2146,6 +2194,11 @@ S.page='loading';
 S.modal=null;
 S.notifOpen=false;
 S.selectedDay=null;
+// Очищаем modal-root сразу при загрузке
+document.addEventListener('DOMContentLoaded',()=>{
+  const mr=document.getElementById('modal-root');
+  if(mr)mr.innerHTML='';
+});
 rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){

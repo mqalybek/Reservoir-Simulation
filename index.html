@@ -1172,34 +1172,130 @@ function renderCalendar(){
 }
 
 /* ── FILES ── */
+function gdriveDirect(url){
+  // Convert Google Drive share link to direct download link
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/uc?export=download&id=${m[1]}`;
+  return url;
+}
+function gdrivePreview(url){
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/file/d/${m[1]}/preview`;
+  return url;
+}
+function gdriveViewUrl(url){
+  if(!url)return'#';
+  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if(m)return`https://drive.google.com/file/d/${m[1]}/view`;
+  return url;
+}
+function fileIcon(name){
+  const ext=(name||'').split('.').pop().toLowerCase();
+  const map={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',
+    pptx:'📊',ppt:'📊',dat:'💾',txt:'📋',csv:'📊',
+    png:'🖼',jpg:'🖼',jpeg:'🖼',gif:'🖼',mp4:'🎬',
+    avi:'🎬',mov:'🎬',zip:'📦',rar:'📦',mp3:'🎵'};
+  return map[ext]||'📎';
+}
+
 function renderFiles(){
-  const ICONS={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',pptx:'📊',dat:'💾',txt:'📋',csv:'📊',png:'🖼',jpg:'🖼',jpeg:'🖼',zip:'📦',rar:'📦'};
-  const allF=Object.entries(S.files||{});
+  const allF=Object.entries(S.files||{}).sort((a,b)=>(b[1].ts||0)-(a[1].ts||0));
   const myF=allF.filter(([,f])=>f.memberId===S.user.id);
   const tmF=allF.filter(([,f])=>f.memberId!==S.user.id);
+
   const fi=([id,f],canDel)=>{
-    const ext=(f.name.split('.').pop()||'').toLowerCase();
     const mem=S.members[f.memberId]||{name:''};
-    return`<div class="fitem">
-      <div class="fico">${ICONS[ext]||'📎'}</div>
-      <div class="fi"><div class="fn">${escH(f.name)}</div>
-        <div class="fm">${escH(mem.name)} · ${f.date} · ${f.size}</div></div>
-      ${canDel?`<button class="fdel" onclick="delF('${id}')">🗑</button>`:''}
+    const hasLink=!!f.driveUrl;
+    return`<div class="fitem" style="flex-direction:column;align-items:stretch;gap:.5rem;padding:1rem">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="fico">${fileIcon(f.name)}</div>
+        <div class="fi">
+          <div class="fn">${escH(f.name)}</div>
+          <div class="fm">${escH(mem.name)} · ${f.date}${f.size?' · '+f.size:''}</div>
+        </div>
+        ${canDel?`<button class="fdel" onclick="delF('${id}')" title="Удалить">🗑</button>`:''}
+      </div>
+      ${f.desc?`<div style="font-size:12px;color:var(--t2);padding:0 2px">${escH(f.desc)}</div>`:''}
+      ${hasLink?`
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <a href="${escA(gdriveViewUrl(f.driveUrl))}" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
+              border-radius:8px;background:rgba(40,120,232,.1);color:var(--accent);
+              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(40,120,232,.2);
+              transition:all .2s" onmouseover="this.style.background='rgba(40,120,232,.18)'"
+              onmouseout="this.style.background='rgba(40,120,232,.1)'">
+            👁 Открыть
+          </a>
+          <a href="${escA(gdriveDirect(f.driveUrl))}" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
+              border-radius:8px;background:rgba(22,180,122,.1);color:var(--green);
+              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(22,180,122,.2);
+              transition:all .2s" onmouseover="this.style.background='rgba(22,180,122,.18)'"
+              onmouseout="this.style.background='rgba(22,180,122,.1)'">
+            ⬇ Скачать
+          </a>
+        </div>`
+      :`<div style="font-size:11px;color:var(--t3);font-style:italic">Ссылка не добавлена</div>`}
     </div>`;
   };
+
   return`<div class="files-page">
-    <div style="font-family:'Syne';font-size:16px;font-weight:700;margin-bottom:1rem">Файлы отдела</div>
-    <div class="upzone" onclick="document.getElementById('fi').click()">
-      <div class="upico">📁</div>
-      <div class="upt">Перетащите или <span>выберите файл</span></div>
-      <div style="font-size:11px;color:var(--t3);margin-top:3px">PDF, XLSX, DOCX, DAT, CSV и другие</div>
-      <input type="file" id="fi" style="display:none" onchange="upF(event)" multiple>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+      <div style="font-family:'Syne';font-size:16px;font-weight:700">Файлы отдела</div>
+      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showAddFileForm()">+ Добавить файл</button>
     </div>
-    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">МОИ ФАЙЛЫ (${myF.length})</div>
-    ${myF.length?`<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`:'<div style="font-size:13px;color:var(--t3);margin-bottom:1rem">Вы ещё не загружали файлы</div>'}
-    ${tmF.length?`<div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
-      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">ФАЙЛЫ КОМАНДЫ (${tmF.length})</div>
-      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`:''}
+
+    <!-- Add file form -->
+    <div id="add-file-form" style="display:none;background:var(--bg3);border:1px solid var(--border);
+      border-radius:12px;padding:1.25rem;margin-bottom:1rem">
+      <div style="font-weight:600;font-size:14px;margin-bottom:.875rem">📎 Добавить файл через Google Drive</div>
+      <div class="fg"><label>НАЗВАНИЕ ФАЙЛА</label>
+        <input type="text" id="f-name" placeholder="Отчёт Q1 2026.pdf"></div>
+      <div class="fg"><label>ССЫЛКА GOOGLE DRIVE</label>
+        <input type="url" id="f-url" placeholder="https://drive.google.com/file/d/..."></div>
+      <div class="fg"><label>ОПИСАНИЕ (необязательно)</label>
+        <input type="text" id="f-desc" placeholder="Краткое описание файла..."></div>
+      <div style="background:rgba(40,120,232,.06);border:1px solid var(--border);border-radius:8px;
+        padding:.875rem;margin-bottom:.875rem;font-size:12px;color:var(--t2);line-height:1.7">
+        <strong style="color:var(--t1)">Как получить ссылку из Google Drive:</strong><br>
+        1. Откройте файл на Google Drive<br>
+        2. Нажмите правой кнопкой → «Поделиться»<br>
+        3. Доступ → «Все, у кого есть ссылка»<br>
+        4. Нажмите «Копировать ссылку» и вставьте сюда
+      </div>
+      <div style="display:flex;gap:.625rem">
+        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="addDriveFile()">Сохранить</button>
+        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="hideAddFileForm()">Отмена</button>
+      </div>
+    </div>
+
+    <!-- My files -->
+    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
+      МОИ ФАЙЛЫ (${myF.length})
+    </div>
+    ${myF.length
+      ? `<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`
+      : `<div style="font-size:13px;color:var(--t3);margin-bottom:1rem;padding:.5rem 0">
+          Вы ещё не добавляли файлы
+        </div>`}
+
+    <!-- Team files -->
+    ${tmF.length?`
+      <div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
+        ФАЙЛЫ КОМАНДЫ (${tmF.length})
+      </div>
+      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`
+    :''}
+
+    ${!myF.length&&!tmF.length?`
+      <div style="text-align:center;padding:2rem 0;color:var(--t3)">
+        <div style="font-size:36px;margin-bottom:.5rem">📂</div>
+        <div style="font-size:14px">Файлы появятся здесь</div>
+        <div style="font-size:12px;margin-top:.375rem">Нажмите «+ Добавить файл» чтобы поделиться документом</div>
+      </div>`:''}
   </div>`;
 }
 
@@ -1535,14 +1631,33 @@ window.sendDM = async peerId=>{
   setTimeout(()=>{scrollEl('dm-msgs');document.getElementById('dminp')?.focus();},50);
 };
 
-window.upF = async e=>{
-  const files=e.target.files;if(!files.length)return;
-  for(const f of Array.from(files)){
-    await fbPush('files',{name:f.name,memberId:S.user.id,
-      date:new Date().toLocaleDateString('ru'),
-      size:f.size>1048576?(f.size/1048576).toFixed(1)+' МБ':Math.round(f.size/1024)+' КБ',ts:Date.now()});
-  }
-  showToast(`Загружено: ${files.length} файл(ов)`);
+window.showAddFileForm = ()=>{
+  const f=document.getElementById('add-file-form');
+  if(f)f.style.display='block';
+  setTimeout(()=>document.getElementById('f-name')?.focus(),50);
+};
+window.hideAddFileForm = ()=>{
+  const f=document.getElementById('add-file-form');
+  if(f)f.style.display='none';
+};
+
+window.addDriveFile = async()=>{
+  const name=(document.getElementById('f-name')?.value||'').trim();
+  const url=(document.getElementById('f-url')?.value||'').trim();
+  const desc=(document.getElementById('f-desc')?.value||'').trim();
+  if(!name){showToast('Введите название файла',true);return;}
+  if(!url){showToast('Вставьте ссылку Google Drive',true);return;}
+  if(!url.includes('drive.google.com')){showToast('Ссылка должна быть с Google Drive',true);return;}
+  await fbPush('files',{
+    name, driveUrl:url, desc,
+    memberId:S.user.id,
+    date:new Date().toLocaleDateString('ru'),
+    ts:Date.now()
+  });
+  // Clear form
+  ['f-name','f-url','f-desc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  window.hideAddFileForm();
+  showToast('Файл добавлен!');
 };
 
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };

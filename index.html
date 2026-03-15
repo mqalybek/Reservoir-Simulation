@@ -548,7 +548,19 @@ select option{background:var(--bg2)}
 </style>
 </head>
 <body>
-<div class="app" id="app"></div>
+<!-- Статичная структура — зоны обновляются независимо -->
+<div id="zone-loading" style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+  <div class="spinner"></div>
+  <div style="font-size:13px;color:var(--t2)">Подключение...</div>
+</div>
+<div id="zone-auth" style="display:none"></div>
+<div id="zone-topnav" style="display:none"></div>
+<div class="layout" id="zone-layout" style="display:none">
+  <div class="sidebar-left" id="zone-sidebar"></div>
+  <div style="min-width:0;flex:1" id="zone-main"></div>
+  <div class="sidebar-right" id="zone-right"></div>
+</div>
+<div id="zone-modal"></div>
 <div class="toast" id="toast"></div>
 <div class="bottom-nav" id="bottom-nav"></div>
 <div class="notif-panel" id="npanel">
@@ -678,26 +690,156 @@ function avImg(src,fallback,size=40,color='#3d8ef0',cls=''){
 
 /* ── LISTENERS ── */
 function startListeners(){
-  fbListen('members', v=>{ S.members=v||{}; if(['feed','team','profile','messages'].includes(S.page))rerender(); });
-  fbListen('posts', v=>{ S.posts=v||{}; if(S.page==='feed'||S.page==='profile')rerender(); });
-  fbListen('comments', v=>{ S.comments=v||{}; if(S.page==='feed')rerender(); });
-  fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerender(); });
-  fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
-  fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
-  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
+  fbListen('members', v=>{ S.members=v||{}; if(['feed','team','profile','messages'].includes(S.page))rerenderContent(); });
+  fbListen('posts', v=>{ S.posts=v||{}; if(S.page==='feed'||S.page==='profile')rerenderContent(); });
+  fbListen('comments', v=>{ S.comments=v||{}; if(S.page==='feed')rerenderContent(); });
+  fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerenderContent(); });
+  fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerenderContent(); });
+  fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerenderContent(); });
+  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerenderContent(); });
 }
 
 /* ── RENDER ROOT ── */
-function rerender(){
-  const app=document.getElementById('app');
-  if(!app)return;
-  if(S.page==='loading'){app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;return;}
-  if(S.page==='auth'){app.innerHTML=renderAuth();return;}
-  app.innerHTML=renderShell();
-  renderNotifPanel();
-  renderBottomNav();
+/* ══ ЗОНАЛЬНЫЙ РЕНДЕРИНГ — каждая зона обновляется независимо ══ */
+
+function showZone(zone){
+  ['loading','auth','topnav','layout'].forEach(z=>{
+    const el=document.getElementById('zone-'+z);
+    if(!el)return;
+    if(z==='layout'){
+      el.style.display=(zone==='layout')?'':'none';
+    } else {
+      el.style.display=(z===zone)?'':'none';
+    }
+  });
+  // topnav показываем вместе с layout
+  const tn=document.getElementById('zone-topnav');
+  if(tn)tn.style.display=(zone==='layout')?'block':'none';
+}
+
+function renderTopNav(){
+  const el=document.getElementById('zone-topnav');
+  if(!el||!S.user)return;
+  const me=S.members[S.user.id]||S.user;
+  const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
+    if(!key.includes(S.user.id))return acc;
+    return acc+Object.values(msgs||{}).filter(m=>m.from!==S.user.id&&!m.read).length;
+  },0);
+  const uc=S.notifs.filter(n=>!n.read).length;
+  el.innerHTML=`<div class="topnav">
+    <div class="tn-logo" onclick="gp('feed')">
+      <div class="tn-logo-mark">RS</div>
+      <span class="tn-logo-name">RS Team</span>
+    </div>
+    <div class="tn-search">
+      <span class="tn-search-ico">🔍</span>
+      <input placeholder="Поиск коллег..." id="search-inp" oninput="onSearch(this.value)">
+    </div>
+    <div class="tn-right">
+      <button class="tn-btn" data-notif onclick="toggleNotif()">🔔${uc>0?`<span class="tn-badge">${uc}</span>`:''}</button>
+      <button class="tn-btn" onclick="gp('messages')" title="Сообщения">💬${dmUnread>0?`<span class="tn-badge">${dmUnread}</span>`:''}</button>
+      <div onclick="gp('profile')">${avImg(me.avatar,me.name,34,me.color||COLORS[0])}</div>
+      <button class="tn-btn" onclick="logout()" title="Выйти" style="font-size:13px">⏻</button>
+    </div>
+  </div>`;
+}
+
+function renderSidebar(){
+  const el=document.getElementById('zone-sidebar');
+  if(!el||!S.user)return;
+  const me=S.members[S.user.id]||S.user;
+  const navItems=[
+    {id:'feed',ico:'🏠',label:'Лента'},
+    {id:'profile',ico:'👤',label:'Мой профиль'},
+    {id:'team',ico:'👥',label:'Команда'},
+    {id:'calendar',ico:'📅',label:'Календарь'},
+    {id:'files',ico:'📁',label:'Файлы'},
+    {id:'messages',ico:'💬',label:'Сообщения'},
+    {id:'game',ico:'🎯',label:'Игра'},
+    {id:'kanban',ico:'📋',label:'Задачи'},
+    {id:'wiki',ico:'📚',label:'База знаний'},
+    {id:'tools',ico:'🧮',label:'Инструменты'},
+  ];
+  const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
+    if(!key.includes(S.user.id))return acc;
+    return acc+Object.values(msgs||{}).filter(m=>m.from!==S.user.id&&!m.read).length;
+  },0);
+  el.innerHTML=`<div class="nav-card">
+    <div class="nav-profile" onclick="gp('profile')">
+      ${avImg(me.avatar,me.name,44,me.color||COLORS[0])}
+      <div>
+        <div class="nav-pname">${escH(me.name)}</div>
+        <div class="nav-prole">${escH(me.role||'')}</div>
+      </div>
+    </div>
+    <div class="nav-items">
+      ${navItems.map(n=>`
+        <button class="nav-item ${S.page===n.id?'active':''}" onclick="gp('${n.id}')">
+          <span class="nav-item-ico">${n.ico}</span>${n.label}
+          ${n.id==='messages'&&dmUnread>0?`<span class="nav-item-badge">${dmUnread}</span>`:''}
+        </button>`).join('')}
+      <div style="border-top:1px solid var(--border);margin:.5rem 0"></div>
+      <button class="nav-item" onclick="logout()"><span class="nav-item-ico">⏻</span>Выйти</button>
+    </div>
+  </div>`;
+}
+
+function renderRight(){
+  const el=document.getElementById('zone-right');
+  if(!el||!S.user)return;
+  el.innerHTML=renderRightSidebar();
+}
+
+function renderMain(){
+  const el=document.getElementById('zone-main');
+  if(!el||!S.user)return;
+  el.innerHTML=renderPage();
   setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
 }
+
+function renderModal(){
+  const el=document.getElementById('zone-modal');
+  if(!el)return;
+  if(!S.modal||!S.modal.type){el.innerHTML='';return;}
+  try{
+    if(S.modal.type==='editProfile')el.innerHTML=renderEditProfileModal();
+    else if(S.modal.type==='editVac'&&S.modal.data)el.innerHTML=renderEditVacModal();
+    else el.innerHTML='';
+  }catch(e){S.modal=null;el.innerHTML='';}
+}
+
+// Главная функция — обновляет только нужные зоны
+function rerender(){
+  if(S.page==='loading'){
+    showZone('loading');
+    return;
+  }
+  if(S.page==='auth'){
+    showZone('auth');
+    const el=document.getElementById('zone-auth');
+    if(el)el.innerHTML=renderAuth();
+    return;
+  }
+  // Показываем приложение
+  showZone('layout');
+  renderTopNav();
+  renderSidebar();   // sidebar обновляется только здесь
+  renderMain();
+  renderRight();
+  renderModal();
+  renderNotifPanel();
+  renderBottomNav();
+}
+
+// При обновлении Firebase данных — обновляем ТОЛЬКО контент, не sidebar
+function rerenderContent(){
+  if(S.page==='loading'||S.page==='auth')return;
+  renderMain();
+  renderRight();
+  renderTopNav(); // только для badge счётчиков
+  renderBottomNav();
+}
+
 
 /* ── AUTH ── */
 function renderAuth(){
@@ -1326,9 +1468,19 @@ function renderEditVacModal(){
 
 /* ── ACTIONS ── */
 window.setAt = t=>{ S.authTab=t; rerender(); };
-window.gp = p=>{ S.page=p; S.modal=null; rerender(); if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80); };
+window.gp = p=>{
+  S.page=p;
+  S.modal=null;
+  // Обновляем sidebar (active класс) и контент
+  renderSidebar();
+  renderMain();
+  renderRight();
+  renderModal();
+  renderBottomNav();
+  if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80);
+};
 window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; rerender(); };
-window.closeModal = ()=>{ S.modal=null; rerender(); };
+window.closeModal = ()=>{ S.modal=null; renderModal(); };
 window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{
@@ -1338,8 +1490,8 @@ window.toggleNotif = ()=>{
   if(S.notifOpen){S.notifs.forEach(n=>n.read=true);renderNotifPanel();}
 };
 window.viewProfile = id=>{ S.page='profile'; S.user.id===id ? S.page='profile' : null; S.viewProfileId=id; rerender(); };
-window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; rerender(); };
-window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; rerender(); };
+window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; renderModal(); };
+window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; renderModal(); };
 window.openDM = id=>{ S.activeDM=id; rerender(); setTimeout(()=>scrollEl('dm-msgs'),80); };
 window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; rerender(); };
 window.autoResize = el=>{ el.style.height='auto'; el.style.height=el.scrollHeight+'px'; };
@@ -1548,13 +1700,47 @@ window.upF = async e=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-S.page='loading'; rerender();
+S.page='loading';
+S.modal=null;
+S.notifOpen=false;
+S.selectedDay=null;
+showZone('loading');
+
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
-  catch{S.page='auth';}
-}else{S.page='auth';}
-rerender();
+  try{
+    const u=JSON.parse(saved);
+    if(u&&u.id&&u.name){
+      S.user=u;
+      S.page='feed';
+      S.modal=null;
+      showZone('layout');
+      renderTopNav();
+      renderSidebar();
+      renderMain();
+      renderRight();
+      renderBottomNav();
+      startListeners();
+    }else{
+      sessionStorage.removeItem('rs_user');
+      S.page='auth';
+      showZone('auth');
+      const el=document.getElementById('zone-auth');
+      if(el)el.innerHTML=renderAuth();
+    }
+  }catch(e){
+    sessionStorage.removeItem('rs_user');
+    S.page='auth';
+    showZone('auth');
+    const el=document.getElementById('zone-auth');
+    if(el)el.innerHTML=renderAuth();
+  }
+}else{
+  S.page='auth';
+  showZone('auth');
+  const el=document.getElementById('zone-auth');
+  if(el)el.innerHTML=renderAuth();
+}
 
 /* ── BOTTOM NAV RENDER ── */
 function renderBottomNav(){

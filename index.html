@@ -57,11 +57,11 @@ body::after{content:'';position:fixed;inset:0;
   font-size:12px;font-weight:700;color:var(--accent);cursor:pointer}
 
 /* ── LAYOUT ── */
-.layout{display:grid;grid-template-columns:240px 1fr 280px;gap:0;
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr) 280px;
   max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem}
 
 /* ── LEFT SIDEBAR ── */
-.sidebar-left{position:sticky;top:70px;align-self:start}
+.sidebar-left{position:sticky;top:70px;align-self:start;isolation:isolate}
 .nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .nav-profile{padding:1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-profile:hover{background:rgba(255,255,255,.02)}
@@ -416,7 +416,7 @@ select option{background:var(--bg2)}
 .iitem .il{font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:3px}
 .iitem .iv{font-size:13px;font-weight:500}
 
-@media(max-width:1100px){.layout{grid-template-columns:200px 1fr 240px}}
+@media(max-width:1100px){.layout{grid-template-columns:200px minmax(0,1fr) 240px}}
 @media(max-width:900px){.layout{grid-template-columns:1fr};.sidebar-left,.sidebar-right{display:none}}
 @media(max-width:600px){.auth-card{padding:1.5rem}.row2,.row3{grid-template-columns:1fr}}
 
@@ -817,7 +817,7 @@ function renderShell(){
     </div>
 
     <!-- MAIN -->
-    <div>
+    <div style="min-width:0;overflow:hidden">
       ${renderPage()}
     </div>
 

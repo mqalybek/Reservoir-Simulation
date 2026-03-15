@@ -454,6 +454,97 @@ select option{background:var(--bg2)}
   .dm-list{width:100% !important}
   .dm-chat{min-height:400px !important}
 }
+
+/* ── CODENAMES GAME ── */
+.game-wrap{max-width:900px;margin:0 auto}
+.game-lobby{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
+.game-title{font-family:'Syne';font-size:24px;font-weight:800;margin-bottom:.5rem}
+.game-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
+.game-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.gbtn{padding:12px 28px;border-radius:12px;border:none;font-weight:700;font-size:15px;
+  cursor:pointer;font-family:'Inter';transition:all .2s}
+.gbtn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.gbtn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.gbtn-secondary{background:var(--bg3);color:var(--t1);border:1px solid var(--border)}
+.gbtn-secondary:hover{background:var(--bg4)}
+.room-code-display{font-family:'Syne';font-size:42px;font-weight:800;
+  color:var(--accent);letter-spacing:8px;margin:1rem 0}
+.room-join-row{display:flex;gap:.625rem;justify-content:center;margin-top:1rem}
+.room-input{width:160px;text-align:center;font-size:20px;letter-spacing:4px;
+  font-family:'Syne';font-weight:700;text-transform:uppercase}
+/* Teams */
+.teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.team-box{border-radius:12px;padding:1.25rem;border:2px solid}
+.team-red{background:rgba(224,58,58,.06);border-color:rgba(224,58,58,.25)}
+.team-blue{background:rgba(40,120,232,.06);border-color:rgba(40,120,232,.25)}
+.team-title{font-family:'Syne';font-size:14px;font-weight:700;margin-bottom:.75rem}
+.team-title.red{color:var(--red)}.team-title.blue{color:var(--accent)}
+.team-player{display:flex;align-items:center;gap:7px;margin-bottom:.5rem;font-size:13px}
+.team-player-crown{font-size:12px}
+.team-btns{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.tbtn{padding:5px 12px;border-radius:8px;border:none;font-size:12px;font-weight:600;
+  cursor:pointer;font-family:'Inter';transition:all .2s}
+.tbtn-red{background:rgba(224,58,58,.12);color:var(--red)}
+.tbtn-red:hover{background:rgba(224,58,58,.2)}
+.tbtn-blue{background:rgba(40,120,232,.12);color:var(--accent)}
+.tbtn-blue:hover{background:rgba(40,120,232,.2)}
+.tbtn-cap{background:rgba(245,200,66,.15);color:var(--gold)}
+.tbtn-cap:hover{background:rgba(245,200,66,.25)}
+/* Game board */
+.game-board-wrap{display:flex;flex-direction:column;gap:.875rem}
+.game-status-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:.875rem 1.25rem;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:.5rem;box-shadow:0 2px 8px rgba(40,120,232,0.05)}
+.game-score{display:flex;gap:1.5rem;align-items:center}
+.score-red{font-family:'Syne';font-size:20px;font-weight:800;color:var(--red)}
+.score-blue{font-family:'Syne';font-size:20px;font-weight:800;color:var(--accent)}
+.score-sep{font-size:18px;color:var(--t3)}
+.turn-indicator{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.turn-red{background:rgba(224,58,58,.12);color:var(--red)}
+.turn-blue{background:rgba(40,120,232,.12);color:var(--accent)}
+.clue-display{background:var(--bg3);border-radius:10px;padding:.625rem 1rem;
+  font-size:14px;font-weight:500;text-align:center}
+.clue-word{font-weight:800;color:var(--accent)}
+.clue-num{background:var(--accent);color:#fff;border-radius:50%;
+  width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;margin-left:4px}
+/* Cards grid */
+.cards-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.game-card{border-radius:10px;padding:.75rem .5rem;text-align:center;cursor:pointer;
+  border:2px solid transparent;transition:all .2s;font-weight:600;font-size:13px;
+  min-height:64px;display:flex;align-items:center;justify-content:center;
+  background:var(--card);box-shadow:0 2px 6px rgba(0,0,0,.06);
+  user-select:none;-webkit-tap-highlight-color:transparent}
+.game-card:hover:not(.revealed){transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);border-color:var(--border2)}
+.game-card.revealed-red{background:#e03a3a;color:#fff;border-color:#c02828;cursor:default}
+.game-card.revealed-blue{background:#2878e8;color:#fff;border-color:#1a65d4;cursor:default}
+.game-card.revealed-neutral{background:#c8b89a;color:#fff;border-color:#b0a088;cursor:default}
+.game-card.revealed-black{background:#1a1a2e;color:#fff;border-color:#000;cursor:default}
+.game-card.spymaster-red{background:rgba(224,58,58,.15);border-color:rgba(224,58,58,.4);color:var(--red)}
+.game-card.spymaster-blue{background:rgba(40,120,232,.15);border-color:rgba(40,120,232,.4);color:var(--accent)}
+.game-card.spymaster-neutral{background:rgba(180,160,120,.15);border-color:rgba(180,160,120,.3);color:#8a7a60}
+.game-card.spymaster-black{background:rgba(20,20,40,.15);border-color:rgba(20,20,40,.4);color:#333}
+/* Clue input */
+.clue-form{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;
+  box-shadow:0 2px 8px rgba(40,120,232,0.05)}
+.clue-input{flex:1;min-width:140px;font-size:14px}
+.clue-num-select{width:80px;font-size:14px}
+.end-turn-btn{padding:8px 18px;border-radius:8px;border:1px solid var(--border);
+  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter';transition:all .2s}
+.end-turn-btn:hover{border-color:var(--accent);color:var(--accent)}
+/* Win screen */
+.win-screen{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:3rem 2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.08)}
+.win-emoji{font-size:64px;margin-bottom:1rem}
+.win-title{font-family:'Syne';font-size:28px;font-weight:800;margin-bottom:.5rem}
+.win-sub{font-size:15px;color:var(--t2);margin-bottom:2rem}
+@media(max-width:600px){
+  .cards-grid{grid-template-columns:repeat(5,1fr);gap:.25rem}
+  .game-card{font-size:10px;padding:.5rem .25rem;min-height:48px;border-radius:7px}
+  .teams-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -512,6 +603,7 @@ let S={
   page:'loading', authTab:'login', user:null,
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
+  game:null, gameRoom:null,
   activeDM:null, notifOpen:false,
   modal:null, // {type, data}
   viewProfileId:null,
@@ -592,6 +684,7 @@ function startListeners(){
   fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerender(); });
   fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
   fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
+  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
 }
 
 /* ── RENDER ROOT ── */
@@ -674,6 +767,7 @@ function renderShell(){
     {id:'calendar',ico:'📅',label:'Календарь'},
     {id:'files',ico:'📁',label:'Файлы'},
     {id:'messages',ico:'💬',label:'Сообщения'},
+    {id:'game',ico:'🎯',label:'Игра'},
   ];
   const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
     if(!key.includes(S.user.id))return acc;
@@ -770,6 +864,7 @@ function renderPage(){
   if(S.page==='calendar') return renderCalendar();
   if(S.page==='files')    return renderFiles();
   if(S.page==='messages') return renderMessages();
+  if(S.page==='game')     return renderGame();
   return '';
 }
 
@@ -1474,6 +1569,7 @@ function renderBottomNav(){
     {id:'team',ico:'👥',label:'Команда'},
     {id:'calendar',ico:'📅',label:'Календарь'},
     {id:'messages',ico:'💬',label:'Чат',badge:dmUnread},
+    {id:'game',ico:'🎯',label:'Игра'},
     {id:'profile',ico:'👤',label:'Профиль'},
   ];
   bn.innerHTML=items.map(it=>`
@@ -1483,6 +1579,440 @@ function renderBottomNav(){
       <span class="bnav-item-label">${it.label}</span>
     </button>`).join('');
 }
+
+
+/* ════════════════════════════════════
+   CODENAMES WORDS (400 слов)
+════════════════════════════════════ */
+const CN_WORDS = [
+  'Нефть','Газ','Скважина','Пласт','Порода','Давление','Насос','Труба','Клапан','Фильтр',
+  'Разлом','Соль','Вода','Песок','Глина','Известняк','Гранит','Сланец','Уголь','Торф',
+  'Буровая','Вышка','Платформа','Завод','Резервуар','Танкер','Рафинад','Бензин','Дизель','Керосин',
+  'Атом','Реактор','Турбина','Генератор','Провод','Ток','Напряжение','Мощность','Энергия','Батарея',
+  'Солнце','Ветер','Волна','Прилив','Тепло','Пар','Лёд','Огонь','Воздух','Земля',
+  'Карта','Компас','Глубина','Высота','Длина','Угол','Кривая','Точка','Линия','Поверхность',
+  'Модель','Данные','Код','Алгоритм','Расчёт','График','Таблица','Формула','Число','Матрица',
+  'Команда','Проект','Отчёт','Анализ','План','Цель','Результат','Решение','Задача','Процесс',
+  'Лаборатория','Микроскоп','Образец','Реакция','Катализатор','Молекула','Атом','Ион','Кислота','Щёлочь',
+  'Мозг','Сердце','Лёгкое','Кость','Кровь','Нерв','Мышца','Кожа','Глаз','Рука',
+  'Лев','Орёл','Акула','Змея','Волк','Лиса','Медведь','Тигр','Слон','Дракон',
+  'Роза','Дуб','Берёза','Кактус','Бамбук','Лотос','Ива','Клён','Сосна','Ель',
+  'Звезда','Луна','Марс','Юпитер','Сатурн','Комета','Галактика','Туманность','Чёрная дыра','Спутник',
+  'Самолёт','Ракета','Корабль','Поезд','Мотоцикл','Велосипед','Лодка','Вертолёт','Трактор','Танк',
+  'Замок','Мост','Башня','Храм','Арена','Тюрьма','Маяк','Плотина','Туннель','Пирамида',
+  'Король','Рыцарь','Шпион','Пират','Ковбой','Ниндзя','Самурай','Викинг','Фараон','Гладиатор',
+  'Алмаз','Золото','Серебро','Рубин','Изумруд','Сапфир','Жемчуг','Янтарь','Опал','Кварц',
+  'Пицца','Суши','Бургер','Паста','Карри','Тако','Рамен','Фалафель','Стейк','Борщ',
+  'Гитара','Скрипка','Барабан','Труба','Пианино','Флейта','Арфа','Саксофон','Виолончель','Орган',
+  'Шахматы','Покер','Домино','Го','Дартс','Боулинг','Бильярд','Пинг-понг','Хоккей','Теннис',
+  'Москва','Лондон','Токио','Париж','Берлин','Рим','Пекин','Дубай','Нью-Йорк','Астана',
+  'Ноябрь','Среда','Рассвет','Закат','Полночь','Эпоха','Момент','Век','Вечность','Мгновение',
+  'Зеркало','Тень','Эхо','Мираж','Иллюзия','Тайна','Загадка','Легенда','Миф','Сказка',
+  'Ключ','Замок','Дверь','Окно','Лестница','Лифт','Мост','Порог','Стена','Потолок',
+  'Молния','Гром','Ураган','Торнадо','Цунами','Землетрясение','Вулкан','Лавина','Засуха','Наводнение',
+  'Победа','Поражение','Ничья','Бонус','Штраф','Рекорд','Чемпион','Финал','Старт','Финиш',
+  'Синий','Красный','Зелёный','Жёлтый','Чёрный','Белый','Серый','Фиолетовый','Оранжевый','Розовый',
+  'Холод','Жара','Влажность','Сухость','Темнота','Свет','Шум','Тишина','Скорость','Покой',
+  'Вирус','Бактерия','Вакцина','Антибиотик','Скальпель','Капсула','Шприц','Пластырь','Бинт','Таблетка',
+  'Океан','Пустыня','Джунгли','Тундра','Саванна','Тайга','Степь','Болото','Горы','Долина',
+  'Робот','Киборг','Клон','Андроид','Голограмма','Телепорт','Лазер','Плазма','Антиматерия','Квант',
+  'Закон','Суд','Полиция','Армия','Дипломат','Шпион','Революция','Манифест','Конституция','Выборы',
+  'Облако','Радуга','Иней','Роса','Туман','Метель','Град','Ливень','Смерч','Бриз',
+  'Сила','Слабость','Храбрость','Трусость','Мудрость','Глупость','Верность','Предательство','Дружба','Ненависть',
+  'Архив','Библиотека','Музей','Галерея','Театр','Цирк','Планетарий','Аквариум','Зоопарк','Стадион',
+  'Паспорт','Виза','Билет','Багаж','Отель','Хостел','Палатка','Яхта','Круиз','Экспедиция',
+  'Нейрон','Синапс','Геном','Хромосома','Митохондрия','Рибосома','Мембрана','Фермент','Гормон','Рецептор',
+  'Монета','Банкнота','Акция','Облигация','Кредит','Долг','Инфляция','Налог','Дивиденд','Бюджет',
+  'Антенна','Сигнал','Частота','Спектр','Радар','Сонар','Лидар','Дрон','Спутник','Ретранслятор',
+  'Философ','Поэт','Скульптор','Архитектор','Режиссёр','Дирижёр','Хирург','Пилот','Детектив','Астроном'
+];
+
+function shuffle(arr){ return arr.slice().sort(()=>Math.random()-.5); }
+
+function makeRoomCode(){
+  return Math.random().toString(36).slice(2,6).toUpperCase();
+}
+
+function generateBoard(){
+  const words = shuffle(CN_WORDS).slice(0, 25);
+  // Red: 9, Blue: 8, Neutral: 7, Black: 1  (red goes first)
+  const colors = shuffle([
+    ...Array(9).fill('red'),
+    ...Array(8).fill('blue'),
+    ...Array(7).fill('neutral'),
+    'black'
+  ]);
+  return words.map((w,i)=>({word:w, color:colors[i], revealed:false}));
+}
+
+/* ── RENDER GAME ── */
+function renderGame(){
+  const g = S.game;
+
+  // No room joined yet → lobby
+  if(!g || !S.gameRoom){
+    return renderGameLobby();
+  }
+
+  // Check if I'm in this room
+  const myId = S.user.id;
+  const allPlayers = [
+    ...(Object.values(g.redTeam||{})),
+    ...(Object.values(g.blueTeam||{}))
+  ];
+  const imIn = allPlayers.some(p=>p.id===myId);
+  if(!imIn) return renderGameLobby();
+
+  // Win condition
+  if(g.winner) return renderWinScreen(g);
+
+  // Game started
+  if(g.started) return renderGameBoard(g);
+
+  // Waiting room
+  return renderGameRoom(g);
+}
+
+function renderGameLobby(){
+  return`<div class="game-wrap">
+    <div class="game-lobby">
+      <div style="font-size:56px;margin-bottom:.5rem">🎯</div>
+      <div class="game-title">Кодовые имена</div>
+      <div class="game-sub">Командная игра на ассоциации · 4–10 игроков</div>
+      <div class="game-actions">
+        <button class="gbtn gbtn-primary" onclick="createRoom()">➕ Создать комнату</button>
+        <button class="gbtn gbtn-secondary" onclick="showJoinForm()">🚪 Войти по коду</button>
+      </div>
+      <div id="join-form" style="display:none;margin-top:.5rem">
+        <div class="room-join-row">
+          <input class="room-input" id="room-code-inp" placeholder="XXXX" maxlength="4"
+            oninput="this.value=this.value.toUpperCase()"
+            onkeydown="if(event.key==='Enter')joinRoom()">
+          <button class="gbtn gbtn-primary" onclick="joinRoom()">Войти</button>
+        </div>
+      </div>
+      <div style="margin-top:2rem;background:var(--bg3);border-radius:12px;padding:1.25rem;text-align:left">
+        <div style="font-weight:700;margin-bottom:.75rem;font-size:14px">Как играть:</div>
+        <div style="font-size:13px;color:var(--t2);line-height:1.8">
+          🔴🔵 Две команды — красные и синие<br>
+          👑 Каждая выбирает капитана (шпиона)<br>
+          🃏 На поле 25 слов — у каждого цвет<br>
+          💬 Капитан даёт подсказку: одно слово + число<br>
+          👆 Команда угадывает карточки своего цвета<br>
+          💀 Чёрная карточка = мгновенное поражение<br>
+          🏆 Побеждает команда, открывшая все свои слова
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderGameRoom(g){
+  const myId=S.user.id;
+  const redPlayers=Object.values(g.redTeam||{});
+  const bluePlayers=Object.values(g.blueTeam||{});
+  const myTeam=redPlayers.find(p=>p.id===myId)?'red':bluePlayers.find(p=>p.id===myId)?'blue':null;
+  const imRedCap=g.redCaptain===myId;
+  const imBlueCap=g.blueCaptain===myId;
+  const canStart=redPlayers.length>=2&&bluePlayers.length>=2&&g.redCaptain&&g.blueCaptain;
+  const isCreator=g.creatorId===myId;
+
+  return`<div class="game-wrap">
+    <div class="game-lobby">
+      <div style="font-size:13px;color:var(--t3);margin-bottom:.5rem">КОД КОМНАТЫ</div>
+      <div class="room-code-display">${S.gameRoom}</div>
+      <div style="font-size:13px;color:var(--t2);margin-bottom:1.5rem">Отправьте этот код коллегам</div>
+
+      <div class="teams-grid">
+        <div class="team-box team-red">
+          <div class="team-title red">🔴 Красная команда (${redPlayers.length})</div>
+          ${redPlayers.map(p=>`
+            <div class="team-player">
+              ${avImg(p.avatar,p.name,24,p.color||COLORS[0])}
+              <span style="font-size:13px">${escH(p.name)}</span>
+              ${g.redCaptain===p.id?'<span class="team-player-crown" title="Капитан">👑</span>':''}
+            </div>`).join('')||'<div style="font-size:13px;color:var(--t3)">Нет игроков</div>'}
+          ${myTeam!=='red'?`<div class="team-btns"><button class="tbtn tbtn-red" onclick="joinTeam('red')">+ Войти</button></div>`:''}
+          ${myTeam==='red'&&!imRedCap?`<div class="team-btns"><button class="tbtn tbtn-cap" onclick="becomeCaptain('red')">👑 Стать капитаном</button></div>`:''}
+          ${imRedCap?`<div style="font-size:12px;color:var(--gold);margin-top:.5rem">👑 Вы — капитан</div>`:''}
+        </div>
+        <div class="team-box team-blue">
+          <div class="team-title blue">🔵 Синяя команда (${bluePlayers.length})</div>
+          ${bluePlayers.map(p=>`
+            <div class="team-player">
+              ${avImg(p.avatar,p.name,24,p.color||COLORS[0])}
+              <span style="font-size:13px">${escH(p.name)}</span>
+              ${g.blueCaptain===p.id?'<span class="team-player-crown">👑</span>':''}
+            </div>`).join('')||'<div style="font-size:13px;color:var(--t3)">Нет игроков</div>'}
+          ${myTeam!=='blue'?`<div class="team-btns"><button class="tbtn tbtn-blue" onclick="joinTeam('blue')">+ Войти</button></div>`:''}
+          ${myTeam==='blue'&&!imBlueCap?`<div class="team-btns"><button class="tbtn tbtn-cap" onclick="becomeCaptain('blue')">👑 Стать капитаном</button></div>`:''}
+          ${imBlueCap?`<div style="font-size:12px;color:var(--gold);margin-top:.5rem">👑 Вы — капитан</div>`:''}
+        </div>
+      </div>
+
+      ${isCreator?`
+        <button class="gbtn gbtn-primary" ${canStart?'':'disabled style="opacity:.4;cursor:not-allowed"'}
+          onclick="startGame()">
+          🚀 Начать игру
+        </button>
+        ${!canStart?`<div style="font-size:12px;color:var(--t3);margin-top:.625rem">Нужно минимум 2+2 игрока и оба капитана</div>`:''}
+      `:`<div style="font-size:14px;color:var(--t2);margin-top:1rem">Ждём пока создатель начнёт игру...</div>`}
+
+      <button class="gbtn gbtn-secondary" style="margin-top:1rem" onclick="leaveRoom()">Выйти из комнаты</button>
+    </div>
+  </div>`;
+}
+
+function renderGameBoard(g){
+  const myId=S.user.id;
+  const isRedCap=g.redCaptain===myId;
+  const isBlueCap=g.blueCaptain===myId;
+  const isSpymaster=isRedCap||isBlueCap;
+  const myTeam=Object.values(g.redTeam||{}).find(p=>p.id===myId)?'red':'blue';
+  const isMyTurn=(g.turn===myTeam);
+  const isMyTeamCap=(g.turn==='red'&&isRedCap)||(g.turn==='blue'&&isBlueCap);
+  const cards=g.board||[];
+
+  // Count remaining
+  const redLeft=cards.filter(c=>c.color==='red'&&!c.revealed).length;
+  const blueLeft=cards.filter(c=>c.color==='blue'&&!c.revealed).length;
+
+  const cardHtml=cards.map((c,i)=>{
+    let cls='game-card';
+    if(c.revealed){
+      cls+=` revealed-${c.color}`;
+    } else if(isSpymaster){
+      cls+=` spymaster-${c.color}`;
+    }
+    const canClick=isMyTurn&&!isMyTeamCap&&!c.revealed&&g.currentClue;
+    return`<div class="${cls}" ${canClick?`onclick="guessCard(${i})"`:''}>
+      ${escH(c.word)}
+    </div>`;
+  }).join('');
+
+  const turnLabel=g.turn==='red'?'🔴 Красные':'🔵 Синие';
+  const clueHtml=g.currentClue
+    ? `<span class="clue-word">${escH(g.currentClue.word)}</span> <span class="clue-num">${g.currentClue.num}</span> · Угадано: ${g.currentClue.guessed||0}`
+    : 'Ждём подсказку капитана...';
+
+  return`<div class="game-wrap">
+    <div class="game-board-wrap">
+      <!-- Status bar -->
+      <div class="game-status-bar">
+        <div class="game-score">
+          <span class="score-red">🔴 ${redLeft}</span>
+          <span class="score-sep">vs</span>
+          <span class="score-blue">${blueLeft} 🔵</span>
+        </div>
+        <span class="turn-indicator turn-${g.turn}">${turnLabel}</span>
+        <div class="clue-display">${clueHtml}</div>
+        <button class="gbtn gbtn-secondary" style="padding:6px 14px;font-size:12px" onclick="leaveRoom()">Выйти</button>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards-grid">${cardHtml}</div>
+
+      <!-- Captain clue form -->
+      ${isMyTeamCap&&isMyTurn&&!g.currentClue?`
+        <div class="clue-form">
+          <div style="font-size:13px;font-weight:600;color:var(--t2);white-space:nowrap">👑 Ваша подсказка:</div>
+          <input class="clue-input" id="clue-word-inp" placeholder="Слово-подсказка" maxlength="30">
+          <select class="clue-num-select" id="clue-num-sel">
+            ${[1,2,3,4,5,6,7,8,9].map(n=>`<option value="${n}">${n}</option>`).join('')}
+          </select>
+          <button class="gbtn gbtn-primary" style="padding:8px 18px;font-size:13px" onclick="giveClue()">Дать подсказку</button>
+        </div>
+      `:''}
+
+      <!-- End turn button for guessing team -->
+      ${isMyTurn&&!isMyTeamCap&&g.currentClue?`
+        <div style="text-align:center">
+          <button class="end-turn-btn" onclick="endTurn()">Завершить ход →</button>
+        </div>
+      `:''}
+
+      <!-- Spymaster role reminder -->
+      ${isSpymaster?`<div style="text-align:center;font-size:12px;color:var(--t3)">👑 Вы — капитан. Цвета карточек видны только вам.</div>`:''}
+    </div>
+  </div>`;
+}
+
+function renderWinScreen(g){
+  const winnerLabel=g.winner==='red'?'🔴 Красная команда':'🔵 Синяя команда';
+  const winnerColor=g.winner==='red'?'var(--red)':'var(--accent)';
+  return`<div class="game-wrap">
+    <div class="win-screen">
+      <div class="win-emoji">${g.winner==='red'?'🔴':'🔵'}</div>
+      <div class="win-title" style="color:${winnerColor}">${winnerLabel} победила!</div>
+      <div class="win-sub">Поздравляем команду!</div>
+      <div style="display:flex;gap:1rem;justify-content:center">
+        <button class="gbtn gbtn-primary" onclick="rematch()">🔄 Реванш</button>
+        <button class="gbtn gbtn-secondary" onclick="leaveRoom()">Выйти</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ── GAME ACTIONS ── */
+window.showJoinForm = ()=>{
+  const f=document.getElementById('join-form');
+  if(f){f.style.display=f.style.display==='none'?'block':'none';}
+  setTimeout(()=>document.getElementById('room-code-inp')?.focus(),50);
+};
+
+window.createRoom = async()=>{
+  const code=makeRoomCode();
+  const me=S.members[S.user.id]||S.user;
+  const playerData={id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]};
+  const room={
+    creatorId:me.id,
+    redTeam:{[me.id]:playerData},
+    blueTeam:{},
+    redCaptain:null,blueCaptain:null,
+    started:false,winner:null,
+    turn:'red',board:null,currentClue:null,
+    createdAt:Date.now()
+  };
+  await fbSet(`game/rooms/${code}`, room);
+  S.gameRoom=code;
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  rerender();
+};
+
+window.joinRoom = async()=>{
+  const code=(document.getElementById('room-code-inp')?.value||'').toUpperCase().trim();
+  if(code.length!==4){showToast('Введите 4-буквенный код',true);return;}
+  const room=await fbGet(`game/rooms/${code}`);
+  if(!room){showToast('Комната не найдена',true);return;}
+  const me=S.members[S.user.id]||S.user;
+  const playerData={id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]};
+  // Add to red team by default if not already in either
+  const inRed=room.redTeam&&room.redTeam[me.id];
+  const inBlue=room.blueTeam&&room.blueTeam[me.id];
+  if(!inRed&&!inBlue){
+    await fbUpd(`game/rooms/${code}/redTeam`,{[me.id]:playerData});
+  }
+  S.gameRoom=code;
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  rerender();
+};
+
+window.joinTeam = async(team)=>{
+  if(!S.gameRoom)return;
+  const me=S.members[S.user.id]||S.user;
+  const playerData={id:me.id,name:me.name,avatar:me.avatar||'',color:me.color||COLORS[0]};
+  const g=S.game;
+  // Remove from other team
+  if(team==='red'&&g.blueTeam&&g.blueTeam[me.id]){
+    await fbDel(`game/rooms/${S.gameRoom}/blueTeam/${me.id}`);
+    if(g.blueCaptain===me.id) await fbSet(`game/rooms/${S.gameRoom}/blueCaptain`,null);
+  }
+  if(team==='blue'&&g.redTeam&&g.redTeam[me.id]){
+    await fbDel(`game/rooms/${S.gameRoom}/redTeam/${me.id}`);
+    if(g.redCaptain===me.id) await fbSet(`game/rooms/${S.gameRoom}/redCaptain`,null);
+  }
+  await fbUpd(`game/rooms/${S.gameRoom}/${team}Team`,{[me.id]:playerData});
+};
+
+window.becomeCaptain = async(team)=>{
+  if(!S.gameRoom)return;
+  await fbSet(`game/rooms/${S.gameRoom}/${team}Captain`, S.user.id);
+};
+
+window.startGame = async()=>{
+  if(!S.gameRoom||!S.game)return;
+  const g=S.game;
+  if(!g.redCaptain||!g.blueCaptain){showToast('Нужны оба капитана!',true);return;}
+  const board=generateBoard();
+  await fbUpd(`game/rooms/${S.gameRoom}`,{
+    started:true, board, turn:'red', currentClue:null, winner:null
+  });
+};
+
+window.giveClue = async()=>{
+  if(!S.gameRoom)return;
+  const word=(document.getElementById('clue-word-inp')?.value||'').trim();
+  const num=parseInt(document.getElementById('clue-num-sel')?.value||'1');
+  if(!word){showToast('Введите слово-подсказку',true);return;}
+  await fbSet(`game/rooms/${S.gameRoom}/currentClue`,{word,num,guessed:0});
+};
+
+window.guessCard = async(idx)=>{
+  if(!S.gameRoom||!S.game)return;
+  const g=S.game;
+  const card=g.board[idx];
+  if(!card||card.revealed)return;
+  const myTeam=Object.values(g.redTeam||{}).find(p=>p.id===S.user.id)?'red':'blue';
+  if(g.turn!==myTeam)return;
+
+  // Reveal card
+  await fbUpd(`game/rooms/${S.gameRoom}/board/${idx}`,{revealed:true});
+
+  // Update guessed count
+  const guessed=(g.currentClue?.guessed||0)+1;
+  await fbSet(`game/rooms/${S.gameRoom}/currentClue/guessed`, guessed);
+
+  // Check win
+  const board=[...g.board];
+  board[idx]={...card,revealed:true};
+
+  // Black card = instant loss
+  if(card.color==='black'){
+    const loser=myTeam;
+    const winner=loser==='red'?'blue':'red';
+    await fbSet(`game/rooms/${S.gameRoom}/winner`, winner);
+    return;
+  }
+
+  // Check if team won
+  const remaining=board.filter(c=>c.color===myTeam&&!c.revealed).length;
+  if(remaining===0){
+    await fbSet(`game/rooms/${S.gameRoom}/winner`, myTeam);
+    return;
+  }
+
+  // Wrong color = end turn
+  if(card.color!==myTeam){
+    await endTurnLogic(myTeam);
+    return;
+  }
+
+  // Correct! Check if used all guesses
+  const maxGuesses=(g.currentClue?.num||1)+1; // +1 bonus guess
+  if(guessed>=maxGuesses){
+    await endTurnLogic(myTeam);
+  }
+};
+
+async function endTurnLogic(currentTeam){
+  const next=currentTeam==='red'?'blue':'red';
+  await fbUpd(`game/rooms/${S.gameRoom}`,{turn:next, currentClue:null});
+}
+
+window.endTurn = async()=>{
+  if(!S.gameRoom||!S.game)return;
+  await endTurnLogic(S.game.turn);
+};
+
+window.rematch = async()=>{
+  if(!S.gameRoom)return;
+  const board=generateBoard();
+  await fbUpd(`game/rooms/${S.gameRoom}`,{
+    started:true, board, turn:'red', currentClue:null, winner:null
+  });
+};
+
+window.leaveRoom = async()=>{
+  if(!S.gameRoom||!S.game)return;
+  const me=S.user.id;
+  const g=S.game;
+  if(g.redTeam&&g.redTeam[me]) await fbDel(`game/rooms/${S.gameRoom}/redTeam/${me}`);
+  if(g.blueTeam&&g.blueTeam[me]) await fbDel(`game/rooms/${S.gameRoom}/blueTeam/${me}`);
+  if(g.redCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/redCaptain`,null);
+  if(g.blueCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/blueCaptain`,null);
+  S.gameRoom=null; S.game=null;
+  rerender();
+};
 
 document.addEventListener('click',e=>{
   if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('[data-notif]')){

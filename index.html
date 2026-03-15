@@ -419,11 +419,47 @@ select option{background:var(--bg2)}
 @media(max-width:1100px){.layout{grid-template-columns:200px 1fr 240px}}
 @media(max-width:900px){.layout{grid-template-columns:1fr};.sidebar-left,.sidebar-right{display:none}}
 @media(max-width:600px){.auth-card{padding:1.5rem}.row2,.row3{grid-template-columns:1fr}}
+
+/* ── BOTTOM MOBILE NAV ── */
+.bottom-nav{display:none}
+@media(max-width:760px){
+  .sidebar-left,.sidebar-right{display:none !important}
+  .layout{grid-template-columns:1fr !important;padding:1rem !important;padding-bottom:74px !important}
+  .bottom-nav{
+    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:500;
+    background:#fff;border-top:1px solid var(--border);
+    box-shadow:0 -2px 16px rgba(40,120,232,0.10);
+    height:60px;align-items:stretch;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .bnav-item{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:2px;cursor:pointer;border:none;background:none;font-family:'Inter';
+    color:var(--t3);transition:all .15s;padding:6px 2px;
+    position:relative;-webkit-tap-highlight-color:transparent;
+  }
+  .bnav-item:active{background:var(--bg3)}
+  .bnav-item.active{color:var(--accent)}
+  .bnav-item.active .bnav-item-ico{transform:scale(1.15)}
+  .bnav-item-ico{font-size:22px;line-height:1;transition:transform .15s}
+  .bnav-item-label{font-size:10px;font-weight:500}
+  .bnav-badge{position:absolute;top:4px;right:calc(50% - 20px);
+    background:var(--red);color:#fff;border-radius:50%;
+    width:15px;height:15px;font-size:9px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid #fff}
+  .tn-search{display:none !important}
+  .topnav{padding:0 1rem}
+  .dm-layout{flex-direction:column !important;gap:.75rem}
+  .dm-list{width:100% !important}
+  .dm-chat{min-height:400px !important}
+}
 </style>
 </head>
 <body>
 <div class="app" id="app"></div>
 <div class="toast" id="toast"></div>
+<div class="bottom-nav" id="bottom-nav"></div>
 <div class="notif-panel" id="npanel">
   <div class="np-head">
     <span class="np-title">Уведомления</span>
@@ -566,6 +602,7 @@ function rerender(){
   if(S.page==='auth'){app.innerHTML=renderAuth();return;}
   app.innerHTML=renderShell();
   renderNotifPanel();
+  renderBottomNav();
   setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
 }
 
@@ -1423,6 +1460,29 @@ if(saved){
   catch{S.page='auth';}
 }else{S.page='auth';}
 rerender();
+
+/* ── BOTTOM NAV RENDER ── */
+function renderBottomNav(){
+  const bn=document.getElementById('bottom-nav');
+  if(!bn||!S.user)return;
+  const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
+    if(!key.includes(S.user.id))return acc;
+    return acc+Object.values(msgs||{}).filter(m=>m.from!==S.user.id&&!m.read).length;
+  },0);
+  const items=[
+    {id:'feed',ico:'🏠',label:'Лента'},
+    {id:'team',ico:'👥',label:'Команда'},
+    {id:'calendar',ico:'📅',label:'Календарь'},
+    {id:'messages',ico:'💬',label:'Чат',badge:dmUnread},
+    {id:'profile',ico:'👤',label:'Профиль'},
+  ];
+  bn.innerHTML=items.map(it=>`
+    <button class="bnav-item ${S.page===it.id?'active':''}" onclick="gp('${it.id}')">
+      ${it.badge>0?`<span class="bnav-badge">${it.badge}</span>`:''}
+      <span class="bnav-item-ico">${it.ico}</span>
+      <span class="bnav-item-label">${it.label}</span>
+    </button>`).join('');
+}
 
 document.addEventListener('click',e=>{
   if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('[data-notif]')){

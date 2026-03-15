@@ -57,7 +57,8 @@ body::after{content:'';position:fixed;inset:0;
   font-size:12px;font-weight:700;color:var(--accent);cursor:pointer}
 
 /* ── LAYOUT ── */
-.layout{display:flex;align-items:flex-start;gap:1.25rem;max-width:1200px;margin:0 auto;padding:1.25rem 1rem}
+.layout{display:grid;grid-template-columns:240px 1fr 280px;gap:0;
+  max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem}
 
 /* ── LEFT SIDEBAR ── */
 .sidebar-left{position:sticky;top:70px;align-self:start}
@@ -359,7 +360,7 @@ select option{background:var(--bg2)}
   margin:.875rem 0 .625rem;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.55);z-index:9000;
+.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.5);z-index:500;
   display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(8px)}
 .modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
@@ -415,8 +416,8 @@ select option{background:var(--bg2)}
 .iitem .il{font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:3px}
 .iitem .iv{font-size:13px;font-weight:500}
 
-@media(max-width:1100px){.sidebar-left{width:200px}.sidebar-right{width:240px}}
-@media(max-width:900px){.sidebar-left,.sidebar-right{display:none}}
+@media(max-width:1100px){.layout{grid-template-columns:200px 1fr 240px}}
+@media(max-width:900px){.layout{grid-template-columns:1fr};.sidebar-left,.sidebar-right{display:none}}
 @media(max-width:600px){.auth-card{padding:1.5rem}.row2,.row3{grid-template-columns:1fr}}
 
 /* ── BOTTOM MOBILE NAV ── */
@@ -1008,7 +1009,7 @@ function renderShell(){
     </div>
 
     <!-- MAIN -->
-    <div style="flex:1;min-width:0">
+    <div>
       ${renderPage()}
     </div>
 
@@ -2013,36 +2014,12 @@ window.addDriveFile = async()=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-// Если загрузка зависла — через 6 секунд переходим на авторизацию
-setTimeout(()=>{
-  if(S.page==='loading'){S.page='auth';rerender();}
-},6000);
-
-S.page='loading';
-S.modal=null;
-S.notifOpen=false;
-S.selectedDay=null;
-rerender();
+S.page='loading'; rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{
-    const u=JSON.parse(saved);
-    if(u&&u.id&&u.name){
-      S.user=u;
-      S.page='feed';
-      S.modal=null;
-      startListeners();
-    } else {
-      sessionStorage.removeItem('rs_user');
-      S.page='auth';
-    }
-  }catch(e){
-    sessionStorage.removeItem('rs_user');
-    S.page='auth';
-  }
-}else{
-  S.page='auth';
-}
+  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
+  catch{S.page='auth';}
+}else{S.page='auth';}
 rerender();
 
 /* ── BOTTOM NAV RENDER ── */

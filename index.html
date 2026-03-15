@@ -360,11 +360,11 @@ select option{background:var(--bg2)}
   margin:.875rem 0 .625rem;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.55);z-index:9000;
+.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.5);z-index:500;
   display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(8px)}
-.modal-box{background:#fff;border:1px solid var(--border2);border-radius:var(--r);
+.modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
-  box-shadow:0 8px 40px rgba(40,120,232,0.18);position:relative;z-index:9001}
+  box-shadow:0 8px 40px rgba(40,120,232,0.12)}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
 .modal-title{font-family:'Space Grotesk';font-size:16px;font-weight:700}
 .btnx{background:none;border:1px solid var(--border);color:var(--t2);
@@ -647,7 +647,7 @@ select option{background:var(--bg2)}
 .cal-outer{max-width:1000px}
 .cal-header-bar{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem}
 .cal-header-left{display:flex;align-items:baseline;gap:.625rem}
-.cal-big-month{font-family:'Space Grotesk';font-size:28px;font-weight:700;cursor:default}
+.cal-big-month{font-family:'Space Grotesk';font-size:28px;font-weight:700}
 .cal-big-year{font-size:16px;color:var(--t3);font-weight:500}
 .cal-header-right{display:flex;align-items:center;gap:6px}
 .cal-nav-btn{background:none;border:1px solid var(--border);border-radius:8px;
@@ -658,15 +658,13 @@ select option{background:var(--bg2)}
 .month-strip{display:flex;gap:4px;overflow-x:auto;margin-bottom:1.25rem;padding-bottom:2px;
   scrollbar-width:none}
 .month-strip::-webkit-scrollbar{display:none}
-.mstrip-btn{flex-shrink:0;padding:7px 12px;border-radius:10px;border:1px solid var(--border);
-  background:none;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .18s;
-  display:flex;flex-direction:column;align-items:center;gap:3px;min-width:56px;
-  -webkit-tap-highlight-color:transparent}
-.mstrip-btn:hover{border-color:var(--accent);background:rgba(40,120,232,.07);transform:translateY(-1px)}
-.mstrip-btn:active{transform:translateY(0)}
-.mstrip-btn.active{background:var(--accent);border-color:var(--accent);box-shadow:0 2px 8px rgba(40,120,232,.3)}
+.mstrip-btn{flex-shrink:0;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:3px;min-width:52px}
+.mstrip-btn:hover{border-color:var(--accent);background:rgba(40,120,232,.05)}
+.mstrip-btn.active{background:var(--accent);border-color:var(--accent)}
 .mstrip-btn.active .mstrip-name{color:#fff}
-.mstrip-name{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.3px}
+.mstrip-name{font-size:11px;font-weight:600;color:var(--t2)}
 .mstrip-btn.active .mstrip-name{color:#fff}
 .mstrip-dots{display:flex;gap:3px}
 .mstrip-dot{width:4px;height:4px;border-radius:50%}
@@ -735,7 +733,6 @@ select option{background:var(--bg2)}
 <div class="app" id="app"></div>
 <div class="toast" id="toast"></div>
 <div class="bottom-nav" id="bottom-nav"></div>
-<div id="modal-root"></div>
 <div class="notif-panel" id="npanel">
   <div class="np-head">
     <span class="np-title">Уведомления</span>
@@ -763,47 +760,21 @@ const db = getDatabase(fbApp);
 
 /* ── CONSTANTS ── */
 const HOLIDAYS={
-  // 2026 — актуальные данные с переносами
-  '2026-01-01':'Новый год',
-  '2026-01-02':'Новый год',
-  '2026-01-07':'Православное Рождество',
+  '2026-01-01':'Новый год','2026-01-02':'Новый год',
   '2026-03-08':'Международный женский день',
-  '2026-03-09':'Перенос (8 марта)',
-  '2026-03-21':'Наурыз мейрамы',
-  '2026-03-22':'Наурыз мейрамы',
-  '2026-03-23':'Наурыз мейрамы',
-  '2026-03-24':'Перенос Наурыза (21 марта)',
-  '2026-03-25':'Перенос Наурыза (22 марта)',
-  '2026-05-01':'День единства народа Казахстана',
-  '2026-05-07':'День защитника Отечества',
-  '2026-05-09':'День Победы',
-  '2026-05-11':'Перенос (9 мая)',
-  '2026-05-27':'Курбан айт',
-  '2026-07-06':'День столицы',
-  '2026-08-30':'День Конституции РК',
-  '2026-08-31':'Перенос (30 августа)',
-  '2026-10-25':'День Республики',
-  '2026-10-26':'Перенос (25 октября)',
-  '2026-12-01':'День Первого Президента',
-  '2026-12-16':'День Независимости',
-  '2026-12-17':'День Независимости',
-  // 2025
-  '2025-01-01':'Новый год',
-  '2025-01-02':'Новый год',
+  '2026-03-21':'Наурыз','2026-03-22':'Наурыз','2026-03-23':'Наурыз',
+  '2026-05-01':'День единства народа','2026-05-07':'День защитника','2026-05-09':'День Победы',
+  '2026-07-06':'День столицы','2026-08-30':'День Конституции',
+  '2026-10-25':'День Республики','2026-12-01':'День Первого Президента',
+  '2026-12-16':'День Независимости','2026-12-17':'День Независимости',
+  '2025-01-01':'Новый год','2025-01-02':'Новый год',
   '2025-03-08':'Международный женский день',
-  '2025-03-21':'Наурыз мейрамы',
-  '2025-03-22':'Наурыз мейрамы',
-  '2025-03-23':'Наурыз мейрамы',
-  '2025-05-01':'День единства народа Казахстана',
-  '2025-05-07':'День защитника Отечества',
-  '2025-05-09':'День Победы',
-  '2025-06-30':'Курбан айт',
-  '2025-07-06':'День столицы',
-  '2025-08-30':'День Конституции РК',
-  '2025-10-25':'День Республики',
+  '2025-03-21':'Наурыз','2025-03-22':'Наурыз','2025-03-23':'Наурыз',
+  '2025-05-01':'День единства народа','2025-05-07':'День защитника','2025-05-09':'День Победы',
+  '2025-06-30':'Курбан айт','2025-07-06':'День столицы',
+  '2025-08-30':'День Конституции','2025-10-25':'День Республики',
   '2025-12-01':'День Первого Президента',
-  '2025-12-16':'День Независимости',
-  '2025-12-17':'День Независимости',
+  '2025-12-16':'День Независимости','2025-12-17':'День Независимости',
 };
 const COLORS=['#3d8ef0','#2fd99a','#f5c842','#f05858','#9b7ff4','#38d4c8','#fb923c','#f472b6','#60a5fa'];
 const MN_FULL=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
@@ -909,26 +880,12 @@ function startListeners(){
 function rerender(){
   const app=document.getElementById('app');
   if(!app)return;
-  if(S.page==='loading'){
-    app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;
-    renderModalRoot();
-    return;
-  }
-  if(S.page==='auth'){app.innerHTML=renderAuth();renderModalRoot();return;}
+  if(S.page==='loading'){app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;return;}
+  if(S.page==='auth'){app.innerHTML=renderAuth();return;}
   app.innerHTML=renderShell();
   renderNotifPanel();
   renderBottomNav();
-  renderModalRoot();
   setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
-}
-
-function renderModalRoot(){
-  // Modal is now managed directly via openEditVac/closeVacModal
-  // Only clear if S.modal is null (safety cleanup)
-  if(!S.modal){
-    const mr=document.getElementById('modal-root');
-    if(mr&&mr.innerHTML&&mr.innerHTML.includes('vac-modal-bg'))return; // don't clear active modal
-  }
 }
 
 /* ── AUTH ── */
@@ -1060,7 +1017,9 @@ function renderShell(){
     <div class="sidebar-right">
       ${renderRightSidebar()}
     </div>
-  </div>`;
+  </div>
+
+  ${S.modal?renderModal():''}`;
 }
 
 function getBirthdays(){
@@ -1469,11 +1428,7 @@ function renderCalendar(){
     <div class="cal-header-bar">
       <div class="cal-header-left">
         <div class="cal-big-month">${MN_FULL[curM]}</div>
-        <div style="display:flex;align-items:center;gap:4px">
-          <button class="cal-nav-btn" style="padding:4px 8px;font-size:12px" onclick="S.calYear=curY-1;rerender()">◀</button>
-          <div class="cal-big-year">${curY}</div>
-          <button class="cal-nav-btn" style="padding:4px 8px;font-size:12px" onclick="S.calYear=curY+1;rerender()">▶</button>
-        </div>
+        <div class="cal-big-year">${curY}</div>
       </div>
       <div class="cal-header-right">
         <button class="cal-nav-btn" onclick="prevMonth()">←</button>
@@ -1483,8 +1438,7 @@ function renderCalendar(){
     </div>
 
     <!-- Month strip -->
-    <div class="month-strip" id="month-strip">${miniStrip}</div>
-    <script>setTimeout(()=>{const s=document.getElementById('month-strip');if(s){const a=s.querySelector('.mstrip-btn.active');if(a)a.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});}},80);</script>
+    <div class="month-strip">${miniStrip}</div>
 
     <!-- Main grid + detail panel -->
     <div class="cal-main-layout">
@@ -1499,10 +1453,8 @@ function renderCalendar(){
           <div class="li"><div class="ld" style="background:var(--accent);border-radius:50%"></div>Сегодня</div>
           <div class="li"><div class="ld" style="background:rgba(40,120,232,.3)"></div>Мой отпуск</div>
           <div class="li"><div class="ld" style="background:rgba(212,146,10,.35)"></div>Праздник РК</div>
-          <div class="li"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green)"></span> Отпуск коллеги</div>
+          <div class="li"><span style="font-size:10px">●</span> Отпуск коллеги</div>
         </div>
-        <!-- Vacation span bars -->
-        ${renderVacBars(curY, curM, vacD)}
       </div>
 
       <!-- Right panel: detail + upcoming -->
@@ -1551,63 +1503,6 @@ function renderCalendar(){
           </div>`:''}
       </div>
     </div>
-  </div>`;
-}
-
-
-function renderVacBars(y, m, vacD){
-  // Show all active vacations this month as color bars with names and dates
-  const monthStr=`${y}-${String(m+1).padStart(2,'0')}`;
-  const dim=new Date(y,m+1,0).getDate();
-  
-  // Collect unique vacations active this month
-  const seen=new Set();
-  const vacs=[];
-  for(let d=1;d<=dim;d++){
-    const ds=`${monthStr}-${String(d).padStart(2,'0')}`;
-    (vacD[ds]||[]).forEach(v=>{
-      if(!seen.has(v._key)){
-        seen.add(v._key);
-        vacs.push(v);
-      }
-    });
-  }
-  if(!vacs.length)return'';
-  
-  return`<div style="margin-top:1rem;border-top:1px solid var(--border);padding-top:.875rem">
-    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;font-weight:600;margin-bottom:.625rem">ОТПУСКА В ЭТОМ МЕСЯЦЕ</div>
-    ${vacs.map(v=>{
-      const mem=S.members[v.memberId]||{name:'?',color:'#2878e8'};
-      const color=mem.color||'#2878e8';
-      const isMe=v.memberId===S.user.id;
-      // Calculate bar width: how many days of this vac fall in current month
-      const mStart=new Date(y,m,1);
-      const mEnd=new Date(y,m+1,0);
-      const vStart=new Date(v.from);
-      const vEnd=new Date(v.to);
-      const start=vStart<mStart?mStart:vStart;
-      const end=vEnd>mEnd?mEnd:vEnd;
-      const startDay=start.getDate();
-      const endDay=end.getDate();
-      const pctLeft=((startDay-1)/dim*100).toFixed(1);
-      const pctWidth=((endDay-startDay+1)/dim*100).toFixed(1);
-      
-      return`<div style="margin-bottom:.625rem">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          ${avImg(mem.avatar,mem.name,22,color)}
-          <span style="font-size:12px;font-weight:600">${escH(mem.name.split(' ')[0])} ${escH(mem.name.split(' ')[1]||'')}</span>
-          <span style="font-size:11px;color:var(--t3)">📅 ${v.from} — ${v.to}</span>
-          ${isMe?`<span style="font-size:10px;background:rgba(40,120,232,.1);color:var(--accent);padding:1px 7px;border-radius:10px;font-weight:600">Мой</span>`:''}
-        </div>
-        <div style="background:var(--bg3);border-radius:6px;height:8px;position:relative;overflow:hidden">
-          <div style="position:absolute;left:${pctLeft}%;width:${pctWidth}%;height:100%;
-            background:${color};border-radius:6px;opacity:0.75"></div>
-        </div>
-        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-top:2px">
-          <span>1</span><span>${dim}</span>
-        </div>
-      </div>`;
-    }).join('')}
   </div>`;
 }
 
@@ -1820,12 +1715,10 @@ function renderMessages(){
 
 /* ── MODAL ── */
 function renderModal(){
-  if(!S.modal||!S.modal.type)return'';
-  try{
-    if(S.modal.type==='editProfile') return renderEditProfileModal();
-    if(S.modal.type==='editVac'&&S.modal.data) return renderEditVacModal();
-    if(S.modal.type==='viewProfile') return renderViewProfileModal();
-  }catch(e){console.warn('modal render error',e);S.modal=null;}
+  if(!S.modal)return'';
+  if(S.modal.type==='editProfile') return renderEditProfileModal();
+  if(S.modal.type==='editVac') return renderEditVacModal();
+  if(S.modal.type==='viewProfile') return renderViewProfileModal();
   return'';
 }
 
@@ -1834,7 +1727,7 @@ function renderEditProfileModal(){
   return`<div class="modal-overlay" onclick="if(event.target===this)closeModal()">
     <div class="modal-box">
       <div class="modal-head"><div class="modal-title">Редактировать профиль</div>
-        <button class="btnx" onclick="window.closeModal()">✕</button></div>
+        <button class="btnx" onclick="closeModal()">✕</button></div>
       <div class="fsec" style="margin-top:0">КОНТАКТЫ</div>
       <div class="row2">
         <div class="fg"><label>ТЕЛЕФОН</label><input type="tel" id="ep" value="${escA(me.phone||'')}"></div>
@@ -1864,28 +1757,15 @@ function renderEditProfileModal(){
 
 function renderEditVacModal(){
   const {key,from,to}=S.modal.data;
-  return`<div class="modal-overlay" id="modal-overlay-bg" onclick="if(event.target.id==='modal-overlay-bg')closeModal()">
-    <div class="modal-box" style="max-width:380px;background:#fff">
-      <div class="modal-head">
-        <div class="modal-title">✏ Изменить отпуск</div>
-        <button class="btnx" type="button" onclick="window.closeModal()">✕</button>
-      </div>
-      <div class="fg">
-        <label>ДАТА НАЧАЛА</label>
-        <input type="date" id="evfrom" value="${from}">
-      </div>
-      <div class="fg">
-        <label>ДАТА ОКОНЧАНИЯ</label>
-        <input type="date" id="evto" value="${to}">
-      </div>
-      <div style="display:flex;gap:.625rem;margin-top:.875rem">
-        <button class="submit-btn" type="button" onclick="window.saveEditVac('${key}')">Сохранить</button>
-        <button type="button" style="padding:11px 16px;font-size:13px;border-radius:8px;border:1px solid rgba(224,58,58,.4);background:none;color:var(--red);cursor:pointer;font-family:'Plus Jakarta Sans';font-weight:600"
-          onclick="window.delVac('${key}')">Отменить отпуск</button>
-      </div>
-      <div style="margin-top:.875rem;text-align:center">
-        <button type="button" style="background:none;border:none;color:var(--t3);font-size:13px;cursor:pointer;font-family:'Plus Jakarta Sans'"
-          onclick="window.closeModal()">Закрыть</button>
+  return`<div class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box" style="max-width:380px">
+      <div class="modal-head"><div class="modal-title">Изменить отпуск</div>
+        <button class="btnx" onclick="closeModal()">✕</button></div>
+      <div class="fg"><label>ДАТА НАЧАЛА</label><input type="date" id="evfrom" value="${from}"></div>
+      <div class="fg"><label>ДАТА ОКОНЧАНИЯ</label><input type="date" id="evto" value="${to}"></div>
+      <div style="display:flex;gap:.625rem;margin-top:.5rem">
+        <button class="submit-btn" onclick="saveEditVac('${key}')">Сохранить</button>
+        <button class="vac-btn del" style="padding:11px 16px;font-size:13px" onclick="delVac('${key}')">Отменить отпуск</button>
       </div>
     </div>
   </div>`;
@@ -1895,16 +1775,7 @@ function renderEditVacModal(){
 window.setAt = t=>{ S.authTab=t; rerender(); };
 window.gp = p=>{ S.page=p; S.modal=null; rerender(); if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80); };
 window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; rerender(); };
-window.closeModal = ()=>{
-  S.modal=null;
-  const mr=document.getElementById('modal-root');
-  if(mr)mr.innerHTML='';
-  rerender();
-};
-window.closeVacModal = ()=>{
-  const mr=document.getElementById('modal-root');
-  if(mr)mr.innerHTML='';
-};
+window.closeModal = ()=>{ S.modal=null; rerender(); };
 window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{
@@ -1915,53 +1786,7 @@ window.toggleNotif = ()=>{
 };
 window.viewProfile = id=>{ S.page='profile'; S.user.id===id ? S.page='profile' : null; S.viewProfileId=id; rerender(); };
 window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; rerender(); };
-window.openEditVac = (key,from,to)=>{
-  const mr=document.getElementById('modal-root');
-  if(!mr)return;
-  mr.innerHTML=`<div style="position:fixed;inset:0;background:rgba(15,31,53,.55);z-index:9999;
-    display:flex;align-items:center;justify-content:center;padding:1rem" id="vac-modal-bg">
-    <div style="background:#fff;border-radius:14px;padding:1.75rem;width:100%;max-width:380px;
-      box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative;z-index:10000">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
-        <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">✏ Изменить отпуск</div>
-        <button type="button" onclick="window.closeVacModal()"
-          style="background:none;border:1px solid #e0e0e0;border-radius:8px;width:30px;height:30px;
-          cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center">✕</button>
-      </div>
-      <div style="margin-bottom:.875rem">
-        <label style="display:block;font-size:10px;color:#8fa3be;letter-spacing:.5px;margin-bottom:4px;font-weight:500">ДАТА НАЧАЛА</label>
-        <input type="date" id="evfrom" value="${from}"
-          style="width:100%;background:#f5f7fb;border:1px solid #e0e8f5;border-radius:8px;
-          padding:9px 12px;font-size:13px;font-family:'Plus Jakarta Sans';color:#0f1f35;outline:none">
-      </div>
-      <div style="margin-bottom:1.25rem">
-        <label style="display:block;font-size:10px;color:#8fa3be;letter-spacing:.5px;margin-bottom:4px;font-weight:500">ДАТА ОКОНЧАНИЯ</label>
-        <input type="date" id="evto" value="${to}"
-          style="width:100%;background:#f5f7fb;border:1px solid #e0e8f5;border-radius:8px;
-          padding:9px 12px;font-size:13px;font-family:'Plus Jakarta Sans';color:#0f1f35;outline:none">
-      </div>
-      <div style="display:flex;gap:.625rem">
-        <button type="button" onclick="window.saveEditVac('${key}')"
-          style="flex:1;padding:10px;border-radius:8px;border:none;
-          background:linear-gradient(135deg,#2878e8,#1a65d4);color:#fff;
-          font-weight:700;font-size:14px;cursor:pointer;font-family:'Plus Jakarta Sans'">
-          Сохранить
-        </button>
-        <button type="button" onclick="window.delVac('${key}')"
-          style="padding:10px 14px;border-radius:8px;border:1px solid rgba(224,58,58,.4);
-          background:none;color:#e03a3a;font-weight:600;font-size:13px;cursor:pointer;
-          font-family:'Plus Jakarta Sans'">
-          Отменить отпуск
-        </button>
-      </div>
-      <div style="text-align:center;margin-top:.75rem">
-        <button type="button" onclick="window.closeVacModal()"
-          style="background:none;border:none;color:#8fa3be;font-size:13px;cursor:pointer;
-          font-family:'Plus Jakarta Sans'">Закрыть</button>
-      </div>
-    </div>
-  </div>`;
-};
+window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; rerender(); };
 window.openDM = id=>{ S.activeDM=id; rerender(); setTimeout(()=>scrollEl('dm-msgs'),80); };
 window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; rerender(); };
 window.autoResize = el=>{ el.style.height='auto'; el.style.height=el.scrollHeight+'px'; };
@@ -2135,8 +1960,7 @@ window.saveVac = async()=>{
 window.delVac = async key=>{
   if(!confirm('Отменить отпуск?'))return;
   await fbDel(`vacations/${key}`);
-  window.closeVacModal();
-  showToast('Отпуск отменён');
+  showToast('Отпуск отменён');S.modal=null;rerender();
 };
 
 window.saveEditVac = async key=>{
@@ -2190,28 +2014,11 @@ window.addDriveFile = async()=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-S.page='loading';
-S.modal=null;
-S.notifOpen=false;
-S.selectedDay=null;
-// Очищаем modal-root сразу при загрузке
-document.addEventListener('DOMContentLoaded',()=>{
-  const mr=document.getElementById('modal-root');
-  if(mr)mr.innerHTML='';
-});
-rerender();
+S.page='loading'; rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{
-    const u=JSON.parse(saved);
-    S.user={...u};
-    S.page='feed';
-    S.modal=null;
-    S.selectedDay=null;
-    S.notifOpen=false;
-    startListeners();
-  }
-  catch(e){S.page='auth';}
+  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
+  catch{S.page='auth';}
 }else{S.page='auth';}
 rerender();
 

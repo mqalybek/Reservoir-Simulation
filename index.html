@@ -1807,9 +1807,9 @@ function renderMessages(){
 
 /* ── MODAL ── */
 function renderModal(){
-  if(!S.modal)return'';
+  if(!S.modal||!S.modal.type)return'';
   if(S.modal.type==='editProfile') return renderEditProfileModal();
-  if(S.modal.type==='editVac') return renderEditVacModal();
+  if(S.modal.type==='editVac'&&S.modal.data) return renderEditVacModal();
   if(S.modal.type==='viewProfile') return renderViewProfileModal();
   return'';
 }
@@ -2106,11 +2106,23 @@ window.addDriveFile = async()=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-S.page='loading'; rerender();
+S.page='loading';
+S.modal=null;
+S.notifOpen=false;
+S.selectedDay=null;
+rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
-  catch{S.page='auth';}
+  try{
+    const u=JSON.parse(saved);
+    S.user={...u};
+    S.page='feed';
+    S.modal=null;
+    S.selectedDay=null;
+    S.notifOpen=false;
+    startListeners();
+  }
+  catch(e){S.page='auth';}
 }else{S.page='auth';}
 rerender();
 

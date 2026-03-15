@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RS Team — Reservoir Simulation</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -15,7 +15,7 @@
   --border:rgba(40,120,232,0.12);--border2:rgba(40,120,232,0.24);
   --card:#ffffff;--r:14px;
 }
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
 body::after{content:'';position:fixed;inset:0;
   background:radial-gradient(ellipse 60% 40% at 80% 5%,rgba(40,120,232,0.04),transparent),
   radial-gradient(ellipse 50% 30% at 5% 95%,rgba(124,92,232,0.03),transparent);
@@ -30,12 +30,12 @@ body::after{content:'';position:fixed;inset:0;
 .tn-logo-mark{width:30px;height:30px;border-radius:8px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk';font-size:13px;font-weight:800;color:#fff}
-.tn-logo-name{font-family:'Space Grotesk';font-size:15px;font-weight:700;color:var(--t1)}
+  font-family:'Syne';font-size:13px;font-weight:800;color:#fff}
+.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:var(--t1)}
 .tn-search{flex:1;max-width:320px;margin:0 1.5rem;position:relative}
 .tn-search input{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px 7px 34px;color:var(--t1);font-size:13px;
-  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
+  font-family:'Inter';outline:none;transition:border .2s}
 .tn-search input:focus{border-color:var(--accent)}
 .tn-search input::placeholder{color:var(--t3)}
 .tn-search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
@@ -74,7 +74,7 @@ body::after{content:'';position:fixed;inset:0;
 .nav-items{padding:.5rem}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
   cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans'}
+  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
 .nav-item:hover{background:var(--bg3);color:var(--t1)}
 .nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
@@ -89,7 +89,7 @@ body::after{content:'';position:fixed;inset:0;
 .composer-top{display:flex;gap:10px;align-items:flex-start}
 .composer-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;color:var(--t1);font-size:14px;
-  font-family:'Plus Jakarta Sans';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
+  font-family:'Inter';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
 .composer-input:focus{border-color:var(--accent);min-height:80px}
 .composer-input::placeholder{color:var(--t3)}
 .composer-actions{display:flex;align-items:center;justify-content:space-between;margin-top:.75rem}
@@ -100,7 +100,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-btn{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:600;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Plus Jakarta Sans'}
+  transition:all .2s;font-family:'Inter'}
 .post-btn:hover{opacity:.9;transform:translateY(-1px)}
 .post-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .img-preview-wrap{margin-top:.75rem;position:relative;display:inline-block}
@@ -130,7 +130,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-footer{padding:.625rem 1rem;border-top:1px solid var(--border);
   display:flex;align-items:center;gap:1rem}
 .post-action{display:flex;align-items:center;gap:5px;background:none;border:none;
-  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Plus Jakarta Sans';
+  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Inter';
   padding:5px 10px;border-radius:8px;transition:all .2s}
 .post-action:hover{background:var(--bg3);color:var(--t1)}
 .post-action.liked{color:var(--red)}
@@ -150,7 +150,7 @@ body::after{content:'';position:fixed;inset:0;
 .comment-input-row{display:flex;gap:8px;align-items:center;margin-top:.625rem}
 .comment-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px;color:var(--t1);font-size:13px;
-  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
+  font-family:'Inter';outline:none;transition:border .2s}
 .comment-input:focus{border-color:var(--accent)}
 .comment-send{background:var(--accent);border:none;border-radius:50%;
   width:30px;height:30px;display:flex;align-items:center;justify-content:center;
@@ -160,7 +160,7 @@ body::after{content:'';position:fixed;inset:0;
 /* ── RIGHT SIDEBAR ── */
 .sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
 .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.widget-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--t2);
+.widget-title{font-family:'Syne';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
 .member-row{display:flex;align-items:center;gap:9px;margin-bottom:.75rem;cursor:pointer}
 .member-row:last-child{margin-bottom:0}
@@ -196,34 +196,34 @@ body::after{content:'';position:fixed;inset:0;
 .profile-av-edit{position:absolute;bottom:2px;right:2px;width:24px;height:24px;
   background:var(--accent);border-radius:50%;display:flex;align-items:center;
   justify-content:center;cursor:pointer;font-size:12px;border:2px solid var(--bg2)}
-.profile-name{font-family:'Space Grotesk';font-size:20px;font-weight:800}
+.profile-name{font-family:'Syne';font-size:20px;font-weight:800}
 .profile-role{color:var(--accent);font-size:13px;margin-top:3px;font-weight:500}
 .profile-bio{font-size:13px;color:var(--t2);margin-top:.5rem;line-height:1.6}
 .profile-stats{display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
 .pstat{text-align:center}
-.pstat-n{font-family:'Space Grotesk';font-size:18px;font-weight:700}
+.pstat-n{font-family:'Syne';font-size:18px;font-weight:700}
 .pstat-l{font-size:11px;color:var(--t3);margin-top:2px}
 .profile-actions{display:flex;gap:.625rem;margin-top:1rem}
 .btn-primary{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
+  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter'}
 .btn-primary:hover{opacity:.9}
 .btn-secondary{padding:8px 20px;border-radius:20px;border:1px solid var(--border2);
   background:none;color:var(--t1);font-weight:500;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Plus Jakarta Sans'}
+  transition:all .2s;font-family:'Inter'}
 .btn-secondary:hover{background:var(--bg3)}
 
 /* Calendar page */
 .cal-page{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .cal-year-nav{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
-.cal-year-val{font-family:'Space Grotesk';font-size:18px;font-weight:700;min-width:56px;text-align:center}
+.cal-year-val{font-family:'Syne';font-size:18px;font-weight:700;min-width:56px;text-align:center}
 .cnbtn{padding:6px 12px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Plus Jakarta Sans'}
+  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Inter'}
 .cnbtn:hover{border-color:var(--accent);color:var(--accent)}
 .year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
 .mini-month{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.75rem}
 .mm-title{font-size:11px;font-weight:700;color:var(--t2);text-align:center;
-  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Space Grotesk'}
+  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Syne'}
 .mm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
 .mm-dh{text-align:center;font-size:8px;color:var(--t3);padding:2px 0}
 .mm-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
@@ -240,7 +240,7 @@ body::after{content:'';position:fixed;inset:0;
   padding:1.125rem;margin-bottom:1rem;animation:fdIn .15s ease}
 @keyframes fdIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .dd-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
-.dd-date{font-family:'Space Grotesk';font-size:15px;font-weight:700}
+.dd-date{font-family:'Syne';font-size:15px;font-weight:700}
 .cal-legend{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
 .li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .ld{width:10px;height:10px;border-radius:3px}
@@ -253,7 +253,7 @@ body::after{content:'';position:fixed;inset:0;
 .vac-item-who{font-size:11px;color:var(--t3);margin-top:2px}
 .vac-actions{display:flex;gap:6px}
 .vac-btn{background:none;border:1px solid var(--border);border-radius:6px;
-  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
+  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Inter';transition:all .2s}
 .vac-btn.edit{color:var(--accent);border-color:rgba(61,142,240,.3)}
 .vac-btn.edit:hover{background:rgba(61,142,240,.1)}
 .vac-btn.del{color:var(--red);border-color:rgba(240,88,88,.3)}
@@ -264,7 +264,7 @@ body::after{content:'';position:fixed;inset:0;
 .dm-list{width:280px;flex-shrink:0;background:var(--card);border:1px solid var(--border);
   border-radius:var(--r);overflow:hidden}
 .dm-list-head{padding:1rem;border-bottom:1px solid var(--border);
-  font-family:'Space Grotesk';font-size:14px;font-weight:700}
+  font-family:'Syne';font-size:14px;font-weight:700}
 .dm-item{display:flex;align-items:center;gap:10px;padding:10px 14px;
   cursor:pointer;transition:background .2s;border-left:3px solid transparent}
 .dm-item:hover{background:var(--bg3)}
@@ -281,7 +281,7 @@ body::after{content:'';position:fixed;inset:0;
   border-radius:var(--r);display:flex;flex-direction:column;min-height:500px}
 .dm-chat-hdr{padding:.875rem 1rem;border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:10px;flex-shrink:0}
-.dm-chat-name{font-family:'Space Grotesk';font-size:14px;font-weight:700}
+.dm-chat-name{font-family:'Syne';font-size:14px;font-weight:700}
 .dm-chat-role{font-size:11px;color:var(--t2)}
 .dm-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
 .msg{display:flex;gap:8px;max-width:75%;align-items:flex-end}
@@ -296,7 +296,7 @@ body::after{content:'';position:fixed;inset:0;
   display:flex;gap:8px;align-items:center}
 .dm-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:8px 14px;color:var(--t1);font-size:13px;
-  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
+  font-family:'Inter';outline:none;transition:border .2s}
 .dm-input:focus{border-color:var(--accent)}
 .dm-send{background:var(--accent);border:none;border-radius:50%;
   width:34px;height:34px;display:flex;align-items:center;justify-content:center;
@@ -330,19 +330,19 @@ body::after{content:'';position:fixed;inset:0;
 .auth-logo-big{width:56px;height:56px;border-radius:16px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;
-  font-family:'Space Grotesk';font-size:20px;font-weight:800;color:#fff}
-.auth-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
+  font-family:'Syne';font-size:20px;font-weight:800;color:#fff}
+.auth-title{font-family:'Syne';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
 .auth-sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:1.5rem}
 .auth-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;box-shadow:0 4px 24px rgba(40,120,232,0.08)}
 .atabs{display:flex;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.5rem;gap:3px}
 .atab{flex:1;padding:8px;text-align:center;cursor:pointer;font-size:13px;font-weight:500;
-  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Plus Jakarta Sans'}
+  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Inter'}
 .atab.active{background:var(--bg2);color:var(--accent);border:1px solid var(--border2)}
 .fg{margin-bottom:.875rem}
 label{display:block;font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:500;letter-spacing:.5px}
 input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:9px 13px;color:var(--t1);font-size:13px;
-  font-family:'Plus Jakarta Sans';transition:border .2s;outline:none}
+  font-family:'Inter';transition:border .2s;outline:none}
 input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 input::placeholder,textarea::placeholder{color:var(--t3)}
 select option{background:var(--bg2)}
@@ -351,7 +351,7 @@ select option{background:var(--bg2)}
 .submit-btn{width:100%;padding:11px;border-radius:10px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:700;font-size:14px;cursor:pointer;
-  transition:all .2s;font-family:'Plus Jakarta Sans';margin-top:4px}
+  transition:all .2s;font-family:'Inter';margin-top:4px}
 .submit-btn:hover{opacity:.9;transform:translateY(-1px)}
 .submit-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .auth-hint{text-align:center;font-size:12px;color:var(--t3);margin-top:1rem}
@@ -366,7 +366,7 @@ select option{background:var(--bg2)}
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
   box-shadow:0 8px 40px rgba(40,120,232,0.12)}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
-.modal-title{font-family:'Space Grotesk';font-size:16px;font-weight:700}
+.modal-title{font-family:'Syne';font-size:16px;font-weight:700}
 .btnx{background:none;border:1px solid var(--border);color:var(--t2);
   width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;
   display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -380,7 +380,7 @@ select option{background:var(--bg2)}
 .np-head{padding:12px 16px 8px;border-bottom:1px solid var(--border);
   display:flex;justify-content:space-between;align-items:center;
   position:sticky;top:0;background:#fff}
-.np-title{font-family:'Space Grotesk';font-size:13px;font-weight:700}
+.np-title{font-family:'Syne';font-size:13px;font-weight:700}
 .np-clear{font-size:11px;color:var(--accent);cursor:pointer;border:none;background:none}
 .np-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;gap:10px}
 .np-item.unread{background:rgba(61,142,240,.05)}
@@ -434,7 +434,7 @@ select option{background:var(--bg2)}
   }
   .bnav-item{
     flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:2px;cursor:pointer;border:none;background:none;font-family:'Plus Jakarta Sans';
+    gap:2px;cursor:pointer;border:none;background:none;font-family:'Inter';
     color:var(--t3);transition:all .15s;padding:6px 2px;
     position:relative;-webkit-tap-highlight-color:transparent;
   }
@@ -459,32 +459,32 @@ select option{background:var(--bg2)}
 .game-wrap{max-width:900px;margin:0 auto}
 .game-lobby{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.game-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;margin-bottom:.5rem}
+.game-title{font-family:'Syne';font-size:24px;font-weight:800;margin-bottom:.5rem}
 .game-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
 .game-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
 .gbtn{padding:12px 28px;border-radius:12px;border:none;font-weight:700;font-size:15px;
-  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
+  cursor:pointer;font-family:'Inter';transition:all .2s}
 .gbtn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
 .gbtn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .gbtn-secondary{background:var(--bg3);color:var(--t1);border:1px solid var(--border)}
 .gbtn-secondary:hover{background:var(--bg4)}
-.room-code-display{font-family:'Space Grotesk';font-size:42px;font-weight:800;
+.room-code-display{font-family:'Syne';font-size:42px;font-weight:800;
   color:var(--accent);letter-spacing:8px;margin:1rem 0}
 .room-join-row{display:flex;gap:.625rem;justify-content:center;margin-top:1rem}
 .room-input{width:160px;text-align:center;font-size:20px;letter-spacing:4px;
-  font-family:'Space Grotesk';font-weight:700;text-transform:uppercase}
+  font-family:'Syne';font-weight:700;text-transform:uppercase}
 /* Teams */
 .teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
 .team-box{border-radius:12px;padding:1.25rem;border:2px solid}
 .team-red{background:rgba(224,58,58,.06);border-color:rgba(224,58,58,.25)}
 .team-blue{background:rgba(40,120,232,.06);border-color:rgba(40,120,232,.25)}
-.team-title{font-family:'Space Grotesk';font-size:14px;font-weight:700;margin-bottom:.75rem}
+.team-title{font-family:'Syne';font-size:14px;font-weight:700;margin-bottom:.75rem}
 .team-title.red{color:var(--red)}.team-title.blue{color:var(--accent)}
 .team-player{display:flex;align-items:center;gap:7px;margin-bottom:.5rem;font-size:13px}
 .team-player-crown{font-size:12px}
 .team-btns{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
 .tbtn{padding:5px 12px;border-radius:8px;border:none;font-size:12px;font-weight:600;
-  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
+  cursor:pointer;font-family:'Inter';transition:all .2s}
 .tbtn-red{background:rgba(224,58,58,.12);color:var(--red)}
 .tbtn-red:hover{background:rgba(224,58,58,.2)}
 .tbtn-blue{background:rgba(40,120,232,.12);color:var(--accent)}
@@ -497,8 +497,8 @@ select option{background:var(--bg2)}
   padding:.875rem 1.25rem;display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:.5rem;box-shadow:0 2px 8px rgba(40,120,232,0.05)}
 .game-score{display:flex;gap:1.5rem;align-items:center}
-.score-red{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--red)}
-.score-blue{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--accent)}
+.score-red{font-family:'Syne';font-size:20px;font-weight:800;color:var(--red)}
+.score-blue{font-family:'Syne';font-size:20px;font-weight:800;color:var(--accent)}
 .score-sep{font-size:18px;color:var(--t3)}
 .turn-indicator{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
 .turn-red{background:rgba(224,58,58,.12);color:var(--red)}
@@ -532,200 +532,18 @@ select option{background:var(--bg2)}
 .clue-input{flex:1;min-width:140px;font-size:14px}
 .clue-num-select{width:80px;font-size:14px}
 .end-turn-btn{padding:8px 18px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
+  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter';transition:all .2s}
 .end-turn-btn:hover{border-color:var(--accent);color:var(--accent)}
 /* Win screen */
 .win-screen{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:3rem 2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.08)}
 .win-emoji{font-size:64px;margin-bottom:1rem}
-.win-title{font-family:'Space Grotesk';font-size:28px;font-weight:800;margin-bottom:.5rem}
+.win-title{font-family:'Syne';font-size:28px;font-weight:800;margin-bottom:.5rem}
 .win-sub{font-size:15px;color:var(--t2);margin-bottom:2rem}
 @media(max-width:600px){
   .cards-grid{grid-template-columns:repeat(5,1fr);gap:.25rem}
   .game-card{font-size:10px;padding:.5rem .25rem;min-height:48px;border-radius:7px}
   .teams-grid{grid-template-columns:1fr}
-}
-
-/* ── BIRTHDAYS WIDGET ── */
-.bday-widget{background:linear-gradient(135deg,rgba(212,146,10,.08),rgba(224,58,58,.06));
-  border:1px solid rgba(212,146,10,.25);border-radius:var(--r);padding:1.25rem;margin-bottom:1rem}
-.bday-today{display:flex;align-items:center;gap:10px;margin-bottom:.5rem}
-.bday-emoji{font-size:32px}
-.bday-name{font-family:'Space Grotesk';font-size:15px;font-weight:700}
-.bday-sub{font-size:12px;color:var(--t2)}
-.bday-upcoming{font-size:12px;color:var(--t2);margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(212,146,10,.2)}
-
-/* ── POLLS ── */
-.poll-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
-  padding:1.25rem;margin-bottom:.875rem;box-shadow:0 2px 8px rgba(40,120,232,.05)}
-.poll-q{font-weight:700;font-size:15px;margin-bottom:.875rem}
-.poll-option{background:var(--bg3);border:1px solid var(--border);border-radius:8px;
-  padding:9px 14px;margin-bottom:.5rem;cursor:pointer;transition:all .2s;
-  display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
-.poll-option:hover{border-color:var(--accent)}
-.poll-option.voted{border-color:var(--accent);background:rgba(40,120,232,.06)}
-.poll-bar{position:absolute;left:0;top:0;bottom:0;background:rgba(40,120,232,.1);
-  transition:width .5s ease;z-index:0}
-.poll-option-text{position:relative;z-index:1;font-size:13px;font-weight:500}
-.poll-pct{position:relative;z-index:1;font-size:12px;color:var(--accent);font-weight:700}
-.poll-meta{font-size:11px;color:var(--t3);margin-top:.5rem}
-.create-poll-form{background:var(--bg3);border:1px solid var(--border);border-radius:12px;
-  padding:1.25rem;margin-bottom:1rem;display:none}
-.poll-option-input{display:flex;gap:.5rem;margin-bottom:.5rem;align-items:center}
-.remove-opt{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
-  padding:4px;transition:color .2s}
-.remove-opt:hover{color:var(--red)}
-
-/* ── KANBAN ── */
-.kanban-board{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;overflow-x:auto}
-.kanban-col{background:var(--bg3);border-radius:12px;padding:.875rem;min-height:300px}
-.kanban-col-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;
-  margin-bottom:.875rem;display:flex;align-items:center;gap:6px}
-.kanban-col-count{background:var(--bg4);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:600;color:var(--t2)}
-.kanban-card{background:var(--card);border:1px solid var(--border);border-radius:10px;
-  padding:.875rem;margin-bottom:.625rem;cursor:pointer;transition:all .2s;
-  box-shadow:0 1px 4px rgba(40,120,232,.04)}
-.kanban-card:hover{border-color:var(--accent);box-shadow:0 3px 10px rgba(40,120,232,.1)}
-.kanban-card-title{font-size:13px;font-weight:600;margin-bottom:.375rem}
-.kanban-card-meta{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:6px}
-.kanban-add{width:100%;background:none;border:1.5px dashed var(--border);border-radius:8px;
-  padding:8px;color:var(--t3);font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
-.kanban-add:hover{border-color:var(--accent);color:var(--accent)}
-.ktag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
-.ktag-todo{background:rgba(143,163,190,.15);color:var(--t2)}
-.ktag-doing{background:rgba(40,120,232,.12);color:var(--accent)}
-.ktag-done{background:rgba(22,180,122,.12);color:var(--green)}
-
-/* ── CALC ── */
-.calc-page{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
-  padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,.06)}
-.calc-tabs{display:flex;gap:4px;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.25rem}
-.calc-tab{flex:1;padding:7px;text-align:center;border:none;background:none;border-radius:7px;
-  font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
-.calc-tab.active{background:var(--card);color:var(--accent);border:1px solid var(--border)}
-.calc-section{display:none}
-.calc-section.active{display:block}
-.calc-group{background:var(--bg3);border-radius:10px;padding:1rem;margin-bottom:.875rem}
-.calc-label{font-size:11px;color:var(--t3);letter-spacing:.5px;margin-bottom:.375rem;font-weight:500}
-.calc-result{background:linear-gradient(135deg,rgba(40,120,232,.08),rgba(124,92,232,.06));
-  border:1px solid var(--border2);border-radius:10px;padding:1rem;text-align:center;margin-top:.875rem}
-.calc-result-val{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--accent)}
-.calc-result-unit{font-size:13px;color:var(--t2);margin-top:3px}
-
-/* ── WEATHER WIDGET ── */
-.weather-widget{background:linear-gradient(135deg,#e8f4ff,#f0f8ff);
-  border:1px solid rgba(40,120,232,.2);border-radius:var(--r);padding:1.25rem;
-  margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
-.weather-icon{font-size:42px}
-.weather-info{}
-.weather-temp{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--t1)}
-.weather-desc{font-size:13px;color:var(--t2);margin-top:2px}
-.weather-details{font-size:12px;color:var(--t3);margin-top:4px}
-
-/* ── WIKI ── */
-.wiki-list{display:flex;flex-direction:column;gap:.625rem}
-.wiki-item{background:var(--card);border:1px solid var(--border);border-radius:10px;
-  padding:1rem 1.25rem;cursor:pointer;transition:all .2s}
-.wiki-item:hover{border-color:var(--accent)}
-.wiki-item-title{font-weight:600;font-size:14px;margin-bottom:3px}
-.wiki-item-meta{font-size:11px;color:var(--t3)}
-.wiki-item-preview{font-size:13px;color:var(--t2);margin-top:.375rem;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wiki-editor{background:var(--bg3);border:1px solid var(--border);border-radius:12px;
-  padding:1.25rem;margin-bottom:1rem;display:none}
-.wiki-full{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem}
-.wiki-full-title{font-family:'Space Grotesk';font-size:20px;font-weight:800;margin-bottom:.5rem}
-.wiki-full-meta{font-size:12px;color:var(--t3);margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-.wiki-full-body{font-size:14px;color:var(--t2);line-height:1.8;white-space:pre-wrap}
-
-@media(max-width:700px){
-  .kanban-board{grid-template-columns:1fr}
-  .calc-tabs{flex-wrap:wrap}
-}
-
-/* ── NEW CALENDAR ── */
-.cal-outer{max-width:1000px}
-.cal-header-bar{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem}
-.cal-header-left{display:flex;align-items:baseline;gap:.625rem}
-.cal-big-month{font-family:'Space Grotesk';font-size:28px;font-weight:700}
-.cal-big-year{font-size:16px;color:var(--t3);font-weight:500}
-.cal-header-right{display:flex;align-items:center;gap:6px}
-.cal-nav-btn{background:none;border:1px solid var(--border);border-radius:8px;
-  padding:7px 12px;cursor:pointer;font-size:14px;color:var(--t2);transition:all .2s;font-family:'Plus Jakarta Sans'}
-.cal-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
-
-/* Month strip */
-.month-strip{display:flex;gap:4px;overflow-x:auto;margin-bottom:1.25rem;padding-bottom:2px;
-  scrollbar-width:none}
-.month-strip::-webkit-scrollbar{display:none}
-.mstrip-btn{flex-shrink:0;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
-  background:none;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;
-  display:flex;flex-direction:column;align-items:center;gap:3px;min-width:52px}
-.mstrip-btn:hover{border-color:var(--accent);background:rgba(40,120,232,.05)}
-.mstrip-btn.active{background:var(--accent);border-color:var(--accent)}
-.mstrip-btn.active .mstrip-name{color:#fff}
-.mstrip-name{font-size:11px;font-weight:600;color:var(--t2)}
-.mstrip-btn.active .mstrip-name{color:#fff}
-.mstrip-dots{display:flex;gap:3px}
-.mstrip-dot{width:4px;height:4px;border-radius:50%}
-
-/* Main layout */
-.cal-main-layout{display:grid;grid-template-columns:1fr 280px;gap:1.25rem;align-items:start}
-.big-cal-wrap{}
-
-/* Big calendar grid */
-.big-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
-.big-dh{text-align:center;font-size:11px;font-weight:600;color:var(--t3);
-  padding:.5rem 0;letter-spacing:.5px}
-.big-day{min-height:72px;border-radius:10px;padding:.5rem;cursor:pointer;
-  position:relative;transition:all .15s;border:1.5px solid transparent;background:var(--bg3)}
-.big-day:hover:not(.other){background:var(--bg4);border-color:var(--border)}
-.big-day.other{opacity:.35;cursor:default;background:transparent}
-.big-day.big-today{background:var(--accent);border-color:var(--accent)}
-.big-day.big-today .big-day-num{color:#fff;font-weight:800}
-.big-day.big-today .big-day-hol{color:rgba(255,255,255,.8)}
-.big-day.big-hol{background:rgba(212,146,10,.08);border-color:rgba(212,146,10,.2)}
-.big-day.big-myvac{background:rgba(40,120,232,.1);border-color:rgba(40,120,232,.25)}
-.big-day.big-sel{border-color:var(--accent);background:rgba(40,120,232,.06);box-shadow:0 0 0 3px rgba(40,120,232,.12)}
-.big-day-num{font-size:13px;font-weight:600;color:var(--t1);display:block}
-.big-day-hol{font-size:9px;color:var(--gold);display:block;margin-top:2px;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
-.day-pips{display:flex;gap:2px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
-.day-pip{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-
-/* Right column */
-.cal-right-col{display:flex;flex-direction:column;gap:.875rem}
-
-/* Detail panel */
-.cal-detail-panel{background:var(--card);border:1px solid var(--border2);border-radius:12px;
-  padding:1.125rem;box-shadow:0 4px 16px rgba(40,120,232,.08);animation:fdIn .15s ease}
-.cdp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
-.cdp-date{font-family:'Space Grotesk';font-size:17px;font-weight:700}
-.cdp-close{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
-  width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;
-  transition:all .2s}
-.cdp-close:hover{background:var(--bg3);color:var(--red)}
-.cdp-holiday{background:rgba(212,146,10,.08);border:1px solid rgba(212,146,10,.2);
-  border-radius:8px;padding:7px 10px;font-size:12px;color:var(--gold);
-  font-weight:500;margin-bottom:.75rem}
-.cdp-section{font-size:10px;color:var(--t3);letter-spacing:1px;font-weight:600;
-  margin-bottom:.5rem}
-.cdp-vac-item{background:var(--bg3);border-radius:8px;padding:.625rem .875rem;margin-bottom:.5rem}
-.cdp-vac-range{font-size:13px;font-weight:500}
-.cdp-add-vac{border-top:1px solid var(--border);padding-top:.875rem;margin-top:.875rem}
-.cal-upcoming{background:var(--card);border:1px solid var(--border);
-  border-radius:12px;padding:1rem}
-
-@media(max-width:800px){
-  .cal-main-layout{grid-template-columns:1fr}
-  .cal-right-col{display:none}
-  .big-day{min-height:52px}
-  .big-day-hol{display:none}
-}
-@media(max-width:480px){
-  .big-day{min-height:40px;padding:.375rem}
-  .big-day-num{font-size:11px}
-  .day-pips{display:none}
 }
 </style>
 </head>
@@ -786,9 +604,6 @@ let S={
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
   game:null, gameRoom:null,
-  calMonth:new Date().getMonth(),
-  polls:{}, kanban:{}, wiki:{}, weather:null,
-  wikiView:null, calcTab:'pressure', activeKanbanForm:null,
   activeDM:null, notifOpen:false,
   modal:null, // {type, data}
   viewProfileId:null,
@@ -870,10 +685,6 @@ function startListeners(){
   fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
   fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
   fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
-  fbListen('polls', v=>{ S.polls=v||{}; if(S.page==='feed')rerender(); });
-  fbListen('kanban', v=>{ S.kanban=v||{}; if(S.page==='kanban')rerender(); });
-  fbListen('wiki', v=>{ S.wiki=v||{}; if(S.page==='wiki')rerender(); });
-  fbListen('weather_cache', v=>{ S.weather=v||null; });
 }
 
 /* ── RENDER ROOT ── */
@@ -957,9 +768,6 @@ function renderShell(){
     {id:'files',ico:'📁',label:'Файлы'},
     {id:'messages',ico:'💬',label:'Сообщения'},
     {id:'game',ico:'🎯',label:'Игра'},
-    {id:'kanban',ico:'📋',label:'Задачи'},
-    {id:'wiki',ico:'📚',label:'База знаний'},
-    {id:'tools',ico:'🧮',label:'Инструменты'},
   ];
   const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
     if(!key.includes(S.user.id))return acc;
@@ -1022,53 +830,10 @@ function renderShell(){
   ${S.modal?renderModal():''}`;
 }
 
-function getBirthdays(){
-  const today=new Date();
-  const mm=String(today.getMonth()+1).padStart(2,'0');
-  const dd=String(today.getDate()).padStart(2,'0');
-  const todayMD=`${mm}-${dd}`;
-  const results={today:[],soon:[]};
-  membersArr().forEach(m=>{
-    if(!m.birthday)return;
-    const parts=m.birthday.split('-');
-    if(parts.length<3)return;
-    const mmd=`${parts[1]}-${parts[2]}`;
-    if(mmd===todayMD){results.today.push(m);return;}
-    // within next 7 days
-    const bday=new Date(today.getFullYear(),parseInt(parts[1])-1,parseInt(parts[2]));
-    if(bday<today)bday.setFullYear(today.getFullYear()+1);
-    const diff=Math.ceil((bday-today)/(1000*60*60*24));
-    if(diff<=7)results.soon.push({...m,daysLeft:diff});
-  });
-  return results;
-}
 function renderRightSidebar(){
   const members=membersArr().filter(m=>m.id!==S.user.id).slice(0,6);
   const myVacs=Object.values(S.vacations||{}).filter(v=>v.memberId===S.user.id);
-  const bdays=getBirthdays();
-  const bdayWidget=bdays.today.length?`
-    <div class="bday-widget">
-      ${bdays.today.map(m=>`
-        <div class="bday-today">
-          <div class="bday-emoji">🎂</div>
-          <div>
-            <div class="bday-name">${escH(m.name)}</div>
-            <div class="bday-sub">Сегодня день рождения! 🎉</div>
-          </div>
-        </div>`).join('')}
-      ${bdays.soon.length?`<div class="bday-upcoming">
-        ${bdays.soon.map(m=>`📅 ${escH(m.name.split(' ')[0])} — через ${m.daysLeft} дн.`).join('<br>')}
-      </div>`:''}
-    </div>`:
-    bdays.soon.length?`<div class="bday-widget" style="background:rgba(40,120,232,.04);border-color:rgba(40,120,232,.15)">
-      <div class="bday-sub" style="font-weight:600;color:var(--t1);margin-bottom:.375rem">Ближайшие дни рождения</div>
-      ${bdays.soon.map(m=>`<div class="bday-upcoming" style="border:none;padding:0;margin:0">
-        🎂 ${escH(m.name.split(' ')[0])} — через ${m.daysLeft} дн.
-      </div>`).join('')}
-    </div>`:'';
-
   return`
-  ${bdayWidget}
   <div class="widget">
     <div class="widget-title">КОЛЛЕГИ</div>
     ${members.length?members.map(m=>`
@@ -1100,9 +865,6 @@ function renderPage(){
   if(S.page==='files')    return renderFiles();
   if(S.page==='messages') return renderMessages();
   if(S.page==='game')     return renderGame();
-  if(S.page==='kanban')   return renderKanban();
-  if(S.page==='wiki')     return renderWiki();
-  if(S.page==='tools')    return renderTools();
   return '';
 }
 
@@ -1123,24 +885,11 @@ function renderFeed(){
         <div class="composer-tools">
           <button class="ctool" title="Добавить фото" onclick="document.getElementById('post-img-inp').click()">🖼</button>
           <input type="file" id="post-img-inp" accept="image/*" style="display:none" onchange="previewPostImg(event)">
-          <button class="ctool" title="Создать опрос" onclick="togglePollForm()">📊</button>
         </div>
         <button class="post-btn" onclick="submitPost()">Опубликовать</button>
       </div>
-      <!-- Poll form -->
-      <div id="poll-form" style="display:none;margin-top:.75rem;border-top:1px solid var(--border);padding-top:.875rem">
-        <div class="fg" style="margin-bottom:.625rem"><label>ВОПРОС ОПРОСА</label>
-          <input type="text" id="poll-q" placeholder="Задайте вопрос команде..."></div>
-        <div id="poll-opts-wrap">
-          <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 1"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
-          <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 2"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
-        </div>
-        <button onclick="addPollOpt()" style="background:none;border:1.5px dashed var(--border);border-radius:7px;padding:5px 12px;font-size:12px;color:var(--t3);cursor:pointer;margin-bottom:.625rem;font-family:'Plus Jakarta Sans'">+ Добавить вариант</button>
-        <div><button class="post-btn" style="width:auto;padding:8px 20px" onclick="submitPoll()">Опубликовать опрос</button></div>
-      </div>
     </div>
     <!-- Posts -->
-    ${renderActivePolls()}
     ${posts.length?posts.map(p=>renderPost(p)).join(''):`
       <div class="empty-state">
         <div class="empty-state-ico">✍️</div>
@@ -1263,7 +1012,7 @@ function renderProfile(uid){
 function renderTeam(){
   const members=membersArr();
   return`<div class="page-wrap">
-    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
+    <div style="font-family:'Syne';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
     ${members.length===0?`<div class="empty-state"><div class="empty-state-ico">👥</div>Коллеги появятся после регистрации</div>`:
     `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem">
       ${members.map(m=>`
@@ -1287,10 +1036,8 @@ function renderTeam(){
 /* ── CALENDAR ── */
 function renderCalendar(){
   const y=S.calYear;
-  const today=new Date();
-  const todayStr=today.toISOString().split('T')[0];
-
-  // Build vac map
+  const todayStr=new Date().toISOString().split('T')[0];
+  // build vac date map
   const vacD={};
   Object.entries(S.vacations||{}).forEach(([k,v])=>{
     let d=new Date(v.from);const e=new Date(v.to);
@@ -1302,351 +1049,157 @@ function renderCalendar(){
     }
   });
 
-  // ── Current month big calendar ──
-  const curM=S.calMonth!==undefined?S.calMonth:today.getMonth();
-  const curY=S.calYear||today.getFullYear();
-  const fd=new Date(curY,curM,1).getDay();
-  const off=fd===0?6:fd-1;
-  const dim=new Date(curY,curM+1,0).getDate();
-  const prevDim=new Date(curY,curM,0).getDate();
-
-  // Get all events for current month
-  const monthHols=Object.entries(HOLIDAYS)
-    .filter(([k])=>k.startsWith(`${curY}-${String(curM+1).padStart(2,'0')}`));
-  const monthVacs=Object.entries(S.vacations||{})
-    .filter(([,v])=>v.from.substring(0,7)===`${curY}-${String(curM+1).padStart(2,'0')}`)
-    .map(([k,v])=>({...v,_key:k}));
-  const myVacsAll=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
-
-  // ── Big month grid ──
-  let cells='';
-  // Prev month grey days
-  for(let i=0;i<off;i++){
-    cells+=`<div class="big-day other">${prevDim-off+1+i}</div>`;
-  }
-  for(let d=1;d<=dim;d++){
-    const ds=`${curY}-${String(curM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const isT=ds===todayStr;
-    const isH=!!HOLIDAYS[ds];
-    const dayVacs=vacD[ds]||[];
-    const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
-    const teamVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
-    const isSel=S.selectedDay===ds;
-    let cls='big-day';
-    if(isSel) cls+=' big-sel';
-    else if(isT) cls+=' big-today';
-    if(isH) cls+=' big-hol';
-    if(isMyVac) cls+=' big-myvac';
-
-    const dots=teamVacs.slice(0,3).map(v=>{
-      const mem=S.members[v.memberId];
-      return`<span class="day-pip" style="background:${mem?mem.color||'#2878e8':'#2878e8'}"></span>`;
-    }).join('');
-
-    cells+=`<div class="${cls}" onclick="selectDay('${ds}')">
-      <span class="big-day-num">${d}</span>
-      ${isH?`<span class="big-day-hol">${HOLIDAYS[ds].split(' ')[0]}</span>`:''}
-      ${dots?`<div class="day-pips">${dots}</div>`:''}
+  const months=Array.from({length:12},(_,m)=>{
+    const fd=new Date(y,m,1).getDay(),off=fd===0?6:fd-1,dim=new Date(y,m+1,0).getDate();
+    let cells='';
+    for(let i=0;i<off;i++)cells+=`<div class="mm-day empty"></div>`;
+    for(let d=1;d<=dim;d++){
+      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const isT=ds===todayStr,isH=!!HOLIDAYS[ds];
+      const dayVacs=vacD[ds]||[];
+      const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
+      const isTeamVac=dayVacs.some(v=>v.memberId!==S.user.id);
+      const isSel=S.selectedDay===ds;
+      let cls='mm-day';
+      if(isSel)cls+=' selected';else if(isT)cls+=' today';
+      if(isH&&!isSel)cls+=' hol';
+      if(isMyVac&&!isSel)cls+=' myvac';
+      else if(isTeamVac&&!isSel)cls+=' teamvac';
+      cells+=`<div class="${cls}" onclick="selectDay('${ds}')">${d}${isTeamVac&&!isMyVac&&!isSel?'<div class="md"></div>':''}</div>`;
+    }
+    return`<div class="mini-month">
+      <div class="mm-title">${MN_S[m]}</div>
+      <div class="mm-grid">
+        ${['П','В','С','Ч','П','С','В'].map(d=>`<div class="mm-dh">${d}</div>`).join('')}
+        ${cells}
+      </div>
     </div>`;
-  }
-  // Next month fill
-  const total=off+dim;
-  const rem=(7-total%7)%7;
-  for(let i=1;i<=rem;i++) cells+=`<div class="big-day other">${i}</div>`;
+  }).join('');
 
-  // ── Selected day detail ──
+  // day detail
   let detail='';
   if(S.selectedDay){
     const ds=S.selectedDay;
-    const [dy,dm2,dd]=ds.split('-');
+    const [dy,dm,dd]=ds.split('-');
     const hol=HOLIDAYS[ds];
     const dayVacs=vacD[ds]||[];
-    const myDV=dayVacs.filter(v=>v.memberId===S.user.id);
-    const teamDV=[...new Map(dayVacs.filter(v=>v.memberId!==S.user.id).map(v=>[v._key,v])).values()];
-    const isFut=ds>=todayStr;
+    const myDayVacs=dayVacs.filter(v=>v.memberId===S.user.id);
+    const teamDayVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
+    const isFuture=ds>=todayStr;
 
-    detail=`<div class="cal-detail-panel">
-      <div class="cdp-head">
-        <div class="cdp-date">${parseInt(dd)} ${MN_FULL[parseInt(dm2)-1]}</div>
-        <button onclick="S.selectedDay=null;rerender()" class="cdp-close">✕</button>
+    detail=`<div class="day-detail">
+      <div class="dd-head">
+        <div class="dd-date">${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</div>
+        <button class="btnx" onclick="S.selectedDay=null;rerender()">✕</button>
       </div>
-      ${hol?`<div class="cdp-holiday">🎉 ${escH(hol)}</div>`:''}
-      ${myDV.length?`
-        <div class="cdp-section">МОЙ ОТПУСК</div>
-        ${[...new Map(myDV.map(v=>[v._key,v])).values()].map(v=>`
-          <div class="cdp-vac-item">
-            <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
-            <div style="display:flex;gap:4px;margin-top:4px">
-              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">Изменить</button>
-              <button class="vac-btn del" onclick="delVac('${v._key}')">Отменить</button>
+      ${hol?`<div style="margin-bottom:.75rem"><span style="background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gold)">🎉 ${hol}</span></div>`:''}
+
+      ${myDayVacs.length?`
+        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">МОИ ОТПУСКА В ЭТОТ ДЕНЬ</div>
+        ${[...new Map(myDayVacs.map(v=>[v._key,v])).values()].map(v=>`
+          <div class="vac-item">
+            <div class="vac-item-info">
+              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
+              <div class="vac-item-who">Мой отпуск</div>
+            </div>
+            <div class="vac-actions">
+              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">✏ Изменить</button>
+              <button class="vac-btn del" onclick="delVac('${v._key}')">✕ Отменить</button>
             </div>
           </div>`).join('')}
       `:''}
-      ${teamDV.length?`
-        <div class="cdp-section" style="margin-top:${myDV.length?'.75rem':'0'}">КОЛЛЕГИ В ОТПУСКЕ</div>
-        ${teamDV.map(v=>{
-          const mem=S.members[v.memberId]||{name:'?'};
-          return`<div style="display:flex;align-items:center;gap:8px;padding:.375rem 0">
-            ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
-            <div>
-              <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
-              <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
-            </div>
+
+      ${teamDayVacs.length?`
+        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin:${myDayVacs.length?'.75rem':0} 0 .5rem">КОЛЛЕГИ В ОТПУСКЕ</div>
+        ${[...new Map(teamDayVacs.map(v=>[v._key,v])).values()].map(v=>{
+          const mem=S.members[v.memberId]||{name:'?',color:COLORS[0]};
+          return`<div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem;font-size:13px">
+            ${avImg(mem.avatar,mem.name,24,mem.color||COLORS[0])}
+            <span>${escH(mem.name)}</span>
+            <span style="color:var(--t3);font-size:11px">${v.from} — ${v.to}</span>
           </div>`;
         }).join('')}
       `:''}
-      ${!myDV.length&&!teamDV.length&&!hol?`<div style="font-size:13px;color:var(--t3);padding:.5rem 0">Нет событий</div>`:''}
-      ${isFut?`
-        <div class="cdp-add-vac">
-          <div class="cdp-section">ДОБАВИТЬ ОТПУСК</div>
-          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-            <input type="date" id="vfrom" value="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
-            <span style="font-size:12px;color:var(--t2)">—</span>
-            <input type="date" id="vto" value="${ds}" min="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
-            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">+ Добавить</button>
+
+      ${!myDayVacs.length&&!teamDayVacs.length&&!hol?`<div style="font-size:13px;color:var(--t3)">Нет событий</div>`:''}
+
+      ${isFuture?`
+        <div style="border-top:1px solid var(--border);padding-top:.875rem;margin-top:${(myDayVacs.length||teamDayVacs.length||hol)?'.875rem':'0'}">
+          <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">ДОБАВИТЬ ОТПУСК</div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2)">
+              С <input type="date" id="vfrom" value="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
+              по <input type="date" id="vto" value="${ds}" min="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
+            </div>
+            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter">+ Добавить</button>
           </div>
         </div>`:''}
     </div>`;
   }
 
-  // ── Mini year strip ──
-  const miniStrip=Array.from({length:12},(_,m)=>{
-    const isActive=m===curM;
-    const hasHol=Object.keys(HOLIDAYS).some(k=>k.startsWith(`${curY}-${String(m+1).padStart(2,'0')}`));
-    const hasVac=Object.values(S.vacations||{}).some(v=>v.from.substring(0,7)===`${curY}-${String(m+1).padStart(2,'0')}`);
-    return`<button class="mstrip-btn ${isActive?'active':''}" onclick="S.calMonth=${m};S.selectedDay=null;rerender()">
-      <span class="mstrip-name">${MN_S[m]}</span>
-      <div class="mstrip-dots">
-        ${hasHol?'<span class="mstrip-dot" style="background:var(--gold)"></span>':''}
-        ${hasVac?'<span class="mstrip-dot" style="background:var(--green)"></span>':''}
-      </div>
-    </button>`;
-  }).join('');
+  // My upcoming vacs
+  const myVacs=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
 
-  return`<div class="cal-outer">
-    <!-- Header -->
-    <div class="cal-header-bar">
-      <div class="cal-header-left">
-        <div class="cal-big-month">${MN_FULL[curM]}</div>
-        <div class="cal-big-year">${curY}</div>
-      </div>
-      <div class="cal-header-right">
-        <button class="cal-nav-btn" onclick="prevMonth()">←</button>
-        <button class="cal-nav-btn" onclick="goToday()" style="padding:6px 14px;border-radius:8px;font-size:12px">Сегодня</button>
-        <button class="cal-nav-btn" onclick="nextMonth()">→</button>
-      </div>
+  return`<div class="cal-page">
+    <div class="cal-year-nav">
+      <button class="cnbtn" onclick="S.calYear--;rerender()">← ${y-1}</button>
+      <div class="cal-year-val">${y}</div>
+      <button class="cnbtn" onclick="S.calYear++;rerender()">${y+1} →</button>
     </div>
-
-    <!-- Month strip -->
-    <div class="month-strip">${miniStrip}</div>
-
-    <!-- Main grid + detail panel -->
-    <div class="cal-main-layout">
-      <div class="big-cal-wrap">
-        <!-- Day headers -->
-        <div class="big-cal-grid">
-          ${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(d=>`<div class="big-dh">${d}</div>`).join('')}
-          ${cells}
-        </div>
-        <!-- Legend -->
-        <div class="cal-legend" style="margin-top:.75rem">
-          <div class="li"><div class="ld" style="background:var(--accent);border-radius:50%"></div>Сегодня</div>
-          <div class="li"><div class="ld" style="background:rgba(40,120,232,.3)"></div>Мой отпуск</div>
-          <div class="li"><div class="ld" style="background:rgba(212,146,10,.35)"></div>Праздник РК</div>
-          <div class="li"><span style="font-size:10px">●</span> Отпуск коллеги</div>
-        </div>
-      </div>
-
-      <!-- Right panel: detail + upcoming -->
-      <div class="cal-right-col">
-        ${detail}
-        <!-- Upcoming vacations -->
-        ${myVacsAll.length?`
-          <div class="cal-upcoming">
-            <div class="cdp-section">МОИ ОТПУСКА</div>
-            ${myVacsAll.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
-              <div class="cdp-vac-item">
-                <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
-                <div style="display:flex;gap:4px;margin-top:4px">
-                  <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">Изменить</button>
-                  <button class="vac-btn del" onclick="delVac('${k}')">Отменить</button>
-                </div>
-              </div>`).join('')}
-          </div>`:''}
-        <!-- Upcoming holidays -->
-        ${monthHols.length?`
-          <div class="cal-upcoming">
-            <div class="cdp-section">ПРАЗДНИКИ МЕСЯЦА</div>
-            ${monthHols.map(([k,n])=>`
-              <div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
-                <span style="font-size:18px">🎉</span>
-                <div>
-                  <div style="font-size:13px;font-weight:500">${escH(n)}</div>
-                  <div style="font-size:11px;color:var(--t3)">${k}</div>
-                </div>
-              </div>`).join('')}
-          </div>`:''}
-        <!-- Team on vacation this month -->
-        ${monthVacs.filter(v=>v.memberId!==S.user.id).length?`
-          <div class="cal-upcoming">
-            <div class="cdp-section">ОТПУСКА КОЛЛЕГ</div>
-            ${monthVacs.filter(v=>v.memberId!==S.user.id).map(v=>{
-              const mem=S.members[v.memberId]||{name:'?'};
-              return`<div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
-                ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
-                <div>
-                  <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
-                  <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
-                </div>
-              </div>`;
-            }).join('')}
-          </div>`:''}
-      </div>
+    ${detail}
+    <div class="year-grid">${months}</div>
+    <div class="cal-legend">
+      <div class="li"><div class="ld" style="background:rgba(61,142,240,.4)"></div>Сегодня</div>
+      <div class="li"><div class="ld" style="background:rgba(61,142,240,.55)"></div>Мой отпуск</div>
+      <div class="li"><div class="ld" style="background:rgba(47,217,154,.3)"></div>Отпуск коллеги</div>
+      <div class="li"><div class="ld" style="background:rgba(245,200,66,.35)"></div>Праздник РК</div>
     </div>
+    ${myVacs.length?`
+      <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.25rem">
+        <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.75rem">МОИ ОТПУСКА</div>
+        ${myVacs.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
+          <div class="vac-item">
+            <div class="vac-item-info">
+              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
+            </div>
+            <div class="vac-actions">
+              <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">✏ Изменить</button>
+              <button class="vac-btn del" onclick="delVac('${k}')">✕ Отменить</button>
+            </div>
+          </div>`).join('')}
+      </div>`:''}
   </div>`;
 }
 
-window.prevMonth=()=>{
-  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
-  const y=S.calYear||new Date().getFullYear();
-  if(m===0){S.calMonth=11;S.calYear=y-1;}else{S.calMonth=m-1;}
-  S.selectedDay=null;rerender();
-};
-window.nextMonth=()=>{
-  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
-  const y=S.calYear||new Date().getFullYear();
-  if(m===11){S.calMonth=0;S.calYear=y+1;}else{S.calMonth=m+1;}
-  S.selectedDay=null;rerender();
-};
-window.goToday=()=>{
-  const t=new Date();S.calMonth=t.getMonth();S.calYear=t.getFullYear();S.selectedDay=null;rerender();
-};
-
 /* ── FILES ── */
-function gdriveDirect(url){
-  // Convert Google Drive share link to direct download link
-  if(!url)return'#';
-  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if(m)return`https://drive.google.com/uc?export=download&id=${m[1]}`;
-  return url;
-}
-function gdrivePreview(url){
-  if(!url)return'#';
-  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if(m)return`https://drive.google.com/file/d/${m[1]}/preview`;
-  return url;
-}
-function gdriveViewUrl(url){
-  if(!url)return'#';
-  const m=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if(m)return`https://drive.google.com/file/d/${m[1]}/view`;
-  return url;
-}
-function fileIcon(name){
-  const ext=(name||'').split('.').pop().toLowerCase();
-  const map={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',
-    pptx:'📊',ppt:'📊',dat:'💾',txt:'📋',csv:'📊',
-    png:'🖼',jpg:'🖼',jpeg:'🖼',gif:'🖼',mp4:'🎬',
-    avi:'🎬',mov:'🎬',zip:'📦',rar:'📦',mp3:'🎵'};
-  return map[ext]||'📎';
-}
-
 function renderFiles(){
-  const allF=Object.entries(S.files||{}).sort((a,b)=>(b[1].ts||0)-(a[1].ts||0));
+  const ICONS={pdf:'📄',xlsx:'📊',xls:'📊',docx:'📝',doc:'📝',pptx:'📊',dat:'💾',txt:'📋',csv:'📊',png:'🖼',jpg:'🖼',jpeg:'🖼',zip:'📦',rar:'📦'};
+  const allF=Object.entries(S.files||{});
   const myF=allF.filter(([,f])=>f.memberId===S.user.id);
   const tmF=allF.filter(([,f])=>f.memberId!==S.user.id);
-
   const fi=([id,f],canDel)=>{
+    const ext=(f.name.split('.').pop()||'').toLowerCase();
     const mem=S.members[f.memberId]||{name:''};
-    const hasLink=!!f.driveUrl;
-    return`<div class="fitem" style="flex-direction:column;align-items:stretch;gap:.5rem;padding:1rem">
-      <div style="display:flex;align-items:center;gap:10px">
-        <div class="fico">${fileIcon(f.name)}</div>
-        <div class="fi">
-          <div class="fn">${escH(f.name)}</div>
-          <div class="fm">${escH(mem.name)} · ${f.date}${f.size?' · '+f.size:''}</div>
-        </div>
-        ${canDel?`<button class="fdel" onclick="delF('${id}')" title="Удалить">🗑</button>`:''}
-      </div>
-      ${f.desc?`<div style="font-size:12px;color:var(--t2);padding:0 2px">${escH(f.desc)}</div>`:''}
-      ${hasLink?`
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <a href="${escA(gdriveViewUrl(f.driveUrl))}" target="_blank" rel="noopener"
-            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
-              border-radius:8px;background:rgba(40,120,232,.1);color:var(--accent);
-              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(40,120,232,.2);
-              transition:all .2s" onmouseover="this.style.background='rgba(40,120,232,.18)'"
-              onmouseout="this.style.background='rgba(40,120,232,.1)'">
-            👁 Открыть
-          </a>
-          <a href="${escA(gdriveDirect(f.driveUrl))}" target="_blank" rel="noopener"
-            style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;
-              border-radius:8px;background:rgba(22,180,122,.1);color:var(--green);
-              font-size:12px;font-weight:600;text-decoration:none;border:1px solid rgba(22,180,122,.2);
-              transition:all .2s" onmouseover="this.style.background='rgba(22,180,122,.18)'"
-              onmouseout="this.style.background='rgba(22,180,122,.1)'">
-            ⬇ Скачать
-          </a>
-        </div>`
-      :`<div style="font-size:11px;color:var(--t3);font-style:italic">Ссылка не добавлена</div>`}
+    return`<div class="fitem">
+      <div class="fico">${ICONS[ext]||'📎'}</div>
+      <div class="fi"><div class="fn">${escH(f.name)}</div>
+        <div class="fm">${escH(mem.name)} · ${f.date} · ${f.size}</div></div>
+      ${canDel?`<button class="fdel" onclick="delF('${id}')">🗑</button>`:''}
     </div>`;
   };
-
   return`<div class="files-page">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-      <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">Файлы отдела</div>
-      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showAddFileForm()">+ Добавить файл</button>
+    <div style="font-family:'Syne';font-size:16px;font-weight:700;margin-bottom:1rem">Файлы отдела</div>
+    <div class="upzone" onclick="document.getElementById('fi').click()">
+      <div class="upico">📁</div>
+      <div class="upt">Перетащите или <span>выберите файл</span></div>
+      <div style="font-size:11px;color:var(--t3);margin-top:3px">PDF, XLSX, DOCX, DAT, CSV и другие</div>
+      <input type="file" id="fi" style="display:none" onchange="upF(event)" multiple>
     </div>
-
-    <!-- Add file form -->
-    <div id="add-file-form" style="display:none;background:var(--bg3);border:1px solid var(--border);
-      border-radius:12px;padding:1.25rem;margin-bottom:1rem">
-      <div style="font-weight:600;font-size:14px;margin-bottom:.875rem">📎 Добавить файл через Google Drive</div>
-      <div class="fg"><label>НАЗВАНИЕ ФАЙЛА</label>
-        <input type="text" id="f-name" placeholder="Отчёт Q1 2026.pdf"></div>
-      <div class="fg"><label>ССЫЛКА GOOGLE DRIVE</label>
-        <input type="url" id="f-url" placeholder="https://drive.google.com/file/d/..."></div>
-      <div class="fg"><label>ОПИСАНИЕ (необязательно)</label>
-        <input type="text" id="f-desc" placeholder="Краткое описание файла..."></div>
-      <div style="background:rgba(40,120,232,.06);border:1px solid var(--border);border-radius:8px;
-        padding:.875rem;margin-bottom:.875rem;font-size:12px;color:var(--t2);line-height:1.7">
-        <strong style="color:var(--t1)">Как получить ссылку из Google Drive:</strong><br>
-        1. Откройте файл на Google Drive<br>
-        2. Нажмите правой кнопкой → «Поделиться»<br>
-        3. Доступ → «Все, у кого есть ссылка»<br>
-        4. Нажмите «Копировать ссылку» и вставьте сюда
-      </div>
-      <div style="display:flex;gap:.625rem">
-        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="addDriveFile()">Сохранить</button>
-        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="hideAddFileForm()">Отмена</button>
-      </div>
-    </div>
-
-    <!-- My files -->
-    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
-      МОИ ФАЙЛЫ (${myF.length})
-    </div>
-    ${myF.length
-      ? `<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`
-      : `<div style="font-size:13px;color:var(--t3);margin-bottom:1rem;padding:.5rem 0">
-          Вы ещё не добавляли файлы
-        </div>`}
-
-    <!-- Team files -->
-    ${tmF.length?`
-      <div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
-      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">
-        ФАЙЛЫ КОМАНДЫ (${tmF.length})
-      </div>
-      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`
-    :''}
-
-    ${!myF.length&&!tmF.length?`
-      <div style="text-align:center;padding:2rem 0;color:var(--t3)">
-        <div style="font-size:36px;margin-bottom:.5rem">📂</div>
-        <div style="font-size:14px">Файлы появятся здесь</div>
-        <div style="font-size:12px;margin-top:.375rem">Нажмите «+ Добавить файл» чтобы поделиться документом</div>
-      </div>`:''}
+    <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">МОИ ФАЙЛЫ (${myF.length})</div>
+    ${myF.length?`<div class="flist">${myF.map(f=>fi(f,true)).join('')}</div>`:'<div style="font-size:13px;color:var(--t3);margin-bottom:1rem">Вы ещё не загружали файлы</div>'}
+    ${tmF.length?`<div style="border-top:1px solid var(--border);margin:.875rem 0"></div>
+      <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.5rem">ФАЙЛЫ КОМАНДЫ (${tmF.length})</div>
+      <div class="flist">${tmF.map(f=>fi(f,false)).join('')}</div>`:''}
   </div>`;
 }
 
@@ -1982,33 +1535,14 @@ window.sendDM = async peerId=>{
   setTimeout(()=>{scrollEl('dm-msgs');document.getElementById('dminp')?.focus();},50);
 };
 
-window.showAddFileForm = ()=>{
-  const f=document.getElementById('add-file-form');
-  if(f)f.style.display='block';
-  setTimeout(()=>document.getElementById('f-name')?.focus(),50);
-};
-window.hideAddFileForm = ()=>{
-  const f=document.getElementById('add-file-form');
-  if(f)f.style.display='none';
-};
-
-window.addDriveFile = async()=>{
-  const name=(document.getElementById('f-name')?.value||'').trim();
-  const url=(document.getElementById('f-url')?.value||'').trim();
-  const desc=(document.getElementById('f-desc')?.value||'').trim();
-  if(!name){showToast('Введите название файла',true);return;}
-  if(!url){showToast('Вставьте ссылку Google Drive',true);return;}
-  if(!url.includes('drive.google.com')){showToast('Ссылка должна быть с Google Drive',true);return;}
-  await fbPush('files',{
-    name, driveUrl:url, desc,
-    memberId:S.user.id,
-    date:new Date().toLocaleDateString('ru'),
-    ts:Date.now()
-  });
-  // Clear form
-  ['f-name','f-url','f-desc'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-  window.hideAddFileForm();
-  showToast('Файл добавлен!');
+window.upF = async e=>{
+  const files=e.target.files;if(!files.length)return;
+  for(const f of Array.from(files)){
+    await fbPush('files',{name:f.name,memberId:S.user.id,
+      date:new Date().toLocaleDateString('ru'),
+      size:f.size>1048576?(f.size/1048576).toFixed(1)+' МБ':Math.round(f.size/1024)+' КБ',ts:Date.now()});
+  }
+  showToast(`Загружено: ${files.length} файл(ов)`);
 };
 
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
@@ -2035,7 +1569,6 @@ function renderBottomNav(){
     {id:'team',ico:'👥',label:'Команда'},
     {id:'calendar',ico:'📅',label:'Календарь'},
     {id:'messages',ico:'💬',label:'Чат',badge:dmUnread},
-    {id:'kanban',ico:'📋',label:'Задачи'},
     {id:'game',ico:'🎯',label:'Игра'},
     {id:'profile',ico:'👤',label:'Профиль'},
   ];
@@ -2481,444 +2014,6 @@ window.leaveRoom = async()=>{
   rerender();
 };
 
-
-/* ══════════════════════════════════
-   POLLS
-══════════════════════════════════ */
-function renderActivePolls(){
-  const polls=Object.entries(S.polls||{}).sort((a,b)=>(b[1].ts||0)-(a[1].ts||0)).slice(0,3);
-  if(!polls.length)return'';
-  return polls.map(([id,p])=>{
-    const total=Object.values(p.votes||{}).reduce((s,v)=>s+(v||0),0)||1;
-    const myVote=p.userVotes&&p.userVotes[S.user.id];
-    const isAuthor=p.authorId===S.user.id;
-    return`<div class="poll-card">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem">
-        <div>
-          <div style="font-size:11px;color:var(--t3);margin-bottom:3px">📊 ОПРОС</div>
-          <div class="poll-q">${escH(p.question)}</div>
-        </div>
-        ${isAuthor?`<button class="fdel" onclick="delPoll('${id}')" title="Удалить">🗑</button>`:''}
-      </div>
-      ${(p.options||[]).map((opt,i)=>{
-        const cnt=p.votes&&p.votes[i]?p.votes[i]:0;
-        const pct=Math.round(cnt/total*100);
-        const voted=myVote===String(i);
-        return`<div class="poll-option ${voted?'voted':''}" onclick="votePoll('${id}',${i})">
-          <div class="poll-bar" style="width:${myVote!==undefined?pct:0}%"></div>
-          <span class="poll-option-text">${voted?'✓ ':''}${escH(opt)}</span>
-          ${myVote!==undefined?`<span class="poll-pct">${pct}%</span>`:''}
-        </div>`;
-      }).join('')}
-      <div class="poll-meta">
-        ${Object.values(p.userVotes||{}).length} голосов · ${p.authorName||''}
-        ${myVote===undefined?'<span style="color:var(--accent);margin-left:4px">· Нажмите чтобы проголосовать</span>':''}
-      </div>
-    </div>`;
-  }).join('');
-}
-
-window.togglePollForm=()=>{
-  const f=document.getElementById('poll-form');
-  if(f)f.style.display=f.style.display==='none'?'block':'none';
-};
-window.addPollOpt=()=>{
-  const wrap=document.getElementById('poll-opts-wrap');if(!wrap)return;
-  const n=document.createElement('div');n.className='poll-option-input';
-  n.innerHTML=`<input type="text" class="poll-opt-inp" placeholder="Вариант ${wrap.children.length+1}"><button class="remove-opt" onclick="removePollOpt(this)">✕</button>`;
-  wrap.appendChild(n);
-};
-window.removePollOpt=btn=>{
-  const row=btn.parentElement;
-  if(document.querySelectorAll('.poll-opt-inp').length>2)row.remove();
-};
-window.submitPoll=async()=>{
-  const q=(document.getElementById('poll-q')?.value||'').trim();
-  const opts=[...document.querySelectorAll('.poll-opt-inp')].map(i=>i.value.trim()).filter(Boolean);
-  if(!q||opts.length<2){showToast('Вопрос и минимум 2 варианта',true);return;}
-  const me=S.members[S.user.id]||S.user;
-  await fbPush('polls',{question:q,options:opts,votes:{},userVotes:{},
-    authorId:S.user.id,authorName:me.name,ts:Date.now()});
-  document.getElementById('poll-q').value='';
-  document.querySelectorAll('.poll-opt-inp').forEach((el,i)=>{el.value='';});
-  window.togglePollForm();
-  showToast('Опрос создан!');
-};
-window.votePoll=async(pollId,optIdx)=>{
-  const p=S.polls[pollId];if(!p)return;
-  if(p.userVotes&&p.userVotes[S.user.id]!==undefined)return;
-  const cur=p.votes&&p.votes[optIdx]?p.votes[optIdx]:0;
-  await fbUpd(`polls/${pollId}`,{
-    [`votes/${optIdx}`]:cur+1,
-    [`userVotes/${S.user.id}`]:String(optIdx)
-  });
-};
-window.delPoll=async id=>{if(confirm('Удалить опрос?'))await fbDel(`polls/${id}`);};
-
-/* ══════════════════════════════════
-   KANBAN
-══════════════════════════════════ */
-function renderKanban(){
-  const cols=[
-    {id:'todo',label:'📋 Нужно сделать',cls:'ktag-todo'},
-    {id:'doing',label:'⚡ В процессе',cls:'ktag-doing'},
-    {id:'done',label:'✅ Готово',cls:'ktag-done'},
-  ];
-  const cards=Object.entries(S.kanban||{}).map(([k,v])=>({...v,_key:k}));
-  return`<div class="page-wrap">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📋 Доска задач</div>
-      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showKanbanForm('todo')">+ Новая задача</button>
-    </div>
-    ${S.activeKanbanForm?`
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem">
-      <div style="font-weight:600;margin-bottom:.875rem">Новая задача</div>
-      <div class="fg"><label>НАЗВАНИЕ</label><input type="text" id="k-title" placeholder="Что нужно сделать?"></div>
-      <div class="fg"><label>ОПИСАНИЕ</label><textarea id="k-desc" rows="2" placeholder="Детали..."></textarea></div>
-      <div class="row2">
-        <div class="fg"><label>КОЛОНКА</label>
-          <select id="k-col">
-            <option value="todo">Нужно сделать</option>
-            <option value="doing">В процессе</option>
-            <option value="done">Готово</option>
-          </select>
-        </div>
-        <div class="fg"><label>ИСПОЛНИТЕЛЬ</label>
-          <select id="k-assignee">
-            <option value="">Не назначен</option>
-            ${membersArr().map(m=>`<option value="${m.id}">${escH(m.name)}</option>`).join('')}
-          </select>
-        </div>
-      </div>
-      <div style="display:flex;gap:.625rem">
-        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="addKanbanCard()">Создать</button>
-        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="S.activeKanbanForm=null;rerender()">Отмена</button>
-      </div>
-    </div>`:''}
-    <div class="kanban-board">
-      ${cols.map(col=>{
-        const colCards=cards.filter(c=>c.col===col.id).sort((a,b)=>(b.ts||0)-(a.ts||0));
-        return`<div class="kanban-col">
-          <div class="kanban-col-title">
-            ${col.label}
-            <span class="kanban-col-count">${colCards.length}</span>
-          </div>
-          ${colCards.map(c=>{
-            const assignee=c.assigneeId?S.members[c.assigneeId]:null;
-            const isOwner=c.creatorId===S.user.id;
-            return`<div class="kanban-card">
-              <div class="kanban-card-title">${escH(c.title)}</div>
-              ${c.desc?`<div style="font-size:12px;color:var(--t2);margin-bottom:.375rem">${escH(c.desc)}</div>`:''}
-              <div class="kanban-card-meta">
-                ${assignee?avImg(assignee.avatar,assignee.name,18,assignee.color||COLORS[0]):''}
-                ${assignee?`<span>${escH(assignee.name.split(' ')[0])}</span>`:'<span style="color:var(--t3)">Не назначен</span>'}
-                ${isOwner?`
-                  <span style="margin-left:auto;display:flex;gap:4px">
-                    ${col.id!=='todo'?`<button onclick="moveCard('${c._key}','todo')" class="kanban-add" style="width:auto;padding:2px 6px;font-size:10px;border-radius:4px">◀</button>`:''}
-                    ${col.id!=='done'?`<button onclick="moveCard('${c._key}',${col.id==='todo'?'"doing"':'"done"'})" class="kanban-add" style="width:auto;padding:2px 6px;font-size:10px;border-radius:4px">▶</button>`:''}
-                    <button onclick="delCard('${c._key}')" class="fdel" style="font-size:11px;padding:2px 5px">🗑</button>
-                  </span>`:''}
-              </div>
-            </div>`;
-          }).join('')}
-          <button class="kanban-add" onclick="S.activeKanbanForm='${col.id}';document.getElementById('k-col')&&(document.getElementById('k-col').value='${col.id}');rerender()">+ Добавить</button>
-        </div>`;
-      }).join('')}
-    </div>
-  </div>`;
-}
-window.showKanbanForm=col=>{S.activeKanbanForm=col;rerender();setTimeout(()=>document.getElementById('k-title')?.focus(),50);};
-window.addKanbanCard=async()=>{
-  const title=(document.getElementById('k-title')?.value||'').trim();
-  if(!title){showToast('Введите название задачи',true);return;}
-  const col=document.getElementById('k-col')?.value||'todo';
-  const assigneeId=document.getElementById('k-assignee')?.value||'';
-  const desc=document.getElementById('k-desc')?.value||'';
-  await fbPush('kanban',{title,desc,col,assigneeId,creatorId:S.user.id,ts:Date.now()});
-  S.activeKanbanForm=null;showToast('Задача создана!');
-};
-window.moveCard=async(id,col)=>await fbUpd(`kanban/${id}`,{col});
-window.delCard=async id=>{if(confirm('Удалить задачу?'))await fbDel(`kanban/${id}`);};
-
-/* ══════════════════════════════════
-   WIKI / БАЗА ЗНАНИЙ
-══════════════════════════════════ */
-function renderWiki(){
-  const articles=Object.entries(S.wiki||{}).map(([k,v])=>({...v,_key:k}))
-    .sort((a,b)=>(b.ts||0)-(a.ts||0));
-  if(S.wikiView){
-    const a=S.wiki[S.wikiView];
-    if(!a)return renderWikiList(articles);
-    const author=S.members[a.authorId]||{name:'?'};
-    const isOwner=a.authorId===S.user.id;
-    return`<div class="page-wrap">
-      <div style="display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="gbtn gbtn-secondary" style="padding:7px 14px;font-size:13px" onclick="S.wikiView=null;rerender()">← Назад</button>
-        ${isOwner?`<button class="gbtn gbtn-secondary" style="padding:7px 14px;font-size:13px;color:var(--red)" onclick="delWiki('${S.wikiView}')">🗑 Удалить</button>`:''}
-      </div>
-      <div class="wiki-full">
-        <div class="wiki-full-title">${escH(a.title)}</div>
-        <div class="wiki-full-meta">
-          ${avImg(author.avatar,author.name,20,author.color||COLORS[0])}
-          <span style="margin-left:4px">${escH(author.name)}</span> ·
-          ${new Date(a.ts||0).toLocaleDateString('ru')}
-          ${a.tag?`<span class="tag" style="margin-left:6px">${escH(a.tag)}</span>`:''}
-        </div>
-        <div class="wiki-full-body">${escH(a.body)}</div>
-      </div>
-    </div>`;
-  }
-  return renderWikiList(articles);
-}
-function renderWikiList(articles){
-  const tags=[...new Set(articles.map(a=>a.tag).filter(Boolean))];
-  return`<div class="page-wrap">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
-      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📚 База знаний</div>
-      <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="toggleWikiEditor()">+ Написать статью</button>
-    </div>
-    <div class="wiki-editor" id="wiki-editor">
-      <div class="fg"><label>ЗАГОЛОВОК</label><input type="text" id="w-title" placeholder="Название статьи..."></div>
-      <div class="fg"><label>КАТЕГОРИЯ</label><input type="text" id="w-tag" placeholder="Eclipse, Petrel, Общее..."></div>
-      <div class="fg"><label>СОДЕРЖАНИЕ</label><textarea id="w-body" rows="8" placeholder="Напишите статью..."></textarea></div>
-      <div style="display:flex;gap:.625rem">
-        <button class="gbtn gbtn-primary" style="padding:9px 20px;font-size:13px" onclick="submitWiki()">Опубликовать</button>
-        <button class="gbtn gbtn-secondary" style="padding:9px 16px;font-size:13px" onclick="toggleWikiEditor()">Отмена</button>
-      </div>
-    </div>
-    ${tags.length?`<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.875rem">
-      ${tags.map(t=>`<span class="tag" style="cursor:pointer;padding:4px 10px">${escH(t)}</span>`).join('')}
-    </div>`:''}
-    ${articles.length?`<div class="wiki-list">
-      ${articles.map(a=>{
-        const author=S.members[a.authorId]||{name:'?'};
-        return`<div class="wiki-item" onclick="S.wikiView='${a._key}';rerender()">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start">
-            <div class="wiki-item-title">${escH(a.title)}</div>
-            ${a.tag?`<span class="tag">${escH(a.tag)}</span>`:''}
-          </div>
-          <div class="wiki-item-meta">${escH(author.name)} · ${new Date(a.ts||0).toLocaleDateString('ru')}</div>
-          <div class="wiki-item-preview">${escH(a.body)}</div>
-        </div>`;
-      }).join('')}
-    </div>`:`<div class="empty-state"><div class="empty-state-ico">📝</div>
-      <div>Статей пока нет</div>
-      <div style="font-size:12px;margin-top:.375rem">Напишите первую статью для команды!</div>
-    </div>`}
-  </div>`;
-}
-window.toggleWikiEditor=()=>{
-  const el=document.getElementById('wiki-editor');
-  if(el)el.style.display=el.style.display==='none'?'block':'none';
-  setTimeout(()=>document.getElementById('w-title')?.focus(),50);
-};
-window.submitWiki=async()=>{
-  const title=(document.getElementById('w-title')?.value||'').trim();
-  const body=(document.getElementById('w-body')?.value||'').trim();
-  const tag=(document.getElementById('w-tag')?.value||'').trim();
-  if(!title||!body){showToast('Заполните заголовок и содержание',true);return;}
-  await fbPush('wiki',{title,body,tag,authorId:S.user.id,ts:Date.now()});
-  window.toggleWikiEditor();showToast('Статья опубликована!');
-};
-window.delWiki=async id=>{
-  if(confirm('Удалить статью?')){await fbDel(`wiki/${id}`);S.wikiView=null;showToast('Удалено');}
-};
-
-/* ══════════════════════════════════
-   ENGINEERING TOOLS + WEATHER
-══════════════════════════════════ */
-function renderTools(){
-  return`<div class="page-wrap">
-    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">🧮 Инструменты</div>
-    ${renderWeatherWidget()}
-    <div class="calc-page">
-      <div style="font-weight:700;font-size:15px;margin-bottom:1rem">Инженерный калькулятор</div>
-      <div class="calc-tabs">
-        <button class="calc-tab active" id="ctab-pressure" onclick="switchCalc('pressure')">Давление</button>
-        <button class="calc-tab" id="ctab-flowrate" onclick="switchCalc('flowrate')">Дебит</button>
-        <button class="calc-tab" id="ctab-units" onclick="switchCalc('units')">Единицы</button>
-      </div>
-      <div id="csec-pressure">${renderPressureCalc()}</div>
-      <div id="csec-flowrate" style="display:none">${renderFlowrateCalc()}</div>
-      <div id="csec-units" style="display:none">${renderUnitsCalc()}</div>
-    </div>
-  </div>`;
-}
-
-function renderWeatherWidget(){
-  if(S.weather&&(Date.now()-S.weather.ts)<600000){
-    const w=S.weather;
-    const icons={'Clear':'☀️','Clouds':'☁️','Rain':'🌧','Snow':'❄️','Wind':'💨','Thunderstorm':'⛈','Drizzle':'🌦','Mist':'🌫','Fog':'🌫'};
-    const ico=icons[w.main]||'🌤';
-    return`<div class="weather-widget">
-      <div class="weather-icon">${ico}</div>
-      <div class="weather-info">
-        <div class="weather-temp">${Math.round(w.temp)}°C</div>
-        <div class="weather-desc">Атырау · ${escH(w.desc)}</div>
-        <div class="weather-details">💧 ${w.humidity}% · 💨 ${w.wind} м/с · ощущается ${Math.round(w.feels)}°C</div>
-      </div>
-    </div>`;
-  }
-  return`<div class="weather-widget" style="cursor:pointer" onclick="fetchWeather()">
-    <div class="weather-icon">🌤</div>
-    <div class="weather-info">
-      <div class="weather-temp" style="font-size:16px;color:var(--t2)">Погода в Атырау</div>
-      <div class="weather-desc">Нажмите чтобы загрузить</div>
-    </div>
-  </div>`;
-}
-
-window.fetchWeather=async()=>{
-  try{
-    const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=47.1167&longitude=51.8833&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&wind_speed_unit=ms');
-    const d=await r.json();
-    const c=d.current;
-    const code=c.weather_code;
-    let main='Clear',desc='Ясно';
-    if(code>=95){main='Thunderstorm';desc='Гроза';}
-    else if(code>=71){main='Snow';desc='Снег';}
-    else if(code>=61){main='Rain';desc='Дождь';}
-    else if(code>=51){main='Drizzle';desc='Морось';}
-    else if(code>=45){main='Fog';desc='Туман';}
-    else if(code>=3){main='Clouds';desc='Облачно';}
-    else if(code>=1){main='Clouds';desc='Переменная облачность';}
-    const w={temp:c.temperature_2m,feels:c.apparent_temperature,humidity:c.relative_humidity_2m,
-      wind:c.wind_speed_10m,main,desc,ts:Date.now()};
-    S.weather=w;
-    await fbSet('weather_cache',w);
-    rerender();
-  }catch(e){showToast('Не удалось загрузить погоду',true);}
-};
-
-function calcResult(val,unit){
-  return`<div class="calc-result"><div class="calc-result-val">${val}</div><div class="calc-result-unit">${unit}</div></div>`;
-}
-
-function renderPressureCalc(){
-  return`<div class="calc-section active">
-    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Конвертер давления</div>
-    <div class="calc-group">
-      <div class="calc-label">ЗНАЧЕНИЕ</div>
-      <input type="number" id="p-val" placeholder="Введите значение" oninput="calcPressure()">
-      <div style="margin-top:.5rem"><label>ИЗ:</label>
-        <select id="p-from" onchange="calcPressure()" style="margin-top:4px">
-          <option value="psi">psi</option><option value="bar">bar</option>
-          <option value="atm">атм</option><option value="mpa">МПа</option><option value="kpa">кПа</option>
-        </select>
-      </div>
-    </div>
-    <div id="p-result" style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem"></div>
-  </div>`;
-}
-window.calcPressure=()=>{
-  const v=parseFloat(document.getElementById('p-val')?.value)||0;
-  const from=document.getElementById('p-from')?.value||'psi';
-  const toBar={psi:0.0689476,bar:1,atm:1.01325,mpa:10,kpa:0.01};
-  const fromBar={psi:14.5038,bar:1,atm:0.986923,mpa:0.1,kpa:100};
-  const bar=v*(toBar[from]||1);
-  const res=document.getElementById('p-result');
-  if(!res)return;
-  const units=['psi','bar','atm','mpa','kpa'];
-  const labels={psi:'psi',bar:'bar',atm:'атм',mpa:'МПа',kpa:'кПа'};
-  res.innerHTML=units.filter(u=>u!==from).map(u=>`
-    <div class="calc-result">
-      <div class="calc-result-val">${(bar*fromBar[u]).toFixed(4).replace(/\.?0+$/,'')}</div>
-      <div class="calc-result-unit">${labels[u]}</div>
-    </div>`).join('');
-};
-
-function renderFlowrateCalc(){
-  return`<div class="calc-section active">
-    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Расчёт дебита скважины</div>
-    <div class="calc-group">
-      <div class="calc-label">ПРОДУКТИВНОСТЬ (м³/сут/атм)</div>
-      <input type="number" id="f-pi" placeholder="Индекс продуктивности" oninput="calcFlow()" step="0.1">
-    </div>
-    <div class="calc-group">
-      <div class="calc-label">ПЛАСТОВОЕ ДАВЛЕНИЕ (атм)</div>
-      <input type="number" id="f-pr" placeholder="Пластовое давление" oninput="calcFlow()">
-    </div>
-    <div class="calc-group">
-      <div class="calc-label">ЗАБОЙНОЕ ДАВЛЕНИЕ (атм)</div>
-      <input type="number" id="f-pwf" placeholder="Забойное давление" oninput="calcFlow()">
-    </div>
-    <div id="f-result"></div>
-  </div>`;
-}
-window.calcFlow=()=>{
-  const pi=parseFloat(document.getElementById('f-pi')?.value)||0;
-  const pr=parseFloat(document.getElementById('f-pr')?.value)||0;
-  const pwf=parseFloat(document.getElementById('f-pwf')?.value)||0;
-  const q=pi*(pr-pwf);
-  const res=document.getElementById('f-result');
-  if(!res||!pi||!pr)return;
-  res.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem">
-    <div class="calc-result"><div class="calc-result-val">${q.toFixed(1)}</div><div class="calc-result-unit">м³/сут</div></div>
-    <div class="calc-result"><div class="calc-result-val">${(q/6.29).toFixed(1)}</div><div class="calc-result-unit">баррель/сут</div></div>
-    <div class="calc-result"><div class="calc-result-val">${(q*1000/24/3600).toFixed(4)}</div><div class="calc-result-unit">м³/с</div></div>
-    <div class="calc-result"><div class="calc-result-val">${(q/30).toFixed(0)}</div><div class="calc-result-unit">м³/месяц</div></div>
-  </div>`;
-};
-
-function renderUnitsCalc(){
-  return`<div class="calc-section active">
-    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Конвертер нефтяных единиц</div>
-    <div class="calc-group">
-      <div class="calc-label">ОБЪЁМ — м³ в баррели</div>
-      <input type="number" id="u-m3" placeholder="м³" oninput="document.getElementById('u-bbl').value=(parseFloat(this.value)*6.2898).toFixed(2)">
-      <input type="number" id="u-bbl" placeholder="баррели (bbl)" style="margin-top:.5rem" oninput="document.getElementById('u-m3').value=(parseFloat(this.value)/6.2898).toFixed(4)">
-    </div>
-    <div class="calc-group">
-      <div class="calc-label">ТЕМПЕРАТУРА — °C в °F</div>
-      <input type="number" id="u-c" placeholder="°C" oninput="document.getElementById('u-f').value=(parseFloat(this.value)*9/5+32).toFixed(1)">
-      <input type="number" id="u-f" placeholder="°F" style="margin-top:.5rem" oninput="document.getElementById('u-c').value=((parseFloat(this.value)-32)*5/9).toFixed(2)">
-    </div>
-    <div class="calc-group">
-      <div class="calc-label">ДЛИНА — м в футы</div>
-      <input type="number" id="u-m" placeholder="метры" oninput="document.getElementById('u-ft').value=(parseFloat(this.value)*3.28084).toFixed(2)">
-      <input type="number" id="u-ft" placeholder="футы" style="margin-top:.5rem" oninput="document.getElementById('u-m').value=(parseFloat(this.value)/3.28084).toFixed(4)">
-    </div>
-  </div>`;
-}
-
-function renderCO2Calc(){
-  return`<div class="calc-section active">
-    <div style="font-size:13px;color:var(--t2);margin-bottom:.875rem">Оценка выбросов CO₂</div>
-    <div class="calc-group">
-      <div class="calc-label">ДОБЫЧА НЕФТИ (т/год)</div>
-      <input type="number" id="c-oil" placeholder="тонн нефти в год" oninput="calcCO2()">
-    </div>
-    <div class="calc-group">
-      <div class="calc-label">ДОБЫЧА ГАЗА (млн. м³/год)</div>
-      <input type="number" id="c-gas" placeholder="млн. м³ газа в год" oninput="calcCO2()">
-    </div>
-    <div id="c-result"></div>
-  </div>`;
-}
-window.calcCO2=()=>{
-  const oil=parseFloat(document.getElementById('c-oil')?.value)||0;
-  const gas=parseFloat(document.getElementById('c-gas')?.value)||0;
-  const co2oil=oil*3.07;
-  const co2gas=gas*1000*1.96;
-  const total=co2oil+co2gas;
-  const res=document.getElementById('c-result');
-  if(!res||(oil===0&&gas===0))return;
-  res.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem">
-    <div class="calc-result"><div class="calc-result-val">${(co2oil/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год (нефть)</div></div>
-    <div class="calc-result"><div class="calc-result-val">${(co2gas/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год (газ)</div></div>
-    <div class="calc-result" style="grid-column:span 2"><div class="calc-result-val">${(total/1000).toFixed(1)}</div><div class="calc-result-unit">тыс. т CO₂/год — итого</div></div>
-  </div>`;
-};
-
-
-window.switchCalc = id => {
-  ['pressure','flowrate','units'].forEach(t=>{
-    const sec=document.getElementById('csec-'+t);
-    const tab=document.getElementById('ctab-'+t);
-    if(sec) sec.style.display = t===id ? 'block' : 'none';
-    if(tab) tab.className = 'calc-tab' + (t===id ? ' active' : '');
-  });
-};
 document.addEventListener('click',e=>{
   if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('[data-notif]')){
     S.notifOpen=false;document.getElementById('npanel').className='notif-panel';

@@ -360,7 +360,7 @@ select option{background:var(--bg2)}
   margin:.875rem 0 .625rem;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.5);z-index:500;
+.modal-overlay{position:fixed;inset:0;background:rgba(15,31,53,.55);z-index:2000;
   display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(8px)}
 .modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
@@ -373,10 +373,10 @@ select option{background:var(--bg2)}
 .btnx:hover{border-color:var(--red);color:var(--red)}
 
 /* NOTIF PANEL */
-.notif-panel{position:fixed;top:58px;right:1rem;width:320px;
+.notif-panel{position:fixed;top:58px;right:1rem;width:320px;pointer-events:none;
   background:#fff;border:1px solid var(--border2);border-radius:var(--r);
   z-index:300;box-shadow:0 8px 32px rgba(40,120,232,0.12);display:none;max-height:420px;overflow-y:auto}
-.notif-panel.open{display:block}
+.notif-panel.open{display:block;pointer-events:auto}
 .np-head{padding:12px 16px 8px;border-bottom:1px solid var(--border);
   display:flex;justify-content:space-between;align-items:center;
   position:sticky;top:0;background:#fff}
@@ -426,7 +426,7 @@ select option{background:var(--bg2)}
   .sidebar-left,.sidebar-right{display:none !important}
   .layout{grid-template-columns:1fr !important;padding:1rem !important;padding-bottom:74px !important}
   .bottom-nav{
-    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:500;
+    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:400;
     background:#fff;border-top:1px solid var(--border);
     box-shadow:0 -2px 16px rgba(40,120,232,0.10);
     height:60px;align-items:stretch;
@@ -1715,10 +1715,12 @@ function renderMessages(){
 
 /* ── MODAL ── */
 function renderModal(){
-  if(!S.modal)return'';
-  if(S.modal.type==='editProfile') return renderEditProfileModal();
-  if(S.modal.type==='editVac') return renderEditVacModal();
-  if(S.modal.type==='viewProfile') return renderViewProfileModal();
+  if(!S.modal||!S.modal.type)return'';
+  try{
+    if(S.modal.type==='editProfile') return renderEditProfileModal();
+    if(S.modal.type==='editVac'&&S.modal.data) return renderEditVacModal();
+    if(S.modal.type==='viewProfile') return renderViewProfileModal();
+  }catch(e){console.error('modal error',e);S.modal=null;return'';}
   return'';
 }
 
@@ -2014,11 +2016,19 @@ window.addDriveFile = async()=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-S.page='loading'; rerender();
+S.page='loading';
+S.modal=null;
+S.notifOpen=false;
+S.selectedDay=null;
+rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
-  catch{S.page='auth';}
+  try{
+    S.user=JSON.parse(saved);
+    S.page='feed';
+    S.modal=null;
+    startListeners();
+  }catch(e){S.page='auth';}
 }else{S.page='auth';}
 rerender();
 

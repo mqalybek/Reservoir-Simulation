@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RS Team — Reservoir Simulation</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -15,7 +15,7 @@
   --border:rgba(40,120,232,0.12);--border2:rgba(40,120,232,0.24);
   --card:#ffffff;--r:14px;
 }
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
 body::after{content:'';position:fixed;inset:0;
   background:radial-gradient(ellipse 60% 40% at 80% 5%,rgba(40,120,232,0.04),transparent),
   radial-gradient(ellipse 50% 30% at 5% 95%,rgba(124,92,232,0.03),transparent);
@@ -30,12 +30,12 @@ body::after{content:'';position:fixed;inset:0;
 .tn-logo-mark{width:30px;height:30px;border-radius:8px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne';font-size:13px;font-weight:800;color:#fff}
-.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:var(--t1)}
+  font-family:'Space Grotesk';font-size:13px;font-weight:800;color:#fff}
+.tn-logo-name{font-family:'Space Grotesk';font-size:15px;font-weight:700;color:var(--t1)}
 .tn-search{flex:1;max-width:320px;margin:0 1.5rem;position:relative}
 .tn-search input{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px 7px 34px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .tn-search input:focus{border-color:var(--accent)}
 .tn-search input::placeholder{color:var(--t3)}
 .tn-search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
@@ -74,7 +74,7 @@ body::after{content:'';position:fixed;inset:0;
 .nav-items{padding:.5rem}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
   cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
+  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans'}
 .nav-item:hover{background:var(--bg3);color:var(--t1)}
 .nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
@@ -89,7 +89,7 @@ body::after{content:'';position:fixed;inset:0;
 .composer-top{display:flex;gap:10px;align-items:flex-start}
 .composer-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;color:var(--t1);font-size:14px;
-  font-family:'Inter';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
+  font-family:'Plus Jakarta Sans';resize:none;outline:none;transition:border .2s;min-height:44px;line-height:1.5}
 .composer-input:focus{border-color:var(--accent);min-height:80px}
 .composer-input::placeholder{color:var(--t3)}
 .composer-actions{display:flex;align-items:center;justify-content:space-between;margin-top:.75rem}
@@ -100,7 +100,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-btn{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:600;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Inter'}
+  transition:all .2s;font-family:'Plus Jakarta Sans'}
 .post-btn:hover{opacity:.9;transform:translateY(-1px)}
 .post-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .img-preview-wrap{margin-top:.75rem;position:relative;display:inline-block}
@@ -130,7 +130,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-footer{padding:.625rem 1rem;border-top:1px solid var(--border);
   display:flex;align-items:center;gap:1rem}
 .post-action{display:flex;align-items:center;gap:5px;background:none;border:none;
-  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Inter';
+  color:var(--t3);cursor:pointer;font-size:13px;font-family:'Plus Jakarta Sans';
   padding:5px 10px;border-radius:8px;transition:all .2s}
 .post-action:hover{background:var(--bg3);color:var(--t1)}
 .post-action.liked{color:var(--red)}
@@ -150,7 +150,7 @@ body::after{content:'';position:fixed;inset:0;
 .comment-input-row{display:flex;gap:8px;align-items:center;margin-top:.625rem}
 .comment-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:7px 14px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .comment-input:focus{border-color:var(--accent)}
 .comment-send{background:var(--accent);border:none;border-radius:50%;
   width:30px;height:30px;display:flex;align-items:center;justify-content:center;
@@ -160,7 +160,7 @@ body::after{content:'';position:fixed;inset:0;
 /* ── RIGHT SIDEBAR ── */
 .sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
 .widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.widget-title{font-family:'Syne';font-size:13px;font-weight:700;color:var(--t2);
+.widget-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
 .member-row{display:flex;align-items:center;gap:9px;margin-bottom:.75rem;cursor:pointer}
 .member-row:last-child{margin-bottom:0}
@@ -196,34 +196,34 @@ body::after{content:'';position:fixed;inset:0;
 .profile-av-edit{position:absolute;bottom:2px;right:2px;width:24px;height:24px;
   background:var(--accent);border-radius:50%;display:flex;align-items:center;
   justify-content:center;cursor:pointer;font-size:12px;border:2px solid var(--bg2)}
-.profile-name{font-family:'Syne';font-size:20px;font-weight:800}
+.profile-name{font-family:'Space Grotesk';font-size:20px;font-weight:800}
 .profile-role{color:var(--accent);font-size:13px;margin-top:3px;font-weight:500}
 .profile-bio{font-size:13px;color:var(--t2);margin-top:.5rem;line-height:1.6}
 .profile-stats{display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
 .pstat{text-align:center}
-.pstat-n{font-family:'Syne';font-size:18px;font-weight:700}
+.pstat-n{font-family:'Space Grotesk';font-size:18px;font-weight:700}
 .pstat-l{font-size:11px;color:var(--t3);margin-top:2px}
 .profile-actions{display:flex;gap:.625rem;margin-top:1rem}
 .btn-primary{padding:8px 20px;border-radius:20px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter'}
+  color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .btn-primary:hover{opacity:.9}
 .btn-secondary{padding:8px 20px;border-radius:20px;border:1px solid var(--border2);
   background:none;color:var(--t1);font-weight:500;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Inter'}
+  transition:all .2s;font-family:'Plus Jakarta Sans'}
 .btn-secondary:hover{background:var(--bg3)}
 
 /* Calendar page */
 .cal-page{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .cal-year-nav{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
-.cal-year-val{font-family:'Syne';font-size:18px;font-weight:700;min-width:56px;text-align:center}
+.cal-year-val{font-family:'Space Grotesk';font-size:18px;font-weight:700;min-width:56px;text-align:center}
 .cnbtn{padding:6px 12px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Inter'}
+  background:none;color:var(--t2);cursor:pointer;font-size:13px;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .cnbtn:hover{border-color:var(--accent);color:var(--accent)}
 .year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
 .mini-month{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.75rem}
 .mm-title{font-size:11px;font-weight:700;color:var(--t2);text-align:center;
-  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Syne'}
+  margin-bottom:.5rem;letter-spacing:.5px;font-family:'Space Grotesk'}
 .mm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px}
 .mm-dh{text-align:center;font-size:8px;color:var(--t3);padding:2px 0}
 .mm-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
@@ -240,7 +240,7 @@ body::after{content:'';position:fixed;inset:0;
   padding:1.125rem;margin-bottom:1rem;animation:fdIn .15s ease}
 @keyframes fdIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .dd-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
-.dd-date{font-family:'Syne';font-size:15px;font-weight:700}
+.dd-date{font-family:'Space Grotesk';font-size:15px;font-weight:700}
 .cal-legend{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
 .li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t2)}
 .ld{width:10px;height:10px;border-radius:3px}
@@ -253,7 +253,7 @@ body::after{content:'';position:fixed;inset:0;
 .vac-item-who{font-size:11px;color:var(--t3);margin-top:2px}
 .vac-actions{display:flex;gap:6px}
 .vac-btn{background:none;border:1px solid var(--border);border-radius:6px;
-  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Inter';transition:all .2s}
+  padding:4px 10px;font-size:11px;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .vac-btn.edit{color:var(--accent);border-color:rgba(61,142,240,.3)}
 .vac-btn.edit:hover{background:rgba(61,142,240,.1)}
 .vac-btn.del{color:var(--red);border-color:rgba(240,88,88,.3)}
@@ -264,7 +264,7 @@ body::after{content:'';position:fixed;inset:0;
 .dm-list{width:280px;flex-shrink:0;background:var(--card);border:1px solid var(--border);
   border-radius:var(--r);overflow:hidden}
 .dm-list-head{padding:1rem;border-bottom:1px solid var(--border);
-  font-family:'Syne';font-size:14px;font-weight:700}
+  font-family:'Space Grotesk';font-size:14px;font-weight:700}
 .dm-item{display:flex;align-items:center;gap:10px;padding:10px 14px;
   cursor:pointer;transition:background .2s;border-left:3px solid transparent}
 .dm-item:hover{background:var(--bg3)}
@@ -281,7 +281,7 @@ body::after{content:'';position:fixed;inset:0;
   border-radius:var(--r);display:flex;flex-direction:column;min-height:500px}
 .dm-chat-hdr{padding:.875rem 1rem;border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:10px;flex-shrink:0}
-.dm-chat-name{font-family:'Syne';font-size:14px;font-weight:700}
+.dm-chat-name{font-family:'Space Grotesk';font-size:14px;font-weight:700}
 .dm-chat-role{font-size:11px;color:var(--t2)}
 .dm-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
 .msg{display:flex;gap:8px;max-width:75%;align-items:flex-end}
@@ -296,7 +296,7 @@ body::after{content:'';position:fixed;inset:0;
   display:flex;gap:8px;align-items:center}
 .dm-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:20px;padding:8px 14px;color:var(--t1);font-size:13px;
-  font-family:'Inter';outline:none;transition:border .2s}
+  font-family:'Plus Jakarta Sans';outline:none;transition:border .2s}
 .dm-input:focus{border-color:var(--accent)}
 .dm-send{background:var(--accent);border:none;border-radius:50%;
   width:34px;height:34px;display:flex;align-items:center;justify-content:center;
@@ -330,19 +330,19 @@ body::after{content:'';position:fixed;inset:0;
 .auth-logo-big{width:56px;height:56px;border-radius:16px;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;
-  font-family:'Syne';font-size:20px;font-weight:800;color:#fff}
-.auth-title{font-family:'Syne';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
+  font-family:'Space Grotesk';font-size:20px;font-weight:800;color:#fff}
+.auth-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
 .auth-sub{font-size:13px;color:var(--t2);text-align:center;margin-bottom:1.5rem}
 .auth-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;box-shadow:0 4px 24px rgba(40,120,232,0.08)}
 .atabs{display:flex;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.5rem;gap:3px}
 .atab{flex:1;padding:8px;text-align:center;cursor:pointer;font-size:13px;font-weight:500;
-  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Inter'}
+  color:var(--t2);border-radius:8px;border:none;background:none;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .atab.active{background:var(--bg2);color:var(--accent);border:1px solid var(--border2)}
 .fg{margin-bottom:.875rem}
 label{display:block;font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:500;letter-spacing:.5px}
 input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:9px 13px;color:var(--t1);font-size:13px;
-  font-family:'Inter';transition:border .2s;outline:none}
+  font-family:'Plus Jakarta Sans';transition:border .2s;outline:none}
 input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 input::placeholder,textarea::placeholder{color:var(--t3)}
 select option{background:var(--bg2)}
@@ -351,7 +351,7 @@ select option{background:var(--bg2)}
 .submit-btn{width:100%;padding:11px;border-radius:10px;border:none;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:700;font-size:14px;cursor:pointer;
-  transition:all .2s;font-family:'Inter';margin-top:4px}
+  transition:all .2s;font-family:'Plus Jakarta Sans';margin-top:4px}
 .submit-btn:hover{opacity:.9;transform:translateY(-1px)}
 .submit-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .auth-hint{text-align:center;font-size:12px;color:var(--t3);margin-top:1rem}
@@ -366,7 +366,7 @@ select option{background:var(--bg2)}
   width:100%;max-width:480px;max-height:88vh;overflow-y:auto;padding:1.75rem;
   box-shadow:0 8px 40px rgba(40,120,232,0.12)}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
-.modal-title{font-family:'Syne';font-size:16px;font-weight:700}
+.modal-title{font-family:'Space Grotesk';font-size:16px;font-weight:700}
 .btnx{background:none;border:1px solid var(--border);color:var(--t2);
   width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;
   display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -380,7 +380,7 @@ select option{background:var(--bg2)}
 .np-head{padding:12px 16px 8px;border-bottom:1px solid var(--border);
   display:flex;justify-content:space-between;align-items:center;
   position:sticky;top:0;background:#fff}
-.np-title{font-family:'Syne';font-size:13px;font-weight:700}
+.np-title{font-family:'Space Grotesk';font-size:13px;font-weight:700}
 .np-clear{font-size:11px;color:var(--accent);cursor:pointer;border:none;background:none}
 .np-item{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;gap:10px}
 .np-item.unread{background:rgba(61,142,240,.05)}
@@ -434,7 +434,7 @@ select option{background:var(--bg2)}
   }
   .bnav-item{
     flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:2px;cursor:pointer;border:none;background:none;font-family:'Inter';
+    gap:2px;cursor:pointer;border:none;background:none;font-family:'Plus Jakarta Sans';
     color:var(--t3);transition:all .15s;padding:6px 2px;
     position:relative;-webkit-tap-highlight-color:transparent;
   }
@@ -459,32 +459,32 @@ select option{background:var(--bg2)}
 .game-wrap{max-width:900px;margin:0 auto}
 .game-lobby{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.game-title{font-family:'Syne';font-size:24px;font-weight:800;margin-bottom:.5rem}
+.game-title{font-family:'Space Grotesk';font-size:24px;font-weight:800;margin-bottom:.5rem}
 .game-sub{font-size:14px;color:var(--t2);margin-bottom:2rem}
 .game-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
 .gbtn{padding:12px 28px;border-radius:12px;border:none;font-weight:700;font-size:15px;
-  cursor:pointer;font-family:'Inter';transition:all .2s}
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .gbtn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
 .gbtn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .gbtn-secondary{background:var(--bg3);color:var(--t1);border:1px solid var(--border)}
 .gbtn-secondary:hover{background:var(--bg4)}
-.room-code-display{font-family:'Syne';font-size:42px;font-weight:800;
+.room-code-display{font-family:'Space Grotesk';font-size:42px;font-weight:800;
   color:var(--accent);letter-spacing:8px;margin:1rem 0}
 .room-join-row{display:flex;gap:.625rem;justify-content:center;margin-top:1rem}
 .room-input{width:160px;text-align:center;font-size:20px;letter-spacing:4px;
-  font-family:'Syne';font-weight:700;text-transform:uppercase}
+  font-family:'Space Grotesk';font-weight:700;text-transform:uppercase}
 /* Teams */
 .teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
 .team-box{border-radius:12px;padding:1.25rem;border:2px solid}
 .team-red{background:rgba(224,58,58,.06);border-color:rgba(224,58,58,.25)}
 .team-blue{background:rgba(40,120,232,.06);border-color:rgba(40,120,232,.25)}
-.team-title{font-family:'Syne';font-size:14px;font-weight:700;margin-bottom:.75rem}
+.team-title{font-family:'Space Grotesk';font-size:14px;font-weight:700;margin-bottom:.75rem}
 .team-title.red{color:var(--red)}.team-title.blue{color:var(--accent)}
 .team-player{display:flex;align-items:center;gap:7px;margin-bottom:.5rem;font-size:13px}
 .team-player-crown{font-size:12px}
 .team-btns{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
 .tbtn{padding:5px 12px;border-radius:8px;border:none;font-size:12px;font-weight:600;
-  cursor:pointer;font-family:'Inter';transition:all .2s}
+  cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .tbtn-red{background:rgba(224,58,58,.12);color:var(--red)}
 .tbtn-red:hover{background:rgba(224,58,58,.2)}
 .tbtn-blue{background:rgba(40,120,232,.12);color:var(--accent)}
@@ -497,8 +497,8 @@ select option{background:var(--bg2)}
   padding:.875rem 1.25rem;display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:.5rem;box-shadow:0 2px 8px rgba(40,120,232,0.05)}
 .game-score{display:flex;gap:1.5rem;align-items:center}
-.score-red{font-family:'Syne';font-size:20px;font-weight:800;color:var(--red)}
-.score-blue{font-family:'Syne';font-size:20px;font-weight:800;color:var(--accent)}
+.score-red{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--red)}
+.score-blue{font-family:'Space Grotesk';font-size:20px;font-weight:800;color:var(--accent)}
 .score-sep{font-size:18px;color:var(--t3)}
 .turn-indicator{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
 .turn-red{background:rgba(224,58,58,.12);color:var(--red)}
@@ -532,13 +532,13 @@ select option{background:var(--bg2)}
 .clue-input{flex:1;min-width:140px;font-size:14px}
 .clue-num-select{width:80px;font-size:14px}
 .end-turn-btn{padding:8px 18px;border-radius:8px;border:1px solid var(--border);
-  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter';transition:all .2s}
+  background:none;color:var(--t2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s}
 .end-turn-btn:hover{border-color:var(--accent);color:var(--accent)}
 /* Win screen */
 .win-screen{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
   padding:3rem 2rem;text-align:center;box-shadow:0 2px 12px rgba(40,120,232,0.08)}
 .win-emoji{font-size:64px;margin-bottom:1rem}
-.win-title{font-family:'Syne';font-size:28px;font-weight:800;margin-bottom:.5rem}
+.win-title{font-family:'Space Grotesk';font-size:28px;font-weight:800;margin-bottom:.5rem}
 .win-sub{font-size:15px;color:var(--t2);margin-bottom:2rem}
 @media(max-width:600px){
   .cards-grid{grid-template-columns:repeat(5,1fr);gap:.25rem}
@@ -551,7 +551,7 @@ select option{background:var(--bg2)}
   border:1px solid rgba(212,146,10,.25);border-radius:var(--r);padding:1.25rem;margin-bottom:1rem}
 .bday-today{display:flex;align-items:center;gap:10px;margin-bottom:.5rem}
 .bday-emoji{font-size:32px}
-.bday-name{font-family:'Syne';font-size:15px;font-weight:700}
+.bday-name{font-family:'Space Grotesk';font-size:15px;font-weight:700}
 .bday-sub{font-size:12px;color:var(--t2)}
 .bday-upcoming{font-size:12px;color:var(--t2);margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(212,146,10,.2)}
 
@@ -579,7 +579,7 @@ select option{background:var(--bg2)}
 /* ── KANBAN ── */
 .kanban-board{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;overflow-x:auto}
 .kanban-col{background:var(--bg3);border-radius:12px;padding:.875rem;min-height:300px}
-.kanban-col-title{font-family:'Syne';font-size:13px;font-weight:700;
+.kanban-col-title{font-family:'Space Grotesk';font-size:13px;font-weight:700;
   margin-bottom:.875rem;display:flex;align-items:center;gap:6px}
 .kanban-col-count{background:var(--bg4);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:600;color:var(--t2)}
 .kanban-card{background:var(--card);border:1px solid var(--border);border-radius:10px;
@@ -589,7 +589,7 @@ select option{background:var(--bg2)}
 .kanban-card-title{font-size:13px;font-weight:600;margin-bottom:.375rem}
 .kanban-card-meta{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:6px}
 .kanban-add{width:100%;background:none;border:1.5px dashed var(--border);border-radius:8px;
-  padding:8px;color:var(--t3);font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter'}
+  padding:8px;color:var(--t3);font-size:13px;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .kanban-add:hover{border-color:var(--accent);color:var(--accent)}
 .ktag{padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
 .ktag-todo{background:rgba(143,163,190,.15);color:var(--t2)}
@@ -601,7 +601,7 @@ select option{background:var(--bg2)}
   padding:1.5rem;box-shadow:0 2px 12px rgba(40,120,232,.06)}
 .calc-tabs{display:flex;gap:4px;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:1.25rem}
 .calc-tab{flex:1;padding:7px;text-align:center;border:none;background:none;border-radius:7px;
-  font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Inter'}
+  font-size:12px;font-weight:600;color:var(--t2);cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans'}
 .calc-tab.active{background:var(--card);color:var(--accent);border:1px solid var(--border)}
 .calc-section{display:none}
 .calc-section.active{display:block}
@@ -609,7 +609,7 @@ select option{background:var(--bg2)}
 .calc-label{font-size:11px;color:var(--t3);letter-spacing:.5px;margin-bottom:.375rem;font-weight:500}
 .calc-result{background:linear-gradient(135deg,rgba(40,120,232,.08),rgba(124,92,232,.06));
   border:1px solid var(--border2);border-radius:10px;padding:1rem;text-align:center;margin-top:.875rem}
-.calc-result-val{font-family:'Syne';font-size:28px;font-weight:800;color:var(--accent)}
+.calc-result-val{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--accent)}
 .calc-result-unit{font-size:13px;color:var(--t2);margin-top:3px}
 
 /* ── WEATHER WIDGET ── */
@@ -618,7 +618,7 @@ select option{background:var(--bg2)}
   margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
 .weather-icon{font-size:42px}
 .weather-info{}
-.weather-temp{font-family:'Syne';font-size:28px;font-weight:800;color:var(--t1)}
+.weather-temp{font-family:'Space Grotesk';font-size:28px;font-weight:800;color:var(--t1)}
 .weather-desc{font-size:13px;color:var(--t2);margin-top:2px}
 .weather-details{font-size:12px;color:var(--t3);margin-top:4px}
 
@@ -634,13 +634,98 @@ select option{background:var(--bg2)}
 .wiki-editor{background:var(--bg3);border:1px solid var(--border);border-radius:12px;
   padding:1.25rem;margin-bottom:1rem;display:none}
 .wiki-full{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem}
-.wiki-full-title{font-family:'Syne';font-size:20px;font-weight:800;margin-bottom:.5rem}
+.wiki-full-title{font-family:'Space Grotesk';font-size:20px;font-weight:800;margin-bottom:.5rem}
 .wiki-full-meta{font-size:12px;color:var(--t3);margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .wiki-full-body{font-size:14px;color:var(--t2);line-height:1.8;white-space:pre-wrap}
 
 @media(max-width:700px){
   .kanban-board{grid-template-columns:1fr}
   .calc-tabs{flex-wrap:wrap}
+}
+
+/* ── NEW CALENDAR ── */
+.cal-outer{max-width:1000px}
+.cal-header-bar{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1rem}
+.cal-header-left{display:flex;align-items:baseline;gap:.625rem}
+.cal-big-month{font-family:'Space Grotesk';font-size:28px;font-weight:700}
+.cal-big-year{font-size:16px;color:var(--t3);font-weight:500}
+.cal-header-right{display:flex;align-items:center;gap:6px}
+.cal-nav-btn{background:none;border:1px solid var(--border);border-radius:8px;
+  padding:7px 12px;cursor:pointer;font-size:14px;color:var(--t2);transition:all .2s;font-family:'Plus Jakarta Sans'}
+.cal-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Month strip */
+.month-strip{display:flex;gap:4px;overflow-x:auto;margin-bottom:1.25rem;padding-bottom:2px;
+  scrollbar-width:none}
+.month-strip::-webkit-scrollbar{display:none}
+.mstrip-btn{flex-shrink:0;padding:6px 10px;border-radius:8px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-family:'Plus Jakarta Sans';transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:3px;min-width:52px}
+.mstrip-btn:hover{border-color:var(--accent);background:rgba(40,120,232,.05)}
+.mstrip-btn.active{background:var(--accent);border-color:var(--accent)}
+.mstrip-btn.active .mstrip-name{color:#fff}
+.mstrip-name{font-size:11px;font-weight:600;color:var(--t2)}
+.mstrip-btn.active .mstrip-name{color:#fff}
+.mstrip-dots{display:flex;gap:3px}
+.mstrip-dot{width:4px;height:4px;border-radius:50%}
+
+/* Main layout */
+.cal-main-layout{display:grid;grid-template-columns:1fr 280px;gap:1.25rem;align-items:start}
+.big-cal-wrap{}
+
+/* Big calendar grid */
+.big-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.big-dh{text-align:center;font-size:11px;font-weight:600;color:var(--t3);
+  padding:.5rem 0;letter-spacing:.5px}
+.big-day{min-height:72px;border-radius:10px;padding:.5rem;cursor:pointer;
+  position:relative;transition:all .15s;border:1.5px solid transparent;background:var(--bg3)}
+.big-day:hover:not(.other){background:var(--bg4);border-color:var(--border)}
+.big-day.other{opacity:.35;cursor:default;background:transparent}
+.big-day.big-today{background:var(--accent);border-color:var(--accent)}
+.big-day.big-today .big-day-num{color:#fff;font-weight:800}
+.big-day.big-today .big-day-hol{color:rgba(255,255,255,.8)}
+.big-day.big-hol{background:rgba(212,146,10,.08);border-color:rgba(212,146,10,.2)}
+.big-day.big-myvac{background:rgba(40,120,232,.1);border-color:rgba(40,120,232,.25)}
+.big-day.big-sel{border-color:var(--accent);background:rgba(40,120,232,.06);box-shadow:0 0 0 3px rgba(40,120,232,.12)}
+.big-day-num{font-size:13px;font-weight:600;color:var(--t1);display:block}
+.big-day-hol{font-size:9px;color:var(--gold);display:block;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.day-pips{display:flex;gap:2px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
+.day-pip{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Right column */
+.cal-right-col{display:flex;flex-direction:column;gap:.875rem}
+
+/* Detail panel */
+.cal-detail-panel{background:var(--card);border:1px solid var(--border2);border-radius:12px;
+  padding:1.125rem;box-shadow:0 4px 16px rgba(40,120,232,.08);animation:fdIn .15s ease}
+.cdp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.875rem}
+.cdp-date{font-family:'Space Grotesk';font-size:17px;font-weight:700}
+.cdp-close{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
+  width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  transition:all .2s}
+.cdp-close:hover{background:var(--bg3);color:var(--red)}
+.cdp-holiday{background:rgba(212,146,10,.08);border:1px solid rgba(212,146,10,.2);
+  border-radius:8px;padding:7px 10px;font-size:12px;color:var(--gold);
+  font-weight:500;margin-bottom:.75rem}
+.cdp-section{font-size:10px;color:var(--t3);letter-spacing:1px;font-weight:600;
+  margin-bottom:.5rem}
+.cdp-vac-item{background:var(--bg3);border-radius:8px;padding:.625rem .875rem;margin-bottom:.5rem}
+.cdp-vac-range{font-size:13px;font-weight:500}
+.cdp-add-vac{border-top:1px solid var(--border);padding-top:.875rem;margin-top:.875rem}
+.cal-upcoming{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1rem}
+
+@media(max-width:800px){
+  .cal-main-layout{grid-template-columns:1fr}
+  .cal-right-col{display:none}
+  .big-day{min-height:52px}
+  .big-day-hol{display:none}
+}
+@media(max-width:480px){
+  .big-day{min-height:40px;padding:.375rem}
+  .big-day-num{font-size:11px}
+  .day-pips{display:none}
 }
 </style>
 </head>
@@ -701,6 +786,7 @@ let S={
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
   game:null, gameRoom:null,
+  calMonth:new Date().getMonth(),
   polls:{}, kanban:{}, wiki:{}, weather:null,
   wikiView:null, calcTab:'pressure', activeKanbanForm:null,
   activeDM:null, notifOpen:false,
@@ -1049,7 +1135,7 @@ function renderFeed(){
           <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 1"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
           <div class="poll-option-input"><input type="text" class="poll-opt-inp" placeholder="Вариант 2"><button class="remove-opt" onclick="removePollOpt(this)">✕</button></div>
         </div>
-        <button onclick="addPollOpt()" style="background:none;border:1.5px dashed var(--border);border-radius:7px;padding:5px 12px;font-size:12px;color:var(--t3);cursor:pointer;margin-bottom:.625rem;font-family:Inter">+ Добавить вариант</button>
+        <button onclick="addPollOpt()" style="background:none;border:1.5px dashed var(--border);border-radius:7px;padding:5px 12px;font-size:12px;color:var(--t3);cursor:pointer;margin-bottom:.625rem;font-family:'Plus Jakarta Sans'">+ Добавить вариант</button>
         <div><button class="post-btn" style="width:auto;padding:8px 20px" onclick="submitPoll()">Опубликовать опрос</button></div>
       </div>
     </div>
@@ -1177,7 +1263,7 @@ function renderProfile(uid){
 function renderTeam(){
   const members=membersArr();
   return`<div class="page-wrap">
-    <div style="font-family:'Syne';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
+    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">Команда отдела</div>
     ${members.length===0?`<div class="empty-state"><div class="empty-state-ico">👥</div>Коллеги появятся после регистрации</div>`:
     `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem">
       ${members.map(m=>`
@@ -1201,8 +1287,10 @@ function renderTeam(){
 /* ── CALENDAR ── */
 function renderCalendar(){
   const y=S.calYear;
-  const todayStr=new Date().toISOString().split('T')[0];
-  // build vac date map
+  const today=new Date();
+  const todayStr=today.toISOString().split('T')[0];
+
+  // Build vac map
   const vacD={};
   Object.entries(S.vacations||{}).forEach(([k,v])=>{
     let d=new Date(v.from);const e=new Date(v.to);
@@ -1214,127 +1302,225 @@ function renderCalendar(){
     }
   });
 
-  const months=Array.from({length:12},(_,m)=>{
-    const fd=new Date(y,m,1).getDay(),off=fd===0?6:fd-1,dim=new Date(y,m+1,0).getDate();
-    let cells='';
-    for(let i=0;i<off;i++)cells+=`<div class="mm-day empty"></div>`;
-    for(let d=1;d<=dim;d++){
-      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const isT=ds===todayStr,isH=!!HOLIDAYS[ds];
-      const dayVacs=vacD[ds]||[];
-      const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
-      const isTeamVac=dayVacs.some(v=>v.memberId!==S.user.id);
-      const isSel=S.selectedDay===ds;
-      let cls='mm-day';
-      if(isSel)cls+=' selected';else if(isT)cls+=' today';
-      if(isH&&!isSel)cls+=' hol';
-      if(isMyVac&&!isSel)cls+=' myvac';
-      else if(isTeamVac&&!isSel)cls+=' teamvac';
-      cells+=`<div class="${cls}" onclick="selectDay('${ds}')">${d}${isTeamVac&&!isMyVac&&!isSel?'<div class="md"></div>':''}</div>`;
-    }
-    return`<div class="mini-month">
-      <div class="mm-title">${MN_S[m]}</div>
-      <div class="mm-grid">
-        ${['П','В','С','Ч','П','С','В'].map(d=>`<div class="mm-dh">${d}</div>`).join('')}
-        ${cells}
-      </div>
-    </div>`;
-  }).join('');
+  // ── Current month big calendar ──
+  const curM=S.calMonth!==undefined?S.calMonth:today.getMonth();
+  const curY=S.calYear||today.getFullYear();
+  const fd=new Date(curY,curM,1).getDay();
+  const off=fd===0?6:fd-1;
+  const dim=new Date(curY,curM+1,0).getDate();
+  const prevDim=new Date(curY,curM,0).getDate();
 
-  // day detail
+  // Get all events for current month
+  const monthHols=Object.entries(HOLIDAYS)
+    .filter(([k])=>k.startsWith(`${curY}-${String(curM+1).padStart(2,'0')}`));
+  const monthVacs=Object.entries(S.vacations||{})
+    .filter(([,v])=>v.from.substring(0,7)===`${curY}-${String(curM+1).padStart(2,'0')}`)
+    .map(([k,v])=>({...v,_key:k}));
+  const myVacsAll=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
+
+  // ── Big month grid ──
+  let cells='';
+  // Prev month grey days
+  for(let i=0;i<off;i++){
+    cells+=`<div class="big-day other">${prevDim-off+1+i}</div>`;
+  }
+  for(let d=1;d<=dim;d++){
+    const ds=`${curY}-${String(curM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isT=ds===todayStr;
+    const isH=!!HOLIDAYS[ds];
+    const dayVacs=vacD[ds]||[];
+    const isMyVac=dayVacs.some(v=>v.memberId===S.user.id);
+    const teamVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
+    const isSel=S.selectedDay===ds;
+    let cls='big-day';
+    if(isSel) cls+=' big-sel';
+    else if(isT) cls+=' big-today';
+    if(isH) cls+=' big-hol';
+    if(isMyVac) cls+=' big-myvac';
+
+    const dots=teamVacs.slice(0,3).map(v=>{
+      const mem=S.members[v.memberId];
+      return`<span class="day-pip" style="background:${mem?mem.color||'#2878e8':'#2878e8'}"></span>`;
+    }).join('');
+
+    cells+=`<div class="${cls}" onclick="selectDay('${ds}')">
+      <span class="big-day-num">${d}</span>
+      ${isH?`<span class="big-day-hol">${HOLIDAYS[ds].split(' ')[0]}</span>`:''}
+      ${dots?`<div class="day-pips">${dots}</div>`:''}
+    </div>`;
+  }
+  // Next month fill
+  const total=off+dim;
+  const rem=(7-total%7)%7;
+  for(let i=1;i<=rem;i++) cells+=`<div class="big-day other">${i}</div>`;
+
+  // ── Selected day detail ──
   let detail='';
   if(S.selectedDay){
     const ds=S.selectedDay;
-    const [dy,dm,dd]=ds.split('-');
+    const [dy,dm2,dd]=ds.split('-');
     const hol=HOLIDAYS[ds];
     const dayVacs=vacD[ds]||[];
-    const myDayVacs=dayVacs.filter(v=>v.memberId===S.user.id);
-    const teamDayVacs=dayVacs.filter(v=>v.memberId!==S.user.id);
-    const isFuture=ds>=todayStr;
+    const myDV=dayVacs.filter(v=>v.memberId===S.user.id);
+    const teamDV=[...new Map(dayVacs.filter(v=>v.memberId!==S.user.id).map(v=>[v._key,v])).values()];
+    const isFut=ds>=todayStr;
 
-    detail=`<div class="day-detail">
-      <div class="dd-head">
-        <div class="dd-date">${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</div>
-        <button class="btnx" onclick="S.selectedDay=null;rerender()">✕</button>
+    detail=`<div class="cal-detail-panel">
+      <div class="cdp-head">
+        <div class="cdp-date">${parseInt(dd)} ${MN_FULL[parseInt(dm2)-1]}</div>
+        <button onclick="S.selectedDay=null;rerender()" class="cdp-close">✕</button>
       </div>
-      ${hol?`<div style="margin-bottom:.75rem"><span style="background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gold)">🎉 ${hol}</span></div>`:''}
-
-      ${myDayVacs.length?`
-        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">МОИ ОТПУСКА В ЭТОТ ДЕНЬ</div>
-        ${[...new Map(myDayVacs.map(v=>[v._key,v])).values()].map(v=>`
-          <div class="vac-item">
-            <div class="vac-item-info">
-              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
-              <div class="vac-item-who">Мой отпуск</div>
-            </div>
-            <div class="vac-actions">
-              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">✏ Изменить</button>
-              <button class="vac-btn del" onclick="delVac('${v._key}')">✕ Отменить</button>
+      ${hol?`<div class="cdp-holiday">🎉 ${escH(hol)}</div>`:''}
+      ${myDV.length?`
+        <div class="cdp-section">МОЙ ОТПУСК</div>
+        ${[...new Map(myDV.map(v=>[v._key,v])).values()].map(v=>`
+          <div class="cdp-vac-item">
+            <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
+            <div style="display:flex;gap:4px;margin-top:4px">
+              <button class="vac-btn edit" onclick="openEditVac('${v._key}','${v.from}','${v.to}')">Изменить</button>
+              <button class="vac-btn del" onclick="delVac('${v._key}')">Отменить</button>
             </div>
           </div>`).join('')}
       `:''}
-
-      ${teamDayVacs.length?`
-        <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin:${myDayVacs.length?'.75rem':0} 0 .5rem">КОЛЛЕГИ В ОТПУСКЕ</div>
-        ${[...new Map(teamDayVacs.map(v=>[v._key,v])).values()].map(v=>{
-          const mem=S.members[v.memberId]||{name:'?',color:COLORS[0]};
-          return`<div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem;font-size:13px">
-            ${avImg(mem.avatar,mem.name,24,mem.color||COLORS[0])}
-            <span>${escH(mem.name)}</span>
-            <span style="color:var(--t3);font-size:11px">${v.from} — ${v.to}</span>
+      ${teamDV.length?`
+        <div class="cdp-section" style="margin-top:${myDV.length?'.75rem':'0'}">КОЛЛЕГИ В ОТПУСКЕ</div>
+        ${teamDV.map(v=>{
+          const mem=S.members[v.memberId]||{name:'?'};
+          return`<div style="display:flex;align-items:center;gap:8px;padding:.375rem 0">
+            ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
+            <div>
+              <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
+              <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
+            </div>
           </div>`;
         }).join('')}
       `:''}
-
-      ${!myDayVacs.length&&!teamDayVacs.length&&!hol?`<div style="font-size:13px;color:var(--t3)">Нет событий</div>`:''}
-
-      ${isFuture?`
-        <div style="border-top:1px solid var(--border);padding-top:.875rem;margin-top:${(myDayVacs.length||teamDayVacs.length||hol)?'.875rem':'0'}">
-          <div style="font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:.5rem">ДОБАВИТЬ ОТПУСК</div>
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2)">
-              С <input type="date" id="vfrom" value="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
-              по <input type="date" id="vto" value="${ds}" min="${ds}" style="padding:6px 10px;font-size:12px;border-radius:8px">
-            </div>
-            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:Inter">+ Добавить</button>
+      ${!myDV.length&&!teamDV.length&&!hol?`<div style="font-size:13px;color:var(--t3);padding:.5rem 0">Нет событий</div>`:''}
+      ${isFut?`
+        <div class="cdp-add-vac">
+          <div class="cdp-section">ДОБАВИТЬ ОТПУСК</div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            <input type="date" id="vfrom" value="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
+            <span style="font-size:12px;color:var(--t2)">—</span>
+            <input type="date" id="vto" value="${ds}" min="${ds}" style="font-size:12px;padding:6px 10px;border-radius:8px;flex:1;min-width:120px">
+            <button onclick="saveVac()" style="padding:7px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">+ Добавить</button>
           </div>
         </div>`:''}
     </div>`;
   }
 
-  // My upcoming vacs
-  const myVacs=Object.entries(S.vacations||{}).filter(([,v])=>v.memberId===S.user.id);
+  // ── Mini year strip ──
+  const miniStrip=Array.from({length:12},(_,m)=>{
+    const isActive=m===curM;
+    const hasHol=Object.keys(HOLIDAYS).some(k=>k.startsWith(`${curY}-${String(m+1).padStart(2,'0')}`));
+    const hasVac=Object.values(S.vacations||{}).some(v=>v.from.substring(0,7)===`${curY}-${String(m+1).padStart(2,'0')}`);
+    return`<button class="mstrip-btn ${isActive?'active':''}" onclick="S.calMonth=${m};S.selectedDay=null;rerender()">
+      <span class="mstrip-name">${MN_S[m]}</span>
+      <div class="mstrip-dots">
+        ${hasHol?'<span class="mstrip-dot" style="background:var(--gold)"></span>':''}
+        ${hasVac?'<span class="mstrip-dot" style="background:var(--green)"></span>':''}
+      </div>
+    </button>`;
+  }).join('');
 
-  return`<div class="cal-page">
-    <div class="cal-year-nav">
-      <button class="cnbtn" onclick="S.calYear--;rerender()">← ${y-1}</button>
-      <div class="cal-year-val">${y}</div>
-      <button class="cnbtn" onclick="S.calYear++;rerender()">${y+1} →</button>
+  return`<div class="cal-outer">
+    <!-- Header -->
+    <div class="cal-header-bar">
+      <div class="cal-header-left">
+        <div class="cal-big-month">${MN_FULL[curM]}</div>
+        <div class="cal-big-year">${curY}</div>
+      </div>
+      <div class="cal-header-right">
+        <button class="cal-nav-btn" onclick="prevMonth()">←</button>
+        <button class="cal-nav-btn" onclick="goToday()" style="padding:6px 14px;border-radius:8px;font-size:12px">Сегодня</button>
+        <button class="cal-nav-btn" onclick="nextMonth()">→</button>
+      </div>
     </div>
-    ${detail}
-    <div class="year-grid">${months}</div>
-    <div class="cal-legend">
-      <div class="li"><div class="ld" style="background:rgba(61,142,240,.4)"></div>Сегодня</div>
-      <div class="li"><div class="ld" style="background:rgba(61,142,240,.55)"></div>Мой отпуск</div>
-      <div class="li"><div class="ld" style="background:rgba(47,217,154,.3)"></div>Отпуск коллеги</div>
-      <div class="li"><div class="ld" style="background:rgba(245,200,66,.35)"></div>Праздник РК</div>
+
+    <!-- Month strip -->
+    <div class="month-strip">${miniStrip}</div>
+
+    <!-- Main grid + detail panel -->
+    <div class="cal-main-layout">
+      <div class="big-cal-wrap">
+        <!-- Day headers -->
+        <div class="big-cal-grid">
+          ${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(d=>`<div class="big-dh">${d}</div>`).join('')}
+          ${cells}
+        </div>
+        <!-- Legend -->
+        <div class="cal-legend" style="margin-top:.75rem">
+          <div class="li"><div class="ld" style="background:var(--accent);border-radius:50%"></div>Сегодня</div>
+          <div class="li"><div class="ld" style="background:rgba(40,120,232,.3)"></div>Мой отпуск</div>
+          <div class="li"><div class="ld" style="background:rgba(212,146,10,.35)"></div>Праздник РК</div>
+          <div class="li"><span style="font-size:10px">●</span> Отпуск коллеги</div>
+        </div>
+      </div>
+
+      <!-- Right panel: detail + upcoming -->
+      <div class="cal-right-col">
+        ${detail}
+        <!-- Upcoming vacations -->
+        ${myVacsAll.length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">МОИ ОТПУСКА</div>
+            ${myVacsAll.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
+              <div class="cdp-vac-item">
+                <span class="cdp-vac-range">📅 ${v.from} — ${v.to}</span>
+                <div style="display:flex;gap:4px;margin-top:4px">
+                  <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">Изменить</button>
+                  <button class="vac-btn del" onclick="delVac('${k}')">Отменить</button>
+                </div>
+              </div>`).join('')}
+          </div>`:''}
+        <!-- Upcoming holidays -->
+        ${monthHols.length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">ПРАЗДНИКИ МЕСЯЦА</div>
+            ${monthHols.map(([k,n])=>`
+              <div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
+                <span style="font-size:18px">🎉</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">${escH(n)}</div>
+                  <div style="font-size:11px;color:var(--t3)">${k}</div>
+                </div>
+              </div>`).join('')}
+          </div>`:''}
+        <!-- Team on vacation this month -->
+        ${monthVacs.filter(v=>v.memberId!==S.user.id).length?`
+          <div class="cal-upcoming">
+            <div class="cdp-section">ОТПУСКА КОЛЛЕГ</div>
+            ${monthVacs.filter(v=>v.memberId!==S.user.id).map(v=>{
+              const mem=S.members[v.memberId]||{name:'?'};
+              return`<div style="display:flex;align-items:center;gap:8px;padding:.25rem 0">
+                ${avImg(mem.avatar,mem.name,26,mem.color||COLORS[0])}
+                <div>
+                  <div style="font-size:13px;font-weight:500">${escH(mem.name)}</div>
+                  <div style="font-size:11px;color:var(--t3)">${v.from} — ${v.to}</div>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>`:''}
+      </div>
     </div>
-    ${myVacs.length?`
-      <div style="border-top:1px solid var(--border);margin-top:1.25rem;padding-top:1.25rem">
-        <div style="font-size:10px;color:var(--t3);letter-spacing:1px;margin-bottom:.75rem">МОИ ОТПУСКА</div>
-        ${myVacs.sort((a,b)=>a[1].from.localeCompare(b[1].from)).map(([k,v])=>`
-          <div class="vac-item">
-            <div class="vac-item-info">
-              <div class="vac-item-dates">📅 ${v.from} — ${v.to}</div>
-            </div>
-            <div class="vac-actions">
-              <button class="vac-btn edit" onclick="openEditVac('${k}','${v.from}','${v.to}')">✏ Изменить</button>
-              <button class="vac-btn del" onclick="delVac('${k}')">✕ Отменить</button>
-            </div>
-          </div>`).join('')}
-      </div>`:''}
   </div>`;
 }
+
+window.prevMonth=()=>{
+  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
+  const y=S.calYear||new Date().getFullYear();
+  if(m===0){S.calMonth=11;S.calYear=y-1;}else{S.calMonth=m-1;}
+  S.selectedDay=null;rerender();
+};
+window.nextMonth=()=>{
+  const m=S.calMonth!==undefined?S.calMonth:new Date().getMonth();
+  const y=S.calYear||new Date().getFullYear();
+  if(m===11){S.calMonth=0;S.calYear=y+1;}else{S.calMonth=m+1;}
+  S.selectedDay=null;rerender();
+};
+window.goToday=()=>{
+  const t=new Date();S.calMonth=t.getMonth();S.calYear=t.getFullYear();S.selectedDay=null;rerender();
+};
 
 /* ── FILES ── */
 function gdriveDirect(url){
@@ -1408,7 +1594,7 @@ function renderFiles(){
 
   return`<div class="files-page">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-      <div style="font-family:'Syne';font-size:16px;font-weight:700">Файлы отдела</div>
+      <div style="font-family:'Space Grotesk';font-size:16px;font-weight:700">Файлы отдела</div>
       <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showAddFileForm()">+ Добавить файл</button>
     </div>
 
@@ -2381,7 +2567,7 @@ function renderKanban(){
   const cards=Object.entries(S.kanban||{}).map(([k,v])=>({...v,_key:k}));
   return`<div class="page-wrap">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-      <div style="font-family:'Syne';font-size:18px;font-weight:700">📋 Доска задач</div>
+      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📋 Доска задач</div>
       <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="showKanbanForm('todo')">+ Новая задача</button>
     </div>
     ${S.activeKanbanForm?`
@@ -2488,7 +2674,7 @@ function renderWikiList(articles){
   const tags=[...new Set(articles.map(a=>a.tag).filter(Boolean))];
   return`<div class="page-wrap">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
-      <div style="font-family:'Syne';font-size:18px;font-weight:700">📚 База знаний</div>
+      <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700">📚 База знаний</div>
       <button class="gbtn gbtn-primary" style="padding:8px 16px;font-size:13px" onclick="toggleWikiEditor()">+ Написать статью</button>
     </div>
     <div class="wiki-editor" id="wiki-editor">
@@ -2542,20 +2728,19 @@ window.delWiki=async id=>{
    ENGINEERING TOOLS + WEATHER
 ══════════════════════════════════ */
 function renderTools(){
-  const t=S.calcTab||'pressure';
   return`<div class="page-wrap">
-    <div style="font-family:'Syne';font-size:18px;font-weight:700;margin-bottom:1rem">🧮 Инструменты</div>
+    <div style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:1rem">🧮 Инструменты</div>
     ${renderWeatherWidget()}
     <div class="calc-page">
       <div style="font-weight:700;font-size:15px;margin-bottom:1rem">Инженерный калькулятор</div>
       <div class="calc-tabs">
-        ${[['pressure','Давление'],['flowrate','Дебит'],['units','Единицы'],['co2','CO₂']].map(([id,label])=>`
-          <button class="calc-tab ${t===id?'active':''}" onclick="S.calcTab='${id}';rerender()">${label}</button>`).join('')}
+        <button class="calc-tab active" id="ctab-pressure" onclick="switchCalc('pressure')">Давление</button>
+        <button class="calc-tab" id="ctab-flowrate" onclick="switchCalc('flowrate')">Дебит</button>
+        <button class="calc-tab" id="ctab-units" onclick="switchCalc('units')">Единицы</button>
       </div>
-      ${t==='pressure'?renderPressureCalc():''}
-      ${t==='flowrate'?renderFlowrateCalc():''}
-      ${t==='units'?renderUnitsCalc():''}
-      ${t==='co2'?renderCO2Calc():''}
+      <div id="csec-pressure">${renderPressureCalc()}</div>
+      <div id="csec-flowrate" style="display:none">${renderFlowrateCalc()}</div>
+      <div id="csec-units" style="display:none">${renderUnitsCalc()}</div>
     </div>
   </div>`;
 }
@@ -2725,6 +2910,15 @@ window.calcCO2=()=>{
   </div>`;
 };
 
+
+window.switchCalc = id => {
+  ['pressure','flowrate','units'].forEach(t=>{
+    const sec=document.getElementById('csec-'+t);
+    const tab=document.getElementById('ctab-'+t);
+    if(sec) sec.style.display = t===id ? 'block' : 'none';
+    if(tab) tab.className = 'calc-tab' + (t===id ? ' active' : '');
+  });
+};
 document.addEventListener('click',e=>{
   if(S.notifOpen&&!e.target.closest('#npanel')&&!e.target.closest('[data-notif]')){
     S.notifOpen=false;document.getElementById('npanel').className='notif-panel';

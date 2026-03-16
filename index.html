@@ -1239,7 +1239,7 @@ function renderCalendar(){
     detail=`<div class="day-detail">
       <div class="dd-head">
         <div class="dd-date">${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</div>
-        <button class="btnx" onclick="S.selectedDay=null;rerender()">✕</button>
+        <button class="btnx" onclick="S.selectedDay=null;renderMain()">✕</button>
       </div>
       ${hol?`<div style="margin-bottom:.75rem"><span style="background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gold)">🎉 ${hol}</span></div>`:''}
 
@@ -1291,9 +1291,9 @@ function renderCalendar(){
 
   return`<div class="cal-page">
     <div class="cal-year-nav">
-      <button class="cnbtn" onclick="S.calYear--;rerender()">← ${y-1}</button>
+      <button class="cnbtn" onclick="S.calYear--;renderMain()">← ${y-1}</button>
       <div class="cal-year-val">${y}</div>
-      <button class="cnbtn" onclick="S.calYear++;rerender()">${y+1} →</button>
+      <button class="cnbtn" onclick="S.calYear++;renderMain()">${y+1} →</button>
     </div>
     ${detail}
     <div class="year-grid">${months}</div>
@@ -1468,7 +1468,7 @@ function renderEditVacModal(){
 }
 
 /* ── ACTIONS ── */
-window.setAt = t=>{ S.authTab=t; rerender(); };
+window.setAt = t=>{ S.authTab=t; const el=document.getElementById('zone-auth');if(el)el.innerHTML=renderAuth(); };
 window.gp = p=>{
   S.page=p;
   S.modal=null;
@@ -1480,9 +1480,9 @@ window.gp = p=>{
   renderBottomNav();
   if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80);
 };
-window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; rerender(); };
+window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; showZone('auth'); const el=document.getElementById('zone-auth');if(el)el.innerHTML=renderAuth(); };
 window.closeModal = ()=>{ S.modal=null; renderModal(); };
-window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
+window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; renderMain(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{
   const panel=document.getElementById('npanel');
@@ -1490,18 +1490,29 @@ window.toggleNotif = ()=>{
   panel.className='notif-panel'+(S.notifOpen?' open':'');
   if(S.notifOpen){S.notifs.forEach(n=>n.read=true);renderNotifPanel();}
 };
-window.viewProfile = id=>{ S.page='profile'; S.user.id===id ? S.page='profile' : null; S.viewProfileId=id; rerender(); };
+window.viewProfile = id=>{ S.page='profile'; S.viewProfileId=id; renderSidebar();renderMain(); };
 window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; renderModal(); };
 window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; renderModal(); };
-window.openDM = id=>{ S.activeDM=id; rerender(); setTimeout(()=>scrollEl('dm-msgs'),80); };
-window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; rerender(); };
+window.openDM = id=>{ S.activeDM=id; renderMain(); setTimeout(()=>scrollEl('dm-msgs'),80); };
+window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; renderMain(); };
 window.autoResize = el=>{ el.style.height='auto'; el.style.height=el.scrollHeight+'px'; };
 window.onSearch = q=>{
   if(!q.trim())return;
   const found=membersArr().find(m=>m.name.toLowerCase().includes(q.toLowerCase()));
-  if(found){S.page='team';rerender();}
+  if(found){S.page='team';renderSidebar();renderMain();}
 };
 
+
+function fullRender(){
+  showZone('layout');
+  renderTopNav();
+  renderSidebar();
+  renderMain();
+  renderRight();
+  renderModal();
+  renderNotifPanel();
+  renderBottomNav();
+}
 window.doLogin = async()=>{
   const email=(document.getElementById('le')||{}).value||'';
   if(!email){showToast('Введите email',true);return}
@@ -1512,7 +1523,7 @@ window.doLogin = async()=>{
     if(found){
       S.user=found;S.page='feed';
       sessionStorage.setItem('rs_user',JSON.stringify(found));
-      startListeners();rerender();return;
+      startListeners();fullRender();return;
     }
   }
   showToast('Email не найден. Зарегистрируйтесь',true);
@@ -1539,7 +1550,7 @@ window.doReg = async()=>{
   const existing=await fbGet('members');
   if(existing){
     const dup=Object.values(existing).find(m=>m.email===em.trim());
-    if(dup){S.user=dup;S.page='feed';sessionStorage.setItem('rs_user',JSON.stringify(dup));startListeners();rerender();return;}
+    if(dup){S.user=dup;S.page='feed';sessionStorage.setItem('rs_user',JSON.stringify(dup));startListeners();fullRender();return;}
   }
   const colorIdx=existing?Object.keys(existing).length%COLORS.length:0;
   const id='m_'+Date.now();
@@ -1551,7 +1562,7 @@ window.doReg = async()=>{
   await fbSet(`members/${id}`,nm);
   S.user=nm;S.page='feed';
   sessionStorage.setItem('rs_user',JSON.stringify(nm));
-  startListeners();showToast('Добро пожаловать!');rerender();
+  startListeners();fullRender();showToast('Добро пожаловать!');
 };
 
 window.saveProf = async()=>{
@@ -1569,7 +1580,7 @@ window.saveProf = async()=>{
   await fbUpd(`members/${me.id}`,upd);
   S.user={...S.user,...upd};
   sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-  S.modal=null;showToast('Профиль сохранён!');rerender();
+  S.modal=null;showToast('Профиль сохранён!');renderSidebar();renderMain();renderModal();
 };
 
 window.uploadAvatar = async(e)=>{
@@ -1581,7 +1592,7 @@ window.uploadAvatar = async(e)=>{
     await fbUpd(`members/${S.user.id}`,{avatar:dataUrl});
     S.user={...S.user,avatar:dataUrl};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-    showToast('Фото обновлено!');rerender();
+    showToast('Фото обновлено!');renderTopNav();renderSidebar();renderMain();renderRight();
   };
   reader.readAsDataURL(file);
 };
@@ -1594,7 +1605,7 @@ window.uploadCover = async(e)=>{
     await fbUpd(`members/${S.user.id}`,{cover:ev.target.result});
     S.user={...S.user,cover:ev.target.result};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-    showToast('Обложка обновлена!');rerender();
+    showToast('Обложка обновлена!');renderMain();
   };
   reader.readAsDataURL(file);
 };
@@ -1660,13 +1671,13 @@ window.saveVac = async()=>{
   if(!from||!to){showToast('Выберите даты',true);return}
   if(from>to){showToast('Дата начала не может быть позже конца',true);return}
   await fbPush('vacations',{memberId:S.user.id,from,to,ts:Date.now()});
-  showToast('Отпуск добавлен!');S.selectedDay=null;rerender();
+  showToast('Отпуск добавлен!');S.selectedDay=null;renderMain();renderRight();
 };
 
 window.delVac = async key=>{
   if(!confirm('Отменить отпуск?'))return;
   await fbDel(`vacations/${key}`);
-  showToast('Отпуск отменён');S.modal=null;rerender();
+  showToast('Отпуск отменён');S.modal=null;renderModal();renderMain();renderRight();
 };
 
 window.saveEditVac = async key=>{
@@ -1674,7 +1685,7 @@ window.saveEditVac = async key=>{
   const to=(document.getElementById('evto')||{}).value||'';
   if(!from||!to||from>to){showToast('Проверьте даты',true);return}
   await fbUpd(`vacations/${key}`,{from,to});
-  showToast('Отпуск изменён!');S.modal=null;rerender();
+  showToast('Отпуск изменён!');S.modal=null;renderModal();renderMain();renderRight();
 };
 
 window.sendDM = async peerId=>{
@@ -2062,8 +2073,8 @@ window.createRoom = async()=>{
   };
   await fbSet(`game/rooms/${code}`, room);
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
-  rerender();
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')renderMain(); });
+  renderSidebar();renderMain();
 };
 
 window.joinRoom = async()=>{
@@ -2080,8 +2091,8 @@ window.joinRoom = async()=>{
     await fbUpd(`game/rooms/${code}/redTeam`,{[me.id]:playerData});
   }
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
-  rerender();
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')renderMain(); });
+  renderSidebar();renderMain();
 };
 
 window.joinTeam = async(team)=>{
@@ -2198,7 +2209,7 @@ window.leaveRoom = async()=>{
   if(g.redCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/redCaptain`,null);
   if(g.blueCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/blueCaptain`,null);
   S.gameRoom=null; S.game=null;
-  rerender();
+  renderSidebar();renderMain();
 };
 
 document.addEventListener('click',e=>{

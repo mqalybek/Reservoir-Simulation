@@ -8,29 +8,22 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* Основной фон — светло-бежевый как в КМГ */
-  --bg:#f0ede8;--bg2:#faf9f7;--bg3:#f5f2ee;--bg4:#ebe7e0;
-  /* Акцент — синий */
-  --accent:#1565c0;--accent2:#0d47a1;
-  --green:#2e7d32;--gold:#e65100;--red:#c62828;--purple:#6a1b9a;
-  /* Текст */
-  --t1:#1a1a2e;--t2:#455a64;--t3:#90a4ae;
-  /* Границы */
-  --border:rgba(21,101,192,0.12);--border2:rgba(21,101,192,0.25);
-  /* Карточки белые */
-  --card:#ffffff;--r:8px;
-  /* Навигация — тёмно-синяя */
-  --nav-bg:#1e3a5f;--nav-bg2:#162d4a;--nav-text:#c8daf0;--nav-text-active:#ffffff;
-  --nav-active:#2878e8;
-  /* Шапка — тёмно-синяя */
-  --topnav-bg:#1e3a5f;
+  --bg:#f0f4fa;--bg2:#ffffff;--bg3:#f5f7fb;--bg4:#eaeff7;
+  --accent:#2878e8;--accent2:#1a65d4;--green:#16b47a;--gold:#d4920a;
+  --red:#e03a3a;--purple:#7c5ce8;
+  --t1:#0f1f35;--t2:#4a6080;--t3:#8fa3be;
+  --border:rgba(40,120,232,0.12);--border2:rgba(40,120,232,0.24);
+  --card:#ffffff;--r:14px;
 }
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
-/* no body overlay */
+body::after{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 60% 40% at 80% 5%,rgba(40,120,232,0.04),transparent),
+  radial-gradient(ellipse 50% 30% at 5% 95%,rgba(124,92,232,0.03),transparent);
+  pointer-events:none;z-index:0}
 .app{position:relative;z-index:1}
 
 /* ── TOP NAV ── */
-.topnav{height:54px;background:var(--topnav-bg);border-bottom:none;box-shadow:0 2px 8px rgba(0,0,0,0.25);
+.topnav{height:54px;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(40,120,232,0.07);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 1.5rem;position:sticky;top:0;z-index:200;backdrop-filter:blur(20px)}
 .tn-logo{display:flex;align-items:center;gap:9px;cursor:pointer}
@@ -38,20 +31,20 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-hei
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   display:flex;align-items:center;justify-content:center;
   font-family:'Syne';font-size:13px;font-weight:800;color:#fff}
-.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:#ffffff}
+.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:var(--t1)}
 .tn-search{flex:1;max-width:320px;margin:0 1.5rem;position:relative}
-.tn-search input{width:100%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
-  border-radius:20px;padding:7px 14px 7px 34px;color:#ffffff;font-size:13px;
+.tn-search input{width:100%;background:var(--bg3);border:1px solid var(--border);
+  border-radius:20px;padding:7px 14px 7px 34px;color:var(--t1);font-size:13px;
   font-family:'Inter';outline:none;transition:border .2s}
 .tn-search input:focus{border-color:var(--accent)}
-.tn-search input::placeholder{color:rgba(255,255,255,0.5)}
+.tn-search input::placeholder{color:var(--t3)}
 .tn-search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
-  font-size:14px;color:rgba(255,255,255,0.6)}
+  font-size:14px;color:var(--t3)}
 .tn-right{display:flex;align-items:center;gap:6px}
 .tn-btn{background:none;border:none;width:36px;height:36px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
-  font-size:16px;color:rgba(255,255,255,0.85);transition:all .2s;position:relative}
-.tn-btn:hover{background:rgba(255,255,255,0.12);color:#ffffff}
+  font-size:16px;color:var(--t2);transition:all .2s;position:relative}
+.tn-btn:hover{background:var(--bg3);color:var(--t1)}
 .tn-badge{position:absolute;top:2px;right:2px;width:15px;height:15px;
   background:var(--red);border-radius:50%;font-size:9px;font-weight:700;
   color:#fff;display:flex;align-items:center;justify-content:center}
@@ -64,26 +57,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-hei
   font-size:12px;font-weight:700;color:var(--accent);cursor:pointer}
 
 /* ── LAYOUT ── */
-.layout{display:grid;grid-template-columns:240px minmax(0,1fr) 280px;
+.layout{display:grid;grid-template-columns:240px 1fr 280px;gap:0;
   max-width:1200px;margin:0 auto;padding:1.25rem 1rem;gap:1.25rem}
 
 /* ── LEFT SIDEBAR ── */
-.sidebar-left{position:sticky;top:70px;align-self:start;isolation:isolate}
-.nav-card{background:var(--nav-bg);border:none;border-radius:var(--r);overflow:hidden;box-shadow:2px 0 8px rgba(0,0,0,0.15)}
-.nav-profile{padding:1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:10px;cursor:pointer}
-.nav-profile:hover{background:rgba(255,255,255,.07)}
+.sidebar-left{position:sticky;top:70px;align-self:start}
+.nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
+.nav-profile{padding:1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-profile:hover{background:rgba(255,255,255,.02)}
 .nav-pav{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);flex-shrink:0}
 .nav-pav-ph{width:44px;height:44px;border-radius:50%;background:var(--bg3);
   border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;
   font-size:14px;font-weight:700;flex-shrink:0}
-.nav-pname{font-weight:600;font-size:14px;color:#ffffff}
-.nav-prole{font-size:11px;color:#60a5fa;margin-top:2px}
+.nav-pname{font-weight:600;font-size:14px}
+.nav-prole{font-size:11px;color:var(--accent);margin-top:2px}
 .nav-items{padding:.5rem}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:6px;
-  cursor:pointer;font-size:13px;font-weight:500;color:var(--nav-text);
-  transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
-.nav-item:hover{background:rgba(255,255,255,.1);color:#ffffff}
-.nav-item.active{background:var(--nav-active);color:#ffffff}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
+  cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
+  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
+.nav-item:hover{background:var(--bg3);color:var(--t1)}
+.nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
 .nav-item-badge{margin-left:auto;background:var(--accent);color:#fff;
   border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700}
@@ -92,7 +85,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-hei
 .feed{display:flex;flex-direction:column;gap:1rem}
 
 /* Composer */
-.composer{background:#fffef9;border:1px solid #e8e0d5;border-radius:var(--r);padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.composer{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .composer-top{display:flex;gap:10px;align-items:flex-start}
 .composer-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;color:var(--t1);font-size:14px;
@@ -104,8 +97,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-hei
 .ctool{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
   padding:6px;border-radius:8px;transition:all .2s}
 .ctool:hover{color:var(--accent);background:rgba(61,142,240,.1)}
-.post-btn{padding:8px 20px;border-radius:4px;border:none;
-  background:var(--accent);
+.post-btn{padding:8px 20px;border-radius:20px;border:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
   color:#fff;font-weight:600;font-size:13px;cursor:pointer;
   transition:all .2s;font-family:'Inter'}
 .post-btn:hover{opacity:.9;transform:translateY(-1px)}
@@ -166,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-hei
 
 /* ── RIGHT SIDEBAR ── */
 .sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
-.widget{background:#fffef9;border:1px solid #e8e0d5;border-radius:var(--r);padding:1.25rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
 .widget-title{font-family:'Syne';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
 .member-row{display:flex;align-items:center;gap:9px;margin-bottom:.75rem;cursor:pointer}
@@ -423,7 +416,7 @@ select option{background:var(--bg2)}
 .iitem .il{font-size:10px;color:var(--t3);letter-spacing:.5px;margin-bottom:3px}
 .iitem .iv{font-size:13px;font-weight:500}
 
-@media(max-width:1100px){.layout{grid-template-columns:200px minmax(0,1fr) 240px}}
+@media(max-width:1100px){.layout{grid-template-columns:200px 1fr 240px}}
 @media(max-width:900px){.layout{grid-template-columns:1fr};.sidebar-left,.sidebar-right{display:none}}
 @media(max-width:600px){.auth-card{padding:1.5rem}.row2,.row3{grid-template-columns:1fr}}
 
@@ -555,19 +548,7 @@ select option{background:var(--bg2)}
 </style>
 </head>
 <body>
-<!-- Статичная структура — зоны обновляются независимо -->
-<div id="zone-loading" style="min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
-  <div class="spinner"></div>
-  <div style="font-size:13px;color:var(--t2)">Подключение...</div>
-</div>
-<div id="zone-auth" style="display:none"></div>
-<div id="zone-topnav" style="display:none"></div>
-<div class="layout" id="zone-layout" style="display:none">
-  <div class="sidebar-left" id="zone-sidebar"></div>
-  <div style="min-width:0;flex:1" id="zone-main"></div>
-  <div class="sidebar-right" id="zone-right"></div>
-</div>
-<div id="zone-modal"></div>
+<div class="app" id="app"></div>
 <div class="toast" id="toast"></div>
 <div class="bottom-nav" id="bottom-nav"></div>
 <div class="notif-panel" id="npanel">
@@ -697,156 +678,26 @@ function avImg(src,fallback,size=40,color='#3d8ef0',cls=''){
 
 /* ── LISTENERS ── */
 function startListeners(){
-  fbListen('members', v=>{ S.members=v||{}; if(['feed','team','profile','messages'].includes(S.page))rerenderContent(); });
-  fbListen('posts', v=>{ S.posts=v||{}; if(S.page==='feed'||S.page==='profile')rerenderContent(); });
-  fbListen('comments', v=>{ S.comments=v||{}; if(S.page==='feed')rerenderContent(); });
-  fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerenderContent(); });
-  fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerenderContent(); });
-  fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerenderContent(); });
-  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerenderContent(); });
+  fbListen('members', v=>{ S.members=v||{}; if(['feed','team','profile','messages'].includes(S.page))rerender(); });
+  fbListen('posts', v=>{ S.posts=v||{}; if(S.page==='feed'||S.page==='profile')rerender(); });
+  fbListen('comments', v=>{ S.comments=v||{}; if(S.page==='feed')rerender(); });
+  fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerender(); });
+  fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
+  fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
+  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
 }
 
 /* ── RENDER ROOT ── */
-/* ══ ЗОНАЛЬНЫЙ РЕНДЕРИНГ — каждая зона обновляется независимо ══ */
-
-function showZone(zone){
-  ['loading','auth','topnav','layout'].forEach(z=>{
-    const el=document.getElementById('zone-'+z);
-    if(!el)return;
-    if(z==='layout'){
-      el.style.display=(zone==='layout')?'':'none';
-    } else {
-      el.style.display=(z===zone)?'':'none';
-    }
-  });
-  // topnav показываем вместе с layout
-  const tn=document.getElementById('zone-topnav');
-  if(tn)tn.style.display=(zone==='layout')?'block':'none';
-}
-
-function renderTopNav(){
-  const el=document.getElementById('zone-topnav');
-  if(!el||!S.user)return;
-  const me=S.members[S.user.id]||S.user;
-  const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
-    if(!key.includes(S.user.id))return acc;
-    return acc+Object.values(msgs||{}).filter(m=>m.from!==S.user.id&&!m.read).length;
-  },0);
-  const uc=S.notifs.filter(n=>!n.read).length;
-  el.innerHTML=`<div class="topnav">
-    <div class="tn-logo" onclick="gp('feed')">
-      <div class="tn-logo-mark">RS</div>
-      <span class="tn-logo-name">RS Team</span>
-    </div>
-    <div class="tn-search">
-      <span class="tn-search-ico">🔍</span>
-      <input placeholder="Поиск коллег..." id="search-inp" oninput="onSearch(this.value)">
-    </div>
-    <div class="tn-right">
-      <button class="tn-btn" data-notif onclick="toggleNotif()">🔔${uc>0?`<span class="tn-badge">${uc}</span>`:''}</button>
-      <button class="tn-btn" onclick="gp('messages')" title="Сообщения">💬${dmUnread>0?`<span class="tn-badge">${dmUnread}</span>`:''}</button>
-      <div onclick="gp('profile')">${avImg(me.avatar,me.name,34,me.color||COLORS[0])}</div>
-      <button class="tn-btn" onclick="logout()" title="Выйти" style="font-size:13px">⏻</button>
-    </div>
-  </div>`;
-}
-
-function renderSidebar(){
-  const el=document.getElementById('zone-sidebar');
-  if(!el||!S.user)return;
-  const me=S.members[S.user.id]||S.user;
-  const navItems=[
-    {id:'feed',ico:'🏠',label:'Лента'},
-    {id:'profile',ico:'👤',label:'Мой профиль'},
-    {id:'team',ico:'👥',label:'Команда'},
-    {id:'calendar',ico:'📅',label:'Календарь'},
-    {id:'files',ico:'📁',label:'Файлы'},
-    {id:'messages',ico:'💬',label:'Сообщения'},
-    {id:'game',ico:'🎯',label:'Игра'},
-    {id:'kanban',ico:'📋',label:'Задачи'},
-    {id:'wiki',ico:'📚',label:'База знаний'},
-    {id:'tools',ico:'🧮',label:'Инструменты'},
-  ];
-  const dmUnread=Object.entries(S.dms).reduce((acc,[key,msgs])=>{
-    if(!key.includes(S.user.id))return acc;
-    return acc+Object.values(msgs||{}).filter(m=>m.from!==S.user.id&&!m.read).length;
-  },0);
-  el.innerHTML=`<div class="nav-card">
-    <div class="nav-profile" onclick="gp('profile')">
-      ${avImg(me.avatar,me.name,44,me.color||COLORS[0])}
-      <div>
-        <div class="nav-pname">${escH(me.name)}</div>
-        <div class="nav-prole">${escH(me.role||'')}</div>
-      </div>
-    </div>
-    <div class="nav-items">
-      ${navItems.map(n=>`
-        <button class="nav-item ${S.page===n.id?'active':''}" onclick="gp('${n.id}')">
-          <span class="nav-item-ico">${n.ico}</span>${n.label}
-          ${n.id==='messages'&&dmUnread>0?`<span class="nav-item-badge">${dmUnread}</span>`:''}
-        </button>`).join('')}
-      <div style="border-top:1px solid var(--border);margin:.5rem 0"></div>
-      <button class="nav-item" onclick="logout()"><span class="nav-item-ico">⏻</span>Выйти</button>
-    </div>
-  </div>`;
-}
-
-function renderRight(){
-  const el=document.getElementById('zone-right');
-  if(!el||!S.user)return;
-  el.innerHTML=renderRightSidebar();
-}
-
-function renderMain(){
-  const el=document.getElementById('zone-main');
-  if(!el||!S.user)return;
-  el.innerHTML=renderPage();
-  setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
-}
-
-function renderModal(){
-  const el=document.getElementById('zone-modal');
-  if(!el)return;
-  if(!S.modal||!S.modal.type){el.innerHTML='';return;}
-  try{
-    if(S.modal.type==='editProfile')el.innerHTML=renderEditProfileModal();
-    else if(S.modal.type==='editVac'&&S.modal.data)el.innerHTML=renderEditVacModal();
-    else el.innerHTML='';
-  }catch(e){S.modal=null;el.innerHTML='';}
-}
-
-// Главная функция — обновляет только нужные зоны
 function rerender(){
-  if(S.page==='loading'){
-    showZone('loading');
-    return;
-  }
-  if(S.page==='auth'){
-    showZone('auth');
-    const el=document.getElementById('zone-auth');
-    if(el)el.innerHTML=renderAuth();
-    return;
-  }
-  // Показываем приложение
-  showZone('layout');
-  renderTopNav();
-  renderSidebar();   // sidebar обновляется только здесь
-  renderMain();
-  renderRight();
-  renderModal();
+  const app=document.getElementById('app');
+  if(!app)return;
+  if(S.page==='loading'){app.innerHTML=`<div class="loading-screen"><div class="spinner"></div><div style="font-size:13px;color:var(--t2)">Подключение...</div></div>`;return;}
+  if(S.page==='auth'){app.innerHTML=renderAuth();return;}
+  app.innerHTML=renderShell();
   renderNotifPanel();
   renderBottomNav();
+  setTimeout(()=>{if(S.page==='messages'&&S.activeDM)scrollEl('dm-msgs');},60);
 }
-
-// При обновлении Firebase данных — обновляем ТОЛЬКО контент, не sidebar
-function rerenderContent(){
-  if(S.page==='loading'||S.page==='auth')return;
-  renderMain();
-  renderRight();
-  renderTopNav(); // только для badge счётчиков
-  renderBottomNav();
-}
-
 
 /* ── AUTH ── */
 function renderAuth(){
@@ -959,14 +810,14 @@ function renderShell(){
               <span class="nav-item-ico">${n.ico}</span>${n.label}
               ${n.id==='messages'&&dmUnread>0?`<span class="nav-item-badge">${dmUnread}</span>`:''}
             </button>`).join('')}
-          <div style="border-top:1px solid rgba(255,255,255,0.08);margin:.5rem 0"></div>
+          <div style="border-top:1px solid var(--border);margin:.5rem 0"></div>
           <button class="nav-item" onclick="logout()"><span class="nav-item-ico">⏻</span>Выйти</button>
         </div>
       </div>
     </div>
 
     <!-- MAIN -->
-    <div style="min-width:0;overflow:hidden">
+    <div>
       ${renderPage()}
     </div>
 
@@ -1239,7 +1090,7 @@ function renderCalendar(){
     detail=`<div class="day-detail">
       <div class="dd-head">
         <div class="dd-date">${parseInt(dd)} ${MN_FULL[parseInt(dm)-1]} ${dy}</div>
-        <button class="btnx" onclick="S.selectedDay=null;renderMain()">✕</button>
+        <button class="btnx" onclick="S.selectedDay=null;rerender()">✕</button>
       </div>
       ${hol?`<div style="margin-bottom:.75rem"><span style="background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gold)">🎉 ${hol}</span></div>`:''}
 
@@ -1291,9 +1142,9 @@ function renderCalendar(){
 
   return`<div class="cal-page">
     <div class="cal-year-nav">
-      <button class="cnbtn" onclick="S.calYear--;renderMain()">← ${y-1}</button>
+      <button class="cnbtn" onclick="S.calYear--;rerender()">← ${y-1}</button>
       <div class="cal-year-val">${y}</div>
-      <button class="cnbtn" onclick="S.calYear++;renderMain()">${y+1} →</button>
+      <button class="cnbtn" onclick="S.calYear++;rerender()">${y+1} →</button>
     </div>
     ${detail}
     <div class="year-grid">${months}</div>
@@ -1416,7 +1267,13 @@ function renderMessages(){
 }
 
 /* ── MODAL ── */
-/* renderModal moved to zone-based version above */
+function renderModal(){
+  if(!S.modal)return'';
+  if(S.modal.type==='editProfile') return renderEditProfileModal();
+  if(S.modal.type==='editVac') return renderEditVacModal();
+  if(S.modal.type==='viewProfile') return renderViewProfileModal();
+  return'';
+}
 
 function renderEditProfileModal(){
   const me=S.members[S.user.id]||S.user;
@@ -1468,21 +1325,11 @@ function renderEditVacModal(){
 }
 
 /* ── ACTIONS ── */
-window.setAt = t=>{ S.authTab=t; const el=document.getElementById('zone-auth');if(el)el.innerHTML=renderAuth(); };
-window.gp = p=>{
-  S.page=p;
-  S.modal=null;
-  // Обновляем sidebar (active класс) и контент
-  renderSidebar();
-  renderMain();
-  renderRight();
-  renderModal();
-  renderBottomNav();
-  if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80);
-};
-window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; showZone('auth'); const el=document.getElementById('zone-auth');if(el)el.innerHTML=renderAuth(); };
-window.closeModal = ()=>{ S.modal=null; renderModal(); };
-window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; renderMain(); };
+window.setAt = t=>{ S.authTab=t; rerender(); };
+window.gp = p=>{ S.page=p; S.modal=null; rerender(); if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80); };
+window.logout = ()=>{ sessionStorage.removeItem('rs_user'); S.user=null; S.page='auth'; rerender(); };
+window.closeModal = ()=>{ S.modal=null; rerender(); };
+window.selectDay = ds=>{ S.selectedDay=S.selectedDay===ds?null:ds; rerender(); };
 window.clearNotifs = ()=>{ S.notifs=[]; renderNotifPanel(); };
 window.toggleNotif = ()=>{
   const panel=document.getElementById('npanel');
@@ -1490,29 +1337,18 @@ window.toggleNotif = ()=>{
   panel.className='notif-panel'+(S.notifOpen?' open':'');
   if(S.notifOpen){S.notifs.forEach(n=>n.read=true);renderNotifPanel();}
 };
-window.viewProfile = id=>{ S.page='profile'; S.viewProfileId=id; renderSidebar();renderMain(); };
-window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; renderModal(); };
-window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; renderModal(); };
-window.openDM = id=>{ S.activeDM=id; renderMain(); setTimeout(()=>scrollEl('dm-msgs'),80); };
-window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; renderMain(); };
+window.viewProfile = id=>{ S.page='profile'; S.user.id===id ? S.page='profile' : null; S.viewProfileId=id; rerender(); };
+window.openEditProfile = ()=>{ S.modal={type:'editProfile'}; rerender(); };
+window.openEditVac = (key,from,to)=>{ S.modal={type:'editVac',data:{key,from,to}}; rerender(); };
+window.openDM = id=>{ S.activeDM=id; rerender(); setTimeout(()=>scrollEl('dm-msgs'),80); };
+window.toggleComments = id=>{ S.postExpanded[id]=!S.postExpanded[id]; rerender(); };
 window.autoResize = el=>{ el.style.height='auto'; el.style.height=el.scrollHeight+'px'; };
 window.onSearch = q=>{
   if(!q.trim())return;
   const found=membersArr().find(m=>m.name.toLowerCase().includes(q.toLowerCase()));
-  if(found){S.page='team';renderSidebar();renderMain();}
+  if(found){S.page='team';rerender();}
 };
 
-
-function fullRender(){
-  showZone('layout');
-  renderTopNav();
-  renderSidebar();
-  renderMain();
-  renderRight();
-  renderModal();
-  renderNotifPanel();
-  renderBottomNav();
-}
 window.doLogin = async()=>{
   const email=(document.getElementById('le')||{}).value||'';
   if(!email){showToast('Введите email',true);return}
@@ -1523,7 +1359,7 @@ window.doLogin = async()=>{
     if(found){
       S.user=found;S.page='feed';
       sessionStorage.setItem('rs_user',JSON.stringify(found));
-      startListeners();fullRender();return;
+      startListeners();rerender();return;
     }
   }
   showToast('Email не найден. Зарегистрируйтесь',true);
@@ -1550,7 +1386,7 @@ window.doReg = async()=>{
   const existing=await fbGet('members');
   if(existing){
     const dup=Object.values(existing).find(m=>m.email===em.trim());
-    if(dup){S.user=dup;S.page='feed';sessionStorage.setItem('rs_user',JSON.stringify(dup));startListeners();fullRender();return;}
+    if(dup){S.user=dup;S.page='feed';sessionStorage.setItem('rs_user',JSON.stringify(dup));startListeners();rerender();return;}
   }
   const colorIdx=existing?Object.keys(existing).length%COLORS.length:0;
   const id='m_'+Date.now();
@@ -1562,7 +1398,7 @@ window.doReg = async()=>{
   await fbSet(`members/${id}`,nm);
   S.user=nm;S.page='feed';
   sessionStorage.setItem('rs_user',JSON.stringify(nm));
-  startListeners();fullRender();showToast('Добро пожаловать!');
+  startListeners();showToast('Добро пожаловать!');rerender();
 };
 
 window.saveProf = async()=>{
@@ -1580,7 +1416,7 @@ window.saveProf = async()=>{
   await fbUpd(`members/${me.id}`,upd);
   S.user={...S.user,...upd};
   sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-  S.modal=null;showToast('Профиль сохранён!');renderSidebar();renderMain();renderModal();
+  S.modal=null;showToast('Профиль сохранён!');rerender();
 };
 
 window.uploadAvatar = async(e)=>{
@@ -1592,7 +1428,7 @@ window.uploadAvatar = async(e)=>{
     await fbUpd(`members/${S.user.id}`,{avatar:dataUrl});
     S.user={...S.user,avatar:dataUrl};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-    showToast('Фото обновлено!');renderTopNav();renderSidebar();renderMain();renderRight();
+    showToast('Фото обновлено!');rerender();
   };
   reader.readAsDataURL(file);
 };
@@ -1605,7 +1441,7 @@ window.uploadCover = async(e)=>{
     await fbUpd(`members/${S.user.id}`,{cover:ev.target.result});
     S.user={...S.user,cover:ev.target.result};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
-    showToast('Обложка обновлена!');renderMain();
+    showToast('Обложка обновлена!');rerender();
   };
   reader.readAsDataURL(file);
 };
@@ -1671,13 +1507,13 @@ window.saveVac = async()=>{
   if(!from||!to){showToast('Выберите даты',true);return}
   if(from>to){showToast('Дата начала не может быть позже конца',true);return}
   await fbPush('vacations',{memberId:S.user.id,from,to,ts:Date.now()});
-  showToast('Отпуск добавлен!');S.selectedDay=null;renderMain();renderRight();
+  showToast('Отпуск добавлен!');S.selectedDay=null;rerender();
 };
 
 window.delVac = async key=>{
   if(!confirm('Отменить отпуск?'))return;
   await fbDel(`vacations/${key}`);
-  showToast('Отпуск отменён');S.modal=null;renderModal();renderMain();renderRight();
+  showToast('Отпуск отменён');S.modal=null;rerender();
 };
 
 window.saveEditVac = async key=>{
@@ -1685,7 +1521,7 @@ window.saveEditVac = async key=>{
   const to=(document.getElementById('evto')||{}).value||'';
   if(!from||!to||from>to){showToast('Проверьте даты',true);return}
   await fbUpd(`vacations/${key}`,{from,to});
-  showToast('Отпуск изменён!');S.modal=null;renderModal();renderMain();renderRight();
+  showToast('Отпуск изменён!');S.modal=null;rerender();
 };
 
 window.sendDM = async peerId=>{
@@ -1712,47 +1548,13 @@ window.upF = async e=>{
 window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
 
 /* ── INIT ── */
-S.page='loading';
-S.modal=null;
-S.notifOpen=false;
-S.selectedDay=null;
-showZone('loading');
-
+S.page='loading'; rerender();
 const saved=sessionStorage.getItem('rs_user');
 if(saved){
-  try{
-    const u=JSON.parse(saved);
-    if(u&&u.id&&u.name){
-      S.user=u;
-      S.page='feed';
-      S.modal=null;
-      showZone('layout');
-      renderTopNav();
-      renderSidebar();
-      renderMain();
-      renderRight();
-      renderBottomNav();
-      startListeners();
-    }else{
-      sessionStorage.removeItem('rs_user');
-      S.page='auth';
-      showZone('auth');
-      const el=document.getElementById('zone-auth');
-      if(el)el.innerHTML=renderAuth();
-    }
-  }catch(e){
-    sessionStorage.removeItem('rs_user');
-    S.page='auth';
-    showZone('auth');
-    const el=document.getElementById('zone-auth');
-    if(el)el.innerHTML=renderAuth();
-  }
-}else{
-  S.page='auth';
-  showZone('auth');
-  const el=document.getElementById('zone-auth');
-  if(el)el.innerHTML=renderAuth();
-}
+  try{S.user=JSON.parse(saved);S.page='feed';startListeners();}
+  catch{S.page='auth';}
+}else{S.page='auth';}
+rerender();
 
 /* ── BOTTOM NAV RENDER ── */
 function renderBottomNav(){
@@ -2073,8 +1875,8 @@ window.createRoom = async()=>{
   };
   await fbSet(`game/rooms/${code}`, room);
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')renderMain(); });
-  renderSidebar();renderMain();
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  rerender();
 };
 
 window.joinRoom = async()=>{
@@ -2091,8 +1893,8 @@ window.joinRoom = async()=>{
     await fbUpd(`game/rooms/${code}/redTeam`,{[me.id]:playerData});
   }
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')renderMain(); });
-  renderSidebar();renderMain();
+  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  rerender();
 };
 
 window.joinTeam = async(team)=>{
@@ -2209,7 +2011,7 @@ window.leaveRoom = async()=>{
   if(g.redCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/redCaptain`,null);
   if(g.blueCaptain===me) await fbSet(`game/rooms/${S.gameRoom}/blueCaptain`,null);
   S.gameRoom=null; S.game=null;
-  renderSidebar();renderMain();
+  rerender();
 };
 
 document.addEventListener('click',e=>{

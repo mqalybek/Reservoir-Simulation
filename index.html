@@ -8,22 +8,19 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f0f4fa;--bg2:#ffffff;--bg3:#f5f7fb;--bg4:#eaeff7;
-  --accent:#2878e8;--accent2:#1a65d4;--green:#16b47a;--gold:#d4920a;
-  --red:#e03a3a;--purple:#7c5ce8;
-  --t1:#0f1f35;--t2:#4a6080;--t3:#8fa3be;
-  --border:rgba(40,120,232,0.12);--border2:rgba(40,120,232,0.24);
-  --card:#ffffff;--r:14px;
+  --bg:#eeebe6;--bg2:#faf9f7;--bg3:#f2efe9;--bg4:#e8e4de;
+  --accent:#1565c0;--accent2:#0d47a1;--green:#2e7d32;--gold:#e65100;
+  --red:#c62828;--purple:#6a1b9a;
+  --t1:#1a1a2e;--t2:#455a64;--t3:#90a4ae;
+  --border:#ddd;--border2:rgba(21,101,192,0.25);
+  --card:#ffffff;--r:8px;
+  --nav:#1e3a5f;--nav-text:rgba(255,255,255,0.75);
 }
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh}
-body::after{content:'';position:fixed;inset:0;
-  background:radial-gradient(ellipse 60% 40% at 80% 5%,rgba(40,120,232,0.04),transparent),
-  radial-gradient(ellipse 50% 30% at 5% 95%,rgba(124,92,232,0.03),transparent);
-  pointer-events:none;z-index:0}
 .app{position:relative;z-index:1}
 
 /* ── TOP NAV ── */
-.topnav{height:54px;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(40,120,232,0.07);
+.topnav{height:52px;background:var(--nav);border-bottom:none;box-shadow:0 2px 8px rgba(0,0,0,0.25);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 1.5rem;position:sticky;top:0;z-index:200;backdrop-filter:blur(20px)}
 .tn-logo{display:flex;align-items:center;gap:9px;cursor:pointer}
@@ -31,20 +28,20 @@ body::after{content:'';position:fixed;inset:0;
   background:linear-gradient(135deg,var(--accent),#60c8ff);
   display:flex;align-items:center;justify-content:center;
   font-family:'Syne';font-size:13px;font-weight:800;color:#fff}
-.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:var(--t1)}
+.tn-logo-name{font-family:'Syne';font-size:15px;font-weight:700;color:#fff}
 .tn-search{flex:1;max-width:320px;margin:0 1.5rem;position:relative}
-.tn-search input{width:100%;background:var(--bg3);border:1px solid var(--border);
-  border-radius:20px;padding:7px 14px 7px 34px;color:var(--t1);font-size:13px;
+.tn-search input{width:100%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;padding:7px 14px 7px 34px;color:#fff;font-size:13px;
   font-family:'Inter';outline:none;transition:border .2s}
 .tn-search input:focus{border-color:var(--accent)}
-.tn-search input::placeholder{color:var(--t3)}
+.tn-search input::placeholder{color:rgba(255,255,255,0.45)}
 .tn-search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
-  font-size:14px;color:var(--t3)}
+  font-size:14px;color:rgba(255,255,255,0.5)}
 .tn-right{display:flex;align-items:center;gap:6px}
 .tn-btn{background:none;border:none;width:36px;height:36px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
-  font-size:16px;color:var(--t2);transition:all .2s;position:relative}
-.tn-btn:hover{background:var(--bg3);color:var(--t1)}
+  font-size:16px;color:rgba(255,255,255,0.8);transition:all .2s;position:relative}
+.tn-btn:hover{background:rgba(255,255,255,0.12);color:#fff}
 .tn-badge{position:absolute;top:2px;right:2px;width:15px;height:15px;
   background:var(--red);border-radius:50%;font-size:9px;font-weight:700;
   color:#fff;display:flex;align-items:center;justify-content:center}
@@ -62,21 +59,21 @@ body::after{content:'';position:fixed;inset:0;
 
 /* ── LEFT SIDEBAR ── */
 .sidebar-left{position:sticky;top:70px;align-self:start}
-.nav-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
-.nav-profile{padding:1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer}
-.nav-profile:hover{background:rgba(255,255,255,.02)}
+.nav-card{background:var(--nav);border:none;border-radius:var(--r);overflow:hidden}
+.nav-profile{padding:1.1rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-profile:hover{background:rgba(255,255,255,.07)}
 .nav-pav{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);flex-shrink:0}
 .nav-pav-ph{width:44px;height:44px;border-radius:50%;background:var(--bg3);
   border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;
   font-size:14px;font-weight:700;flex-shrink:0}
-.nav-pname{font-weight:600;font-size:14px}
-.nav-prole{font-size:11px;color:var(--accent);margin-top:2px}
+.nav-pname{font-weight:600;font-size:13px;color:#fff}
+.nav-prole{font-size:11px;color:#64b5f6;margin-top:2px}
 .nav-items{padding:.5rem}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;
-  cursor:pointer;font-size:14px;font-weight:500;color:var(--t2);
-  transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
-.nav-item:hover{background:var(--bg3);color:var(--t1)}
-.nav-item.active{background:rgba(61,142,240,.12);color:var(--accent)}
+  cursor:pointer;font-size:13px;font-weight:500;color:var(--nav-text);
+  transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:'Inter'}
+.nav-item:hover{background:rgba(255,255,255,0.1);color:#fff}
+.nav-item.active{background:#1565c0;color:#fff}
 .nav-item-ico{width:20px;text-align:center;font-size:16px}
 .nav-item-badge{margin-left:auto;background:var(--accent);color:#fff;
   border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700}
@@ -85,7 +82,7 @@ body::after{content:'';position:fixed;inset:0;
 .feed{display:flex;flex-direction:column;gap:1rem}
 
 /* Composer */
-.composer{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
+.composer{background:#fffef9;border:1px solid #ddd;border-radius:var(--r);padding:1rem}
 .composer-top{display:flex;gap:10px;align-items:flex-start}
 .composer-input{flex:1;background:var(--bg3);border:1px solid var(--border);
   border-radius:10px;padding:10px 14px;color:var(--t1);font-size:14px;
@@ -97,10 +94,10 @@ body::after{content:'';position:fixed;inset:0;
 .ctool{background:none;border:none;color:var(--t3);cursor:pointer;font-size:16px;
   padding:6px;border-radius:8px;transition:all .2s}
 .ctool:hover{color:var(--accent);background:rgba(61,142,240,.1)}
-.post-btn{padding:8px 20px;border-radius:20px;border:none;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
+.post-btn{padding:8px 20px;border-radius:5px;border:none;
+  background:var(--accent);
   color:#fff;font-weight:600;font-size:13px;cursor:pointer;
-  transition:all .2s;font-family:'Inter'}
+  transition:all .15s;font-family:'Inter'}
 .post-btn:hover{opacity:.9;transform:translateY(-1px)}
 .post-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .img-preview-wrap{margin-top:.75rem;position:relative;display:inline-block}
@@ -127,7 +124,7 @@ body::after{content:'';position:fixed;inset:0;
 .post-menu:hover{background:var(--bg3);color:var(--t1)}
 .post-text{padding:0 1rem .75rem;font-size:14px;line-height:1.65;color:var(--t1);white-space:pre-wrap}
 .post-image{width:100%;max-height:480px;object-fit:cover;display:block}
-.post-footer{padding:.625rem 1rem;border-top:1px solid var(--border);
+.post-footer{padding:.5rem 1rem;border-top:1px solid #f0ebe3;
   display:flex;align-items:center;gap:1rem}
 .post-action{display:flex;align-items:center;gap:5px;background:none;border:none;
   color:var(--t3);cursor:pointer;font-size:13px;font-family:'Inter';
@@ -159,7 +156,7 @@ body::after{content:'';position:fixed;inset:0;
 
 /* ── RIGHT SIDEBAR ── */
 .sidebar-right{position:sticky;top:70px;align-self:start;display:flex;flex-direction:column;gap:1rem}
-.widget{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;box-shadow:0 2px 12px rgba(40,120,232,0.06)}
+.widget{background:#fffef9;border:1px solid #ddd;border-radius:var(--r);padding:1.125rem}
 .widget-title{font-family:'Syne';font-size:13px;font-weight:700;color:var(--t2);
   letter-spacing:.5px;margin-bottom:.875rem}
 .member-row{display:flex;align-items:center;gap:9px;margin-bottom:.75rem;cursor:pointer}
@@ -545,6 +542,47 @@ select option{background:var(--bg2)}
   .game-card{font-size:10px;padding:.5rem .25rem;min-height:48px;border-radius:7px}
   .teams-grid{grid-template-columns:1fr}
 }
+
+/* ── BIRTHDAY WIDGET ── */
+.bday-widget{
+  background:linear-gradient(135deg,rgba(230,81,0,.08),rgba(198,40,40,.05));
+  border:1px solid rgba(230,81,0,.22);border-radius:var(--r);
+  padding:1rem;margin-bottom:.875rem
+}
+.bday-today-row{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.bday-soon{font-size:12px;color:var(--t2);margin-top:.375rem;
+  padding-top:.375rem;border-top:1px solid rgba(230,81,0,.15)}
+
+/* ── STATUS BADGE ── */
+.status-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600
+}
+.status-office{background:rgba(46,125,50,.1);color:#2e7d32}
+.status-field{background:rgba(230,81,0,.1);color:#e65100}
+.status-trip{background:rgba(21,101,192,.1);color:#1565c0}
+.status-remote{background:rgba(106,27,154,.1);color:#6a1b9a}
+.status-off{background:rgba(144,164,174,.1);color:#546e7a}
+
+/* ── POLL CARD ── */
+.poll-card{
+  background:#fffef9;border:1px solid #ddd;
+  border-radius:var(--r);padding:1.125rem;
+  margin-bottom:.875rem
+}
+.poll-q{font-weight:700;font-size:15px;margin-bottom:.875rem}
+.poll-opt{
+  background:var(--bg3);border:1px solid #ddd;border-radius:7px;
+  padding:9px 13px;margin-bottom:.5rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;overflow:hidden;transition:border .15s
+}
+.poll-opt:hover{border-color:var(--accent)}
+.poll-opt.voted{border-color:var(--accent);background:rgba(21,101,192,.05)}
+.poll-bar{position:absolute;left:0;top:0;bottom:0;background:rgba(21,101,192,.1);z-index:0}
+.poll-opt-text{position:relative;z-index:1;font-size:13px;font-weight:500}
+.poll-pct{position:relative;z-index:1;font-size:12px;font-weight:700;color:var(--accent)}
+
 </style>
 </head>
 <body>
@@ -604,12 +642,14 @@ let S={
   members:{}, posts:{}, comments:{}, files:{}, vacations:{}, dms:{}, notifs:[],
   calYear:2026, selectedDay:null,
   game:null, gameRoom:null,
+  polls:{}, statuses:{},
   activeDM:null, notifOpen:false,
   modal:null, // {type, data}
   viewProfileId:null,
   postImages:{}, // postId -> dataUrl cache
   postExpanded:{}, // postId -> bool (comments open)
-  editVac:null, // vac key being edited
+  editVac:null,
+  statuses:{}, // memberId -> status
 };
 
 /* ── FIREBASE ── */
@@ -685,6 +725,8 @@ function startListeners(){
   fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
   fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
   fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
+  fbListen('statuses', v=>{ S.statuses=v||{}; rerender(); });
+  fbListen('polls', v=>{ S.polls=v||{}; if(S.page==='feed')rerender(); });
 }
 
 /* ── RENDER ROOT ── */
@@ -810,7 +852,7 @@ function renderShell(){
               <span class="nav-item-ico">${n.ico}</span>${n.label}
               ${n.id==='messages'&&dmUnread>0?`<span class="nav-item-badge">${dmUnread}</span>`:''}
             </button>`).join('')}
-          <div style="border-top:1px solid var(--border);margin:.5rem 0"></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.08);margin:.5rem 0"></div>
           <button class="nav-item" onclick="logout()"><span class="nav-item-ico">⏻</span>Выйти</button>
         </div>
       </div>
@@ -831,9 +873,12 @@ function renderShell(){
 }
 
 function renderRightSidebar(){
+  // Birthday widget at top
   const members=membersArr().filter(m=>m.id!==S.user.id).slice(0,6);
   const myVacs=Object.values(S.vacations||{}).filter(v=>v.memberId===S.user.id);
+  const bdayWidget = renderBdayWidget();
   return`
+  ${bdayWidget}
   <div class="widget">
     <div class="widget-title">КОЛЛЕГИ</div>
     ${members.length?members.map(m=>`
@@ -855,6 +900,12 @@ function renderRightSidebar(){
         <button onclick="delVac('${k}')" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:12px;padding:2px 6px;border-radius:4px" title="Удалить">✕</button>
       </div>`).join('')}
   </div>`:''}`;
+}
+
+function renderRightSidebarOnly(){
+  const shell = document.getElementById('app');
+  if(!shell) return;
+  // Не перерисовываем всё, просто обновляем виджет если он есть
 }
 
 function renderPage(){
@@ -885,11 +936,34 @@ function renderFeed(){
         <div class="composer-tools">
           <button class="ctool" title="Добавить фото" onclick="document.getElementById('post-img-inp').click()">🖼</button>
           <input type="file" id="post-img-inp" accept="image/*" style="display:none" onchange="previewPostImg(event)">
+          <button class="ctool" title="Создать опрос" onclick="togglePollForm()">📊</button>
         </div>
         <button class="post-btn" onclick="submitPost()">Опубликовать</button>
       </div>
+      <!-- Poll form -->
+      <div id="poll-form" style="display:none;margin-top:.75rem;border-top:1px solid #ddd;padding-top:.875rem">
+        <div class="fg" style="margin-bottom:.625rem">
+          <label style="display:block;font-size:10px;color:var(--t3);margin-bottom:4px;font-weight:600;letter-spacing:.5px">ВОПРОС</label>
+          <input type="text" id="poll-q" placeholder="Задайте вопрос команде..." style="width:100%;background:var(--bg3);border:1px solid #ddd;border-radius:7px;padding:8px 11px;font-size:13px;outline:none">
+        </div>
+        <div id="poll-opts-wrap">
+          <div class="poll-option-input" style="display:flex;gap:6px;margin-bottom:6px">
+            <input type="text" class="poll-opt-inp" placeholder="Вариант 1" style="flex:1;background:var(--bg3);border:1px solid #ddd;border-radius:6px;padding:7px 10px;font-size:13px;outline:none">
+            <button onclick="this.parentElement.remove()" style="border:none;background:none;color:var(--t3);cursor:pointer;font-size:16px">✕</button>
+          </div>
+          <div class="poll-option-input" style="display:flex;gap:6px;margin-bottom:6px">
+            <input type="text" class="poll-opt-inp" placeholder="Вариант 2" style="flex:1;background:var(--bg3);border:1px solid #ddd;border-radius:6px;padding:7px 10px;font-size:13px;outline:none">
+            <button onclick="this.parentElement.remove()" style="border:none;background:none;color:var(--t3);cursor:pointer;font-size:16px">✕</button>
+          </div>
+        </div>
+        <div style="display:flex;gap:.625rem;margin-top:.5rem;align-items:center">
+          <button onclick="addPollOpt()" style="padding:5px 11px;border-radius:6px;border:1px solid #ddd;background:none;font-size:12px;font-weight:500;cursor:pointer;font-family:'Inter'">+ Вариант</button>
+          <button class="post-btn" style="padding:7px 18px" onclick="submitPoll()">Создать опрос</button>
+        </div>
+      </div>
     </div>
     <!-- Posts -->
+    ${renderPolls()}
     ${posts.length?posts.map(p=>renderPost(p)).join(''):`
       <div class="empty-state">
         <div class="empty-state-ico">✍️</div>
@@ -975,7 +1049,10 @@ function renderProfile(uid){
           <div class="pstat"><div class="pstat-n">с ${m.joined||'—'}</div><div class="pstat-l">в компании</div></div>
         </div>
         <div class="profile-actions">
-          ${isMe?`<button class="btn-primary" onclick="openEditProfile()">✏ Редактировать</button>`
+          ${isMe?`<div style="display:flex;gap:.625rem">
+              <button class="btn-primary" onclick="openEditProfile()">✏ Редактировать</button>
+              <button class="btn-secondary" onclick="openStatusModal()">📍 ${getStatusHtml(S.user.id)||'Статус'}</button>
+            </div>`
             :`<button class="btn-primary" onclick="gp('messages');openDM('${m.id}')">💬 Написать</button>`}
         </div>
       </div>
@@ -1324,6 +1401,167 @@ function renderEditVacModal(){
   </div>`;
 }
 
+
+/* ── BIRTHDAYS ── */
+function getBirthdays(){
+  const today=new Date();
+  const mm=String(today.getMonth()+1).padStart(2,'0');
+  const dd=String(today.getDate()).padStart(2,'0');
+  const todayMD=`${mm}-${dd}`;
+  const res={today:[],soon:[]};
+  membersArr().forEach(m=>{
+    if(!m.birthday)return;
+    const p=m.birthday.split('-');
+    if(p.length<3)return;
+    const mmd=`${p[1]}-${p[2]}`;
+    if(mmd===todayMD){res.today.push(m);return;}
+    const b=new Date(today.getFullYear(),parseInt(p[1])-1,parseInt(p[2]));
+    if(b<today)b.setFullYear(today.getFullYear()+1);
+    const diff=Math.ceil((b-today)/86400000);
+    if(diff<=7)res.soon.push({...m,daysLeft:diff});
+  });
+  return res;
+}
+
+function renderBdayWidget(){
+  const bdays=getBirthdays();
+  if(!bdays.today.length&&!bdays.soon.length)return'';
+  if(bdays.today.length){
+    return`<div class="bday-widget">
+      ${bdays.today.map(m=>`
+        <div class="bday-today-row">
+          <div style="font-size:30px">🎂</div>
+          <div>
+            <div style="font-weight:700;font-size:14px">${escH(m.name)}</div>
+            <div style="font-size:12px;color:var(--gold);font-weight:600">Сегодня день рождения! 🎉</div>
+          </div>
+        </div>`).join('')}
+      ${bdays.soon.length?`<div class="bday-soon">
+        ${bdays.soon.map(m=>`📅 ${escH(m.name.split(' ')[0])} — через ${m.daysLeft} дн.`).join(' &nbsp;·&nbsp; ')}
+      </div>`:''}
+    </div>`;
+  }
+  return`<div class="bday-widget" style="background:rgba(21,101,192,.04);border-color:rgba(21,101,192,.15)">
+    <div style="font-size:12px;font-weight:600;color:var(--t1);margin-bottom:.375rem">🎂 Ближайшие дни рождения</div>
+    ${bdays.soon.map(m=>`<div style="font-size:12px;color:var(--t2);margin-bottom:2px">
+      ${avImg(m.avatar,m.name,20,m.color||COLORS[0])} <b>${escH(m.name.split(' ')[0])}</b> — через ${m.daysLeft} дн.
+    </div>`).join('')}
+  </div>`;
+}
+
+/* ── POLLS ── */
+function renderPolls(){
+  const polls=Object.entries(S.polls||{})
+    .sort((a,b)=>(b[1].ts||0)-(a[1].ts||0))
+    .slice(0,3);
+  if(!polls.length)return'';
+  return polls.map(([id,p])=>{
+    const total=Object.values(p.votes||{}).reduce((s,v)=>s+(v||0),0)||1;
+    const myVote=p.userVotes&&p.userVotes[S.user.id];
+    const isAuthor=p.authorId===S.user.id;
+    return`<div class="poll-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem">
+        <div>
+          <div style="font-size:10px;color:var(--t3);font-weight:600;letter-spacing:.5px;margin-bottom:3px">📊 ОПРОС</div>
+          <div class="poll-q">${escH(p.question)}</div>
+        </div>
+        ${isAuthor?`<button onclick="deletePoll('${id}')" style="border:none;background:none;color:var(--t3);cursor:pointer;font-size:14px;padding:3px 6px">🗑</button>`:''}
+      </div>
+      ${(p.options||[]).map((opt,i)=>{
+        const cnt=p.votes&&p.votes[i]?p.votes[i]:0;
+        const pct=Math.round(cnt/total*100);
+        const voted=myVote===String(i);
+        return`<div class="poll-opt${voted?' voted':''}" onclick="votePoll('${id}',${i})">
+          <div class="poll-bar" style="width:${myVote!==undefined?pct:0}%"></div>
+          <span class="poll-opt-text">${voted?'✓ ':''}${escH(opt)}</span>
+          ${myVote!==undefined?`<span class="poll-pct">${pct}%</span>`:''}
+        </div>`;
+      }).join('')}
+      <div style="font-size:11px;color:var(--t3);margin-top:.5rem">
+        ${Object.values(p.userVotes||{}).length} голосов · ${escH(p.authorName||'')}
+        ${myVote===undefined?'<span style="color:var(--accent);margin-left:4px">· Нажмите чтобы проголосовать</span>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window.votePoll = async(id,idx)=>{
+  const p=S.polls[id];if(!p)return;
+  if(p.userVotes&&p.userVotes[S.user.id]!==undefined)return;
+  const cur=p.votes&&p.votes[idx]?p.votes[idx]:0;
+  await fbUpd(`polls/${id}`,{[`votes/${idx}`]:cur+1,[`userVotes/${S.user.id}`]:String(idx)});
+};
+window.deletePoll = async(id)=>{
+  if(confirm('Удалить опрос?'))await fbDel(`polls/${id}`);
+};
+window.submitPoll = async()=>{
+  const q=(document.getElementById('poll-q')||{}).value||'';
+  const opts=[...document.querySelectorAll('.poll-opt-inp')].map(i=>i.value.trim()).filter(Boolean);
+  if(!q.trim()||opts.length<2){showToast('Нужен вопрос и минимум 2 варианта',true);return;}
+  const me=S.members[S.user.id]||S.user;
+  await fbPush('polls',{question:q.trim(),options:opts,votes:{},userVotes:{},
+    authorId:S.user.id,authorName:me.name,ts:Date.now()});
+  document.getElementById('poll-q').value='';
+  document.querySelectorAll('.poll-opt-inp').forEach(el=>el.value='');
+  window.togglePollForm();
+  showToast('Опрос создан!');
+};
+window.addPollOpt=()=>{
+  const wrap=document.getElementById('poll-opts-wrap');if(!wrap)return;
+  const n=document.createElement('div');
+  n.className='poll-option-input';n.style.cssText='display:flex;gap:6px;margin-bottom:6px';
+  n.innerHTML=`<input type="text" class="poll-opt-inp" placeholder="Вариант ${wrap.children.length+1}"
+    style="flex:1;background:var(--bg3);border:1px solid #ddd;border-radius:6px;padding:7px 10px;font-size:13px;outline:none">
+    <button onclick="this.parentElement.remove()" style="border:none;background:none;color:var(--t3);cursor:pointer;font-size:16px">✕</button>`;
+  wrap.appendChild(n);
+};
+window.togglePollForm=()=>{
+  const f=document.getElementById('poll-form');
+  if(f)f.style.display=f.style.display==='none'?'block':'none';
+};
+
+/* ── STATUS ── */
+const STATUS_LIST=[
+  {id:'office',label:'В офисе',cls:'status-office',ico:'🏢'},
+  {id:'field',label:'На объекте',cls:'status-field',ico:'⛽'},
+  {id:'trip',label:'Командировка',cls:'status-trip',ico:'✈️'},
+  {id:'remote',label:'Удалённо',cls:'status-remote',ico:'🏠'},
+  {id:'off',label:'Не на работе',cls:'status-off',ico:'💤'},
+];
+function getStatusHtml(memberId,size='sm'){
+  const st=S.statuses&&S.statuses[memberId];
+  if(!st)return'';
+  const found=STATUS_LIST.find(s=>s.id===st);
+  if(!found)return'';
+  if(size==='sm')return`<span class="status-badge ${found.cls}">${found.ico} ${found.label}</span>`;
+  return`<span class="status-badge ${found.cls}" style="font-size:12px;padding:3px 10px">${found.ico} ${found.label}</span>`;
+}
+window.setMyStatus=async(id)=>{
+  await fbSet(`statuses/${S.user.id}`,id);
+  showToast('Статус обновлён!');
+  closeModal();
+};
+window.openStatusModal=()=>{
+  const cur=S.statuses&&S.statuses[S.user.id];
+  openModal(`
+    <div class="modal-head">
+      <div class="modal-title">Мой статус</div>
+      <button class="btnx" onclick="closeModal()">✕</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.5rem">
+      ${STATUS_LIST.map(s=>`
+        <button onclick="setMyStatus('${s.id}')"
+          style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;
+          border:1.5px solid ${cur===s.id?'var(--accent)':'#ddd'};
+          background:${cur===s.id?'rgba(21,101,192,.06)':'none'};
+          cursor:pointer;font-family:'Inter';font-size:14px;font-weight:500;
+          transition:all .15s;text-align:left">
+          <span style="font-size:20px">${s.ico}</span>
+          <span>${s.label}</span>
+          ${cur===s.id?'<span style="margin-left:auto;color:var(--accent);font-size:12px;font-weight:600">✓ Выбрано</span>':''}
+        </button>`).join('')}
+    </div>`);
+};
 /* ── ACTIONS ── */
 window.setAt = t=>{ S.authTab=t; rerender(); };
 window.gp = p=>{ S.page=p; S.modal=null; rerender(); if(p==='messages'&&S.activeDM)setTimeout(()=>scrollEl('dm-msgs'),80); };

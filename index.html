@@ -597,22 +597,65 @@ select option{background:var(--bg2)}
   <div id="notif-list"><div class="np-empty">Нет уведомлений</div></div>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, set, get, push, onValue, update, remove }
-  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+<script>
+/* ══ ЛОКАЛЬНОЕ ХРАНИЛИЩЕ (localStorage) — вместо Firebase ══ */
+const LS_KEY = 'rs_portal_data';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDQlrj-U1rck6gLsPg3RilLq-h8amXKcPo",
-  authDomain: "reservoir-simulation.firebaseapp.com",
-  databaseURL: "https://reservoir-simulation-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "reservoir-simulation",
-  storageBucket: "reservoir-simulation.firebasestorage.app",
-  messagingSenderId: "924476318258",
-  appId: "1:924476318258:web:75ebc4fff16dd4a424922b",
-};
-const fbApp = initializeApp(firebaseConfig);
-const db = getDatabase(fbApp);
+function lsLoad(){
+  try{ return JSON.parse(localStorage.getItem(LS_KEY)||'{}'); }
+  catch{ return {}; }
+}
+function lsSave(data){
+  localStorage.setItem(LS_KEY, JSON.stringify(data));
+}
+function lsGet(path){
+  const parts = path.split('/').filter(Boolean);
+  let obj = lsLoad();
+  for(const p of parts){ if(obj==null)return null; obj=obj[p]; }
+  return obj===undefined?null:obj;
+}
+function lsSet(path, val){
+  const parts = path.split('/').filter(Boolean);
+  const data = lsLoad();
+  let obj = data;
+  for(let i=0;i<parts.length-1;i++){
+    if(obj[parts[i]]==null||typeof obj[parts[i]]!=='object') obj[parts[i]]={};
+    obj=obj[parts[i]];
+  }
+  obj[parts[parts.length-1]] = val;
+  lsSave(data);
+}
+function lsDel(path){
+  const parts = path.split('/').filter(Boolean);
+  const data = lsLoad();
+  let obj = data;
+  for(let i=0;i<parts.length-1;i++){
+    if(!obj[parts[i]])return;
+    obj=obj[parts[i]];
+  }
+  delete obj[parts[parts.length-1]];
+  lsSave(data);
+}
+function lsPush(path, val){
+  const id = 'id_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
+  lsSet(path+'/'+id, val);
+  return id;
+}
+function lsUpd(path, updates){
+  const parts = path.split('/').filter(Boolean);
+  const data = lsLoad();
+  let obj = data;
+  for(let i=0;i<parts.length;i++){
+    if(i===parts.length-1){
+      if(!obj[parts[i]]||typeof obj[parts[i]]!=='object') obj[parts[i]]={};
+      Object.assign(obj[parts[i]], updates);
+    } else {
+      if(!obj[parts[i]]||typeof obj[parts[i]]!=='object') obj[parts[i]]={};
+      obj=obj[parts[i]];
+    }
+  }
+  lsSave(data);
+}
 
 /* ── CONSTANTS ── */
 const HOLIDAYS={
@@ -652,14 +695,14 @@ let S={
   statuses:{}, // memberId -> status
 };
 
-/* ── FIREBASE ── */
-const fbRef = p => ref(db, p);
-const fbSet = (p,v) => set(fbRef(p), v);
-const fbUpd = (p,v) => update(fbRef(p), v);
-const fbPush = (p,v) => push(fbRef(p), v);
-const fbGet = async p => { const s=await get(fbRef(p)); return s.exists()?s.val():null; };
-const fbDel = p => remove(fbRef(p));
-const fbListen = (p,cb) => onValue(fbRef(p), s=>cb(s.exists()?s.val():null));
+/* ── localStorage API (совместимый с Firebase интерфейс) ── */
+const fbSet = async (p,v) => { lsSet(p,v); };
+const fbUpd = async (p,v) => { lsUpd(p,v); };
+const fbPush = async (p,v) => { const id=lsPush(p,v); return {key:id}; };
+const fbGet = async p => lsGet(p);
+const fbDel = async p => { lsDel(p); };
+// fbListen — вызывает callback сразу с текущими данными (нет realtime)
+const fbListen = (p,cb) => { cb(lsGet(p)); };
 
 /* ── UTILS ── */
 const ini = n=>(n||'??').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
@@ -718,15 +761,31 @@ function avImg(src,fallback,size=40,color='#3d8ef0',cls=''){
 
 /* ── LISTENERS ── */
 function startListeners(){
-  fbListen('members', v=>{ S.members=v||{}; if(['feed','team','profile','messages'].includes(S.page))rerender(); });
-  fbListen('posts', v=>{ S.posts=v||{}; if(S.page==='feed'||S.page==='profile')rerender(); });
-  fbListen('comments', v=>{ S.comments=v||{}; if(S.page==='feed')rerender(); });
-  fbListen('files', v=>{ S.files=v||{}; if(S.page==='files')rerender(); });
-  fbListen('vacations', v=>{ S.vacations=v||{}; if(S.page==='calendar')rerender(); });
-  fbListen('dms', v=>{ S.dms=v||{}; if(S.page==='messages')rerender(); });
-  fbListen('game', v=>{ S.game=v||null; if(S.page==='game')rerender(); });
-  fbListen('statuses', v=>{ S.statuses=v||{}; rerender(); });
-  fbListen('polls', v=>{ S.polls=v||{}; if(S.page==='feed')rerender(); });
+  // localStorage — загружаем все данные сразу при старте
+  const data = lsLoad();
+  S.members  = data.members   || {};
+  S.posts    = data.posts     || {};
+  S.comments = data.comments  || {};
+  S.files    = data.files     || {};
+  S.vacations= data.vacations || {};
+  S.dms      = data.dms       || {};
+  S.polls    = data.polls     || {};
+  S.statuses = data.statuses  || {};
+  S.game     = data.game      || null;
+}
+
+// После каждого изменения данных — перезагружаем state из LS и рендерим
+function refreshState(){
+  const data = lsLoad();
+  S.members  = data.members   || {};
+  S.posts    = data.posts     || {};
+  S.comments = data.comments  || {};
+  S.files    = data.files     || {};
+  S.vacations= data.vacations || {};
+  S.dms      = data.dms       || {};
+  S.polls    = data.polls     || {};
+  S.statuses = data.statuses  || {};
+  rerender();
 }
 
 /* ── RENDER ROOT ── */
@@ -908,6 +967,18 @@ function renderRightSidebarOnly(){
   // Не перерисовываем всё, просто обновляем виджет если он есть
 }
 
+
+function renderGameLocal(){
+  return`<div style="max-width:500px;margin:0 auto;text-align:center;padding:3rem 1rem">
+    <div style="font-size:52px;margin-bottom:1rem">🎯</div>
+    <div style="font-family:'Plus Jakarta Sans';font-size:18px;font-weight:700;margin-bottom:.5rem">Кодовые имена</div>
+    <div style="font-size:14px;color:var(--t2);margin-bottom:1.5rem">Мультиплеер недоступен в локальном режиме.<br>Игра требует синхронизацию между игроками.</div>
+    <div style="background:var(--bg3);border-radius:12px;padding:1.25rem;font-size:13px;color:var(--t2)">
+      Все остальные функции портала работают в полном объёме:<br>лента, профиль, календарь, файлы, задачи, база знаний, инструменты.
+    </div>
+  </div>`;
+}
+
 function renderPage(){
   if(S.page==='feed')     return renderFeed();
   if(S.page==='profile')  return renderProfile(S.user.id);
@@ -915,7 +986,7 @@ function renderPage(){
   if(S.page==='calendar') return renderCalendar();
   if(S.page==='files')    return renderFiles();
   if(S.page==='messages') return renderMessages();
-  if(S.page==='game')     return renderGame();
+  if(S.page==='game')     return renderGameLocal();
   return '';
 }
 
@@ -1304,7 +1375,7 @@ function renderMessages(){
     if(peer){
       const key=dmKey(S.user.id,peer.id);
       const msgs=Object.values(S.dms[key]||{}).sort((a,b)=>a.ts-b.ts);
-      msgs.forEach(msg=>{if(msg.from!==S.user.id&&!msg.read&&msg._key)fbUpd(`dms/${key}/${msg._key}`,{read:true})});
+      // mark read handled locally
       chat=`<div class="dm-chat">
         <div class="dm-chat-hdr">
           ${avImg(peer.avatar,peer.name,36,peer.color||COLORS[0])}
@@ -1490,9 +1561,10 @@ window.votePoll = async(id,idx)=>{
   if(p.userVotes&&p.userVotes[S.user.id]!==undefined)return;
   const cur=p.votes&&p.votes[idx]?p.votes[idx]:0;
   await fbUpd(`polls/${id}`,{[`votes/${idx}`]:cur+1,[`userVotes/${S.user.id}`]:String(idx)});
+  refreshState();
 };
 window.deletePoll = async(id)=>{
-  if(confirm('Удалить опрос?'))await fbDel(`polls/${id}`);
+  if(confirm('Удалить опрос?')){await fbDel(`polls/${id}`);refreshState();}
 };
 window.submitPoll = async()=>{
   const q=(document.getElementById('poll-q')||{}).value||'';
@@ -1538,6 +1610,7 @@ function getStatusHtml(memberId,size='sm'){
 }
 window.setMyStatus=async(id)=>{
   await fbSet(`statuses/${S.user.id}`,id);
+  refreshState();
   showToast('Статус обновлён!');
   closeModal();
 };
@@ -1591,7 +1664,7 @@ window.doLogin = async()=>{
   const email=(document.getElementById('le')||{}).value||'';
   if(!email){showToast('Введите email',true);return}
   const btn=document.getElementById('lbtn');if(btn){btn.disabled=true;btn.textContent='Проверяем...';}
-  const members=await fbGet('members');
+  const members=lsGet('members');
   if(members){
     const found=Object.values(members).find(m=>m.email===email.trim());
     if(found){
@@ -1621,7 +1694,7 @@ window.doReg = async()=>{
   if(!fn||!ln||!em){showToast('Заполните имя, фамилию и email',true);return}
   if(p&&p!==p2){showToast('Пароли не совпадают',true);return}
   const btn=document.getElementById('rbtn');if(btn){btn.disabled=true;btn.textContent='Сохраняем...';}
-  const existing=await fbGet('members');
+  const existing=lsGet('members');
   if(existing){
     const dup=Object.values(existing).find(m=>m.email===em.trim());
     if(dup){S.user=dup;S.page='feed';sessionStorage.setItem('rs_user',JSON.stringify(dup));startListeners();rerender();return;}
@@ -1634,6 +1707,7 @@ window.doReg = async()=>{
     bio:bio.trim(),color:COLORS[colorIdx],birthday:bday,family:fam,
     project:proj.trim(),avatar:'',cover:''};
   await fbSet(`members/${id}`,nm);
+  refreshState();
   S.user=nm;S.page='feed';
   sessionStorage.setItem('rs_user',JSON.stringify(nm));
   startListeners();showToast('Добро пожаловать!');rerender();
@@ -1652,6 +1726,7 @@ window.saveProf = async()=>{
   const sk=(document.getElementById('es')||{}).value||'';
   upd.skills=sk?sk.split(',').map(s=>s.trim()).filter(Boolean):me.skills||[];
   await fbUpd(`members/${me.id}`,upd);
+  refreshState();
   S.user={...S.user,...upd};
   sessionStorage.setItem('rs_user',JSON.stringify(S.user));
   S.modal=null;showToast('Профиль сохранён!');rerender();
@@ -1664,6 +1739,7 @@ window.uploadAvatar = async(e)=>{
   reader.onload=async ev=>{
     const dataUrl=ev.target.result;
     await fbUpd(`members/${S.user.id}`,{avatar:dataUrl});
+      refreshState();
     S.user={...S.user,avatar:dataUrl};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
     showToast('Фото обновлено!');rerender();
@@ -1677,6 +1753,7 @@ window.uploadCover = async(e)=>{
   const reader=new FileReader();
   reader.onload=async ev=>{
     await fbUpd(`members/${S.user.id}`,{cover:ev.target.result});
+      refreshState();
     S.user={...S.user,cover:ev.target.result};
     sessionStorage.setItem('rs_user',JSON.stringify(S.user));
     showToast('Обложка обновлена!');rerender();
@@ -1706,6 +1783,7 @@ window.submitPost = async()=>{
   if(!txt.trim()&&!_postImgData){showToast('Напишите что-нибудь',true);return}
   const post={authorId:S.user.id,text:txt.trim(),ts:Date.now(),imageUrl:_postImgData||''};
   await fbPush('posts',post);
+  refreshState();
   _postImgData=null;
   const ta=document.getElementById('post-text');if(ta){ta.value='';ta.style.height='auto';}
   const prev=document.getElementById('post-img-preview');if(prev)prev.innerHTML='';
@@ -1716,6 +1794,7 @@ window.deletePost = async id=>{
   if(!confirm('Удалить пост?'))return;
   await fbDel(`posts/${id}`);
   await fbDel(`comments/${id}`);
+  refreshState();
   showToast('Пост удалён');
 };
 
@@ -1724,8 +1803,8 @@ window.showPostMenu = id=>{ deletePost(id); };
 window.toggleLike = async id=>{
   const post=S.posts[id];if(!post)return;
   const liked=post.likes&&post.likes[S.user.id];
-  if(liked){await fbDel(`posts/${id}/likes/${S.user.id}`);}
-  else{await fbSet(`posts/${id}/likes/${S.user.id}`,true);
+  if(liked){await fbDel(`posts/${id}/likes/${S.user.id}`);refreshState();}
+  else{await fbSet(`posts/${id}/likes/${S.user.id}`,true);refreshState();
     if(post.authorId!==S.user.id)addLocalNotif(`${S.user.name.split(' ')[0]} оценил ваш пост`,'❤️');}
 };
 
@@ -1734,6 +1813,7 @@ window.submitComment = async postId=>{
   const text=(inp?.value||'').trim();if(!text)return;
   const comment={authorId:S.user.id,text,ts:Date.now()};
   await fbPush(`comments/${postId}`,comment);
+  refreshState();
   if(inp)inp.value='';
   const post=S.posts[postId];
   if(post&&post.authorId!==S.user.id)addLocalNotif(`${S.user.name.split(' ')[0]} прокомментировал ваш пост`,'💬');
@@ -1745,12 +1825,14 @@ window.saveVac = async()=>{
   if(!from||!to){showToast('Выберите даты',true);return}
   if(from>to){showToast('Дата начала не может быть позже конца',true);return}
   await fbPush('vacations',{memberId:S.user.id,from,to,ts:Date.now()});
+  refreshState();
   showToast('Отпуск добавлен!');S.selectedDay=null;rerender();
 };
 
 window.delVac = async key=>{
   if(!confirm('Отменить отпуск?'))return;
   await fbDel(`vacations/${key}`);
+  refreshState();
   showToast('Отпуск отменён');S.modal=null;rerender();
 };
 
@@ -1759,6 +1841,7 @@ window.saveEditVac = async key=>{
   const to=(document.getElementById('evto')||{}).value||'';
   if(!from||!to||from>to){showToast('Проверьте даты',true);return}
   await fbUpd(`vacations/${key}`,{from,to});
+  refreshState();
   showToast('Отпуск изменён!');S.modal=null;rerender();
 };
 
@@ -1768,7 +1851,8 @@ window.sendDM = async peerId=>{
   const key=dmKey(S.user.id,peerId);
   const msg={from:S.user.id,text,ts:Date.now(),
     time:new Date().toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'}),read:false};
-  const pushed=await fbPush(`dms/${key}`,msg);
+  await fbPush(`dms/${key}`,msg);
+  refreshState();
   if(inp)inp.value='';
   setTimeout(()=>{scrollEl('dm-msgs');document.getElementById('dminp')?.focus();},50);
 };
@@ -1783,7 +1867,7 @@ window.upF = async e=>{
   showToast(`Загружено: ${files.length} файл(ов)`);
 };
 
-window.delF = async id=>{ await fbDel(`files/${id}`); showToast('Файл удалён'); };
+window.delF = async id=>{ await fbDel(`files/${id}`); refreshState(); showToast('Файл удалён'); };
 
 /* ── INIT ── */
 S.page='loading';
@@ -2129,7 +2213,7 @@ window.createRoom = async()=>{
   };
   await fbSet(`game/rooms/${code}`, room);
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  // game realtime listener removed (no Firebase)
   rerender();
 };
 
@@ -2147,7 +2231,7 @@ window.joinRoom = async()=>{
     await fbUpd(`game/rooms/${code}/redTeam`,{[me.id]:playerData});
   }
   S.gameRoom=code;
-  fbListen(`game/rooms/${code}`, v=>{ S.game=v; if(S.page==='game')rerender(); });
+  // game realtime listener removed (no Firebase)
   rerender();
 };
 
